@@ -4,10 +4,10 @@ type Inputs = {
   apiKey: string;
 };
 
-// export function onPreBuild({ inputs }: { inputs: Inputs }) {
-//   console.log('Hello world from onPreBuild event!');
-//   console.log('Got inputs', inputs);
-// }
+export function onPreBuild({ inputs }: { inputs: Inputs }) {
+  console.log('Hello world from onPreBuild event!');
+  console.log('Got inputs', inputs);
+}
 
 export function onPostBuild() {
   console.log('onPostBuild');

@@ -1,5 +1,5 @@
 [[plugins]]
-package = "/dist/index.js"
+package = "@algolia/crawler-netlify-plugin"
   [plugins.inputs]
       appId = "coucou"
       apiKey = "lol"
