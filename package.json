@@ -1,6 +1,6 @@
 {
   "name": "@algolia/crawler-netlify-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "repository": "https://github.com/algolia/crawler-netlify-plugin.git",
   "author": "Samuel Bodin <samuel.bodin@algolia.com>",
