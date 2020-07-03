@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.onPostBuild = exports.onPreBuild = void 0;
+exports.onEnd = exports.onPreBuild = void 0;
 const node_fetch_1 = __importDefault(require("node-fetch"));
 async function onPreBuild() {
     console.log('Algolia Crawler Netlify plugin started');
@@ -23,7 +23,7 @@ async function onPreBuild() {
     console.log(results);
 }
 exports.onPreBuild = onPreBuild;
-function onPostBuild() {
-    console.log('onPostBuild');
+function onEnd(params) {
+    console.log(JSON.stringify(params));
 }
-exports.onPostBuild = onPostBuild;
+exports.onEnd = onEnd;

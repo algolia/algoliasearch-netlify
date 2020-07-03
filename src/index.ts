@@ -27,6 +27,6 @@ export async function onPreBuild() {
   console.log(results);
 }
 
-export function onPostBuild() {
-  console.log('onPostBuild');
+export function onEnd(params: any) {
+  console.log(JSON.stringify(params));
 }
