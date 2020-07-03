@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-export function onPreBuild() {
+export async function onPreBuild() {
   console.log('Algolia Crawler Netlify plugin started');
 
   const crawlerID = process.env.CRAWLER_ID;
@@ -11,15 +11,20 @@ export function onPreBuild() {
     throw new Error('Missing required Crawler credentials');
   }
 
-  fetch('https://crawler.algolia.com/api/1/crawlers/`crawlerID`/reindex', {
-    headers: {
-      Authorization: `Basic ${Buffer.from(
-        `${crawlerUserID}:${crawlerApiKey}`
-      ).toString('base64')}`,
-      'Content-Type': 'application/json',
-    },
-    method: 'POST',
-  });
+  const results = await fetch(
+    `https://crawler.algolia.com/api/1/crawlers/${crawlerID}/reindex`,
+    {
+      headers: {
+        Authorization: `Basic ${Buffer.from(
+          `${crawlerUserID}:${crawlerApiKey}`
+        ).toString('base64')}`,
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    }
+  );
+
+  console.log(results);
 }
 
 export function onPostBuild() {

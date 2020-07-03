@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.onPostBuild = exports.onPreBuild = void 0;
 const node_fetch_1 = __importDefault(require("node-fetch"));
-function onPreBuild() {
+async function onPreBuild() {
     console.log('Algolia Crawler Netlify plugin started');
     const crawlerID = process.env.CRAWLER_ID;
     const crawlerUserID = process.env.CRAWLER_USER_ID;
@@ -13,13 +13,14 @@ function onPreBuild() {
     if (!crawlerID || !crawlerUserID || !crawlerApiKey) {
         throw new Error('Missing required Crawler credentials');
     }
-    node_fetch_1.default('https://crawler.algolia.com/api/1/crawlers/`crawlerID`/reindex', {
+    const results = await node_fetch_1.default(`https://crawler.algolia.com/api/1/crawlers/${crawlerID}/reindex`, {
         headers: {
             Authorization: `Basic ${Buffer.from(`${crawlerUserID}:${crawlerApiKey}`).toString('base64')}`,
             'Content-Type': 'application/json',
         },
         method: 'POST',
     });
+    console.log(results);
 }
 exports.onPreBuild = onPreBuild;
 function onPostBuild() {
