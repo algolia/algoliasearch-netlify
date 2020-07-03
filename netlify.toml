@@ -1,5 +1,5 @@
 [[plugins]]
-package = "@algolia/crawler-netlify-plugin"
+package = "src/index.ts"
   [plugins.inputs]
       appId = "coucou"
       apiKey = "lol"
