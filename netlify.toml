@@ -1,5 +1,5 @@
 [[plugins]]
-package = "src/index.ts"
+package = "/src/index.js"
   [plugins.inputs]
       appId = "coucou"
       apiKey = "lol"
