@@ -1,5 +1,37 @@
 {
   "extends": [
-    "config:base"
-  ]
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":noUnscheduledUpdates",
+    ":ignoreModulesAndTests",
+    ":autodetectPinVersions",
+    "group:monorepos",
+    "group:recommended"
+  ],
+  "enabledManagers": [
+    "circleci",
+    "npm",
+    "nvm"
+  ],
+  "automerge": true,
+  "separateMultipleMajor": true,
+  "schedule": "every weekend",
+  "reviewers": [],
+  "semanticCommitType": "fix",
+  "node": {
+    "supportPolicy": [
+      "current"
+    ]
+  },
+  "lockFileMaintenance": {
+    "enabled": false
+  },
+  "masterIssue": true,
+  "stabilityDays": 7,
+  "prCreation": "not-pending",
+  "timezone": "Europe/Paris",
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 10
 }
