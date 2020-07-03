@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-export async function onPreBuild() {
+export async function onPostBuild() {
   console.log('Algolia Crawler Netlify plugin started');
 
   const crawlerID = process.env.CRAWLER_ID;
