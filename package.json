@@ -27,5 +27,9 @@
   "scripts": {
     "lint": "eslint .",
     "build": "tsc -b"
+  },
+  "dependencies": {
+    "@types/node": "^14.0.14",
+    "node-fetch": "2.6.0"
   }
 }

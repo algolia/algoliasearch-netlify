@@ -1,5 +1,2 @@
 [[plugins]]
 package = "/dist/index.js"
-  [plugins.inputs]
-      appId = "coucou"
-      apiKey = "lol"

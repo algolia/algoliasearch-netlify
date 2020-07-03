@@ -1,8 +1,1 @@
 name: crawler-netlify-plugin
-inputs:
-  - name: appId
-    description: Algolia Application ID
-    required: true
-  - name: apiKey
-    description: Algolia Write API Key (please do not put admin api key)
-    required: true
