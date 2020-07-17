@@ -4286,6 +4286,11 @@ lodash.clonedeep@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
 lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
@@ -4747,10 +4752,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@2.57.0:
-  version "2.57.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.57.0.tgz#01766460135c41659eb041cacc90899a30f0cb72"
-  integrity sha512-Fk7lynhW8C00UjCQFt/8tRQ1Ge7PZurlawgo15nCQ2pVfmAexSUItCMLqPHZqAaki2/ZflPbut8fONQaryl2Hg==
+netlify-cli@2.58.0:
+  version "2.58.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.58.0.tgz#1e18a0502e026ce6272a0489d67abd278a2420fa"
+  integrity sha512-PE+nuI+MQsien5jI7cf0loim6MpupF5IQk+aLHHNHZkPYI2LyuDayQPy7amvQyacqaz/VccGu8fwhOxY0ctkew==
   dependencies:
     "@netlify/build" "^2.0.26"
     "@netlify/config" "^2.0.3"
@@ -4799,6 +4804,7 @@ netlify-cli@2.57.0:
     is-docker "^1.1.0"
     jwt-decode "^2.2.0"
     lambda-local "^1.7.1"
+    lodash.debounce "^4.0.8"
     lodash.get "^4.4.2"
     lodash.isempty "^4.4.0"
     lodash.isequal "^4.5.0"
