@@ -20,7 +20,7 @@
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.1",
-    "netlify-cli": "2.58.0",
+    "netlify-cli": "2.59.1",
     "prettier": "2.0.5",
     "typescript": "3.9.7"
   },
