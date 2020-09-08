@@ -105,5 +105,14 @@ typings/
 # Local Netlify folder
 .netlify
 
+# Built files
+dist/
+
+# VSCode files
 .vscode
+
+# npm package lock
 package-lock.json
+
+# .env
+.env

@@ -1,32 +1,51 @@
 import fetch from 'node-fetch';
 
-export async function onPostBuild() {
-  console.log('Algolia Crawler Netlify plugin started');
+process.env.NODE_ENV ??= 'production';
 
-  const crawlerID = process.env.CRAWLER_ID;
-  const crawlerUserID = process.env.CRAWLER_USER_ID;
-  const crawlerApiKey = process.env.CRAWLER_API_KEY;
-
-  if (!crawlerID || !crawlerUserID || !crawlerApiKey) {
-    throw new Error('Missing required Crawler credentials');
-  }
-
-  const results = await fetch(
-    `https://crawler.algolia.com/api/1/crawlers/${crawlerID}/reindex`,
-    {
-      headers: {
-        Authorization: `Basic ${Buffer.from(
-          `${crawlerUserID}:${crawlerApiKey}`
-        ).toString('base64')}`,
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    }
-  );
-
-  console.log(results);
+interface BuildParams {
+  constants: {
+    SITE_ID: string;
+  };
 }
 
-export function onEnd(params: any) {
-  console.log(JSON.stringify(params));
+function throwExceptInDev(message: string) {
+  if (process.env.NODE_ENV === 'development') {
+    console.warn(`WARN: ${message}`);
+  } else {
+    throw new Error(message);
+  }
+}
+
+export async function onSuccess(params: BuildParams) {
+  console.log('Algolia Netlify plugin started');
+
+  // Debug
+  console.log(JSON.stringify(params, null, 2));
+  console.log(JSON.stringify(process.env, null, 2));
+
+  const siteId = params.constants.SITE_ID;
+  const branch = process.env.BRANCH || 'master';
+  const algoliaBaseUrl =
+    process.env.ALGOLIA_BASE_URL || 'https://crawler.algolia.com';
+  const algoliaApiKey = process.env.ALGOLIA_API_KEY;
+
+  if (!siteId) throw new Error('Missing SITE_ID');
+  if (!branch) throw new Error('Missing BRANCH');
+  if (!algoliaApiKey) throwExceptInDev('Missing ALGOLIA_API_KEY');
+
+  const endpoint = `${algoliaBaseUrl}/api/1/netlify/crawl`;
+  const creds = `${siteId}:${algoliaApiKey || 'unused'}`;
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      Authorization: `Basic ${Buffer.from(creds).toString('base64')}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ branch }),
+  });
+
+  console.log({
+    status: response.status,
+    text: await response.text(),
+  });
 }
