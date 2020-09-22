@@ -14,7 +14,7 @@ common='
 # Dev only
 dev_only='
 [[plugins]]
-package = "./dist/index.js"
+package = "./plugin/dist/index.js"
 '
 
 # Prod only

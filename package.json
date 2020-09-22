@@ -1,20 +1,22 @@
 {
-  "name": "@algolia/crawler-netlify-plugin",
-  "version": "0.0.3",
-  "main": "dist/index.js",
-  "repository": "https://github.com/algolia/crawler-netlify-plugin.git",
+  "name": "@algolia/netlify",
+  "version": "1.0.0",
+  "private": true,
   "author": "Algolia Team <contact@algolia.com>",
   "license": "MIT",
-  "private": false,
+  "repository": "https://github.com/algolia/algoliasearch-netlify.git",
+  "workspaces": [
+    "plugin"
+  ],
   "scripts": {
-    "build": "tsc -b",
-    "dev": "NODE_ENV=development ./scripts/dev.sh",
-    "lint": "eslint --ext=jsx,ts,tsx,js .",
-    "release": "yarn build && yarn publish"
+    "build": "echo 'Website already built in public'",
+    "build:plugin": "cd plugin && yarn build",
+    "dev:plugin": "cd plugin && yarn dev",
+    "lint": "yarn lint:plugin",
+    "lint:plugin": "cd plugin && yarn lint",
+    "release:plugin": "cd plugin && yarn release"
   },
-  "dependencies": {
-    "node-fetch": "2.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "14.0.27",
     "@typescript-eslint/eslint-plugin": "3.5.0",
@@ -35,9 +37,8 @@
     "prettier": "2.1.1",
     "typescript": "4.0.2"
   },
-  "files": [
-    "README.md",
-    "manifest.yml",
-    "dist/"
-  ]
+  "engines": {
+    "yarn": "1.*",
+    "node": "14.*"
+  }
 }

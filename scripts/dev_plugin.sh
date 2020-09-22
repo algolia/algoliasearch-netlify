@@ -17,5 +17,5 @@ restore_netlify_toml() {
 NODE_ENV=development ./scripts/generate_netlify_toml.sh
 trap restore_netlify_toml EXIT
 
-yarn build
+yarn build:plugin
 yarn netlify build 
