@@ -4,5 +4,5 @@
 
 
 [[plugins]]
-package = "./plugin/dist/index.js"
+package = "crawler-netlify-plugin"
 

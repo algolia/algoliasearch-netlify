@@ -20,7 +20,7 @@ package = "./plugin/dist/index.js"
 # Prod only
 prod_only='
 [[plugins]]
-package = "@algolia/crawler-netlify-plugin"
+package = "crawler-netlify-plugin"
 '
 
 echo "$common" > "$target"
