@@ -12,8 +12,7 @@
     "build": "echo 'Website already built in public'",
     "build:plugin": "cd plugin && yarn build",
     "dev:plugin": "cd plugin && yarn dev",
-    "lint": "yarn lint:plugin",
-    "lint:plugin": "cd plugin && yarn lint",
+    "lint": "eslint --ext=jsx,ts,tsx,js .",
     "release:plugin": "cd plugin && yarn release"
   },
   "dependencies": {

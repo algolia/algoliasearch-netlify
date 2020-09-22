@@ -14,7 +14,6 @@
   "scripts": {
     "build": "tsc -b",
     "dev": "NODE_ENV=development ../scripts/dev_plugin.sh",
-    "lint": "eslint --ext=jsx,ts,tsx,js .",
     "postinstall": "npm run build",
     "release": "yarn build && yarn publish"
   },
