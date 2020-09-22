@@ -1,0 +1,71 @@
+---
+aliases:
+  # Forward the current folder when using wokflows
+  #   persist-to-workspace & attach-workspace
+  - &persist-work-dir
+    root: .
+    paths: .
+
+  - &attach-work-dir
+    at: ~/app/
+
+  # Dependencies
+  - &yarn
+    name: Run Yarn
+    command: |
+      yarn install --non-interactive --cache-folder ~/.cache/yarn
+
+defaults: &defaults
+  working_directory: ~/app
+  docker:
+    - image: cimg/node:14.11.0
+  environment:
+    NODE_ENV: 'test'
+
+version: 2
+
+jobs:
+  checkout:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - run: *yarn
+
+      - persist-to-workspace: *persist-work-dir
+
+  lint:
+    <<: *defaults
+
+    steps:
+      - attach-workspace: *attach-work-dir
+
+      - run: yarn lint
+
+  # release:
+  #   <<: *defaults
+
+  #   steps:
+  #     - attach-workspace: *attach-work-dir
+
+  #     - run: yarn semantic-release
+
+workflows:
+  version: 2
+  suite:
+    jobs:
+      - checkout
+      - lint:
+          requires:
+            - checkout
+      # - test:
+      #     requires:
+      #       - checkout
+      # - release:
+      #     requires:
+      #       - lint
+      #       - test
+      #     filters:
+      #       branches:
+      #         only: master
