@@ -4,5 +4,5 @@
 
 
 [[plugins]]
-package = "crawler-netlify-plugin"
+package = "@algolia/crawler-netlify-plugin"
 
