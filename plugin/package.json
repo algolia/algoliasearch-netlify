@@ -6,7 +6,6 @@
   "license": "MIT",
   "repository": "https://github.com/algolia/algoliasearch-netlify.git",
   "main": "dist/index.js",
-  "postinstall": "npm run build",
   "files": [
     "README.md",
     "manifest.yml",
@@ -16,6 +15,7 @@
     "build": "tsc -b",
     "dev": "NODE_ENV=development ../scripts/dev_plugin.sh",
     "lint": "eslint --ext=jsx,ts,tsx,js .",
+    "postinstall": "npm run build",
     "release": "yarn build && yarn publish"
   },
   "dependencies": {
