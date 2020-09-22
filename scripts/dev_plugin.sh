@@ -10,12 +10,5 @@ set -a
 source .env
 set +a
 
-restore_netlify_toml() {
-  NODE_ENV=production ./scripts/generate_netlify_toml.sh
-}
-
-NODE_ENV=development ./scripts/generate_netlify_toml.sh
-trap restore_netlify_toml EXIT
-
 yarn build:plugin
 yarn netlify build 
