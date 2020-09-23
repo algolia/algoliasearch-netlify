@@ -19,6 +19,11 @@ function throwExceptInDev(message: string) {
 export async function onSuccess(params: BuildParams) {
   console.log('Algolia Netlify plugin started');
 
+  if (process.env.NODE_ENV === 'production') {
+    console.log('For now, skipping in production');
+    return;
+  }
+
   // Debug
   console.log(JSON.stringify(params, null, 2));
   console.log(JSON.stringify(process.env, null, 2));
