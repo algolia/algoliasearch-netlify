@@ -18,7 +18,7 @@
     "release": "yarn build && yarn publish"
   },
   "dependencies": {
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.1"
   },
   "devDependencies": {}
 }
