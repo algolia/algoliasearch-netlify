@@ -75,7 +75,7 @@ export async function onSuccess({
 
     utils.status.show({
       title: 'Crawling...',
-      summary: `API annwered: ${response.status}`,
+      summary: `API answered: ${response.status}`,
       text: await response.text(),
     });
   } catch (error) {
