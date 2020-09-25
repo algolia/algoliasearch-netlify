@@ -65,6 +65,12 @@ export async function onSuccess({
       },
       body: JSON.stringify({ branch, siteName, deployPrimeUrl }),
     });
+
+    if (!response.ok) {
+      console.warn(response);
+      throw response;
+    }
+
     utils.status.show({
       title: 'Crawling...',
       summary: `API annwered: ${response.status}`,
