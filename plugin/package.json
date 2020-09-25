@@ -18,7 +18,23 @@
     "release": "yarn build && yarn publish"
   },
   "dependencies": {
+    "dotenv": "8.2.0",
     "node-fetch": "2.6.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/algolia/algoliasearch-netlify/issues"
+  },
+  "keywords": [
+    "netlify",
+    "netlify-plugin",
+    "search",
+    "crawl",
+    "crawler",
+    "robots",
+    "indexing",
+    "netlify-search",
+    "algolia",
+    "algoliasearch"
+  ]
 }
