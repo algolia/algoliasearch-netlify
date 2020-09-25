@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "tsc -b",
-    "dev": "NODE_ENV=development ../scripts/dev_plugin.sh",
+    "dev": "../scripts/dev_plugin.sh",
     "postinstall": "npm run build",
     "release": "yarn build && yarn publish"
   },

@@ -1,66 +1,78 @@
 import fetch from 'node-fetch';
 
-process.env.NODE_ENV ??= 'production';
-
 interface BuildParams {
   constants: {
     SITE_ID: string;
+    IS_LOCAL: boolean;
+  };
+  utils: {
+    status: {
+      show(params: { title?: string; summary: string; text?: string }): void;
+    };
+    build: {
+      failBuild(str: string): void;
+      failPlugin(str: string): void;
+    };
   };
 }
 
-function throwExceptInDev(message: string) {
-  if (process.env.NODE_ENV === 'development') {
-    console.warn(`WARN: ${message}`);
-  } else {
-    throw new Error(message);
-  }
-}
-
-export async function onSuccess(params: BuildParams) {
+export async function onSuccess({
+  utils,
+  constants,
+}: BuildParams): Promise<void> {
   console.log('Algolia Netlify plugin started');
 
-  if (process.env.NODE_ENV === 'production') {
-    console.log('For now, skipping in production');
-    return;
+  const siteId = constants.SITE_ID;
+  const isLocal = constants.IS_LOCAL;
+
+  const branch = process.env.BRANCH;
+  const siteName = process.env.SITE_NAME;
+  const deployPrimeUrl = process.env.DEPLOY_PRIME_URL;
+
+  const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
+  const algoliaApiKey = process.env.ALGOLIA_API_KEY;
+
+  if (isLocal) {
+    return utils.build.failPlugin(
+      'This plugin does not work locally, please deploy to a branch to test it.'
+    );
   }
 
-  // Debug
-  console.log(JSON.stringify(params, null, 2));
-  console.log(JSON.stringify(process.env, null, 2));
+  // Check internal constants
+  if (!siteName) {
+    return utils.build.failBuild('Missing or invalid SITE_NAME');
+  }
+  if (!deployPrimeUrl) {
+    return utils.build.failBuild('Missing DEPLOY_PRIME_URL');
+  }
 
-  const siteId = params.constants.SITE_ID;
-  const branch = process.env.BRANCH || 'master';
-  const algoliaBaseUrl =
-    process.env.ALGOLIA_BASE_URL || 'https://crawler.algolia.com';
-  const algoliaApiKey = process.env.ALGOLIA_API_KEY;
-  const siteName =
-    process.env.NODE_ENV === 'development'
-      ? 'crawler-netlify-plugin'
-      : process.env.SITE_NAME;
-  const deployPrimeUrl =
-    process.env.NODE_ENV === 'development'
-      ? 'https://master--crawler-netlify-plugin.netlify.app'
-      : process.env.DEPLOY_PRIME_URL;
-
-  if (!siteId) throw new Error('Missing SITE_ID');
-  if (!branch) throw new Error('Missing BRANCH');
-  if (!algoliaApiKey) throwExceptInDev('Missing ALGOLIA_API_KEY');
-  if (!siteName) throw new Error('Missing or invalid SITE_NAME');
-  if (!deployPrimeUrl) throw new Error('Missing DEPLOY_PRIME_URL');
+  // Check required env vars
+  if (!algoliaApiKey || !algoliaBaseUrl) {
+    return utils.build.failBuild(
+      'Missing ALGOLIA_API_KEY or ALGOLIA_BASE_URL, please go to https://crawler.algolia.com/admin/netlify to complete installation.'
+    );
+  }
 
   const endpoint = `${algoliaBaseUrl}/api/1/netlify/crawl`;
-  const creds = `${siteId}:${algoliaApiKey || 'unused'}`;
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      Authorization: `Basic ${Buffer.from(creds).toString('base64')}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ branch, siteName, deployPrimeUrl }),
-  });
+  const creds = `${siteId}:${algoliaApiKey}`;
 
-  console.log({
-    status: response.status,
-    text: await response.text(),
-  });
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        Authorization: `Basic ${Buffer.from(creds).toString('base64')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ branch, siteName, deployPrimeUrl }),
+    });
+    utils.status.show({
+      title: 'Crawling...',
+      summary: `API annwered: ${response.status}`,
+      text: await response.text(),
+    });
+  } catch (error) {
+    utils.build.failBuild(
+      `Could not reach Algolia's Crawler, got: ${error.message}`
+    );
+  }
 }
