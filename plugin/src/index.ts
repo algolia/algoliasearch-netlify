@@ -68,7 +68,9 @@ export async function onSuccess({
 
     if (!response.ok) {
       console.warn(response);
-      throw response;
+      throw new Error(
+        `${response.statusText} ${JSON.stringify(response.json())}`
+      );
     }
 
     utils.status.show({

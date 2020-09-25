@@ -21,7 +21,9 @@
     "dotenv": "8.2.0",
     "node-fetch": "2.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node-fetch": "2.5.7"
+  },
   "bugs": {
     "url": "https://github.com/algolia/algoliasearch-netlify/issues"
   },
