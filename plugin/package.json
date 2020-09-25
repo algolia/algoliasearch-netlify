@@ -18,7 +18,6 @@
     "release": "yarn build && yarn publish"
   },
   "dependencies": {
-    "dotenv": "8.2.0",
     "node-fetch": "2.6.1"
   },
   "devDependencies": {

@@ -11,4 +11,4 @@ source .env
 set +a
 
 yarn build:plugin
-node -r dotenv/config ./node_modules/.bin/netlify build
+yarn netlify build
