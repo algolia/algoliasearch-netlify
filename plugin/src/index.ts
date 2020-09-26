@@ -48,7 +48,12 @@ export async function onSuccess({
   }
 
   // Check required env vars
-  if (!algoliaApiKey || !algoliaBaseUrl) {
+  if (
+    !algoliaApiKey ||
+    algoliaApiKey === '' ||
+    !algoliaBaseUrl ||
+    algoliaBaseUrl === ''
+  ) {
     return utils.build.failBuild(
       'Missing ALGOLIA_API_KEY or ALGOLIA_BASE_URL, please go to https://crawler.algolia.com/admin/netlify to complete installation.'
     );
