@@ -6,22 +6,27 @@
   "license": "MIT",
   "repository": "https://github.com/algolia/algoliasearch-netlify.git",
   "workspaces": [
+    "frontend",
     "plugin"
   ],
   "scripts": {
     "build": "echo 'Website already built in public'",
     "build:plugin": "cd plugin && yarn build",
+    "dev": "yarn && npx concurrently --success first --kill-others --names 'plugin,frontend,website' --prefix-colors 'magenta,cyan,yellow' 'yarn dev:frontend' 'yarn dev:plugin' 'yarn dev:website'",
+    "dev:frontend": "cd frontend && yarn dev",
     "dev:plugin": "cd plugin && yarn dev",
+    "dev:website": "npx http-server --port 9000 -c -1 public",
     "lint": "eslint --ext=jsx,ts,tsx,js .",
     "release:plugin": "cd plugin && yarn release"
   },
-  "dependencies": {
-    "@algolia/crawler-netlify-plugin": "*"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@algolia/algoliasearch-netlify-frontend": "*",
+    "@algolia/crawler-netlify-plugin": "*",
     "@types/node": "14.11.2",
     "@typescript-eslint/eslint-plugin": "4.2.0",
     "@typescript-eslint/parser": "4.2.0",
+    "concurrently": "5.3.0",
     "eslint": "7.9.0",
     "eslint-config-algolia": "16.0.0",
     "eslint-config-prettier": "6.11.0",
@@ -34,8 +39,10 @@
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.1",
+    "http-server": "0.12.3",
     "jest": "26.4.2",
     "netlify-cli": "2.64.1",
+    "nodemon": "2.0.4",
     "prettier": "2.1.2",
     "typescript": "4.0.3"
   },

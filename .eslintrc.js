@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-commonjs
 module.exports = {
   env: {
-    browser: false,
+    browser: true, // For frontend only
     es2020: true,
     jest: true,
   },
@@ -25,5 +25,10 @@ module.exports = {
 
     'no-console': 'off',
     'consistent-return': 'off',
+
+    '@typescript-eslint/explicit-member-accessibility': [
+      'error',
+      { accessibility: 'no-public' },
+    ],
   },
 };

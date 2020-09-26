@@ -43,7 +43,6 @@ For a local run, those need to be set in `.env` using `cp .env.example .env` and
 yarn dev
 ```
 
-This script creates a temporary `netlify.toml` which references a plugin located at `dist/index.js`.
-It then builds the site locally, running the local version of the plugin.
+It builds the site locally, running the local version of the plugin.
 
-To change the crawler target from the prod one to a locally running on, simply change in your `.env` `ALGOLIA_BASE_URL` to target your local instance.
+To change the crawler target from the prod one to a local instance, simply change in your `.env` `ALGOLIA_BASE_URL`.

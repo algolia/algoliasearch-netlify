@@ -16,11 +16,10 @@ interface BuildParams {
   };
 }
 
-export async function onSuccess({
-  utils,
-  constants,
-}: BuildParams): Promise<void> {
+export async function onSuccess(params: BuildParams): Promise<void> {
   console.log('Algolia Netlify plugin started');
+
+  const { utils, constants } = params;
 
   const siteId = constants.SITE_ID;
   const isLocal = constants.IS_LOCAL;
@@ -29,6 +28,10 @@ export async function onSuccess({
   const branch = process.env.BRANCH;
   const siteName = process.env.SITE_NAME;
   const deployPrimeUrl = process.env.DEPLOY_PRIME_URL;
+
+  // Debug
+  // console.log(JSON.stringify(params, null, 2));
+  // console.log(JSON.stringify(process.env, null, 2));
 
   const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
