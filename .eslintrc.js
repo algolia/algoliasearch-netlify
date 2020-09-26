@@ -24,5 +24,6 @@ module.exports = {
     'algolia/func-style-toplevel': 'error',
 
     'no-console': 'off',
+    'consistent-return': 'off',
   },
 };

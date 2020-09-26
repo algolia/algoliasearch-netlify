@@ -13,12 +13,29 @@
   ],
   "scripts": {
     "build": "tsc -b",
-    "dev": "NODE_ENV=development ../scripts/dev_plugin.sh",
+    "dev": "ALGOLIA_DEV_ENV=true ../scripts/dev_plugin.sh",
     "postinstall": "npm run build",
     "release": "yarn build && yarn publish"
   },
   "dependencies": {
     "node-fetch": "2.6.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node-fetch": "2.5.7"
+  },
+  "bugs": {
+    "url": "https://github.com/algolia/algoliasearch-netlify/issues"
+  },
+  "keywords": [
+    "netlify",
+    "netlify-plugin",
+    "search",
+    "crawl",
+    "crawler",
+    "robots",
+    "indexing",
+    "netlify-search",
+    "algolia",
+    "algoliasearch"
+  ]
 }
