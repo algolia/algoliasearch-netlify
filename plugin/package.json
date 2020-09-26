@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "tsc -b",
-    "dev": "../scripts/dev_plugin.sh",
+    "dev": "ALGOLIA_DEV_ENV=true ../scripts/dev_plugin.sh",
     "postinstall": "npm run build",
     "release": "yarn build && yarn publish"
   },

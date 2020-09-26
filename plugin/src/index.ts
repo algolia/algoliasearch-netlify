@@ -24,6 +24,7 @@ export async function onSuccess({
 
   const siteId = constants.SITE_ID;
   const isLocal = constants.IS_LOCAL;
+  const isDev = Boolean(process.env.ALGOLIA_DEV_ENV);
 
   const branch = process.env.BRANCH;
   const siteName = process.env.SITE_NAME;
@@ -32,7 +33,7 @@ export async function onSuccess({
   const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
 
-  if (isLocal) {
+  if (isLocal && !isDev) {
     return utils.build.failPlugin(
       'This plugin does not work locally, please deploy to a branch to test it.'
     );
