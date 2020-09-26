@@ -1,6 +1,6 @@
 {
   "name": "@algolia/crawler-netlify-plugin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "author": "Algolia Team <contact@algolia.com>",
   "license": "MIT",
@@ -14,7 +14,6 @@
   "scripts": {
     "build": "tsc -b",
     "dev": "ALGOLIA_DEV_ENV=true ../scripts/dev_plugin.sh",
-    "postinstall": "npm run build",
     "release": "yarn build && yarn publish"
   },
   "dependencies": {
