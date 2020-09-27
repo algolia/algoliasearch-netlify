@@ -58,7 +58,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
     algoliaBaseUrl === ''
   ) {
     return utils.build.failBuild(
-      'Missing ALGOLIA_API_KEY or ALGOLIA_BASE_URL, please go to https://crawler.algolia.com/admin/netlify to complete installation.'
+      'Missing ALGOLIA_API_KEY or ALGOLIA_BASE_URL, please go to https://crawler.algolia.com/admin/netlify to complete your installation.'
     );
   }
 
@@ -66,6 +66,8 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const creds = `${siteId}:${algoliaApiKey}`;
 
   try {
+    console.log('Sending request to crawl', endpoint);
+
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -81,13 +83,20 @@ export async function onSuccess(params: BuildParams): Promise<void> {
         `${response.statusText} ${JSON.stringify(response.json())}`
       );
     }
+    const json: { crawlerId: string } = await response.json();
+
+    console.log(
+      'Crawler done got response',
+      `API answered: ${response.status}`,
+      JSON.stringify(json)
+    );
 
     utils.status.show({
-      title: 'Crawling...',
-      summary: `API answered: ${response.status}`,
-      text: await response.text(),
+      title: 'Algolia Crawler',
+      summary: `Your crawler is running at: ${algoliaBaseUrl}/admin/user_configs/${json.crawlerId}`,
     });
   } catch (error) {
+    console.error('Could not reach algolia', error);
     utils.build.failBuild(
       `Could not reach Algolia's Crawler, got: ${error.message}`
     );
