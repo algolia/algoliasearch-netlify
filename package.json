@@ -17,6 +17,7 @@
     "dev:plugin": "cd plugin && yarn dev",
     "dev:website": "npx http-server --port 9000 -c -1 public",
     "lint": "eslint --ext=jsx,ts,tsx,js .",
+    "release:frontend": "cd frontend && yarn release",
     "release:plugin": "cd plugin && yarn release"
   },
   "dependencies": {},
