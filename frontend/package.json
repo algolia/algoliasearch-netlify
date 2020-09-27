@@ -1,7 +1,7 @@
 {
   "name": "@algolia/algoliasearch-netlify-frontend",
-  "version": "0.0.4",
-  "private": "false",
+  "version": "0.0.3",
+  "private": false,
   "author": "Algolia Team <contact@algolia.com>",
   "license": "MIT",
   "repository": "https://github.com/algolia/algoliasearch-netlify.git",
@@ -13,7 +13,7 @@
     "build": "npx webpack --mode production",
     "dev": "PORT=9100 npx webpack-dev-server --mode development",
     "postinstall": "[ -d dist/ ] || npm run build",
-    "release": "npm run build && npm run publish"
+    "release": "npm run build && yarn publish"
   },
   "devDependencies": {
     "@algolia/transporter": "4.5.1",
