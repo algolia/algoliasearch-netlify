@@ -12,8 +12,9 @@
     "dist/"
   ],
   "scripts": {
-    "build": "tsc -b",
-    "dev": "ALGOLIA_DEV_ENV=true ../scripts/dev_plugin.sh",
+    "build": "npx tsc -b",
+    "dev": "ALGOLIA_DEV_ENV=development nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'",
+    "postinstall": "[ -d dist/ ] || npm run build",
     "release": "yarn build && yarn publish"
   },
   "dependencies": {

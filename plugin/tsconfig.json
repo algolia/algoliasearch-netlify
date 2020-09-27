@@ -3,7 +3,7 @@
   "compilerOptions": {
     "rootDir": "src",
     "baseUrl": ".",
-    "outDir": "./dist", /* Redirect output structure to the directory. */
+    "outDir": "./dist",
   },
   "include": [
     "src"

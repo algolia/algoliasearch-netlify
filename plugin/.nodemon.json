@@ -1,0 +1,10 @@
+{
+  "ext": "js,json,ts",
+  "watch": [
+    "../.env",
+    "src"
+  ],
+  "delay": "500",
+  "verbose": false,
+  "ignore": []
+}
