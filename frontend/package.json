@@ -5,6 +5,9 @@
   "author": "Algolia Team <contact@algolia.com>",
   "license": "MIT",
   "repository": "https://github.com/algolia/algoliasearch-netlify.git",
+  "bugs": {
+    "url": "https://github.com/algolia/algoliasearch-netlify/issues"
+  },
   "files": [
     "README.md",
     "dist/"
@@ -39,5 +42,20 @@
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0"
-  }
+  },
+  "keywords": [
+    "algolia",
+    "algoliasearch",
+    "crawl",
+    "crawler",
+    "indexing",
+    "jamstack",
+    "netlify-plugin",
+    "netlify-search",
+    "netlify",
+    "plugin",
+    "robots",
+    "search",
+    "ui"
+  ]
 }
