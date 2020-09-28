@@ -13,7 +13,6 @@ For a local run, those need to be set in `.env` using `cp .env.example .env` and
 ## Scripts
 
 - `yarn dev`: run dev environment
-- `yarn release`: build & publish the library
 
 ## Development
 

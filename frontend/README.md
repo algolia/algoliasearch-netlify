@@ -53,7 +53,3 @@ yarn dev
 
 This runs a `webpack-dev-server` on port 9100.
 Meant to be used in conjunction with the [test website](../public/).
-
-## Releasing
-
-

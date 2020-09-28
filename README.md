@@ -24,3 +24,11 @@ yarn dev
 Launches all 3 dev tools: plugin, front-end library and test website.
 
 See each project's respective README.
+
+# Releasing
+
+```sh
+yarn release
+```
+
+This releases both `plugin` & `frontend` to be sure our versions are aligned even if there was changes in only one of both projects.

@@ -15,8 +15,7 @@
   "scripts": {
     "build": "npx webpack --mode production",
     "dev": "PORT=9100 npx webpack-dev-server --mode development",
-    "postinstall": "[ -d dist/ ] || npm run build",
-    "release": "npm run build && yarn publish"
+    "postinstall": "[ -d dist/ ] || npm run build"
   },
   "devDependencies": {
     "@algolia/transporter": "4.5.1",
