@@ -23,7 +23,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
 
   const siteId = constants.SITE_ID;
   const isLocal = constants.IS_LOCAL;
-  const isDev = Boolean(process.env.ALGOLIA_DEV_ENV);
+  const isDev = process.env.ALGOLIA_DEV_ENV === 'true';
 
   const branch = process.env.BRANCH;
   const siteName = process.env.SITE_NAME;
@@ -51,19 +51,19 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   }
 
   // Check required env vars
-  if (
-    !algoliaApiKey ||
-    algoliaApiKey === '' ||
-    !algoliaBaseUrl ||
-    algoliaBaseUrl === ''
-  ) {
-    return utils.build.failBuild(
-      'Missing ALGOLIA_API_KEY or ALGOLIA_BASE_URL, please go to https://crawler.algolia.com/admin/netlify to complete your installation.'
-    );
+  const missingEnvMessage = (key: string) =>
+    `Missing ${key}, please go to ${algoliaBaseUrl}/admin/netlify to complete your installation.`;
+  if (!algoliaBaseUrl) {
+    return utils.build.failBuild(missingEnvMessage('ALGOLIA_BASE_URL'));
+  }
+  if (!isDev && !algoliaApiKey) {
+    return utils.build.failBuild(missingEnvMessage('ALGOLIA_API_KEY'));
   }
 
   const endpoint = `${algoliaBaseUrl}/api/1/netlify/crawl`;
-  const creds = `${siteId}:${algoliaApiKey}`;
+  const apiKey =
+    isDev && !algoliaApiKey ? 'not-necessary-in-dev' : algoliaApiKey;
+  const creds = `${siteId}:${apiKey}`;
 
   try {
     console.log('Sending request to crawl', endpoint);

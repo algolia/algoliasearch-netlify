@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "npx tsc -b",
-    "dev": "ALGOLIA_DEV_ENV=development nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'",
+    "dev": "ALGOLIA_DEV_ENV=true nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'",
     "postinstall": "[ -d dist/ ] || npm run build"
   },
   "dependencies": {
