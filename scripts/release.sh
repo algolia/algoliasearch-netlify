@@ -65,15 +65,21 @@ read OTP
 [[ $OTP =~ [0-9]{6} ]] || exit -1
 
 ## Release plugin
+echo
+echo "Publishing plugin on npm..."
 cd plugin/
-yarn publish --otp $OTP
+yarn publish --new-version $ALGOLIASEARCH_NETLIFY_VERSION --otp $OTP
 cd ..
 
+echo
+echo "Publishing frontend on npm..."
 ## Release frontend
 cd frontend/
-yarn publish --otp $OTP
+yarn publish --new-version $ALGOLIASEARCH_NETLIFY_VERSION --otp $OTP
 cd ..
 
 ## Release git
+echo
+echo "Pushing on git remote..."
 git push
 git push --tags
