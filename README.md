@@ -10,6 +10,8 @@
 
 <h2 align="center"> Algolia Netlify integration</h2>
 
+Index your website automatically to Algolia when you deploy your project to Netlify, using our dedicated Crawler.
+
 - [What is Algolia?](https://www.algolia.com/doc/guides/getting-started/what-is-algolia/)
 - [What is Algolia's Crawler?](https://www.algolia.com/doc/tools/crawler/getting-started/overview/)
 
@@ -24,23 +26,43 @@ Go to <https://crawler.algolia.com/admin/netlify>
 > Screenshot
 
 Login to Algolia with Netlify.
+We will automatically create a new Algolia account if you do not have one.
 > Screenshot
 
-Search your site
+Search your site and click "install".
+On this step we will modify your Netlify site to add a couple of environment variables required to use the plugin.
+We will also create one Algolia application with a dedicated [free plan](https://www.algolia.com/pricing/).
 > Screenshot
 
-Install
-> Screenshot
+At this point the plugin should be working correctly.
 
 ### Install the frontend bundle
 
-> Note: we recommend using our bundle because it is compatible with the records we extract from your website. But you can build any frontend search, with [InstantSearch](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/) or any technology you want.
+> Note: we recommend using our bundle because it is compatible with the records we extract from your website. 
+> You are free to build the UI you want, with [InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/) or any technology you want.
 
-Copy js snippet into your code
+In the Crawler UI you will find an html snippet that you can copy into your code.
 > Screenshot
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify@0/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify@0/dist/algoliasearchNetlify.js"></script>
+<script type="text/javascript">
+  algoliasearchNetlify({
+    appId: '<YOUR_ALGOLIA_APP_ID>',
+    apiKey: '<YOUR_ALGOLIA_API_KEY>',
+    indexName: 'netlify_<YOUR_NETLIFY_SITE_ID>_<YOUR_BRANCH>',
+  });
+</script>
+```
+
+This will automatically plug your newly created Algolia index in your website.
+Please refer to the [full documentation](https://github.com/algolia/algoliasearch-netlify/tree/master/frontend) to configure this frontend plugin.
 
 
 ### Build your index
+
+After you configured the plugin in our dedicated UI and created your frontend search. You can deploy your site to Netlify and wait for your index to be populated by the Crawler.
 
 Wait for build
 > Screenshot
@@ -50,10 +72,10 @@ Go to your website
 
 ### Going further
 
-
-
+- Learn more about [Algolia](https://www.algolia.com/doc/)
+- Implement a dedicated UI with [InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/)
 
 ## Troubleshoot
 
 - Need help? We have you covered in our [Discourse](https://discourse.algolia.com/c/netlify/28)
-- Found a bug in the plugin? Please post an issue in this repository.
+- Found a bug in the plugin? Please post an issue in this repository and read our [Contributing guide](/CONTRIBUTING.md)
