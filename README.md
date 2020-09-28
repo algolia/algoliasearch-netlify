@@ -1,34 +1,35 @@
-> ⚠️ **This project is an alpha, not usable without dedicated access.**
+<p align="center">
+  <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer">
+    <img width="100" src="/logo.png" alt="Vue logo">
+  </a>
+</p>
 
-# Algolia's Netlify integration
+<h2 align="center"> Algolia Netlify integration</h2>
 
-This integration links your Netlify site with Algolia.
+- [What is Algolia?](https://www.algolia.com/doc/guides/getting-started/what-is-algolia/)
+- [What is Algolia's Crawler?](https://www.algolia.com/doc/tools/crawler/getting-started/overview/)
 
-## Architecture
+## Getting Started
 
-- [`frontend/`](./frontend/): Front-end library
-- [`plugin/`](./plugin/): Netlify plugin sources
-- [`public/`](./public/): Test website
+On this tutorial we will go
 
-The plugin links your Netlify site to Algolia's Crawler.
-It triggers a crawl on each successful build.
+Go to <https://crawler.algolia.com/admin/netlify>
+> Screenshot
 
-This repository is itself a netlify site, which allows us to test the whole setup.
+Login to Algolia with Netlify.
+> Screenshot
 
-## Development
+Search your site
+> Screenshot
 
-```sh
-yarn dev
-```
+Install
+> Screenshot
 
-Launches all 3 dev tools: plugin, front-end library and test website.
+Copy js snippet into your code
+> Screenshot
 
-See each project's respective README.
+Wait for build
+> Screenshot
 
-# Releasing
-
-```sh
-yarn release
-```
-
-This releases both `plugin` & `frontend` to be sure our versions are aligned even if there was changes in only one of both projects.
+Go to your website
+> Screenshot
