@@ -2,8 +2,7 @@
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "lib": ["es2020", "DOM"],
-    "resolveJsonModule": true,
-    "rootDir": ".",
+    "rootDir": "src",
     /* Use a fake outDir */
     "outDir": "dist-webpack-never-used"
   },

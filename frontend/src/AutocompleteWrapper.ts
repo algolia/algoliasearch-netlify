@@ -16,6 +16,7 @@ import type { Options } from './options';
 import { templates } from './templates';
 import { addCss } from './addCss';
 
+// @ts-ignore
 import { version } from '../package.json';
 
 export type SizeModifier = null | 'xs' | 'sm';

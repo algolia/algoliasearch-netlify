@@ -1,5 +1,8 @@
 import fetch from 'node-fetch';
 
+// @ts-ignore
+import { version } from '../package.json';
+
 interface BuildParams {
   constants: {
     SITE_ID: string;
@@ -74,7 +77,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
         Authorization: `Basic ${Buffer.from(creds).toString('base64')}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ branch, siteName, deployPrimeUrl }),
+      body: JSON.stringify({ branch, siteName, deployPrimeUrl, version }),
     });
 
     if (!response.ok) {
