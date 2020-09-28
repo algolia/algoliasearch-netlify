@@ -1,4 +1,4 @@
-# crawler-netlify-plugin
+# netlify-plugin-crawler
 
 This plugin links your Netlify site with Algolia's Crawler.  
 It will trigger a crawl on each successful build.
@@ -22,7 +22,7 @@ For a local run, those need to be set in `.env` using `cp .env.example .env` and
 **Only accessible to Algolia employees.**
 
 1. Access to the Algolia team on Netlify (only granted to Algolia employees).
-2. Access to the test website in this org: https://app.netlify.com/sites/crawler-netlify-plugin/
+2. Access to the test website in this org: https://app.netlify.com/sites/algoliasearch-netlify/
 3. Clone the repo and link it to the test website on Netlify:
    ```sh
    git clone git@github.com:algolia/algoliasearch-netlify.git
