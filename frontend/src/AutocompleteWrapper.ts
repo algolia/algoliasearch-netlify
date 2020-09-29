@@ -7,8 +7,11 @@ if (!isMsie()) {
   delete css.inputWithNoHint.verticalAlign;
 }
 
-import algoliasearch, { SearchClient, SearchIndex } from 'algoliasearch';
-import { RequestOptions } from '@algolia/transporter';
+import type { SearchClient, SearchIndex } from 'algoliasearch';
+import type { RequestOptions } from '@algolia/transporter';
+import type { Hit } from '@algolia/client-search';
+
+import algoliasearch from 'algoliasearch';
 import autocomplete from 'autocomplete.js';
 
 import type { Options } from './options';
@@ -18,6 +21,7 @@ import { addCss } from './addCss';
 
 // @ts-ignore
 import { version } from '../package.json';
+import { Data } from './data';
 
 export type SizeModifier = null | 'xs' | 'sm';
 
@@ -70,7 +74,10 @@ class AutocompleteWrapper {
         hitsPerPage,
         highlightPreTag: '<span class="aa-hit--highlight">',
         highlightPostTag: '</span>',
-        attributesToSnippet: [`description:${nbSnippetWords}`],
+        attributesToSnippet: [
+          `description:${nbSnippetWords}`,
+          `content:${nbSnippetWords}`,
+        ],
         snippetEllipsisText: '...',
       };
 
@@ -135,19 +142,32 @@ class AutocompleteWrapper {
   }
 
   private createSource(searchParams: RequestOptions) {
-    return (query: string, callback: (hits: any[]) => void) => {
-      this.index.search('', { ...searchParams, query }).then((content) => {
-        callback(content.hits);
-      });
+    return (query: string, callback: (hits: Array<Hit<Data>>) => void) => {
+      this.index
+        .search<Data>('', { ...searchParams, query })
+        .then((content) => {
+          callback(content.hits);
+        });
     };
   }
 
   private createRenderSuggestion(sizeModifier: SizeModifier) {
-    return (hit: any): string => {
-      // eslint-disable-next-line no-param-reassign
-      hit.sizeModifier = sizeModifier;
-      return templates.autocomplete.suggestion(hit);
+    return (hit: Hit<Data>): string => {
+      return templates.autocomplete.suggestion({
+        ...hit,
+        sizeModifier,
+        snippet: this.getSuggestionSnippet(hit),
+      });
     };
+  }
+
+  private getSuggestionSnippet(hit: Hit<Data>) {
+    const { description, content } = hit._snippetResult!;
+    if (description.matchLevel === 'full') return description.value;
+    if (content.matchLevel === 'full') return content.value;
+    if (description.matchLevel === 'partial') return description.value;
+    if (content.matchLevel === 'partial') return content.value;
+    return description.value;
   }
 
   private createHandleSelected() {
