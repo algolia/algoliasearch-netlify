@@ -56,8 +56,10 @@ We will create **one Crawler and one Algolia index per branch name**, so you can
 You can click on the URL to go the current Crawlergo to our UI to follow the progress of the crawl.
 <img src="/docs/screenshots/screely-1601381447204.png?raw=true" alt="Your Crawler running.">
 
-After the crawl is done you can go take a look in your Algolia index to see the records we extracted automatically.
-We apply a default relevance by default, but you can fine tune it
+After the crawl is done you can go take a look at your Algolia index, to see the records we extracted automatically.
+We apply a default relevance by default, but you can fine tune it as you want in the index settings.
+
+<img src="/docs/screenshots/screely-1601382688193.png?raw=true" alt="Your Algolia Index.">
 
 ### Install the frontend bundle
 
