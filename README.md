@@ -131,10 +131,6 @@ If you believe we have missed something or you would want to have more control, 
 
 Yes!
 
-### Can I receive a notification when my crawl is done?
-
-Yes, you can configure notification in the Crawler UI here: <https://crawler.algolia.com/admin/user/settings/>
-
 ## Troubleshooting
 
 - Need help? We have you covered in our [Discourse forum](https://discourse.algolia.com/c/netlify/28)
