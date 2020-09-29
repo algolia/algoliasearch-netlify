@@ -26,22 +26,21 @@ To start right away **you only need a Netlify site**.
 
 Click "Sign-in to Algolia with Netlify".
 We will automatically create a new Algolia account if you do not have one.
-<img src="/docs/screenshots/screely-1601375945482.png?raw=true" alt="Sign in to Algolia with Netlify">
+<img src="/docs/screenshots/signin.png?raw=true" alt="Sign in to Algolia with Netlify">
 
 Authorize Algolia to access your Neltify account.
 The plugin will only update your plugin settings and add necessary environment variables, prefixed by `ALGOLIA_`.
-NB: Algolia **only stores your encrypted Netlify access token**, and no other information.
-<img src="/docs/screenshots/screely-1601375955283.png?raw=true" alt="Authorize Algolia's OAuth">
+<img src="/docs/screenshots/authorize.png?raw=true" alt="Authorize Algolia's OAuth">
 
 Search for your site name and click "Install".
 On this step we will automatically update your Netlify site to add a couple of environment variables required to use the plugin (prefixed by `ALGOLIA_`).
 We will also create an Algolia application with a dedicated [free plan](https://www.algolia.com/pricing/).
 
-<img src="/docs/screenshots/screely-1601375970172.png?raw=true" alt="Search for your site">
-<img src="/docs/screenshots/screely-1601375981021.png?raw=true" alt="Install in your site">
+<img src="/docs/screenshots/search-site.png?raw=true" alt="Search for your site">
+<img src="/docs/screenshots/accept-install.png?raw=true" alt="Install in your site">
 
 The plugin is now correctly installed and ready to index your site.
-<img src="/docs/screenshots/screely-1601375010606.png?raw=true" alt="View your site information.">
+<img src="/docs/screenshots/installed.png?raw=true" alt="View your site information.">
 
 ### Indexing
 
@@ -52,15 +51,15 @@ Once we receive a build hook, our Crawler will process your website asynchronous
 In other words, there will be a delay between the first deploy on a branch and the Algolia index being ready for usage.
 You will find the information about your current Crawler in the Netlify deploy logs.
 We will create **one Crawler targeting one Algolia index per git branch**, so you can have a production index on `master` and development index on `develop` for example.
-<img src="/docs/screenshots/screely-1601381176485.png?raw=true" alt="Netlify deploy logs.">
+<img src="/docs/screenshots/deploy-logs.png?raw=true" alt="Netlify deploy logs.">
 
 You can click on the URL to open the current Crawler dashboard to follow the progress of the crawl.
-<img src="/docs/screenshots/screely-1601381447204.png?raw=true" alt="Your Crawler running.">
+<img src="/docs/screenshots/crawler-overview.png?raw=true" alt="Your Crawler running.">
 
 After the crawl is done you can go take a look at your Algolia index to see the records we extracted automatically.
 We apply a default relevance configuration by default, but you can fine tune it as you want in the index settings.
 Find out [what is inside your records](/docs/schema.md).
-<img src="/docs/screenshots/screely-1601382688193.png?raw=true" alt="Your Algolia Index.">
+<img src="/docs/screenshots/algolia-index.png?raw=true" alt="Your Algolia Index.">
 
 ### Install the frontend bundle
 
@@ -120,11 +119,11 @@ Please contact us to enable it.
 While the Crawler is extremely customisable, the plugin is currently restricted to a default extraction strategy.
 If you believe we have missed something or you would want to have more control, please share your feedback in our [Discourse forum](https://discourse.algolia.com/c/netlify/28).
 
-### Can I build my own UI
+### Can I build my own UI?
 
 Yes!
 
-### Can I receive a notification when my crawl is done
+### Can I receive a notification when my crawl is done?
 
 Yes, you can configure notification in the Crawler UI here: <https://crawler.algolia.com/admin/user/settings/>
 
