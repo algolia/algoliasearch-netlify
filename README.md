@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer">
-    <img width="400" src="/logo.png" alt="Vue logo">
+  <a href="https://crawler.algolia.com/admin/netlify" target="_blank" rel="noopener noreferrer">
+    <img width="400" src="/logo.png" alt="Algolia + Netlify logo">
   </a>
 </p>
 <p align="center">
@@ -8,7 +8,7 @@
   <a href="https://www.npmjs.com/package/@algolia/netlify-plugin-crawler"><img src="https://img.shields.io/npm/v/algolia/netlify-plugin-crawler" alt="Version"></a>
 </p>
 
-<h2 align="center"> Algolia Netlify integration</h2>
+<h2 align="center">Algolia Netlify integration</h2>
 
 Index your website automatically to Algolia when you deploy your project to Netlify, using our dedicated Crawler.
 
@@ -18,20 +18,23 @@ Index your website automatically to Algolia when you deploy your project to Netl
 ## Getting Started
 
 On this getting started we will implement a frontend search using Netlify, Algolia, and this plugin.
-To start right away you will only need a Netlify site.
+To start right away **you only need a Netlify site**.
 
 ### Link your site to Algolia
 
-Go to <https://crawler.algolia.com/admin/netlify> and login to Algolia with Netlify.
+**Go to <https://crawler.algolia.com/admin/netlify>**
+
+Click "Sign-in to Algolia with Netlify".
 We will automatically create a new Algolia account if you do not have one.
 <img src="/docs/screenshots/screely-1601375945482.png?raw=true" alt="Sign in to Algolia with Netlify">
 
 Authorize Algolia to access your Neltify account.
-We will only change your plugin and environement variables settings.
+The plugin will only update your plugin settings and add two environement variables.
+NB: Algolia **only stores your encrypted Netlify access token**, and no other information.
 <img src="/docs/screenshots/screely-1601375955283.png?raw=true" alt="Authorize Algolia's oauth">
 
 Search your site and click "install".
-On this step we will modify your Netlify site to add a couple of environment variables required to use the plugin.
+On this step we will automatically update your Netlify site to add a couple of environment variables required to use the plugin.
 We will also create one Algolia application with a dedicated [free plan](https://www.algolia.com/pricing/).
 
 <img src="/docs/screenshots/screely-1601375970172.png?raw=true" alt="Search and install your site.">
