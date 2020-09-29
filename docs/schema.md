@@ -4,7 +4,7 @@ Algolia is a schemaless search engine. However to provide an effortless experien
 
 All root-level properties are a computation of multiple selectors, with a fallback. We might change the extraction logic to add more properties, but **we won't remove root-level properties without a proper deprecation period**.
 
-All properties that can't be undefined are present in the final record. Others can be missing if the Algolia Crawler coudln't find any relevant information.
+All properties that aren't marked as optional are present in the final record. Others can be missing if the Algolia Crawler coudln't find any relevant information.
 
 ## Schema
 
