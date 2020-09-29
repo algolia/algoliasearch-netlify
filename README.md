@@ -49,8 +49,8 @@ In the Crawler UI you will find an html snippet that you can copy into your code
 > Screenshot
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify@0/dist/algoliasearchNetlify.css" />
-<script type="text/javascript" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify@0/dist/algoliasearchNetlify.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend/dist/algoliasearchNetlify.js"></script>
 <script type="text/javascript">
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',

@@ -1,331 +1,329 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Algoliasearch Netlify Test Website</title>
-    <link rel="icon" href="#FIXME" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/necolas/normalize.css@8.0.1/normalize.css"
-    />
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+<head>
+  <title>Algoliasearch Netlify Test Website</title>
+  <link rel="icon" href="#FIXME" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/necolas/normalize.css@8.0.1/normalize.css" />
 
-      body {
-        max-width: 1024px;
-        margin: auto;
-        font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
-          'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif',
-          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-          'Noto Color Emoji';
-      }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-      h1 {
-        text-align: center;
-      }
+    body {
+      max-width: 1024px;
+      margin: auto;
+      font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
+        'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif',
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    }
 
-      button {
-        padding: 4px 8px;
-        border-radius: 2px;
-        border: 1px solid #ccc;
-      }
+    h1 {
+      text-align: center;
+    }
 
-      #search {
-        width: 60%;
-        display: block;
-        margin: 16px auto;
-        padding: 8px 16px;
-        font-size: 1.2em;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-      }
+    button {
+      padding: 4px 8px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+    }
 
-      #debug-script {
-        background: #2d3155;
-        color: white;
-        border-radius: 4px;
-        padding: 16px;
-      }
+    #search {
+      width: 60%;
+      display: block;
+      margin: 16px auto;
+      padding: 8px 16px;
+      font-size: 1.2em;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
 
-      #debug-script-grid {
-        display: grid;
-        grid-template-columns: 1fr 20fr;
-        align-items: baseline;
-        column-gap: 16px;
-        row-gap: 8px;
-      }
+    #debug-script {
+      background: #2d3155;
+      color: white;
+      border-radius: 4px;
+      padding: 16px;
+    }
 
-      #debug-script-grid > *:nth-child(2n - 1),
-      #error-title {
-        font-weight: bold;
-        white-space: nowrap;
-      }
+    #debug-script-grid {
+      display: grid;
+      grid-template-columns: 1fr 20fr;
+      align-items: baseline;
+      column-gap: 16px;
+      row-gap: 8px;
+    }
 
-      #debug-script-grid > *:nth-child(2n) {
-        font-family: monospace;
-        font-size: 1.2em;
-      }
+    #debug-script-grid>*:nth-child(2n - 1),
+    #error-title {
+      font-weight: bold;
+      white-space: nowrap;
+    }
 
-      #toggle-dev-prod-container {
-        text-align: right;
-      }
+    #debug-script-grid>*:nth-child(2n) {
+      font-family: monospace;
+      font-size: 1.2em;
+    }
 
-      #toggle-dev-prod {
-        font-size: 0.8em;
-      }
+    #toggle-dev-prod-container {
+      text-align: right;
+    }
 
-      #source-editor {
-        height: 300px;
-        margin-top: 4px;
-        border-radius: 4px;
-      }
+    #toggle-dev-prod {
+      font-size: 0.8em;
+    }
 
-      #error-title {
-        display: none;
-        margin-top: 16px;
-      }
+    #source-editor {
+      height: 300px;
+      margin-top: 4px;
+      border-radius: 4px;
+    }
 
-      #error {
-        color: #f86e7e;
-        margin-top: 8px;
-        font-family: monospace;
-        font-size: 1.2em;
-      }
+    #error-title {
+      display: none;
+      margin-top: 16px;
+    }
 
-      #source-buttons {
-        text-align: right;
-        margin-top: 8px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Algoliasearch Netlify Test Website</h1>
+    #error {
+      color: #f86e7e;
+      margin-top: 8px;
+      font-family: monospace;
+      font-size: 1.2em;
+    }
 
-    <input id="search" type="search" placeholder="Search for content" />
+    #source-buttons {
+      text-align: right;
+      margin-top: 8px;
+    }
+  </style>
+</head>
 
-    <h2>Script</h2>
-    <div id="debug-script">
-      <div id="toggle-dev-prod-container">
-        <button id="toggle-dev-prod">Pending...</button>
-      </div>
-      <div id="debug-script-grid">
-        <div>Base URL</div>
-        <div id="base-url"></div>
-        <div>CSS</div>
-        <div id="lib-css"></div>
-        <div>JS</div>
-        <div id="lib-js"></div>
-        <div>Code</div>
-        <div></div>
-      </div>
-      <div id="source-editor">Test before</div>
-      <div id="error-title">Error</div>
-      <pre id="error"></pre>
-      <div id="source-buttons">
-        <button id="source-reset">Reset</button>
-        <button id="source-test">Test</button>
-      </div>
+<body>
+  <h1>Algoliasearch Netlify Test Website</h1>
+
+  <input id="search" type="search" placeholder="Search for content" />
+
+  <h2>Script</h2>
+  <div id="debug-script">
+    <div id="toggle-dev-prod-container">
+      <button id="toggle-dev-prod">Pending...</button>
     </div>
+    <div id="debug-script-grid">
+      <div>Base URL</div>
+      <div id="base-url"></div>
+      <div>CSS</div>
+      <div id="lib-css"></div>
+      <div>JS</div>
+      <div id="lib-js"></div>
+      <div>Code</div>
+      <div></div>
+    </div>
+    <div id="source-editor">Test before</div>
+    <div id="error-title">Error</div>
+    <pre id="error"></pre>
+    <div id="source-buttons">
+      <button id="source-reset">Reset</button>
+      <button id="source-test">Test</button>
+    </div>
+  </div>
 
-    <h2>Test content</h2>
+  <h2>Test content</h2>
 
-    <p>Some content to index.</p>
-    <p>Links to other pages:
-      <ul>
-        <li>
-          <a href="1.html">1.html</a>
-        </li>
-        <li>
-          <a href="2.html">2.html</a>
-        </li>
-      </ul>
-    </p>
+  <p>Some content to index.</p>
+  <p>Links to other pages:
+  <ul>
+    <li>
+      <a href="1.html">1.html</a>
+    </li>
+    <li>
+      <a href="2.html">2.html</a>
+    </li>
+  </ul>
+  </p>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/ace-builds@1.4.12/src-min-noconflict/ace.js"
-      type="text/javascript"
-    ></script>
-    <script type="text/javascript">
-      const DEFAULT_SOURCE = `algoliasearchNetlify({
+  <script src="https://cdn.jsdelivr.net/npm/ace-builds@1.4.12/src-min-noconflict/ace.js"
+    type="text/javascript"></script>
+  <script type="text/javascript">
+    const DEFAULT_SOURCE = `algoliasearchNetlify({
           appId: 'FHMV5EW9NC',
           apiKey: 'aea9a7c4604b1e1a4d57fd29b2dc0a3f',
           indexName: 'test-manual-index',
           debug: true,
         });`
-        .split('\n')
-        .map((l) => l.replace(/^\s{8}/, ''))
-        .join('\n');
+      .split('\n')
+      .map((l) => l.replace(/^\s{8}/, ''))
+      .join('\n');
 
-      const usp = new URLSearchParams(window.location.search);
+    const usp = new URLSearchParams(window.location.search);
 
-      const editor = ace.edit('source-editor');
+    const editor = ace.edit('source-editor');
 
-      const $sourceResetButton = document.getElementById('source-reset');
-      const $sourceTestButton = document.getElementById('source-test');
-      const $debugToggle = document.getElementById('toggle-dev-prod');
-      const $baseUrl = document.getElementById('base-url');
-      const $libCSS = document.getElementById('lib-css');
-      const $libJS = document.getElementById('lib-js');
-      const $errorTitle = document.getElementById('error-title');
-      const $error = document.getElementById('error');
+    const $sourceResetButton = document.getElementById('source-reset');
+    const $sourceTestButton = document.getElementById('source-test');
+    const $debugToggle = document.getElementById('toggle-dev-prod');
+    const $baseUrl = document.getElementById('base-url');
+    const $libCSS = document.getElementById('lib-css');
+    const $libJS = document.getElementById('lib-js');
+    const $errorTitle = document.getElementById('error-title');
+    const $error = document.getElementById('error');
 
-      async function checkIfWebpackRunning() {
-        try {
-          const response = await fetch(
-            'http://localhost:9100/algoliasearchNetlify.css',
-            {
-              method: 'HEAD',
-            }
-          );
-          return response.status === 200;
-        } catch (err) {
-          console.log(err);
-          return false;
-        }
-      }
-
-      function reloadWithNewUsp() {
-        const { origin, pathname } = window.location;
-        const search = `?${usp.toString()}`;
-        const newUrl = `${origin}${pathname}${search === '?' ? '' : search}`;
-        window.location.href = newUrl;
-      }
-
-      function reloadWithNewSource(source) {
-        if (source === DEFAULT_SOURCE) {
-          usp.delete('force_source');
-        } else {
-          usp.set('force_source', btoa(source));
-        }
-        reloadWithNewUsp();
-      }
-
-      (async () => {
-        // Editor
-        editor.setTheme('ace/theme/monokai');
-        editor.session.setMode('ace/mode/javascript');
-        editor.session.setTabSize(2);
-        editor.session.setUseSoftTabs(true);
-
-        // Source
-        const source = usp.get('force_source')
-          ? atob(usp.get('force_source'))
-          : DEFAULT_SOURCE;
-        editor.setValue(source, -1);
-
-        // Source actions
-        $sourceResetButton.addEventListener('click', () => {
-          reloadWithNewSource(DEFAULT_SOURCE);
-        });
-        $sourceTestButton.addEventListener('click', () => {
-          reloadWithNewSource(editor.getValue().trim());
-        });
-        // Test on Ctrl + S
-        const handleKeyDown = (e) => {
-          if (
-            e.keyCode === 83 &&
-            (e.metaKey || e.ctrlKey) &&
-            !(e.altKey || e.shiftKey)
-          ) {
-            e.preventDefault();
-            reloadWithNewSource(editor.getValue().trim());
+    async function checkIfWebpackRunning() {
+      try {
+        const response = await fetch(
+          'http://localhost:9100/algoliasearchNetlify.css',
+          {
+            method: 'HEAD',
           }
-        };
-        document.addEventListener('keydown', handleKeyDown);
+        );
+        return response.status === 200;
+      } catch (err) {
+        console.log(err);
+        return false;
+      }
+    }
 
-        // Base URL
-        const webpackReady = await checkIfWebpackRunning();
-        let usingDev = webpackReady;
-        if (usp.get('force_env') === 'dev') usingDev = true;
-        if (usp.get('force_env') === 'prod') usingDev = false;
+    function reloadWithNewUsp() {
+      const { origin, pathname } = window.location;
+      const search = `?${usp.toString()}`;
+      const newUrl = `${origin}${pathname}${search === '?' ? '' : search}`;
+      window.location.href = newUrl;
+    }
 
-        // Toggle dev <-> prod
-        $debugToggle.innerText = usingDev
-          ? 'Switch to cdn.jsdelivr.net'
-          : 'Switch to localhost:9100';
-        $debugToggle.addEventListener('click', () => {
-          usp.delete('force_env');
-          if (usingDev && webpackReady) usp.set('force_env', 'prod');
-          if (!usingDev && !webpackReady) usp.set('force_env', 'dev');
-          reloadWithNewUsp();
-        });
+    function reloadWithNewSource(source) {
+      if (source === DEFAULT_SOURCE) {
+        usp.delete('force_source');
+      } else {
+        usp.set('force_source', btoa(source));
+      }
+      reloadWithNewUsp();
+    }
 
-        // Base Url
-        const baseUrl = usingDev
-          ? 'http://localhost:9100'
-          : 'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify@0/dist';
+    (async () => {
+      // Editor
+      editor.setTheme('ace/theme/monokai');
+      editor.session.setMode('ace/mode/javascript');
+      editor.session.setTabSize(2);
+      editor.session.setUseSoftTabs(true);
 
-        // Debug info
-        $baseUrl.innerText = baseUrl;
-        $libCSS.innerText = `${baseUrl}/algoliasearchNetlify.css`;
-        $libJS.innerText = `${baseUrl}/algoliasearchNetlify.js`;
+      // Source
+      const source = usp.get('force_source')
+        ? atob(usp.get('force_source'))
+        : DEFAULT_SOURCE;
+      editor.setValue(source, -1);
 
-        // Error Handler
-        const handleError = (err) => {
-          $errorTitle.style.display = 'block';
-          $error.innerHTML = err instanceof Error ? err.message : err;
-        };
-        // Loading lib & script source
-        try {
-          // Library's CSS
-          let libStyleResolve;
-          let libStyleReject;
-          const libStylePromise = new Promise((resolve, reject) => {
-            libStyleResolve = resolve;
-            libStyleReject = reject;
-          });
-          const $libStyle = document.createElement('link');
-          $libStyle.rel = 'stylesheet';
-          $libStyle.href = `${baseUrl}/algoliasearchNetlify.css`;
-          $libStyle.onload = libStyleResolve;
-          $libStyle.onerror = () =>
-            libStyleReject(new Error("Could not load lib's CSS"));
-
-          // Library's JS
-          const $libScript = document.createElement('script');
-          $libScript.type = 'text/javascript';
-          $libScript.src = `${baseUrl}/algoliasearchNetlify.js`;
-          let libScriptResolve;
-          let libScriptReject;
-          const libScriptPromise = new Promise((resolve, reject) => {
-            libScriptResolve = resolve;
-            libScriptReject = reject;
-          });
-          $libScript.onload = libScriptResolve;
-          $libScript.onerror = libScriptReject;
-          $libScript.onerror = () =>
-            libScriptReject(new Error("Could not load lib's JS"));
-
-          // JS lib invocation
-          const $script = document.createElement('script');
-          $script.type = 'text/javascript';
-          window.scriptHandleError = handleError;
-          $script.innerHTML = `try { ${source}; } catch (err) { window.scriptHandleError(err); }`;
-          let scriptResolve;
-          let scriptReject;
-          const scriptPromise = new Promise((resolve, reject) => {
-            scriptResolve = resolve;
-            scriptReject = reject;
-          });
-          $script.onload = scriptResolve;
-          $script.onerror = () =>
-            scriptReject(
-              new Error('Failed to run code script, check the console')
-            );
-
-          // Actually load elements
-          document.head.appendChild($libStyle);
-          await libStylePromise;
-          document.head.appendChild($libScript);
-          await libScriptPromise;
-          document.head.appendChild($script);
-          await scriptPromise;
-        } catch (err) {
-          handleError(err);
+      // Source actions
+      $sourceResetButton.addEventListener('click', () => {
+        reloadWithNewSource(DEFAULT_SOURCE);
+      });
+      $sourceTestButton.addEventListener('click', () => {
+        reloadWithNewSource(editor.getValue().trim());
+      });
+      // Test on Ctrl + S
+      const handleKeyDown = (e) => {
+        if (
+          e.keyCode === 83 &&
+          (e.metaKey || e.ctrlKey) &&
+          !(e.altKey || e.shiftKey)
+        ) {
+          e.preventDefault();
+          reloadWithNewSource(editor.getValue().trim());
         }
-      })();
-    </script>
-  </body>
+      };
+      document.addEventListener('keydown', handleKeyDown);
+
+      // Base URL
+      const webpackReady = await checkIfWebpackRunning();
+      let usingDev = webpackReady;
+      if (usp.get('force_env') === 'dev') usingDev = true;
+      if (usp.get('force_env') === 'prod') usingDev = false;
+
+      // Toggle dev <-> prod
+      $debugToggle.innerText = usingDev
+        ? 'Switch to cdn.jsdelivr.net'
+        : 'Switch to localhost:9100';
+      $debugToggle.addEventListener('click', () => {
+        usp.delete('force_env');
+        if (usingDev && webpackReady) usp.set('force_env', 'prod');
+        if (!usingDev && !webpackReady) usp.set('force_env', 'dev');
+        reloadWithNewUsp();
+      });
+
+      // Base Url
+      const baseUrl = usingDev
+        ? 'http://localhost:9100'
+        : 'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist';
+
+      // Debug info
+      $baseUrl.innerText = baseUrl;
+      $libCSS.innerText = `${baseUrl}/algoliasearchNetlify.css`;
+      $libJS.innerText = `${baseUrl}/algoliasearchNetlify.js`;
+
+      // Error Handler
+      const handleError = (err) => {
+        $errorTitle.style.display = 'block';
+        $error.innerHTML = err instanceof Error ? err.message : err;
+      };
+      // Loading lib & script source
+      try {
+        // Library's CSS
+        let libStyleResolve;
+        let libStyleReject;
+        const libStylePromise = new Promise((resolve, reject) => {
+          libStyleResolve = resolve;
+          libStyleReject = reject;
+        });
+        const $libStyle = document.createElement('link');
+        $libStyle.rel = 'stylesheet';
+        $libStyle.href = `${baseUrl}/algoliasearchNetlify.css`;
+        $libStyle.onload = libStyleResolve;
+        $libStyle.onerror = () =>
+          libStyleReject(new Error("Could not load lib's CSS"));
+
+        // Library's JS
+        const $libScript = document.createElement('script');
+        $libScript.type = 'text/javascript';
+        $libScript.src = `${baseUrl}/algoliasearchNetlify.js`;
+        let libScriptResolve;
+        let libScriptReject;
+        const libScriptPromise = new Promise((resolve, reject) => {
+          libScriptResolve = resolve;
+          libScriptReject = reject;
+        });
+        $libScript.onload = libScriptResolve;
+        $libScript.onerror = libScriptReject;
+        $libScript.onerror = () =>
+          libScriptReject(new Error("Could not load lib's JS"));
+
+        // JS lib invocation
+        const $script = document.createElement('script');
+        $script.type = 'text/javascript';
+        window.scriptHandleError = handleError;
+        $script.innerHTML = `try { ${source}; } catch (err) { window.scriptHandleError(err); }`;
+        let scriptResolve;
+        let scriptReject;
+        const scriptPromise = new Promise((resolve, reject) => {
+          scriptResolve = resolve;
+          scriptReject = reject;
+        });
+        $script.onload = scriptResolve;
+        $script.onerror = () =>
+          scriptReject(
+            new Error('Failed to run code script, check the console')
+          );
+
+        // Actually load elements
+        document.head.appendChild($libStyle);
+        await libStylePromise;
+        document.head.appendChild($libScript);
+        await libScriptPromise;
+        document.head.appendChild($script);
+        await scriptPromise;
+      } catch (err) {
+        handleError(err);
+      }
+    })();
+  </script>
+</body>
+
 </html>
