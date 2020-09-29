@@ -20,9 +20,9 @@ Automatically index your website to Algolia when deploying your project to Netli
 - [Getting started](#getting-started)
   - [Link your site to Algolia](#link-your-site-to-algolia)
   - [Indexing](#indexing)
-  - [Install the front-end bundle](#install-the-front-end-bundle)
+  - [Installing the front-end bundle](#installing-the-front-end-bundle)
   - [Going further](#going-further)
-- [Uninstall the plugin](#uninstall-the-plugin)
+- [Uninstalling the plugin](#uninstalling-the-plugin)
   - [Disable](#disable)
   - [Uninstall](#uninstall)
 - [Limitations, known issues, and FAQ](#limitations-known-issues-and-faq)
@@ -78,7 +78,7 @@ Once the crawl is done, you can check your Algolia index, which contains the ext
 
 <img src="/docs/screenshots/algolia-index.png?raw=true" alt="Your Algolia Index.">
 
-### Install the front-end bundle
+### Installing the front-end bundle
 
 > We recommend using our bundle as it's compatible out of the box with the records we extract from your site.
 > You can still [build your custom UI](#can-i-build-my-own-ui) if you want to.
@@ -116,7 +116,7 @@ This code automatically adds a search autocomplete widget on your website, using
 - Implement a custom UI with [InstantSearch](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/)
 - Fine tune your [search relevance](https://www.algolia.com/doc/guides/managing-results/relevance-overview/)
 
-## Uninstall the plugin
+## Uninstalling the plugin
 
 ### Disable
 
