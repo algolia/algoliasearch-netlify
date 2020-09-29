@@ -42,7 +42,7 @@ First, go to the [Algolia Crawler for Netlify](https://crawler.algolia.com/admin
 
 <img src="/docs/screenshots/signin.png?raw=true" alt="Sign in to Algolia with Netlify">
 
-Then, authorize Algolia to access your Netlify account. The plugin only updates your plugin settings and add necessary environment variables.
+Then, authorize Algolia to access your Netlify account. The plugin only updates your plugin settings and adds necessary environment variables.
 
 <img src="/docs/screenshots/authorize.png?raw=true" alt="Authorize Algolia's OAuth">
 
