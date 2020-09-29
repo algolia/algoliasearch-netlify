@@ -87,7 +87,8 @@ You can find an HTML code snippet in the [Crawler Admin Console](https://crawler
 
 - `YOUR_ALGOLIA_APP_ID`: the unique identifier of your Algolia application
 - `YOUR_ALGOLIA_API_KEY`: your Algolia search-only API key (you can find it on your [Algolia dashboard](https://www.algolia.com/api-keys))
-- `YOUR_BRANCH` the branch name (any branch on which the plugin is allowed to run)
+- `YOUR_NETLIFY_SITE_ID`: the unique identifier of your Netlify site (we prefill this for you in the snippet from the [Crawler Admin Console](https://crawler.algolia.com/admin/netlify))
+- `YOUR_BRANCH`: the branch name (any branch on which the plugin is allowed to run)
 
 ```html
 <link
