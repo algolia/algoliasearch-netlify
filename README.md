@@ -24,21 +24,21 @@ To start right away you will only need a Netlify site.
 
 Go to <https://crawler.algolia.com/admin/netlify> and login to Algolia with Netlify.
 We will automatically create a new Algolia account if you do not have one.
-<img src="/docs/screenshots/screely-1601374927601.png?raw=true" alt="Sign in to Algolia with Netlify">
+<img src="/docs/screenshots/screely-1601375945482.png?raw=true" alt="Sign in to Algolia with Netlify">
 
 Authorize Algolia to access your Neltify account.
 We will only change your plugin and environement variables settings.
-<img src="/docs/screenshots/screely-1601374957113.png?raw=true" alt="Authorize Algolia's oauth">
+<img src="/docs/screenshots/screely-1601375955283.png?raw=true" alt="Authorize Algolia's oauth">
 
 Search your site and click "install".
 On this step we will modify your Netlify site to add a couple of environment variables required to use the plugin.
 We will also create one Algolia application with a dedicated [free plan](https://www.algolia.com/pricing/).
 
-<img src="/docs/screenshots/screely-1601374987493.png?raw=true" alt="Search and install your site.">
-<img src="/docs/screenshots/screely-1601374996541.png?raw=true" alt="Search and install your site.">
+<img src="/docs/screenshots/screely-1601375970172.png?raw=true" alt="Search and install your site.">
+<img src="/docs/screenshots/screely-1601375981021.png?raw=true" alt="Search and install your site.">
 
 The plugin is now correctly installed and should already index your site at the next deploy.
-<img src="/docs/screenshots/screely-1601375010606.png?raw=true" alt="Search and install your site.">
+<img src="/docs/screenshots/screely-1601375010606.png?raw=true" alt="View your site information.">
 
 ### Install the frontend bundle
 
