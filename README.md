@@ -97,6 +97,14 @@ Please refer to the [full documentation](https://github.com/algolia/algoliasearc
 - Implement a dedicated UI with [InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/)
 - Fine tune your search relevancy [Relevance Guide](https://www.algolia.com/doc/guides/managing-results/relevance-overview/)
 
+## Disable
+
+You can temporarly disable the plugin by adding this to your environment variables (Deploy > Settings > Build & Deploy > Environment)
+
+```yaml
+ALGOLIA_DISABLED=true
+```
+
 ## Uninstall
 
 You can uninstall the plugin by either:
