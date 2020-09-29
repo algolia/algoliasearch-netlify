@@ -17,7 +17,7 @@ Index your website automatically to Algolia when you deploy your project to Netl
 
 ## Getting Started
 
-On this getting started we will implement a frontend search using Netlify, Algolia, and this plugin.
+In this getting started we will implement an instant search using Netlify, Algolia, and this plugin.  
 To start right away **you only need a Netlify site**.
 
 ### Link your site to Algolia
@@ -29,35 +29,36 @@ We will automatically create a new Algolia account if you do not have one.
 <img src="/docs/screenshots/screely-1601375945482.png?raw=true" alt="Sign in to Algolia with Netlify">
 
 Authorize Algolia to access your Neltify account.
-The plugin will only update your plugin settings and add two environement variables.
+The plugin will only update your plugin settings and add necessary environment variables, prefixed by `ALGOLIA_`.
 NB: Algolia **only stores your encrypted Netlify access token**, and no other information.
-<img src="/docs/screenshots/screely-1601375955283.png?raw=true" alt="Authorize Algolia's oauth">
+<img src="/docs/screenshots/screely-1601375955283.png?raw=true" alt="Authorize Algolia's OAuth">
 
-Search your site and click "install".
-On this step we will automatically update your Netlify site to add a couple of environment variables required to use the plugin.
-We will also create one Algolia application with a dedicated [free plan](https://www.algolia.com/pricing/).
+Search for your site name and click "Install".
+On this step we will automatically update your Netlify site to add a couple of environment variables required to use the plugin (prefixed by `ALGOLIA_`).
+We will also create an Algolia application with a dedicated [free plan](https://www.algolia.com/pricing/).
 
-<img src="/docs/screenshots/screely-1601375970172.png?raw=true" alt="Search and install your site.">
-<img src="/docs/screenshots/screely-1601375981021.png?raw=true" alt="Search and install your site.">
+<img src="/docs/screenshots/screely-1601375970172.png?raw=true" alt="Search for your site">
+<img src="/docs/screenshots/screely-1601375981021.png?raw=true" alt="Install in your site">
 
-The plugin is now correctly installed and should already index your site at the next deploy.
+The plugin is now correctly installed and ready to index your site.
 <img src="/docs/screenshots/screely-1601375010606.png?raw=true" alt="View your site information.">
 
-### Build your index
+### Indexing
 
-You can deploy your site to Netlify and wait for your index to be populated by the Crawler.
-If you want, in the meantime, you can also use our own [Frontend Bundle](#install-the-frontend-bundle) to power your search out of the box
+Now that you've installed our plugin, your next deploy to Netlify will launch a crawl that will populate an Algolia index.
+You can manually launch a new deploy by opening your latest deploy in Netlify and clicking on "Retry deploy" > "Deploy site".
 
-Once we receive a build hooks, the Crawler will process your website asynchronously. Indeed the Crawler requires your site to be online to be able to crawl it. In other words, there will be a small delay between deploying and having your Algolia index populated.
-In Netlify deploy logs you will find the information about your current Crawler.
-We will create **one Crawler and one Algolia index per branch name**, so you can have a production index and develop index for example.
+Once we receive a build hook, our Crawler will process your website asynchronously, and this operation takes some time.
+In other words, there will be a delay between the first deploy on a branch and the Algolia index being ready for usage.
+You will find the information about your current Crawler in the Netlify deploy logs.
+We will create **one Crawler targeting one Algolia index per git branch**, so you can have a production index on `master` and development index on `develop` for example.
 <img src="/docs/screenshots/screely-1601381176485.png?raw=true" alt="Netlify deploy logs.">
 
-You can click on the URL to go the current Crawlergo to our UI to follow the progress of the crawl.
+You can click on the URL to open the current Crawler dashboard to follow the progress of the crawl.
 <img src="/docs/screenshots/screely-1601381447204.png?raw=true" alt="Your Crawler running.">
 
-After the crawl is done you can go take a look at your Algolia index, to see the records we extracted automatically.
-We apply a default relevance by default, but you can fine tune it as you want in the index settings.
+After the crawl is done you can go take a look at your Algolia index to see the records we extracted automatically.
+We apply a default relevance configuration by default, but you can fine tune it as you want in the index settings.
 Find out [what is inside your records](/docs/schema.md).
 <img src="/docs/screenshots/screely-1601382688193.png?raw=true" alt="Your Algolia Index.">
 
@@ -74,8 +75,8 @@ Replace the variables with the one given in the UI:
 - `YOUR_BRANCH` with your branch name (any branch name where the plugin is allowed to run)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend/dist/algoliasearchNetlify.css" />
-<script type="text/javascript" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend/dist/algoliasearchNetlify.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.js"></script>
 <script type="text/javascript">
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',
@@ -85,7 +86,7 @@ Replace the variables with the one given in the UI:
 </script>
 ```
 
-This will automatically plug your newly created Algolia index in your website.
+This will automatically add an instant search autocomplete to your website using your newly created Algolia index.
 Please refer to the [full documentation](https://github.com/algolia/algoliasearch-netlify/tree/master/frontend) to configure this frontend plugin.
 
 > Screenshot
@@ -107,9 +108,9 @@ You can uninstall the plugin by either:
 - Go to your Netlify plugin and click "uninstall"
   This will not clean your data.
 
-## Limitation / Known Issues / FAQ
+## Limitations / Known Issues / FAQ
 
-### My website requires Javascript to run
+### My website requires JavaScript to run
 
 The crawler does support this but the option is not yet exposed in the plugin.
 Please contact us to enable it.
@@ -117,18 +118,18 @@ Please contact us to enable it.
 ### I want to extract more information from my webpages
 
 While the Crawler is extremely customisable, the plugin is currently restricted to a default extraction strategy.
-If you believe we have missed something or you would want to have more control, please share your feedback in our [Discourse](https://discourse.algolia.com/c/netlify/28)
+If you believe we have missed something or you would want to have more control, please share your feedback in our [Discourse forum](https://discourse.algolia.com/c/netlify/28).
 
 ### Can I build my own UI
 
-Yes !
+Yes!
 
 ### Can I receive a notification when my crawl is done
 
 Yes, you can configure notification in the Crawler UI here: <https://crawler.algolia.com/admin/user/settings/>
 
-## Troubleshoot
+## Troubleshooting
 
-- Need help? We have you covered in our [Discourse](https://discourse.algolia.com/c/netlify/28)
-- Found a bug in the plugin? Please post an issue in this repository and read our [Contributing guide](/CONTRIBUTING.md)
+- Need help? We have you covered in our [Discourse forum](https://discourse.algolia.com/c/netlify/28)
+- Found a bug in the plugin? Please read our [Contributing guide](/CONTRIBUTING.md) and post an issue in this repository
 - Did not find any answer? Please reach out to `support@algolia.com`

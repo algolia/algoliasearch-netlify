@@ -3,7 +3,7 @@
 Algolia is a schema-less search engine. However to provide a simple and easy experience with Neltify and the Crawler,
 we currently populate Algolia with a standard record.
 
-All root level properties are a computation of multiple selectors with fallback. We **reserve the possibility to change the extraction logic** or to add more properties, but **not remove top property without proper deprecation period**.
+All root level properties are a computation of multiple selectors with fallback. We **might change the extraction logic** or to add more properties, but **will not remove root level properties without a proper deprecation period**.
 All properties marked as "not undefined" will be present in the end record, the other can be missing if did not find any relevant information.
 
 ## Schema
