@@ -150,3 +150,7 @@ Yes, you can configure notification in the Crawler UI here: <https://crawler.alg
 - Need help? We have you covered in our [Discourse forum](https://discourse.algolia.com/c/netlify/28)
 - Found a bug in the plugin? Please read our [Contributing guide](/CONTRIBUTING.md) and post an issue in this repository
 - Did not find any answer? Please reach out to `support@algolia.com`
+
+## Development & Release
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
