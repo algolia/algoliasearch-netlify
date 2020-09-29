@@ -37,7 +37,7 @@ We will also create one Algolia application with a dedicated [free plan](https:/
 <img src="/docs/screenshots/screely-1601374987493.png?raw=true" alt="Search and install your site.">
 <img src="/docs/screenshots/screely-1601374996541.png?raw=true" alt="Search and install your site.">
 
-The plugin is now correctly installed and should already index your site at your next deploy.
+The plugin is now correctly installed and should already index your site at the next deploy.
 <img src="/docs/screenshots/screely-1601375010606.png?raw=true" alt="Search and install your site.">
 
 ### Install the frontend bundle
