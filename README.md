@@ -58,7 +58,7 @@ You can click on the URL to go the current Crawlergo to our UI to follow the pro
 
 After the crawl is done you can go take a look at your Algolia index, to see the records we extracted automatically.
 We apply a default relevance by default, but you can fine tune it as you want in the index settings.
-
+Find out [what is inside your records](/docs/schema.md).
 <img src="/docs/screenshots/screely-1601382688193.png?raw=true" alt="Your Algolia Index.">
 
 ### Install the frontend bundle
@@ -92,9 +92,20 @@ Please refer to the [full documentation](https://github.com/algolia/algoliasearc
 
 ### Going further
 
+- Understand the extracted [record schema](/docs/schema.md)
 - Learn more about [Algolia](https://www.algolia.com/doc/)
 - Implement a dedicated UI with [InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/)
 - Fine tune your search relevancy [Relevance Guide](https://www.algolia.com/doc/guides/managing-results/relevance-overview/)
+
+## Uninstall
+
+You can uninstall the plugin by either:
+
+- Go to your Crawler UI and click "uninstall"
+  **This is the recommended way**.
+  We will also clean the environment variables and delete associated data from Algolia.
+- Go to your Netlify plugin and click "uninstall"
+  This will not clean your data.
 
 ## Limitation / Known Issues / FAQ
 
@@ -106,7 +117,7 @@ Please contact us to enable it.
 ### I want to extract more information from my webpages
 
 While the Crawler is extremely customisable, the plugin is currently restricted to a default extraction strategy.
-If you believe we have missed something or you would want to have more control, please reach out
+If you believe we have missed something or you would want to have more control, please share your feedback in our [Discourse](https://discourse.algolia.com/c/netlify/28)
 
 ### Can I build my own UI
 
@@ -120,4 +131,4 @@ Yes, you can configure notification in the Crawler UI here: <https://crawler.alg
 
 - Need help? We have you covered in our [Discourse](https://discourse.algolia.com/c/netlify/28)
 - Found a bug in the plugin? Please post an issue in this repository and read our [Contributing guide](/CONTRIBUTING.md)
-- Did not find any answer? Please reach out to `support+crawler@algolia.com`
+- Did not find any answer? Please reach out to `support@algolia.com`
