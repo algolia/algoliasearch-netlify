@@ -62,7 +62,7 @@ The plugin is now correctly installed and ready to index your site.
 
 Once you've installed the plugin, your next Netlify deploy will trigger a crawl and populate an Algolia index. You can manually trigger a new deploy in Netlify by clicking **Retry deploy > Deploy site** on any deploy.
 
-Once we receive a build hook, the Algolia Crawler processes your website asynchronously. This operation takes some time, resulting in a short delay between the first deploy and the associated crawl. Your site and your Algolia index will be out of sync for that delay.
+Once we receive a build hook, the Algolia Crawler processes your website asynchronously. This operation takes some time, resulting in a short delay between the first deploy and the associated crawl. Your site and your Algolia index will be out of sync during that delay.
 
 You can find information about your current crawler in the [Netlify deploy logs](https://docs.netlify.com/monitor-sites/logs/#deploy-log). We create **one crawler targeting one Algolia index per Git branch**, so that you can have, for example, a production index on `master` and development index on `develop`.
 
