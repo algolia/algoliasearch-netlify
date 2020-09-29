@@ -22,23 +22,27 @@ To start right away you will only need a Netlify site.
 
 ### Link your site to Algolia
 
-Go to <https://crawler.algolia.com/admin/netlify>
-> Screenshot
-
-Login to Algolia with Netlify.
+Go to <https://crawler.algolia.com/admin/netlify> and login to Algolia with Netlify.
 We will automatically create a new Algolia account if you do not have one.
-> Screenshot
+<img src="/docs/screenshots/screely-1601374927601.png?raw=true" alt="Sign in to Algolia with Netlify">
+
+Authorize Algolia to access your Neltify account.
+We will only change your plugin and environement variables settings.
+<img src="/docs/screenshots/screely-1601374957113.png?raw=true" alt="Authorize Algolia's oauth">
 
 Search your site and click "install".
 On this step we will modify your Netlify site to add a couple of environment variables required to use the plugin.
 We will also create one Algolia application with a dedicated [free plan](https://www.algolia.com/pricing/).
-> Screenshot
 
-At this point the plugin should be working correctly.
+<img src="/docs/screenshots/screely-1601374987493.png?raw=true" alt="Search and install your site.">
+<img src="/docs/screenshots/screely-1601374996541.png?raw=true" alt="Search and install your site.">
+
+The plugin is now correctly installed and should already index your site at your next deploy.
+<img src="/docs/screenshots/screely-1601375010606.png?raw=true" alt="Search and install your site.">
 
 ### Install the frontend bundle
 
-> Note: we recommend using our bundle because it is compatible with the records we extract from your website. 
+> Note: we recommend using our bundle because it is compatible with the records we extract from your website.
 > You are free to build the UI you want, with [InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/) or any technology you want.
 
 In the Crawler UI you will find an html snippet that you can copy into your code.
@@ -58,7 +62,6 @@ In the Crawler UI you will find an html snippet that you can copy into your code
 
 This will automatically plug your newly created Algolia index in your website.
 Please refer to the [full documentation](https://github.com/algolia/algoliasearch-netlify/tree/master/frontend) to configure this frontend plugin.
-
 
 ### Build your index
 
