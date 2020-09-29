@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer">
-    <img width="200" src="/logo.png" alt="Vue logo">
+    <img width="400" src="/logo.png" alt="Vue logo">
   </a>
 </p>
 <p align="center">
