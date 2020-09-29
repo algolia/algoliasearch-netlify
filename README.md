@@ -64,7 +64,7 @@ Once you've installed the plugin, your next Netlify deploy will trigger a crawl 
 
 Once we receive a build hook, the Algolia Crawler processes your website asynchronously. This operation takes some time, resulting in a short delay between the first deploy and the associated crawl. Your site and your Algolia index will be out of sync during that delay.
 
-You can find information about your current crawler in the [Netlify deploy logs](https://docs.netlify.com/monitor-sites/logs/#deploy-log). We create **one crawler targeting one Algolia index per Git branch**, so that you can have, for example, a production index on `master` and development index on `develop`.
+You can find information about your current crawler in the [Netlify deploy logs](https://docs.netlify.com/monitor-sites/logs/#deploy-log). We create one crawler (targeting one Algolia index) per Git branch, so that you can have, for example, a production index on `master` and development index on `develop`.
 
 <img src="/docs/screenshots/deploy-logs.png?raw=true" alt="Netlify deploy logs.">
 
