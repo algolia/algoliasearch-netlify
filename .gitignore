@@ -116,3 +116,5 @@ package-lock.json
 
 # .env
 .env
+
+.DS_Store
