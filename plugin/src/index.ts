@@ -36,8 +36,17 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   // console.log(JSON.stringify(params, null, 2));
   // console.log(JSON.stringify(process.env, null, 2));
 
+  const isDisabled = process.env.ALGOLIA_DISABLED === 'true';
   const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
+
+  if (isDisabled) {
+    utils.status.show({
+      title: 'Algolia Crawler',
+      summary: `This plugin was disabled by your environment variable "ALGOLIA_DISABLED"`,
+    });
+    return;
+  }
 
   if (isLocal && !isDev) {
     return utils.build.failPlugin(
