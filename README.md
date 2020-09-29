@@ -88,7 +88,7 @@ Replace the variables with the one given in the UI:
 This will automatically add an instant search autocomplete to your website using your newly created Algolia index.
 Please refer to the [full documentation](https://github.com/algolia/algoliasearch-netlify/tree/master/frontend) to configure this frontend plugin.
 
-> Screenshot
+<img src="/docs/screenshots/frontend.png?raw=true" alt="Autocomplete preview">
 
 ### Going further
 
