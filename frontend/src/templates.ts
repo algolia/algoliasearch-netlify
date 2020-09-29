@@ -1,3 +1,7 @@
+import type { Hit } from '@algolia/client-search';
+
+import { SizeModifier } from './AutocompleteWrapper';
+import { Data } from './data';
 import { escapeHTML } from './escapeHTML';
 
 export interface Templates {
@@ -5,7 +9,9 @@ export interface Templates {
   autocomplete: {
     css: (color: string) => string;
     poweredBy: (algoliaLogoHtml: string) => string;
-    suggestion: (hit: any) => string;
+    suggestion: (
+      hit: Hit<Data> & { sizeModifier: SizeModifier; snippet: string }
+    ) => string;
   };
 }
 
@@ -37,8 +43,8 @@ export const templates: Templates = {
       </div>`,
     suggestion: (hit) => `
       <div class="aa-hit aa-hit__${hit.sizeModifier}">
-        <div class="aa-hit--title">${hit._highlightResult.title.value}</div>
-        <div class="aa-hit--description">${hit._snippetResult.description.value}</div>
+        <div class="aa-hit--title">${hit._highlightResult!.title.value}</div>
+        <div class="aa-hit--description">${hit.snippet}</div>
       </div>
     `,
   },
