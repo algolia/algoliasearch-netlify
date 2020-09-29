@@ -1,13 +1,13 @@
-# algoliasearch-netlify
+# algoliasearch-netlify-frontend
 
-`algoliasearch-netlify` is the front-end bundle we recommend to use with our Netlify plugin.
+`algoliasearch-netlify-frontend` is the front-end bundle we recommend to use with our Netlify plugin.
 It's designed to be compatible with the index structure extracted by the [plugin](../plugin).
 
 ## Usage
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend/dist/algoliasearchNetlify.css" />
-<script type="text/javascript" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend/dist/algoliasearchNetlify.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.js"></script>
 <script type="text/javascript">
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',
