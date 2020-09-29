@@ -15,6 +15,16 @@ Index your website automatically to Algolia when you deploy your project to Netl
 - [What is Algolia?](https://www.algolia.com/doc/guides/getting-started/what-is-algolia/)
 - [What is Algolia's Crawler?](https://www.algolia.com/doc/tools/crawler/getting-started/overview/)
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Link your site to Algolia](#link-your-site-to-algolia)
+  - [Indexing](#indexing)
+  - [Install the frontend bundle](#install-the-frontend-bundle)
+  - [Going further](#going-further)
+- [FAQ](#limitations--known-issues--faq)
+- [Troubleshooting](#troubleshooting)
+
 ## Getting Started
 
 In this getting started we will implement an instant search using Netlify, Algolia, and this plugin.  
