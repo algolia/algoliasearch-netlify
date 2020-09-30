@@ -158,3 +158,18 @@ You can configure notifications in the [account settings](https://crawler.algoli
 - Need help? We have you covered in our [Discourse forum](https://discourse.algolia.com/c/netlify/28)
 - Found a bug in the plugin? Please read our [contributing guide](/CONTRIBUTING.md) and either open an [issue](https://github.com/algolia/algoliasearch-netlify/issues) or a [pull request](https://github.com/algolia/algoliasearch-netlify/pulls)
 - Can't find the answer to your issue? Please reach out to [support@algolia.com](support@algolia.com)
+
+## Architecture
+
+- [`frontend/`](./frontend/): Front-end library
+- [`plugin/`](./plugin/): Netlify plugin sources
+- [`public/`](./public/): Test website
+
+The plugin links your Netlify site to Algolia's Crawler.
+It triggers a crawl on each successful build.
+
+This repository is itself a netlify site, which allows us to test the whole setup.
+
+## Development & Release
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
