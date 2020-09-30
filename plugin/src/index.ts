@@ -33,8 +33,8 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const deployPrimeUrl = process.env.DEPLOY_PRIME_URL;
 
   // Debug
-  // console.log(JSON.stringify(params, null, 2));
-  // console.log(JSON.stringify(process.env, null, 2));
+  console.log(JSON.stringify(params, null, 2));
+  console.log(JSON.stringify(process.env, null, 2));
 
   const isDisabled = process.env.ALGOLIA_DISABLED === 'true';
   const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
