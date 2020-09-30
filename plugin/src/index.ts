@@ -28,7 +28,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const isLocal = constants.IS_LOCAL;
   const isDev = process.env.ALGOLIA_DEV_ENV === 'true';
 
-  const branch = process.env.BRANCH;
+  const branch = process.env.HEAD;
   const siteName = process.env.SITE_NAME;
   const deployPrimeUrl = process.env.DEPLOY_PRIME_URL;
 
