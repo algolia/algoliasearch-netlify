@@ -56,18 +56,21 @@ All properties that aren't marked as optional are present in the final record. O
   /**
    * The authors of the page.
    * - meta[property="article:author"]
+   * - `author` field of JSON-LD Article object: https://schema.org/Article
    */
   authors?: string[];
 
   /**
    * The publish date of the page.
    * - meta[property="article:published_time"]
+   * - `datePublished` field of JSON-LD Article object: https://schema.org/Article
    */
   datePublished?: number;
 
   /**
    * The modified date of the page.
    * - meta[property="article:modified_time"]
+   * - `dateModified` field of JSON-LD Article object: https://schema.org/Article
    */
   dateModified?: number;
 
@@ -114,3 +117,14 @@ For this URL: <https://www.algolia.com/products/crawler/>
 ## Record splitting
 
 For better relevance, we can split records into multiple ones. We create all indices with the index settings `{ distinct: true, attributeForDistinct: 'url' }` to deduplicate them at search time.
+
+## JSON-LD
+
+We support a limited set of [JSON-LD](https://json-ld.org/) attributes. We expect the JSON-LD structure to follow the https://schema.org/ structure.
+The current list of supported attributes are:
+- `Article` (https://schema.org/Article)
+  - `author`
+  - `datePublished`
+  - `dateModified`
+
+We will add more in the future, contact us if you'd like to request the addition of some specific attributes.
