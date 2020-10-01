@@ -54,7 +54,7 @@ All properties that aren't marked as optional are present in the final record. O
   image?: string;
 
   /**
-   * The author of the page.
+   * The authors of the page.
    * - meta[property="article:author"]
    */
   authors?: string[];
