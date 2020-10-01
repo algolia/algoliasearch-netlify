@@ -1,6 +1,6 @@
 # Extracted record schema
 
-Algolia is a schemaless search engine. However to provide an effortless experience with Netlify and the Algolia Crawler, the plugin currently populates your Algolia index with a standard record schema.
+Algolia is a schemaless search engine. However, to provide an effortless experience with Netlify and the Algolia Crawler, the plugin currently populates your Algolia index with a standard record schema.
 
 All root-level properties are a computation of multiple selectors, with a fallback. We might change the extraction logic to add more properties, but **we won't remove root-level properties without a proper deprecation period**.
 
@@ -57,19 +57,19 @@ All properties that aren't marked as optional are present in the final record. O
    * The author of the page.
    * - meta[property="article:author"]
    */
-  author?: string;
+  authors?: string[];
 
   /**
    * The publish date of the page.
    * - meta[property="article:published_time"]
    */
-  publishedDate?: number;
+  datePublished?: number;
 
   /**
    * The modified date of the page.
    * - meta[property="article:modified_time"]
    */
-  modifiedDate?: number;
+  dateModified?: number;
 
   /**
    * The category of the page.
