@@ -1,6 +1,6 @@
 # Extracted record schema
 
-Algolia is a schemaless search engine. However to provide an effortless experience with Netlify and the Algolia Crawler, the plugin currently populates your Algolia index with a standard record schema.
+Algolia is a schemaless search engine. However, to provide an effortless experience with Netlify and the Algolia Crawler, the plugin currently populates your Algolia index with a standard record schema.
 
 All root-level properties are a computation of multiple selectors, with a fallback. We might change the extraction logic to add more properties, but **we won't remove root-level properties without a proper deprecation period**.
 
@@ -54,22 +54,25 @@ All properties that aren't marked as optional are present in the final record. O
   image?: string;
 
   /**
-   * The author of the page.
+   * The authors of the page.
+   * - `author` field of JSON-LD Article object: https://schema.org/Article
    * - meta[property="article:author"]
    */
-  author?: string;
+  authors?: string[];
 
   /**
    * The publish date of the page.
+   * - `datePublished` field of JSON-LD Article object: https://schema.org/Article
    * - meta[property="article:published_time"]
    */
-  publishedDate?: number;
+  datePublished?: number;
 
   /**
    * The modified date of the page.
+   * - `dateModified` field of JSON-LD Article object: https://schema.org/Article
    * - meta[property="article:modified_time"]
    */
-  modifiedDate?: number;
+  dateModified?: number;
 
   /**
    * The category of the page.
@@ -114,3 +117,15 @@ For this URL: <https://www.algolia.com/products/crawler/>
 ## Record splitting
 
 For better relevance, we can split records into multiple ones. We create all indices with the index settings `{ distinct: true, attributeForDistinct: 'url' }` to deduplicate them at search time.
+
+## JSON-LD
+
+We support a limited set of [JSON-LD](https://json-ld.org/) attributes. We expect the JSON-LD structure to follow the <https://schema.org/> structure.
+If present, the attributes found in JSON-LD will be taken in priority during the extraction.
+The current list of supported attributes are:
+- `Article` (https://schema.org/Article)
+  - `author`
+  - `datePublished`
+  - `dateModified`
+
+We will add more in the future, contact us if you'd like to request the addition of some specific attributes.
