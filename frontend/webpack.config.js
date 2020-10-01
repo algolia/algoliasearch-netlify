@@ -28,11 +28,12 @@ function plugins({ production }) {
     additionalPlugins = [
       new HotModuleReplacementPlugin(),
       new ForkTsCheckerWebpackPlugin({
-        tsconfig: 'tsconfig.json',
-        compilerOptions: {
-          skipLibCheck: true,
+        typescript: {
+          configFile: 'tsconfig.json',
         },
-        eslint: true,
+        eslint: {
+          files: 'src/**/*.{js,ts}',
+        },
       }),
     ];
   }
