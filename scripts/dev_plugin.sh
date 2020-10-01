@@ -10,5 +10,12 @@ set -a
 source .env
 set +a
 
+restore_netlify_toml() {
+  ./scripts/generate_netlify_toml.sh
+}
+
+ALGOLIA_DEV_ENV=true ./scripts/generate_netlify_toml.sh
+trap restore_netlify_toml EXIT
+
 yarn build:plugin
-yarn netlify build
+ALGOLIA_DEV_ENV=true yarn netlify build

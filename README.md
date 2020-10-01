@@ -165,9 +165,6 @@ You can configure notifications in the [account settings](https://crawler.algoli
 - [`plugin/`](./plugin/): Netlify plugin sources
 - [`public/`](./public/): Test website
 
-The plugin links your Netlify site to Algolia's Crawler.
-It triggers a crawl on each successful build.
-
 This repository is itself a netlify site, which allows us to test the whole setup.
 
 ## Development & Release

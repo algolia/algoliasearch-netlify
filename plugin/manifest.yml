@@ -1,1 +1,4 @@
-name: "@algolia/netlify-plugin-crawler"
+name: '@algolia/netlify-plugin-crawler'
+inputs:
+  - name: disabled
+    description: Disable the plugin
