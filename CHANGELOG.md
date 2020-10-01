@@ -1,3 +1,23 @@
+## [0.0.8](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.7...v0.0.8) (2020-10-01)
+
+
+### Bug Fixes
+
+* try to get correct branch name ([#53](https://github.com/algolia/algoliasearch-netlify/issues/53)) ([dbcda60](https://github.com/algolia/algoliasearch-netlify/commit/dbcda60ceda4eeaaaeb202ddba411b8047e2b596))
+* **README:** fix npm version badge ([#47](https://github.com/algolia/algoliasearch-netlify/issues/47)) ([717e6e1](https://github.com/algolia/algoliasearch-netlify/commit/717e6e1c16e2fb75d16e4e5ec4e632d7eb301e1b))
+* tutorial ([#43](https://github.com/algolia/algoliasearch-netlify/issues/43)) ([fce5c2e](https://github.com/algolia/algoliasearch-netlify/commit/fce5c2e3f2c15a90ac55a4e4162b046283c104ea))
+* **doc:** correct library links ([#44](https://github.com/algolia/algoliasearch-netlify/issues/44)) ([1f8533e](https://github.com/algolia/algoliasearch-netlify/commit/1f8533e0558c48c953f3ce0ecb87e723cca6c598))
+
+
+### Features
+
+* **dev:** improve dev env ([#54](https://github.com/algolia/algoliasearch-netlify/issues/54)) ([ef53726](https://github.com/algolia/algoliasearch-netlify/commit/ef5372677f9e34cafeeedce0da7d0bf4223e9512))
+* **frontend:** handle content snippeting ([#51](https://github.com/algolia/algoliasearch-netlify/issues/51)) ([61a0d4e](https://github.com/algolia/algoliasearch-netlify/commit/61a0d4e35c1ac33081ef3ecbef1a60f02e2074a4))
+* add env var to disable the plugin ([#45](https://github.com/algolia/algoliasearch-netlify/issues/45)) ([60c7c44](https://github.com/algolia/algoliasearch-netlify/commit/60c7c44a0c843665795d3591aa29cab3c6b60433))
+* **plugin:** send version in crawl call ([#42](https://github.com/algolia/algoliasearch-netlify/issues/42)) ([f52622b](https://github.com/algolia/algoliasearch-netlify/commit/f52622b1f684ff083e6e59e1d2c9e17d4597cd7c))
+
+
+
 ## [0.0.7](https://github.com/algolia/algoliasearch-netlify/compare/8493dd5559af4ec9bd75a9be1c6392d611029ea4...v0.0.7) (2020-09-28)
 
 
