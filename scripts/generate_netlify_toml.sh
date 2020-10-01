@@ -18,8 +18,8 @@ package = "./plugin/dist/index.js"
 
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
-#  [plugins.inputs]
-#  disabled = true
+  [plugins.inputs]
+  disabled = true
 '
 
 # Prod only
