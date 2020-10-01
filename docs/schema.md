@@ -55,22 +55,22 @@ All properties that aren't marked as optional are present in the final record. O
 
   /**
    * The authors of the page.
-   * - meta[property="article:author"]
    * - `author` field of JSON-LD Article object: https://schema.org/Article
+   * - meta[property="article:author"]
    */
   authors?: string[];
 
   /**
    * The publish date of the page.
-   * - meta[property="article:published_time"]
    * - `datePublished` field of JSON-LD Article object: https://schema.org/Article
+   * - meta[property="article:published_time"]
    */
   datePublished?: number;
 
   /**
    * The modified date of the page.
-   * - meta[property="article:modified_time"]
    * - `dateModified` field of JSON-LD Article object: https://schema.org/Article
+   * - meta[property="article:modified_time"]
    */
   dateModified?: number;
 
@@ -120,7 +120,7 @@ For better relevance, we can split records into multiple ones. We create all ind
 
 ## JSON-LD
 
-We support a limited set of [JSON-LD](https://json-ld.org/) attributes. We expect the JSON-LD structure to follow the https://schema.org/ structure.
+We support a limited set of [JSON-LD](https://json-ld.org/) attributes. We expect the JSON-LD structure to follow the <https://schema.org/> structure.
 If present, the attributes found in JSON-LD will be taken in priority during the extraction.
 The current list of supported attributes are:
 - `Article` (https://schema.org/Article)
