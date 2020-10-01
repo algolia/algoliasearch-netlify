@@ -2,11 +2,15 @@ import fetch from 'node-fetch';
 
 // @ts-ignore
 import { version } from '../package.json';
+import { loadDevEnvVariables } from './dev';
 
 interface BuildParams {
   constants: {
     SITE_ID: string;
     IS_LOCAL: boolean;
+  };
+  inputs: {
+    disabled?: boolean;
   };
   utils: {
     status: {
@@ -22,11 +26,16 @@ interface BuildParams {
 export async function onSuccess(params: BuildParams): Promise<void> {
   console.log('Algolia Netlify plugin started');
 
-  const { utils, constants } = params;
+  const { utils, inputs, constants } = params;
+
+  const isDev = process.env.ALGOLIA_DEV_ENV === 'true';
+
+  if (isDev) {
+    loadDevEnvVariables();
+  }
 
   const siteId = constants.SITE_ID;
   const isLocal = constants.IS_LOCAL;
-  const isDev = process.env.ALGOLIA_DEV_ENV === 'true';
 
   const branch = process.env.HEAD;
   const siteName = process.env.SITE_NAME;
@@ -36,14 +45,23 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   // console.log(JSON.stringify(params, null, 2));
   // console.log(JSON.stringify(process.env, null, 2));
 
-  const isDisabled = process.env.ALGOLIA_DISABLED === 'true';
+  const isEnvDisabled = process.env.ALGOLIA_DISABLED === 'true';
+  const isInputDisabled = Boolean(inputs.disabled);
   const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
 
-  if (isDisabled) {
+  if (isEnvDisabled) {
     utils.status.show({
       title: 'Algolia Crawler',
       summary: `This plugin was disabled by your environment variable "ALGOLIA_DISABLED"`,
+    });
+    return;
+  }
+
+  if (isInputDisabled) {
+    utils.status.show({
+      title: 'Algolia Crawler',
+      summary: `This plugin was disabled by the "disabled" input in your "netlify.toml"`,
     });
     return;
   }
