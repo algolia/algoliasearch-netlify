@@ -121,6 +121,7 @@ For better relevance, we can split records into multiple ones. We create all ind
 ## JSON-LD
 
 We support a limited set of [JSON-LD](https://json-ld.org/) attributes. We expect the JSON-LD structure to follow the https://schema.org/ structure.
+If present, the attributes found in JSON-LD will be taken in priority during the extraction.
 The current list of supported attributes are:
 - `Article` (https://schema.org/Article)
   - `author`
