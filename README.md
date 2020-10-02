@@ -64,7 +64,9 @@ Once you've installed the plugin, your next Netlify deploy will trigger a crawl 
 
 When it receives a build hook, the Algolia Crawler processes your website asynchronously. This operation takes some time, resulting in a short delay between the first deploy and the associated crawl. Your site and your Algolia index will be out of sync during that delay.
 
-You can find information about your current crawler in the [Netlify deploy logs](https://docs.netlify.com/monitor-sites/logs/#deploy-log). We create one crawler (targeting one Algolia index) per Git branch, so that you can have, for example, a production index on `master` and development index on `develop`.
+You can find information about your current crawler in the [Netlify deploy logs](https://docs.netlify.com/monitor-sites/logs/#deploy-log).
+
+> Note: by default, we only build the main branch (`main` or `master`). We can however create one crawler (targeting one Algolia index) per Git branch, so that you can have, for example, a production index on `master` and development index on `develop`. You need to configure the [`branches` plugin input](./plugin#available-parameters) to enable this feature.
 
 <img src="/docs/screenshots/deploy-logs.png?raw=true" alt="Netlify deploy logs.">
 
@@ -127,6 +129,7 @@ ALGOLIA_DISABLED=true
 ```
 
 ### Uninstall
+
 To uninstall the plugin, go to your [Crawler Admin Console](https://crawler.algolia.com/admin/netlify) and click **Uninstall**. It automatically cleans up the environment variables and deletes associated data from Algolia.
 
 You can also go to your [Netlify plugins](https://app.netlify.com/plugins) and click **Options > Uninstall plugin**. Note that this won't clean your data on our end.

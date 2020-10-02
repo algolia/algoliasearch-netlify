@@ -10,8 +10,19 @@ It will trigger a crawl on each successful build.
 Plugin inputs can be set in `netlify.toml`. They're all optional.
 
 - `branches` - _Default: `['main', 'master']`_ - List of branches the crawler should build.  
-  Each of those will have a dedicated Algolia index.
+  By default, we only build your main branch, but this can be used to build multiple branches.
+  Each of those will have a dedicated Algolia index, named `netlify_<site-id>_<branch-name>_all`.
+  To target the right branch, you will need to inject the `HEAD` environment variable in your front-end code.
 - `disabled` - _Default: `false`_ - Use to disable the plugin without removing it.
+
+Example:
+
+```toml
+[[plugins]]
+package = "@algolia/netlify-plugin-crawler"
+  [plugins.inputs]
+  branches = ['master', 'develop', 'feat/add-algolia']
+```
 
 ### Environment variables
 
