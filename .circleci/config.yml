@@ -43,13 +43,13 @@ jobs:
 
       - run: yarn lint
 
-  # release:
-  #   <<: *defaults
+  test:
+    <<: *defaults
 
-  #   steps:
-  #     - attach-workspace: *attach-work-dir
+    steps:
+      - attach-workspace: *attach-work-dir
 
-  #     - run: yarn semantic-release
+      - run: yarn test
 
 workflows:
   version: 2
@@ -59,13 +59,6 @@ workflows:
       - lint:
           requires:
             - checkout
-      # - test:
-      #     requires:
-      #       - checkout
-      # - release:
-      #     requires:
-      #       - lint
-      #       - test
-      #     filters:
-      #       branches:
-      #         only: master
+      - test:
+          requires:
+            - checkout
