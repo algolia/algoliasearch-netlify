@@ -36,8 +36,8 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   console.log('Algolia Netlify plugin started');
 
   // Debug
-  console.log(JSON.stringify(params, null, 2));
-  console.log(JSON.stringify(process.env, null, 2));
+  // console.log(JSON.stringify(params, null, 2));
+  // console.log(JSON.stringify(process.env, null, 2));
 
   const { utils, inputs, constants } = params;
 
