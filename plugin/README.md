@@ -9,12 +9,14 @@ It will trigger a crawl on each successful build.
 
 Plugin inputs can be set in `netlify.toml`. They're all optional.
 
-- `branches` - _Default: `['main', 'master']`_ - List of branches the crawler should build. Each of those will have a dedicated Algolia index.
+- `branches` - _Default: `['main', 'master']`_ - List of branches the crawler should build.  
+  Each of those will have a dedicated Algolia index.
 - `disabled` - _Default: `false`_ - Use to disable the plugin without removing it.
 
 ### Environment variables
 
-- `ALGOLIA_BASE_URL`: URL to target, usually https://crawler.algolia.com/. Can be modified locally to target a local instance of the crawler (only for Algolia employees).
+- `ALGOLIA_BASE_URL`: URL to target, usually https://crawler.algolia.com/.  
+  Can be modified locally to target a local instance of the crawler (only for Algolia employees).
 - `ALGOLIA_API_KEY`: [Optional in dev] API Key to authenticate the call to the crawler.
 - `ALGOLIA_DISABLED`: [Optional] Set to `true` to disable the plugin without removing it.
 
