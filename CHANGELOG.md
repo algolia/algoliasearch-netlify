@@ -1,3 +1,13 @@
+## [0.0.12](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.11...v0.0.12) (2020-10-02)
+
+
+### Features
+
+* **plugin:** add siteId and branch params support ([#60](https://github.com/algolia/algoliasearch-netlify/issues/60)) ([3a2c587](https://github.com/algolia/algoliasearch-netlify/commit/3a2c58781c7f99f60b4583d07a611bbe78c58eeb))
+* **public:** add favicon ([#61](https://github.com/algolia/algoliasearch-netlify/issues/61)) ([432b67a](https://github.com/algolia/algoliasearch-netlify/commit/432b67a212bb5d0ea713cf8180770ad9d88c662d))
+
+
+
 ## [0.0.11](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.10...v0.0.11) (2020-10-02)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@algolia/algoliasearch-netlify-frontend",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": false,
   "author": "Algolia Team <contact@algolia.com>",
   "license": "MIT",
