@@ -50,6 +50,8 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const siteId = constants.SITE_ID;
   const isLocal = constants.IS_LOCAL;
 
+  // HEAD is incorrect locally if you try to run `yarn netlify build`
+  // before having pushed your first commit on this branch, it says `master`
   const branch = process.env.HEAD!;
   const siteName = process.env.SITE_NAME;
   const deployPrimeUrl = process.env.DEPLOY_PRIME_URL;
