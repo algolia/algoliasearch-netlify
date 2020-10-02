@@ -66,7 +66,7 @@ When it receives a build hook, the Algolia Crawler processes your website asynch
 
 You can find information about your current crawler in the [Netlify deploy logs](https://docs.netlify.com/monitor-sites/logs/#deploy-log).
 
-> Note: by default, we only build the main branch (`main` or `master`). We can however create one crawler (targeting one Algolia index) per Git branch, so that you can have, for example, a production index on `master` and development index on `develop`. You need to configure the [`branches` plugin input](./plugin#available-parameters) to enable this feature.
+> Note: by default, we only build the `master` branch. We can however create one crawler (targeting one Algolia index) per Git branch, so that you can have, for example, a production index on `master` and development index on `develop`. You need to configure the [`branches` plugin input](./plugin#available-parameters) to enable this feature.
 
 <img src="/docs/screenshots/deploy-logs.png?raw=true" alt="Netlify deploy logs.">
 

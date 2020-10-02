@@ -5,4 +5,4 @@ inputs:
     default: false
   - name: branches
     description: Branches to index. Each branch in this array will have its content crawled in a dedicated index.
-    default: ['main', 'master']
+    default: ['master']
