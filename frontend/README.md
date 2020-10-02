@@ -12,7 +12,8 @@ It's designed to be compatible with the index structure extracted by the [plugin
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',
     apiKey: '<YOUR_ALGOLIA_API_KEY>',
-    indexName: 'netlify_<YOUR_NETLIFY_SITE_ID>_<YOUR_BRANCH>',
+    siteId: '<YOUR_NETLIFY_SITE_ID>',
+    branch: '<YOUR_TARGET_GIT_BRANCH>'
   });
 </script>
 ```
@@ -24,19 +25,43 @@ Here's the full list of options with their default value.
 ```js
 algoliasearchNetlify({
   // Mandatory
-  appId: '<YOUR_ALGOLIA_APP_ID>',                             // Application ID (Can be found in https://www.algolia.com/api-keys)
-  apiKey: '<YOUR_ALGOLIA_API_KEY>',                           // Search api key (Can be found in https://www.algolia.com/api-keys)
-  indexName: 'netlify_<YOUR_NETLIFY_SITE_ID>_<YOUR_BRANCH>',  // Index name (Can be found in https://www.algolia.com/indexes)
+  appId: '<YOUR_ALGOLIA_APP_ID>',               // Application ID (Can be found in https://www.algolia.com/api-keys)
+  apiKey: '<YOUR_ALGOLIA_API_KEY>',             // Search api key (Can be found in https://www.algolia.com/api-keys)
+  siteId: '<YOUR_NETLIFY_SITE_ID>',             // Netlify Site ID (Can be found in https://crawler.algolia.com/admin/netlify)
+  branch: '<YOUR_TARGET_GIT_BRANCH>',           // Target git branch, either a fixed one (e.g. 'master') or a dynamic one using `process.env.HEAD`. See "Using Multiple branches" in this doc.
 
   // Optional
-  analytics: true,                                            // Enable search analytics
+  analytics: true,                              // Enable search analytics
   autocomplete: {
-    hitsPerPage: 5,                                           // Amount of results to display
-    inputSelector: 'input[type=search]',                      // CSS selector of your search input(s)
+    hitsPerPage: 5,                             // Amount of results to display
+    inputSelector: 'input[type=search]',        // CSS selector of your search input(s)
   },
-  color: '#3c4fe0',                                           // Main color
-  debug: false,                                               // Debug mode (keeps the autocomplete open)
-  poweredBy: true,                                            // Controls displaying the logo (mandatory with our FREE plan)
+  color: '#3c4fe0',                             // Main color
+  debug: false,                                 // Debug mode (keeps the autocomplete open)
+  poweredBy: true,                              // Controls displaying the logo (mandatory with our FREE plan)
+});
+```
+
+## Using multiple branches
+
+If you've setup the plugin to index multiple branches using the `branches` plugin input, each configured branch has a dedicated index.
+You'll also need to pass the information of which index you want to search in using the `branch` parameter of the integration.
+
+To get access to the currently building branch, you can configure your build tool to forward the `HEAD` environment variable.
+For instance, with [`webpack`'s environment plugin](https://webpack.js.org/plugins/environment-plugin/) configured to forward `HEAD`, you would pass `branch: process.env.HEAD`.
+
+If you've configured your plugin to index only specific branches, you'll need to duplicate the logic here so that it picks the correct branch only when appropriate.
+For instance, with `branches = ['main', 'develop', 'feat/*']`, and using webpack's environment plugin to inject `HEAD`, here's how the snippet could look like:
+
+```js
+const currentBranch = process.env.HEAD; // Injected by your build tool
+let targetBranch = 'main';
+if (currentBranch === 'develop' || currentBranch.startsWith('feat/')) {
+  targetBranch = currentBranch;
+}
+algoliasearchNetlify({
+  // ...
+  branch: targetBranch,
 });
 ```
 

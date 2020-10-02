@@ -2,7 +2,11 @@ export interface Options {
   // Mandatory
   appId: string;
   apiKey: string;
-  indexName: string;
+
+  // Temporary
+  indexName?: string;
+  siteId: string;
+  branch: string;
 
   // Optional
   analytics: boolean;
