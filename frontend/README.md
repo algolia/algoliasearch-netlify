@@ -48,7 +48,7 @@ If you've setup the plugin to index multiple branches using the `branches` plugi
 You'll also need to pass the information of which index you want to search in using the `branch` parameter of the integration.
 
 To get access to the currently building branch, you can configure your build tool to forward the `HEAD` environment variable.
-For instance, with [`webpack`'s environment plugin](https://webpack.js.org/plugins/environment-plugin/) configured to forward `HEAD`, you could simply pass `branch: process.env.HEAD`.
+For instance, with [`webpack`'s environment plugin](https://webpack.js.org/plugins/environment-plugin/) configured to forward `HEAD`, you would pass `branch: process.env.HEAD`.
 
 If you've configured your plugin to index only specific branches, you'll need to duplicate the logic here so that it picks the correct branch only when appropriate.
 For instance, with `branches = ['main', 'develop', 'feat/*']`, and using webpack's environment plugin to inject `HEAD`, here's how the snippet could look like:
