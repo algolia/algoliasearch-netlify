@@ -5,6 +5,7 @@
 </p>
 <p align="center">
   <a href="https://circleci.com/gh/algolia/algoliasearch-netlify/tree/master"><img src="https://img.shields.io/circleci/build/gh/algolia/algoliasearch-netlify/master" alt="Build Status"></a>
+  <a href="https://algoliasearch-netlify.netlify.app/"><img src="https://img.shields.io/netlify/9209706f-d5b7-46e2-bb88-5d6bedd2823f" alt="Netlify build status" /></a>
   <a href="https://www.npmjs.com/package/@algolia/netlify-plugin-crawler"><img src="https://img.shields.io/npm/v/@algolia/netlify-plugin-crawler" alt="Version"></a>
 </p>
 
