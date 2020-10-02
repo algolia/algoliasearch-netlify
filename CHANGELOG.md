@@ -1,3 +1,17 @@
+## [0.0.11](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.10...v0.0.11) (2020-10-02)
+
+
+### Bug Fixes
+
+* add missing input ([b7f0781](https://github.com/algolia/algoliasearch-netlify/commit/b7f078161c3ce61ca8ac1ed94238e7b13514c204))
+
+
+### Features
+
+* **branches:** support star patterns ([#59](https://github.com/algolia/algoliasearch-netlify/issues/59)) ([34f04d9](https://github.com/algolia/algoliasearch-netlify/commit/34f04d9411d760791cbddb81332a368f5e6284c2))
+
+
+
 ## [0.0.10](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.9...v0.0.10) (2020-10-02)
 
 
