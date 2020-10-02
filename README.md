@@ -92,7 +92,7 @@ You can find an HTML code snippet in the [Crawler Admin Console](https://crawler
 - `YOUR_ALGOLIA_APP_ID`: the unique identifier of your Algolia application
 - `YOUR_ALGOLIA_API_KEY`: your Algolia search-only API key (you can find it on your [Algolia dashboard](https://www.algolia.com/api-keys))
 - `YOUR_NETLIFY_SITE_ID`: the unique identifier of your Netlify site (we prefill this for you in the snippet from the [Crawler Admin Console](https://crawler.algolia.com/admin/netlify))
-- `YOUR_BRANCH`: the branch name (any branch on which the plugin is allowed to run)
+- `YOUR_TARGET_GIT_BRANCH`: Target git branch, either a fixed one (e.g. `'master'`) or a dynamic one using `process.env.HEAD`. See ["Using Multiple branches"](./frontend#using-multiple-branches) of the frontend doc.
 
 ```html
 <link
@@ -104,7 +104,8 @@ You can find an HTML code snippet in the [Crawler Admin Console](https://crawler
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',
     apiKey: '<YOUR_ALGOLIA_API_KEY>',
-    indexName: 'netlify_<YOUR_NETLIFY_SITE_ID>_<YOUR_BRANCH>',
+    siteId: '<YOUR_NETLIFY_SITE_ID>',
+    branch: '<YOUR_TARGET_GIT_BRANCH>',
   });
 </script>
 ```
