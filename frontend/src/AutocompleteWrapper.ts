@@ -41,7 +41,6 @@ class AutocompleteWrapper {
   constructor({ appId, apiKey, siteId, branch }: Options) {
     this.client = this.createClient(appId, apiKey);
     const indexName = this.computeIndexName(siteId, branch);
-    console.log('Index name', indexName);
     this.index = this.client.initIndex(indexName);
   }
 
