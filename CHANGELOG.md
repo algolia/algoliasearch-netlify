@@ -1,3 +1,18 @@
+## [0.0.9](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.8...v0.0.9) (2020-10-02)
+
+
+### Bug Fixes
+
+* Update record schema ([#56](https://github.com/algolia/algoliasearch-netlify/issues/56)) ([f1a7ace](https://github.com/algolia/algoliasearch-netlify/commit/f1a7ace123766a72a173ac0f4880e598a51b6d1c))
+* **dev:** fix fork-ts-checker config options ([#55](https://github.com/algolia/algoliasearch-netlify/issues/55)) ([7abc0d0](https://github.com/algolia/algoliasearch-netlify/commit/7abc0d06127fcf796b8e9e3f108521661e584b40))
+
+
+### Features
+
+* **plugin:** add "branches" input ([#58](https://github.com/algolia/algoliasearch-netlify/issues/58)) ([cf397e2](https://github.com/algolia/algoliasearch-netlify/commit/cf397e2725878e0aeed60d972f3fcc9a091e9454))
+
+
+
 ## [0.0.8](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.7...v0.0.8) (2020-10-01)
 
 
