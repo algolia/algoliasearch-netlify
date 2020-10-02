@@ -2,3 +2,7 @@ name: '@algolia/netlify-plugin-crawler'
 inputs:
   - name: disabled
     description: Disable the plugin
+    default: false
+  - name: branches
+    description: Branches to index. Each branch in this array will have its content crawled in a dedicated index.
+    default: ['main', 'master']

@@ -17,11 +17,6 @@ It's designed to be compatible with the index structure extracted by the [plugin
 </script>
 ```
 
-## Scripts
-
-- `yarn dev`: run dev environment
-- `yarn release`: build & publish the library
-
 ## Available options
 
 Here's the full list of options with their default value.
@@ -45,10 +40,22 @@ algoliasearchNetlify({
 });
 ```
 
+## Scripts
+
+- `yarn dev`: run dev environment
+- `yarn release`: build & publish the library
+
+
 ## Development
 
+From this folder:
 ```sh
 yarn dev
+```
+
+Or from the root of the repository:
+```sh
+yarn dev:frontend
 ```
 
 This runs a `webpack-dev-server` on port 9100.

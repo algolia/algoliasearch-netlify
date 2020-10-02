@@ -10,7 +10,8 @@ interface BuildParams {
     IS_LOCAL: boolean;
   };
   inputs: {
-    disabled?: boolean;
+    disabled: boolean;
+    branches: string[];
   };
   utils: {
     status: {
@@ -49,15 +50,17 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const siteId = constants.SITE_ID;
   const isLocal = constants.IS_LOCAL;
 
-  const branch = process.env.HEAD;
+  const branch = process.env.HEAD!;
   const siteName = process.env.SITE_NAME;
   const deployPrimeUrl = process.env.DEPLOY_PRIME_URL;
 
   const isEnvDisabled = process.env.ALGOLIA_DISABLED === 'true';
-  const isInputDisabled = Boolean(inputs.disabled);
+  const isInputDisabled = inputs.disabled;
 
   const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
+
+  const branches = inputs.branches;
 
   if (isEnvDisabled) {
     summary(`Disabled by the "ALGOLIA_DISABLED" environment variable`);
@@ -91,6 +94,12 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   }
   if (!isDev && !algoliaApiKey) {
     return utils.build.failBuild(missingEnvMessage('ALGOLIA_API_KEY'));
+  }
+
+  // Check branch is whitelisted
+  if (!branches.includes(branch)) {
+    summary(`"${branch}" is not part of configuration's "branches", skipping`);
+    return;
   }
 
   const endpoint = `${algoliaBaseUrl}/api/1/netlify/crawl`;
