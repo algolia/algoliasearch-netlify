@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch, { Response } from 'node-fetch';
 
 // @ts-ignore
 import { version } from '../package.json';
@@ -23,16 +23,28 @@ interface BuildParams {
   };
 }
 
+function createSummaryLogger(
+  show: BuildParams['utils']['status']['show']
+): (message: string) => void {
+  return (message) => {
+    show({ title: 'Algolia Crawler', summary: message });
+  };
+}
+
 export async function onSuccess(params: BuildParams): Promise<void> {
   console.log('Algolia Netlify plugin started');
+
+  // Debug
+  // console.log(JSON.stringify(params, null, 2));
+  // console.log(JSON.stringify(process.env, null, 2));
 
   const { utils, inputs, constants } = params;
 
   const isDev = process.env.ALGOLIA_DEV_ENV === 'true';
 
-  if (isDev) {
-    loadDevEnvVariables();
-  }
+  if (isDev) loadDevEnvVariables();
+
+  const summary = createSummaryLogger(utils.status.show);
 
   const siteId = constants.SITE_ID;
   const isLocal = constants.IS_LOCAL;
@@ -41,28 +53,19 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const siteName = process.env.SITE_NAME;
   const deployPrimeUrl = process.env.DEPLOY_PRIME_URL;
 
-  // Debug
-  // console.log(JSON.stringify(params, null, 2));
-  // console.log(JSON.stringify(process.env, null, 2));
-
   const isEnvDisabled = process.env.ALGOLIA_DISABLED === 'true';
   const isInputDisabled = Boolean(inputs.disabled);
+
   const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
 
   if (isEnvDisabled) {
-    utils.status.show({
-      title: 'Algolia Crawler',
-      summary: `This plugin was disabled by your environment variable "ALGOLIA_DISABLED"`,
-    });
+    summary(`Disabled by the "ALGOLIA_DISABLED" environment variable`);
     return;
   }
 
   if (isInputDisabled) {
-    utils.status.show({
-      title: 'Algolia Crawler',
-      summary: `This plugin was disabled by the "disabled" input in your "netlify.toml"`,
-    });
+    summary(`Disabled by the "disabled" input in "netlify.toml"`);
     return;
   }
 
@@ -95,10 +98,11 @@ export async function onSuccess(params: BuildParams): Promise<void> {
     isDev && !algoliaApiKey ? 'not-necessary-in-dev' : algoliaApiKey;
   const creds = `${siteId}:${apiKey}`;
 
+  let response: Response;
   try {
     console.log('Sending request to crawl', endpoint);
 
-    const response = await fetch(endpoint, {
+    response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         Authorization: `Basic ${Buffer.from(creds).toString('base64')}`,
@@ -106,29 +110,28 @@ export async function onSuccess(params: BuildParams): Promise<void> {
       },
       body: JSON.stringify({ branch, siteName, deployPrimeUrl, version }),
     });
-
-    if (!response.ok) {
-      console.warn(response);
-      throw new Error(
-        `${response.statusText} ${JSON.stringify(response.json())}`
-      );
-    }
-    const json: { crawlerId: string } = await response.json();
-
-    console.log(
-      'Crawler done got response',
-      `API answered: ${response.status}`,
-      JSON.stringify(json)
-    );
-
-    utils.status.show({
-      title: 'Algolia Crawler',
-      summary: `Your crawler is running at: ${algoliaBaseUrl}/admin/user_configs/${json.crawlerId}`,
-    });
   } catch (error) {
     console.error('Could not reach algolia', error);
     utils.build.failBuild(
       `Could not reach Algolia's Crawler, got: ${error.message}`
     );
+    return;
   }
+
+  if (!response.ok) {
+    console.warn(response);
+    throw new Error(
+      `${response.statusText} ${JSON.stringify(response.json())}`
+    );
+  }
+  const json: { crawlerId: string } = await response.json();
+
+  console.log(
+    'Crawler done got response',
+    `API answered: ${response.status}`,
+    JSON.stringify(json)
+  );
+
+  const crawlerUrl = `${algoliaBaseUrl}/admin/user_configs/${json.crawlerId}`;
+  summary(`Your crawler is running at: ${crawlerUrl}`);
 }
