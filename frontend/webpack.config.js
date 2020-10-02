@@ -174,6 +174,7 @@ module.exports = function (env, options) {
       minimizer: [
         new TerserPlugin({
           cache: !production,
+          extractComments: false,
           parallel: true,
           sourceMap,
           terserOptions: {
