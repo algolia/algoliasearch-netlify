@@ -3,6 +3,7 @@ import fetch, { Response } from 'node-fetch';
 // @ts-ignore
 import { version } from '../package.json';
 import { loadDevEnvVariables } from './dev';
+import { starMatch } from './starMatch';
 
 interface BuildParams {
   constants: {
@@ -99,7 +100,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   }
 
   // Check branch is whitelisted
-  if (!branches.includes(branch)) {
+  if (!branches.some((pattern) => starMatch(pattern, branch))) {
     summary(`"${branch}" is not part of configuration's "branches", skipping`);
     return;
   }

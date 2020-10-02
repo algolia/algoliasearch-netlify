@@ -15,6 +15,8 @@ common='
 dev_only='
 [[plugins]]
 package = "./plugin/dist/index.js"
+  [plugins.inputs]
+  branches = ["*"]
 
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
@@ -26,6 +28,8 @@ package = "@algolia/netlify-plugin-crawler"
 prod_only='
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
+  [plugins.inputs]
+  branches = ["*"]
 '
 
 echo "$common" > "$target"
