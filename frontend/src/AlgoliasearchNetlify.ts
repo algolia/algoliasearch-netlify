@@ -1,7 +1,10 @@
 import { AutocompleteWrapper } from './AutocompleteWrapper';
 import { Options } from './options';
 
-const defaultOptions: Omit<Options, 'appId' | 'apiKey' | 'indexName'> = {
+const defaultOptions: Omit<
+  Options,
+  'appId' | 'apiKey' | 'indexName' | 'siteId' | 'branch'
+> = {
   analytics: true,
   autocomplete: {
     hitsPerPage: 5,
@@ -20,11 +23,21 @@ class AlgoliasearchNetlify {
   constructor(_options: Options) {
     AlgoliasearchNetlify.instances.push(this);
 
+    // Temporary
+    const splitIndexName = (
+      indexName: string
+    ): { siteId: string; branch: string } => {
+      const regexp = /^netlify_([0-9a-f-]+)_(.*)_all$/;
+      const [, siteId, branch] = indexName.match(regexp)!;
+      return { siteId, branch };
+    };
+
     // eslint-disable-next-line no-warning-comments
     // TODO: add validation
     const options = {
       ...defaultOptions,
       ..._options,
+      ...(_options.indexName && splitIndexName(_options.indexName)), // Temporary
       autocomplete: {
         ...defaultOptions.autocomplete,
         ..._options.autocomplete,

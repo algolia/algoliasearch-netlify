@@ -12,7 +12,7 @@ Plugin inputs can be set in `netlify.toml`. They're all optional.
 - `branches` - _Default: `['master']`_ - List of branches the crawler should build.  
   By default, we only build your main branch, but this can be used to build multiple branches.
   Each of those will have a dedicated Algolia index, named `netlify_<site-id>_<branch-name>_all`.
-  To target the right branch, you will need to inject the `HEAD` environment variable in your front-end code.
+  You will need to [target the right branch](../frontend#using-multiple-branches) in your front-end code.
   Accepts star patterns too, like so:
   - `*`: matches all branches
   - `feat/*`: matches all branches starting with `feat/`

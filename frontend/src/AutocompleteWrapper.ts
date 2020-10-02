@@ -33,15 +33,15 @@ const SM_WIDTH = 600;
 class AutocompleteWrapper {
   // All fields are private because they're just here for debugging
   private client: SearchClient;
-  private indexName: string;
   private index: SearchIndex;
 
   private $inputs: HTMLInputElement[] = [];
   private autocompletes: AutocompleteJs[] = [];
 
-  constructor({ appId, apiKey, indexName }: Options) {
+  constructor({ appId, apiKey, siteId, branch }: Options) {
     this.client = this.createClient(appId, apiKey);
-    this.indexName = indexName;
+    const indexName = this.computeIndexName(siteId, branch);
+    console.log('Index name', indexName);
     this.index = this.client.initIndex(indexName);
   }
 
@@ -106,6 +106,14 @@ class AutocompleteWrapper {
     // Store debug variables
     this.$inputs = $inputs;
     this.autocompletes = autocompletes;
+  }
+
+  private computeIndexName(siteId: string, branch: string): string {
+    // Keep in sync with crawler code in /netlify/crawl
+    const cleanBranch = branch
+      .replace(/[^\p{L}\p{N}_.-]+/gu, '-')
+      .replace(/-{2,}/g, '-');
+    return `netlify_${siteId}_${cleanBranch}_all`;
   }
 
   private createClient(appId: string, apiKey: string): SearchClient {
