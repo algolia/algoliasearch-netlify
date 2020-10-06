@@ -30,6 +30,7 @@ function createSummaryLogger(
 ): (message: string) => void {
   return (message) => {
     show({ title: 'Algolia Crawler', summary: message });
+    console.log(message);
   };
 }
 
@@ -122,6 +123,13 @@ export async function onSuccess(params: BuildParams): Promise<void> {
       },
       body: JSON.stringify({ branch, siteName, deployPrimeUrl, version }),
     });
+
+    if (!response.ok) {
+      console.warn(response);
+      throw new Error(
+        `${response.statusText} ${JSON.stringify(response.json())}`
+      );
+    }
   } catch (error) {
     console.error('Could not reach algolia', error);
     utils.build.failBuild(
@@ -129,21 +137,11 @@ export async function onSuccess(params: BuildParams): Promise<void> {
     );
     return;
   }
-
-  if (!response.ok) {
-    console.warn(response);
-    throw new Error(
-      `${response.statusText} ${JSON.stringify(response.json())}`
-    );
-  }
   const json: { crawlerId: string } = await response.json();
 
-  console.log(
-    'Crawler done got response',
-    `API answered: ${response.status}`,
-    JSON.stringify(json)
-  );
+  console.log(`API answered: ${response.status}`);
 
   const crawlerUrl = `${algoliaBaseUrl}/admin/user_configs/${json.crawlerId}`;
   summary(`Your crawler is running at: ${crawlerUrl}`);
+  console.log('Done.');
 }
