@@ -1,3 +1,12 @@
+## [0.0.13](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.12...v0.0.13) (2020-10-06)
+
+
+### Bug Fixes
+
+* add more logs + default branches + readme ([#68](https://github.com/algolia/algoliasearch-netlify/issues/68)) ([8d0e0b5](https://github.com/algolia/algoliasearch-netlify/commit/8d0e0b5a1d69ca98afc6221ab7b765b99cef670f))
+
+
+
 ## [0.0.12](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.11...v0.0.12) (2020-10-02)
 
 
