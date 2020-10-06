@@ -7,7 +7,7 @@ It's designed to be compatible with the index structure extracted by the [plugin
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.css" />
-<script type="text/javascript" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.js"></script>
 <script type="text/javascript">
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',
@@ -70,15 +70,16 @@ algoliasearchNetlify({
 - `yarn dev`: run dev environment
 - `yarn release`: build & publish the library
 
-
 ## Development
 
 From this folder:
+
 ```sh
 yarn dev
 ```
 
 Or from the root of the repository:
+
 ```sh
 yarn dev:frontend
 ```
