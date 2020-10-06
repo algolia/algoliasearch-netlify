@@ -33,7 +33,7 @@ Automatically index your website to Algolia when deploying your project to Netli
 
 Here's how you can implement an instant search on your site using Netlify, Algolia, and this plugin. **All you need is an existing Netlify site.**
 
->! This plugin is in Public Beta
+> This plugin is in Public Beta
 
 ### Link your site to Algolia
 
