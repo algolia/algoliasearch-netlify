@@ -11,10 +11,16 @@
 
 <h2 align="center">Algolia Netlify plugin</h2>
 
+
 Automatically index your website to Algolia when deploying your project to Netlify with the Algolia Crawler.
 
 - [What is Algolia?](https://www.algolia.com/doc/guides/getting-started/what-is-algolia/)
 - [What is Algolia's Crawler?](https://www.algolia.com/doc/tools/crawler/getting-started/overview/)
+
+<p align="center">
+  <a href="https://crawler.algolia.com/admin/netlify"><img width="223" alt="Sign in to Algolia with Netlify" src="https://user-images.githubusercontent.com/1637651/95232629-0ebc1d00-0805-11eb-9b77-f116a3ed1a2b.png">
+</a>
+</p>
 
 ## Table of contents<!-- omit in toc -->
 
