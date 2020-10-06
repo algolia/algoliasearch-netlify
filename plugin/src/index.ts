@@ -30,6 +30,7 @@ function createSummaryLogger(
 ): (message: string) => void {
   return (message) => {
     show({ title: 'Algolia Crawler', summary: message });
+    console.log(message);
   };
 }
 
@@ -146,4 +147,5 @@ export async function onSuccess(params: BuildParams): Promise<void> {
 
   const crawlerUrl = `${algoliaBaseUrl}/admin/user_configs/${json.crawlerId}`;
   summary(`Your crawler is running at: ${crawlerUrl}`);
+  console.log('done.');
 }
