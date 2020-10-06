@@ -160,14 +160,12 @@ You can configure notifications in the [account settings](https://crawler.algoli
 ### My website is not crawled<!-- omit in toc -->
 
 The monitoring tab in the Crawler UI will provide information to help you improve the crawler behavior.
-By default we respect all the rules: robots.txt, password protection, canonical, redirection, etc...
+By default we respect most of the standard web rules: robots.txt, password protection, canonical, redirection, etc...
 
 You can help the crawler by:
 
 - Allowing our user-agent in [your robots.txt]([<!-- omit in toc -->](https://www.algolia.com/doc/tools/crawler/troubleshooting/faq/#what-ip-address-can-i-use-for-ip-whitelisting))
 - Specifying relative URLs in your links and canonical instead of absolute URLs that could conflict with the domain you may use.
-
--
 
 ## Troubleshooting
 
