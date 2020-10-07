@@ -1,3 +1,14 @@
+## [0.0.14](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.13...v0.0.14) (2020-10-07)
+
+
+### Bug Fixes
+
+* missing baseUrl when no env var ([#71](https://github.com/algolia/algoliasearch-netlify/issues/71)) ([9c46e36](https://github.com/algolia/algoliasearch-netlify/commit/9c46e36faa24a4192cb21ea1ba1a28d5ba2a1c2e))
+* typo in frontend readme ([475314e](https://github.com/algolia/algoliasearch-netlify/commit/475314e035176eb50334d03a09236a4e5d1112ea))
+* use failPlugin instead of failBuild ([#74](https://github.com/algolia/algoliasearch-netlify/issues/74)) ([fc21018](https://github.com/algolia/algoliasearch-netlify/commit/fc210183a756845e365118429ac54b4a22c239d7))
+
+
+
 ## [0.0.13](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.12...v0.0.13) (2020-10-06)
 
 
