@@ -19,7 +19,7 @@ interface BuildParams {
       show(params: { title?: string; summary: string; text?: string }): void;
     };
     build: {
-      failBuild(str: string): void;
+      // failBuild(str: string): void; // Do not use https://github.com/algolia/algoliasearch-netlify/issues/69
       failPlugin(str: string): void;
     };
   };
@@ -85,20 +85,20 @@ export async function onSuccess(params: BuildParams): Promise<void> {
 
   // Check internal constants
   if (!siteName) {
-    return utils.build.failBuild('Missing or invalid SITE_NAME');
+    return utils.build.failPlugin('Missing or invalid SITE_NAME');
   }
   if (!deployPrimeUrl) {
-    return utils.build.failBuild('Missing DEPLOY_PRIME_URL');
+    return utils.build.failPlugin('Missing DEPLOY_PRIME_URL');
   }
 
   // Check required env vars
   const missingEnvMessage = (key: string) =>
     `Missing ${key}, please go to ${algoliaBaseUrl}/admin/netlify to complete your installation.`;
   if (!algoliaBaseUrl) {
-    return utils.build.failBuild(missingEnvMessage('ALGOLIA_BASE_URL'));
+    return utils.build.failPlugin(missingEnvMessage('ALGOLIA_BASE_URL'));
   }
   if (!isDev && !algoliaApiKey) {
-    return utils.build.failBuild(missingEnvMessage('ALGOLIA_API_KEY'));
+    return utils.build.failPlugin(missingEnvMessage('ALGOLIA_API_KEY'));
   }
 
   // Check branch is whitelisted
@@ -133,7 +133,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
     }
   } catch (error) {
     console.error('Could not reach algolia', error);
-    utils.build.failBuild(
+    utils.build.failPlugin(
       `Could not reach Algolia's Crawler, got: ${error.message}`
     );
     return;
