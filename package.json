@@ -47,7 +47,7 @@
     "http-server": "0.12.3",
     "jest": "26.4.2",
     "json": "10.0.0",
-    "netlify-cli": "2.64.1",
+    "netlify-cli": "2.65.1",
     "nodemon": "2.0.4",
     "prettier": "2.1.2",
     "ts-jest": "26.4.1",
