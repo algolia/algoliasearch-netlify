@@ -61,7 +61,8 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const isEnvDisabled = process.env.ALGOLIA_DISABLED === 'true';
   const isInputDisabled = inputs.disabled;
 
-  const algoliaBaseUrl = process.env.ALGOLIA_BASE_URL;
+  const algoliaBaseUrl =
+    process.env.ALGOLIA_BASE_URL || 'https://crawler.algolia.com';
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
 
   const branches = inputs.branches;
