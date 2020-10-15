@@ -114,7 +114,9 @@ export async function onSuccess(params: BuildParams): Promise<void> {
 
   let response: Response;
   try {
+    const body = JSON.stringify({ branch, siteName, deployPrimeUrl, version });
     console.log('Sending request to crawl', endpoint);
+    console.log(body);
 
     response = await fetch(endpoint, {
       method: 'POST',
