@@ -44,6 +44,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const { utils, inputs, constants } = params;
 
   const isDev = process.env.ALGOLIA_DEV_ENV === 'true';
+  const isDebugMode = process.env.NETLIFY_BUILD_DEBUG === 'true';
 
   if (isDev) loadDevEnvVariables();
 
@@ -116,7 +117,9 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   try {
     const body = JSON.stringify({ branch, siteName, deployPrimeUrl, version });
     console.log('Sending request to crawl', endpoint);
-    console.log(body);
+    if (isDebugMode) {
+      console.log(body);
+    }
 
     response = await fetch(endpoint, {
       method: 'POST',
