@@ -127,7 +127,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
         Authorization: `Basic ${Buffer.from(creds).toString('base64')}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ branch, siteName, deployPrimeUrl, version }),
+      body,
     });
 
     if (!response.ok) {
