@@ -13,6 +13,7 @@ interface BuildParams {
   inputs: {
     disabled: boolean;
     branches: string[];
+    pathPrefix: string;
   };
   utils: {
     status: {
@@ -91,6 +92,8 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   if (!deployPrimeUrl) {
     return utils.build.failPlugin('Missing DEPLOY_PRIME_URL');
   }
+  // Construct real url with pathPrefix
+  const deployPrimeUrlWithPathPrefix = [deployPrimeUrl, inputs.pathPrefix].filter(x => x).join("");
 
   // Check required env vars
   const missingEnvMessage = (key: string) =>
@@ -115,7 +118,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
 
   let response: Response;
   try {
-    const body = JSON.stringify({ branch, siteName, deployPrimeUrl, version });
+    const body = JSON.stringify({ branch, siteName, deployPrimeUrl: deployPrimeUrlWithPathPrefix, version });
     console.log('Sending request to crawl', endpoint);
     if (isDebugMode) {
       console.log(body);
