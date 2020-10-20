@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "npx webpack --mode production",
-    "dev": "PORT=9100 npx webpack-dev-server --mode development",
+    "dev": "PORT=9100 npx webpack serve --mode development",
     "postinstall": "[ -d dist/ ] || npm run build"
   },
   "devDependencies": {
