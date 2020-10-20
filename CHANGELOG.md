@@ -1,3 +1,14 @@
+## [0.0.15](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.14...v0.0.15) (2020-10-20)
+
+
+### Bug Fixes
+
+* **autocomplete:** handle null description or content ([#96](https://github.com/algolia/algoliasearch-netlify/issues/96)) ([32afff6](https://github.com/algolia/algoliasearch-netlify/commit/32afff6c60265fcdf5d51da5a7f96a637a0da613))
+* **webpack:** fix dev server command ([#95](https://github.com/algolia/algoliasearch-netlify/issues/95)) ([aa353ea](https://github.com/algolia/algoliasearch-netlify/commit/aa353ea919b35320bcda591e4728e6717bf0f752))
+* use debug mode env to log more info ([#84](https://github.com/algolia/algoliasearch-netlify/issues/84)) ([dc60780](https://github.com/algolia/algoliasearch-netlify/commit/dc60780a3163f39916e3ffc8af1b7eac5b3cf087))
+
+
+
 ## [0.0.14](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.13...v0.0.14) (2020-10-07)
 
 
