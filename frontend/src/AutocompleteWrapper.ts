@@ -137,7 +137,7 @@ class AutocompleteWrapper {
     return Math.floor(inputWidth / 20);
   }
 
-  private getDropdownTemplates(poweredBy: boolean) {
+  private getDropdownTemplates(poweredBy: boolean): { footer?: string } {
     if (!poweredBy) return {};
     const { hostname } = window.location;
     const algoliaLogoHtml = templates.algolia(hostname);
