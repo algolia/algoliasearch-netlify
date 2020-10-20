@@ -168,8 +168,14 @@ class AutocompleteWrapper {
     };
   }
 
-  private getSuggestionSnippet(hit: Hit<Data>) {
-    const { description, content } = hit._snippetResult!;
+  private getSuggestionSnippet(hit: Hit<Data>): string {
+    const description = hit._snippetResult?.description!;
+    const content = hit._snippetResult?.content!;
+    if (!description || !content) {
+      if (description) return description.value;
+      if (content) return content.value;
+      return '';
+    }
     if (description.matchLevel === 'full') return description.value;
     if (content.matchLevel === 'full') return content.value;
     if (description.matchLevel === 'partial') return description.value;
