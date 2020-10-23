@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@algolia/transporter": "4.5.1",
-    "@babel/core": "7.11.6",
-    "@babel/preset-env": "7.11.5",
+    "@babel/core": "7.12.3",
+    "@babel/preset-env": "7.12.1",
     "algoliasearch": "4.5.1",
     "autocomplete.js": "0.38.0",
     "babel-loader": "8.1.0",
