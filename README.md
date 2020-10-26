@@ -11,7 +11,6 @@
 
 <h2 align="center">Algolia Netlify plugin</h2>
 
-
 Automatically index your website to Algolia when deploying your project to Netlify with the Algolia Crawler.
 
 - [What is Algolia?](https://www.algolia.com/doc/guides/getting-started/what-is-algolia/)
@@ -114,7 +113,8 @@ You can find an HTML code snippet in the [Crawler Admin Console](https://crawler
 </script>
 ```
 
-This code automatically adds a search autocomplete widget on your website, using your newly created Algolia index. Please refer to the [full documentation](https://github.com/algolia/algoliasearch-netlify/tree/master/frontend) to configure this front-end plugin.
+This code automatically adds a search autocomplete widget on your website on all `<input type="search" />` tags, using your newly created Algolia index.  
+Please refer to the [full documentation](https://github.com/algolia/algoliasearch-netlify/tree/master/frontend) to configure this front-end plugin.
 
 <img src="/docs/screenshots/frontend.png?raw=true" alt="Autocomplete preview">
 

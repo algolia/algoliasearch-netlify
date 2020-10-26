@@ -12,6 +12,7 @@ const defaultOptions: Omit<
   },
   color: '#3c4fe0',
   debug: false,
+  silenceWarnings: false,
   poweredBy: true,
 };
 

@@ -2,6 +2,7 @@
 
 `algoliasearch-netlify-frontend` is the front-end bundle we recommend to use with our Netlify plugin.
 It's designed to be compatible with the index structure extracted by the [plugin](../plugin).
+It enhances existing search inputs in your website with an autocomplete menu providing search as you type results.
 
 ## Usage
 
@@ -38,6 +39,7 @@ algoliasearchNetlify({
   },
   color: '#3c4fe0',                             // Main color
   debug: false,                                 // Debug mode (keeps the autocomplete open)
+  silenceWarnings: false,                       // Disable warnings (e.g. no search input found)
   poweredBy: true,                              // Controls displaying the logo (mandatory with our FREE plan)
 });
 ```

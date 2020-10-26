@@ -16,5 +16,6 @@ export interface Options {
   };
   color: string;
   debug: boolean;
+  silenceWarnings: boolean;
   poweredBy: boolean;
 }
