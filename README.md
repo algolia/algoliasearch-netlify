@@ -147,6 +147,10 @@ You can also go to your [Netlify plugins](https://app.netlify.com/plugins) and c
 
 The Algolia Crawler supports JavaScript-rendered websites, but we don't yet expose this option in the plugin. Please [contact us](mailto:support@algolia.com) to enable it.
 
+### My website is password protected<!-- omit in toc -->
+
+If you have configured the password protection through your Netlify site's settings, the Crawler will automatically use this password to crawl your website.
+
 ### I want to extract more information from my pages<!-- omit in toc -->
 
 While the Algolia Crawler offers extended record customization, the plugin currently provides a single, default extraction strategy.
