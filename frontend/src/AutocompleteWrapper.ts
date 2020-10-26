@@ -49,11 +49,24 @@ class AutocompleteWrapper {
     autocomplete: { hitsPerPage, inputSelector },
     color,
     debug,
+    silenceWarnings,
     poweredBy,
   }: Options) {
     addCss(templates.autocomplete.css(color));
 
     const $inputs = this.getInputs(inputSelector);
+
+    if ($inputs.length === 0 && !silenceWarnings) {
+      const inputSelectorText = JSON.stringify(inputSelector);
+      console.warn(
+        [
+          `[Algolia] No input matched our default selector ${inputSelectorText}`,
+          'The integration needs a search input to be active on your page. You can either:',
+          '- add an input that matches the selector',
+          '- or modify `autocomplete.inputSelector` to match your search input.',
+        ].join('\n')
+      );
+    }
 
     const autocompletes = $inputs.map(($input) => {
       const inputWidth = $input.getBoundingClientRect().width;
