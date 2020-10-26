@@ -1,3 +1,12 @@
+## [0.0.16](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.15...v0.0.16) (2020-10-26)
+
+
+### Features
+
+* **frontend:** add warning when no search input is found ([#101](https://github.com/algolia/algoliasearch-netlify/issues/101)) ([07a9669](https://github.com/algolia/algoliasearch-netlify/commit/07a96698437555ccd2e5e88697f02eb1144de780))
+
+
+
 ## [0.0.15](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.14...v0.0.15) (2020-10-20)
 
 
