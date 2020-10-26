@@ -7,11 +7,11 @@ if (!isMsie()) {
   delete css.inputWithNoHint.verticalAlign;
 }
 
-import type { SearchClient, SearchIndex } from 'algoliasearch';
+import type { SearchClient, SearchIndex } from 'algoliasearch/lite';
 import type { RequestOptions } from '@algolia/transporter';
 import type { Hit } from '@algolia/client-search';
 
-import algoliasearch from 'algoliasearch';
+import algoliasearch from 'algoliasearch/lite';
 import autocomplete from 'autocomplete.js';
 
 import type { Options } from './options';
