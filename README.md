@@ -149,7 +149,7 @@ The Algolia Crawler supports JavaScript-rendered websites, but we don't yet expo
 
 ### My website is password protected<!-- omit in toc -->
 
-If you've configured the password protection through your Netlify site's settings, the Crawler will automatically use this password to crawl your website.
+If you have configured the password protection through your Netlify site's settings, the Crawler will automatically use this password to crawl your website.
 
 ### I want to extract more information from my pages<!-- omit in toc -->
 
