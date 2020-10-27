@@ -1,3 +1,12 @@
+## [0.0.17](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.16...v0.0.17) (2020-10-27)
+
+
+### Features
+
+* use algoliasearch-lite to avoid preflight requests ([#102](https://github.com/algolia/algoliasearch-netlify/issues/102)) ([2ec2ede](https://github.com/algolia/algoliasearch-netlify/commit/2ec2ede8ddb05ef71262f88b3f31a7ca66efbd8d))
+
+
+
 ## [0.0.16](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.15...v0.0.16) (2020-10-26)
 
 
