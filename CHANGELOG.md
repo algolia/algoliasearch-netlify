@@ -1,3 +1,12 @@
+## [0.0.18](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.17...v0.0.18) (2020-10-29)
+
+
+### Bug Fixes
+
+* **frontend:** add a default color for results title ([#103](https://github.com/algolia/algoliasearch-netlify/issues/103)) ([f22bf92](https://github.com/algolia/algoliasearch-netlify/commit/f22bf92ac236786e2c0c808de458c78c6e113bef))
+
+
+
 ## [0.0.17](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.16...v0.0.17) (2020-10-27)
 
 
