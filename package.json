@@ -43,7 +43,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.1",
+    "eslint-plugin-standard": "4.0.2",
     "http-server": "0.12.3",
     "jest": "26.5.3",
     "json": "10.0.0",
