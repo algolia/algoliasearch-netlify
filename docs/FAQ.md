@@ -10,7 +10,7 @@ If you have configured the password protection through your Netlify site's setti
 
 ## I want to extract more information from my pages<!-- omit in toc -->
 
-While the Algolia Crawler offers extended record customization, the plugin currently provides a single, default extraction strategy.
+While the Algolia Crawler offers extended record customization, the plugin currently provides a single, default [extraction strategy](schema.md).
 
 If you believe we've missed something, or you'd like to have more control, please share your feedback in our [Discourse forum](https://discourse.algolia.com/c/netlify/28).
 
@@ -33,6 +33,10 @@ You can help the crawler by:
 
 - Allowing our user-agent in [your robots.txt]([<!-- omit in toc -->](https://www.algolia.com/doc/tools/crawler/troubleshooting/faq/#what-ip-address-can-i-use-for-ip-whitelisting))
 - Specifying relative URLs in your links and canonical instead of absolute URLs that could conflict with the domain you may use.
+
+## I have a custom domain<!-- omit in toc -->
+
+The plugin currently only support custom domains that are configured in Netlify (**Settings > Domain management > Custom domains**).
 
 ## Do I need to display the Algolia logo?
 
