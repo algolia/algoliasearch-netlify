@@ -1,16 +1,10 @@
 # FAQ
 
-## My website requires JavaScript to render<!-- omit in toc -->
-
-The Algolia Crawler supports JavaScript-rendered websites, but we don't yet expose this option in the plugin. Please [contact us](mailto:support@algolia.com) to enable it.
-
-## My website is password protected<!-- omit in toc -->
-
-If you have configured the password protection through your Netlify site's settings, the Crawler will automatically use this password to crawl your website.
+Here is general purpose FAQ. If you are looking for technical answer, please go to our [Technical documentation](Extraction.md).
 
 ## I want to extract more information from my pages<!-- omit in toc -->
 
-While the Algolia Crawler offers extended record customization, the plugin currently provides a single, default [extraction strategy](Schema.md).
+While the Algolia Crawler offers extended record customization, the plugin currently provides a single, default [extraction strategy](Extraction.md).
 
 If you believe we've missed something, or you'd like to have more control, please share your feedback in our [Discourse forum](https://discourse.algolia.com/c/netlify/28).
 
@@ -42,3 +36,8 @@ The plugin currently only support custom domains that are configured in Netlify 
 
 Yes, but only if you are on a free plan.
 Please see our official answer [here](https://www.algolia.com/doc/faq/accounts-billing/do-i-need-to-display-the-algolia-logo-when-i-am-on-the-free-plan/).
+
+## I am an Algolia paying customer, can I use my own Application?
+
+Yes, but it currently require a manual intervention.
+Please [contact us](mailto:support@algolia.com) to operate the change.
