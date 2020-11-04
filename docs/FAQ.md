@@ -10,7 +10,7 @@ If you have configured the password protection through your Netlify site's setti
 
 ## I want to extract more information from my pages<!-- omit in toc -->
 
-While the Algolia Crawler offers extended record customization, the plugin currently provides a single, default [extraction strategy](schema.md).
+While the Algolia Crawler offers extended record customization, the plugin currently provides a single, default [extraction strategy](Schema.md).
 
 If you believe we've missed something, or you'd like to have more control, please share your feedback in our [Discourse forum](https://discourse.algolia.com/c/netlify/28).
 

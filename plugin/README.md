@@ -5,7 +5,7 @@ It will trigger a crawl on each successful build.
 
 ## Install the plugin
 
-Read our full documentation [here](../docs/install.md)
+Read our full documentation [here](../docs/GettingStarted.md)
 
 ## Available parameters
 

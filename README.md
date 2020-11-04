@@ -23,10 +23,10 @@ Automatically index your website to Algolia when deploying your project to Netli
 
 ## Documentation
 
-- [Getting Started](docs/install.md)
+- [Getting Started](docs/GettingStart.md)
 - [FAQ](docs/FAQ.md)
-- [Uninstall](docs/uninstall.md)
-- [Data Extraction](docs/schema.md)
+- [Uninstall](docs/Uninstall.md)
+- [Data Extraction](docs/Schema.md)
 
 ## Troubleshooting
 

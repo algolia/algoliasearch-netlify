@@ -58,7 +58,7 @@ You can click on the crawler URL to follow the progress of your crawl.
 
 Once the crawl is done, you can check your Algolia index, which contains the extracted records. We apply a standard relevance configuration by default, but you can fine-tune it as you want in the index settings.
 
-> Find out [what's inside your records](/docs/schema.md).
+> Find out [what's inside your records](Schema.md).
 
 <img src="/docs/screenshots/algolia-index.png?raw=true" alt="Your Algolia Index.">
 
@@ -100,7 +100,7 @@ Please refer to the [full documentation](https://github.com/algolia/algoliasearc
 
 ### Going further
 
-- Understand the extracted [record schema](/docs/schema.md)
+- Understand the extracted [record schema](Schema.md)
 - Learn more about [Algolia](https://www.algolia.com/doc/)
 - Implement a custom UI with [InstantSearch](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/)
 - Fine tune your [search relevance](https://www.algolia.com/doc/guides/managing-results/relevance-overview/)
