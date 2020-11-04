@@ -193,7 +193,7 @@ Learn more about [canonical meta tag](https://ahrefs.com/blog/canonical-tags/).
 
 ```html
 <head>
-  <meta name="canonical" content="/another-page.html" />
+  <link rel=“canonical” href=“/another-page.html” />
 </head>
 ```
 
