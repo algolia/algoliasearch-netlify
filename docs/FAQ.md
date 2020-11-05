@@ -1,6 +1,6 @@
 # FAQ
 
-Here is general purpose FAQ. If you are looking for technical answer, please go to our [Technical documentation](Extraction.md).
+Here is general purpose FAQ. If you are looking for technical answers, please go to our [Technical documentation](Extraction.md).
 
 ## I want to extract more information from my pages<!-- omit in toc -->
 
@@ -25,7 +25,7 @@ By default we respect most of the standard web rules: robots.txt, password prote
 
 You can help the crawler by:
 
-- Allowing our user-agent in [your robots.txt]([<!-- omit in toc -->](https://www.algolia.com/doc/tools/crawler/troubleshooting/faq/#what-ip-address-can-i-use-for-ip-whitelisting))
+- Allowing our user-agent in [your robots.txt](https://www.algolia.com/doc/tools/crawler/troubleshooting/faq/#what-ip-address-can-i-use-for-ip-whitelisting)
 - Specifying relative URLs in your links and canonical instead of absolute URLs that could conflict with the domain you may use.
 
 ## I have a custom domain<!-- omit in toc -->
@@ -39,5 +39,5 @@ Please see our official answer [here](https://www.algolia.com/doc/faq/accounts-b
 
 ## I am an Algolia paying customer, can I use my own Application?
 
-Yes, but it currently require a manual intervention.
+Yes, but it currently requires a manual intervention.
 Please [contact us](mailto:support@algolia.com) to operate the change.

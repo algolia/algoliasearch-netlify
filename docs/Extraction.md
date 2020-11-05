@@ -189,7 +189,7 @@ Learn more about [robots meta tag](https://developers.google.com/search/referenc
 
 You can redirect the crawl to an other page and indirectly exclude this page from the crawl by using the canonical meta tag.
 It is also useful to ignore **query params**, e.g: pagination, search term, etc...
-Learn more about [canonical meta tag](https://ahrefs.com/blog/canonical-tags/).
+Learn more about [canonical meta tag](https://support.google.com/webmasters/answer/139066?hl=en).
 
 ```html
 <head>

@@ -47,8 +47,8 @@ When it receives a build hook, the Algolia Crawler processes your website asynch
 
 You can find information about your current crawler in the [Netlify deploy logs](https://docs.netlify.com/monitor-sites/logs/#deploy-log).
 
-> Note: by default, we only build the `master` branch. We can however create one crawler (targeting one Algolia index) per Git branch, so that you can have, for example, a production index on `master` and development index on `develop`. You need to configure the [`branches` plugin input](./plugin#available-parameters) to enable this feature.
-> If you're using our front-end library, you'll also need to [pass the correct branch](./frontend#using-multiple-branches) to the library parameters.
+> Note: by default, we only build the `master` branch. We can however create one crawler (targeting one Algolia index) per Git branch, so that you can have, for example, a production index on `master` and development index on `develop`. You need to configure the [`branches` plugin input](../plugin#available-parameters) to enable this feature.
+> If you're using our front-end library, you'll also need to [pass the correct branch](../frontend#using-multiple-branches) to the library parameters.
 
 <img src="/docs/screenshots/deploy-logs.png?raw=true" alt="Netlify deploy logs.">
 
@@ -65,7 +65,7 @@ Once the crawl is done, you can check your Algolia index, which contains the ext
 ### Installing the front-end bundle
 
 > We recommend using our bundle as it's compatible out of the box with the records we extract from your site.
-> You can still [build your custom UI](#can-i-build-my-own-ui) if you want to.
+> You can still [build your custom UI](FAQ.md#can-i-build-my-own-ui) if you want to.
 
 You can find an HTML code snippet in the [Crawler Admin Console](https://crawler.algolia.com/admin/netlify) that you can use in your code. Make sure to replace the variables with the provided ones:
 
