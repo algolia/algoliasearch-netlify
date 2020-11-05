@@ -72,7 +72,7 @@ You can find an HTML code snippet in the [Crawler Admin Console](https://crawler
 - `YOUR_ALGOLIA_APP_ID`: the unique identifier of your Algolia application
 - `YOUR_ALGOLIA_API_KEY`: your Algolia search-only API key (you can find it on your [Algolia dashboard](https://www.algolia.com/api-keys))
 - `YOUR_NETLIFY_SITE_ID`: the unique identifier of your Netlify site (we prefill this for you in the snippet from the [Crawler Admin Console](https://crawler.algolia.com/admin/netlify))
-- `YOUR_TARGET_GIT_BRANCH`: Target git branch, either a fixed one (e.g. `'master'`) or a dynamic one using `process.env.HEAD`. See ["Using Multiple branches"](./frontend#using-multiple-branches) of the frontend doc.
+- `YOUR_TARGET_GIT_BRANCH`: Target git branch, either a fixed one (e.g. `'master'`) or a dynamic one using `process.env.HEAD`. See ["Using Multiple branches"](../frontend#using-multiple-branches) of the frontend doc.
 
 ```html
 <link
