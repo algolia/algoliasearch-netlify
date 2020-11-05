@@ -25,7 +25,7 @@ By default we respect most of the standard web rules: robots.txt, password prote
 
 You can help the crawler by:
 
-- Allowing our user-agent in [your robots.txt](https://www.algolia.com/doc/tools/crawler/troubleshooting/faq/#what-ip-address-can-i-use-for-ip-whitelisting)
+- Allowing our user-agent in [your robots.txt](https://www.algolia.com/doc/tools/crawler/troubleshooting/faq/#what-is-the-user-agent-of-the-crawler-useful-for-whitelisting)
 - Specifying relative URLs in your links and canonical instead of absolute URLs that could conflict with the domain you may use.
 
 ## I have a custom domain<!-- omit in toc -->
