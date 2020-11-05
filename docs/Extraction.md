@@ -1,12 +1,28 @@
-# Extracted record schema
+# Extraction Strategy<!-- omit in toc -->
 
+The plugin use [Algolia Custom Crawler](https://www.algolia.com/products/crawler/) under the hood.
 Algolia is a schemaless search engine. However, to provide an effortless experience with Netlify and the Algolia Crawler, the plugin currently populates your Algolia index with a standard record schema.
+You can see on this page what the Crawler extract and how you can improve the crawl by yourself.
+
+## Table of Contents<!-- omit in toc -->
+
+- [Schema](#schema)
+  - [Example](#example)
+  - [Record splitting](#record-splitting)
+  - [JSON-LD](#json-ld)
+- [Sitemaps](#sitemaps)
+- [Ignoring URLs or Patterns](#ignoring-urls-or-patterns)
+  - [Using Robots.txt](#using-robotstxt)
+  - [Using Meta Robots](#using-meta-robots)
+  - [Using Canonical](#using-canonical)
+- [Executing Javascript](#executing-javascript)
+- [Password protection](#password-protection)
+
+## Schema
 
 All root-level properties are a computation of multiple selectors, with a fallback. We might change the extraction logic to add more properties, but **we won't remove root-level properties without a proper deprecation period**.
 
 All properties that aren't marked as optional are present in the final record. Others can be missing if the Algolia Crawler couldn't find any relevant information.
-
-## Schema
 
 ```ts
 {
@@ -97,7 +113,7 @@ All properties that aren't marked as optional are present in the final record. O
 }
 ```
 
-## Example
+### Example
 
 For this URL: <https://www.algolia.com/products/crawler/>
 
@@ -114,18 +130,79 @@ For this URL: <https://www.algolia.com/products/crawler/>
 }
 ```
 
-## Record splitting
+### Record splitting
 
 For better relevance, we can split records into multiple ones. We create all indices with the index settings `{ distinct: true, attributeForDistinct: 'url' }` to deduplicate them at search time.
 
-## JSON-LD
+### JSON-LD
 
 We support a limited set of [JSON-LD](https://json-ld.org/) attributes. We expect the JSON-LD structure to follow the <https://schema.org/> structure.
 If present, the attributes found in JSON-LD will be taken in priority during the extraction.
 The current list of supported attributes are:
-- `Article` (https://schema.org/Article)
+
+- `Article` (<https://schema.org/Article>)
   - `author`
   - `datePublished`
   - `dateModified`
 
 We will add more in the future, contact us if you'd like to request the addition of some specific attributes.
+
+## Sitemaps
+
+The plugin will automatically find sitemaps in your Robots.txt and also try multiple standard URLs that usually match sitemaps.
+
+## Ignoring URLs or Patterns
+
+The plugin supports multiple standard way of excluding URLs from a crawl:
+
+- Robots.txt
+- Meta robots
+- Canonical
+
+### Using Robots.txt
+
+You can allow or disallow us to crawl certain pages using the standard Robots.txt syntax.
+Learn more about the [Robots.txt](https://support.google.com/webmasters/answer/6062596?hl=en).
+
+```txt
+User-agent: Algolia Crawler
+Disallow: /foo/bar
+```
+
+```txt
+User-agent: Algolia Crawler
+Allow: /*
+```
+
+### Using Meta Robots
+
+You can directly exclude a page by using the robots meta tag in an HTML page.
+Learn more about [robots meta tag](https://developers.google.com/search/reference/robots_meta_tag).
+
+```html
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+```
+
+### Using Canonical
+
+You can redirect the crawl to an other page and indirectly exclude this page from the crawl by using the canonical meta tag.
+It is also useful to ignore **query params**, e.g: pagination, search term, etc...
+Learn more about [canonical meta tag](https://support.google.com/webmasters/answer/139066?hl=en).
+
+```html
+<head>
+  <link rel=“canonical” href=“/another-page.html” />
+</head>
+```
+
+## Executing Javascript
+
+The Algolia Crawler supports JavaScript-rendered websites, but we don't yet expose this option in the plugin.
+Please [contact us](mailto:support@algolia.com) to enable it.
+
+## Password protection
+
+If you have configured the password protection through your Netlify site's settings (**Settings > Access Control > Visitor Access**), the Crawler will automatically use this password to crawl your website.
+N.B: We will store the password encrypted.

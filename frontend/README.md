@@ -14,7 +14,10 @@ It enhances existing search inputs in your website with an autocomplete menu pro
     appId: '<YOUR_ALGOLIA_APP_ID>',
     apiKey: '<YOUR_ALGOLIA_API_KEY>',
     siteId: '<YOUR_NETLIFY_SITE_ID>',
-    branch: '<YOUR_TARGET_GIT_BRANCH>'
+    branch: '<YOUR_TARGET_GIT_BRANCH>',
+    autocomplete: {
+      inputSelector: 'input[type=search]',
+    },
   });
 </script>
 ```
