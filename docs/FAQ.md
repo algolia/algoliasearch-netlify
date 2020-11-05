@@ -1,6 +1,6 @@
 # FAQ
 
-Here is general purpose FAQ. If you are looking for technical answers, please go to our [Technical documentation](Extraction.md).
+This is a general purpose FAQ. If you are looking for technical answers, go to our [Technical documentation](Extraction.md).
 
 ## I want to extract more information from my pages<!-- omit in toc -->
 
