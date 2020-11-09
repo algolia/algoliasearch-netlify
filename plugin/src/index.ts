@@ -4,26 +4,7 @@ import fetch, { Response } from 'node-fetch';
 import { version } from '../package.json';
 import { loadDevEnvVariables } from './dev';
 import { starMatch } from './starMatch';
-
-interface BuildParams {
-  constants: {
-    SITE_ID: string;
-    IS_LOCAL: boolean;
-  };
-  inputs: {
-    disabled: boolean;
-    branches: string[];
-  };
-  utils: {
-    status: {
-      show(params: { title?: string; summary: string; text?: string }): void;
-    };
-    build: {
-      // failBuild(str: string): void; // Do not use https://github.com/algolia/algoliasearch-netlify/issues/69
-      failPlugin(str: string): void;
-    };
-  };
-}
+import { BuildParams } from './types';
 
 function createSummaryLogger(
   show: BuildParams['utils']['status']['show']
@@ -67,6 +48,8 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
 
   const branches = inputs.branches;
+  const pathPrefix = inputs.pathPrefix;
+  const customDomain = inputs.customDomain;
 
   if (isEnvDisabled) {
     summary(`Disabled by the "ALGOLIA_DISABLED" environment variable`);
@@ -115,7 +98,14 @@ export async function onSuccess(params: BuildParams): Promise<void> {
 
   let response: Response;
   try {
-    const body = JSON.stringify({ branch, siteName, deployPrimeUrl, version });
+    const body = JSON.stringify({
+      branch,
+      siteName,
+      deployPrimeUrl,
+      version,
+      pathPrefix,
+      customDomain,
+    });
     console.log('Sending request to crawl', endpoint);
     if (isDebugMode) {
       console.log(body);
