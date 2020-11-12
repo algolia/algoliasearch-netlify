@@ -22,6 +22,10 @@ Plugin inputs can be set in `netlify.toml`. They're all optional.
   - `feat/*`: matches all branches starting with `feat/`
   - `*-bug`: matches all branches finishing with `-bug`
 - `disabled` - _Default: `false`_ - Use to disable the plugin without removing it.
+- `pathPrefix` - The prefix of your website if it's not at the root level.
+  Putting "pathPrefix: /blog" will alias `/blog` to `/`
+- `customDomain` - The custom domain that you use, if it's not possible to define it on your Netlify's settings.
+  Putting "customDomain: example.com" will alias `example.com` to `<your-site-url>.netlify.app`
 
 Example:
 
@@ -30,6 +34,9 @@ Example:
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
   branches = ['master', 'develop', 'feat/add-algolia']
+  disabled = true
+  pathPrefix = "/blog"
+  customDomain = "example.com"
 ```
 
 ### Environment variables

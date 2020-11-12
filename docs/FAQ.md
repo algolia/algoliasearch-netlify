@@ -1,6 +1,6 @@
 # FAQ
 
-This is a general purpose FAQ. If you are looking for technical answers, go to our [Technical documentation](Extraction.md).
+This is a general purpose FAQ. If you are looking for more technical answers, go to our [Technical documentation](Extraction.md).
 
 ## I want to extract more information from my pages<!-- omit in toc -->
 
@@ -30,7 +30,14 @@ You can help the crawler by:
 
 ## I have a custom domain<!-- omit in toc -->
 
-The plugin currently only support custom domains that are configured in Netlify (**Settings > Domain management > Custom domains**).
+The plugin can automatically alias your custom domain:
+
+- we automatically alias custom domains that are configured in Netlify (**Settings > Domain management > Custom domains**).
+- if not possible to configure that in Netlify, an option `customDomain` is available in your [netlify.toml](/plugin/README.md#inputs)
+
+## My website is not at the root level<!-- omit in toc -->
+
+The plugin can automatically alias path (i.e. removing path prefix), by setting the option `pathPrefix` in your [netlify.toml](/plugin/README.md#inputs)
 
 ## Do I need to display the Algolia logo?
 
