@@ -37,7 +37,7 @@ The plugin can automatically alias your custom domain:
 
 ## My website is not at the root level<!-- omit in toc -->
 
-The plugin can automatically alias path (aka removing path prefix), by setting the option `pathPrefix` in your [netlify.toml](/plugin/README.md#inputs)
+The plugin can automatically alias path (i.e. removing path prefix), by setting the option `pathPrefix` in your [netlify.toml](/plugin/README.md#inputs)
 
 ## Do I need to display the Algolia logo?
 
