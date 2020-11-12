@@ -1,3 +1,12 @@
+## [0.0.19](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.18...v0.0.19) (2020-11-12)
+
+
+### Features
+
+* new params pathPrefix, customDomain ([#122](https://github.com/algolia/algoliasearch-netlify/issues/122)) ([f06ae0d](https://github.com/algolia/algoliasearch-netlify/commit/f06ae0d0793b039ef7d281d232081e906c9d08a9))
+
+
+
 ## [0.0.18](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.17...v0.0.18) (2020-10-29)
 
 
