@@ -18,7 +18,7 @@
     "postinstall": "[ -d dist/ ] || npm run build"
   },
   "devDependencies": {
-    "@algolia/transporter": "4.5.1",
+    "@algolia/transporter": "4.6.0",
     "@babel/core": "7.12.3",
     "@babel/preset-env": "7.12.1",
     "algoliasearch": "4.5.1",
