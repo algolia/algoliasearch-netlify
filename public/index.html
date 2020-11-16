@@ -36,10 +36,7 @@
       width: 60%;
       display: block;
       margin: 16px auto;
-      padding: 8px 16px;
-      font-size: 1.2em;
-      border-radius: 4px;
-      border: 1px solid #ccc;
+      height: 32px;
     }
 
     #debug-script {
@@ -103,7 +100,7 @@
 <body>
   <h1>Algoliasearch Netlify Test Website</h1>
 
-  <input id="search" type="search" placeholder="Search for content" />
+  <div id="search"></div>
 
   <h2>Script</h2>
   <div id="debug-script">
@@ -149,6 +146,7 @@
     const DEFAULT_SOURCE = `algoliasearchNetlify({
           appId: '4C7VLPQA76',
           apiKey: 'a9cfed5acb56143690b612167d89a1b5',
+          selector: '#search',
           siteId: '9209706f-d5b7-46e2-bb88-5d6bedd2823f',
           branch: 'master',
           debug: true,

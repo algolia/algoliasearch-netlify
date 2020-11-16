@@ -18,11 +18,11 @@
     "postinstall": "[ -d dist/ ] || npm run build"
   },
   "devDependencies": {
+    "@algolia/autocomplete-js": "1.0.0-alpha.35",
     "@algolia/transporter": "4.6.0",
     "@babel/core": "7.12.3",
     "@babel/preset-env": "7.12.1",
     "algoliasearch": "4.6.0",
-    "autocomplete.js": "0.38.0",
     "babel-loader": "8.2.1",
     "clean-webpack-plugin": "3.0.0",
     "core-js": "3.7.0",
@@ -55,5 +55,8 @@
     "robots",
     "search",
     "ui"
-  ]
+  ],
+  "dependencies": {
+    "@algolia/autocomplete-preset-algolia": "1.0.0-alpha.29"
+  }
 }

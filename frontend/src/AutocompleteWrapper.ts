@@ -1,126 +1,102 @@
-// Small hack to remove verticalAlign on the input
-// Makes IE11 fail though
-import { isMsie } from 'autocomplete.js/src/common/utils';
-if (!isMsie()) {
-  const css = require('autocomplete.js/src/autocomplete/css.js');
-  delete css.input.verticalAlign;
-  delete css.inputWithNoHint.verticalAlign;
-}
-
-import type { SearchClient, SearchIndex } from 'algoliasearch/lite';
-import type { RequestOptions } from '@algolia/transporter';
-import type { Hit } from '@algolia/client-search';
+import type { SearchClient } from 'algoliasearch/lite';
 
 import algoliasearch from 'algoliasearch/lite';
-import autocomplete from 'autocomplete.js';
+import type { Hit } from '@algolia/client-search';
+import {
+  autocomplete,
+  AutocompleteApi,
+  highlightHit,
+  snippetHit,
+} from '@algolia/autocomplete-js';
+import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
 
-import type { Options } from './options';
+import type { Options } from './types/options';
 
 import { templates } from './templates';
-import { addCss } from './addCss';
+// import { addCss } from './addCss';
+import type { AlgoliaRecord } from './types';
 
 // @ts-ignore
 import { version } from '../package.json';
-import { Data } from './data';
-
-export type SizeModifier = null | 'xs' | 'sm';
-
-type AutocompleteJs = any;
-
-const XS_WIDTH = 400;
-const SM_WIDTH = 600;
 
 class AutocompleteWrapper {
   // All fields are private because they're just here for debugging
-  private client: SearchClient;
-  private index: SearchIndex;
+  private options;
+  private indexName;
+  private client;
+  private autocomplete: AutocompleteApi<AlgoliaRecord> | undefined;
 
-  private $inputs: HTMLInputElement[] = [];
-  private autocompletes: AutocompleteJs[] = [];
-
-  constructor({ appId, apiKey, siteId, branch }: Options) {
-    this.client = this.createClient(appId, apiKey);
-    const indexName = this.computeIndexName(siteId, branch);
-    this.index = this.client.initIndex(indexName);
+  constructor(options: Options) {
+    this.options = options;
+    this.client = this.createClient();
+    this.indexName = this.computeIndexName();
   }
 
-  render({
-    analytics,
-    autocomplete: { hitsPerPage, inputSelector },
-    color,
-    debug,
-    silenceWarnings,
-    poweredBy,
-  }: Options) {
-    addCss(templates.autocomplete.css(color));
-
-    const $inputs = this.getInputs(inputSelector);
-
-    if ($inputs.length === 0 && !silenceWarnings) {
-      const inputSelectorText = JSON.stringify(inputSelector);
-      console.warn(
-        [
-          `[Algolia] No input matched our default selector ${inputSelectorText}`,
-          'The integration needs a search input to be active on your page. You can either:',
-          '- add an input that matches the selector',
-          '- or modify `autocomplete.inputSelector` to match your search input.',
-        ].join('\n')
-      );
+  render() {
+    const $input = document.querySelector(this.options.selector);
+    if (!$input) {
+      console.error('[algoliasearch netlify] no inputs found');
+      return;
     }
 
-    const autocompletes = $inputs.map(($input) => {
-      const inputWidth = $input.getBoundingClientRect().width;
-
-      const sizeModifier = this.computeSizeModifier(inputWidth);
-      const nbSnippetWords = this.computeNbSnippetWords(inputWidth);
-
-      const autocompleteParams = {
-        hint: false,
-        debug,
-        templates: this.getDropdownTemplates(poweredBy),
-        appendTo: 'body',
-      };
-
-      const searchParams = {
-        analytics,
-        hitsPerPage,
-        highlightPreTag: '<span class="aa-hit--highlight">',
-        highlightPostTag: '</span>',
-        attributesToSnippet: [
-          `description:${nbSnippetWords}`,
-          `content:${nbSnippetWords}`,
-        ],
-        snippetEllipsisText: '...',
-      };
-
-      const sources = [
-        {
-          name: 'hits',
-          source: this.createSource(searchParams),
-          templates: {
-            suggestion: this.createRenderSuggestion(sizeModifier),
+    const instance = autocomplete<AlgoliaRecord>({
+      container: $input as HTMLElement,
+      autoFocus: false,
+      placeholder: 'Search...',
+      debug: this.options.debug,
+      openOnFocus: true,
+      classNames: {
+        sourceFooter: 'aa-powered-by',
+      },
+      getSources: () => {
+        return [
+          {
+            getItems: ({ query }) => {
+              return getAlgoliaHits({
+                searchClient: this.client,
+                queries: [
+                  {
+                    indexName: this.indexName,
+                    query,
+                    params: {
+                      analytics: this.options.analytics,
+                      hitsPerPage: this.options.hitsPerPage,
+                    },
+                  },
+                ],
+              });
+            },
+            getItemUrl({ item }) {
+              return item.url;
+            },
+            templates: {
+              header() {
+                return;
+              },
+              item({ item }: { item: Hit<AlgoliaRecord> }) {
+                return templates.item(
+                  item,
+                  highlightHit({ hit: item, attribute: 'title' }),
+                  getSuggestionSnippet(item)
+                );
+              },
+              footer() {
+                return templates.poweredBy(window.location.host);
+              },
+            },
           },
-        },
-      ];
-
-      const aa: AutocompleteJs = autocomplete(
-        $input,
-        autocompleteParams,
-        sources
-      );
-
-      const handleSelected = this.createHandleSelected();
-      aa.on('autocomplete:selected', handleSelected);
-
-      return aa;
+        ];
+      },
     });
 
-    // Store debug variables
-    this.$inputs = $inputs;
-    this.autocompletes = autocompletes;
+    this.autocomplete = instance;
+
+    // addCss(templates.autocomplete.css(color));
   }
 
-  private computeIndexName(siteId: string, branch: string): string {
+  private computeIndexName(): string {
+    const { siteId, branch } = this.options;
+
     // Keep in sync with crawler code in /netlify/crawl
     const cleanBranch = branch
       .replace(/[^\p{L}\p{N}_.-]+/gu, '-')
@@ -128,79 +104,20 @@ class AutocompleteWrapper {
     return `netlify_${siteId}_${cleanBranch}_all`;
   }
 
-  private createClient(appId: string, apiKey: string): SearchClient {
-    const client = algoliasearch(appId, apiKey);
+  private createClient(): SearchClient {
+    const client = algoliasearch(this.options.appId, this.options.apiKey);
     client.addAlgoliaAgent(`Netlify integration ${version}`);
     return client;
   }
-
-  private getInputs(inputSelector: string): HTMLInputElement[] {
-    return Array.from(document.querySelectorAll(inputSelector));
-  }
-
-  private computeSizeModifier(inputWidth: number): SizeModifier | null {
-    if (inputWidth < XS_WIDTH) return 'xs';
-    if (inputWidth < SM_WIDTH) return 'sm';
-    return null;
-  }
-
-  private computeNbSnippetWords(inputWidth: number): number {
-    if (inputWidth < XS_WIDTH) return 0;
-    if (inputWidth < SM_WIDTH) return 3 + Math.floor(inputWidth / 35);
-    return Math.floor(inputWidth / 20);
-  }
-
-  private getDropdownTemplates(poweredBy: boolean): { footer?: string } {
-    if (!poweredBy) return {};
-    const { hostname } = window.location;
-    const algoliaLogoHtml = templates.algolia(hostname);
-    return {
-      ...(poweredBy && {
-        footer: templates.autocomplete.poweredBy(algoliaLogoHtml),
-      }),
-    };
-  }
-
-  private createSource(searchParams: RequestOptions) {
-    return (query: string, callback: (hits: Array<Hit<Data>>) => void) => {
-      this.index
-        .search<Data>('', { ...searchParams, query })
-        .then((content) => {
-          callback(content.hits);
-        });
-    };
-  }
-
-  private createRenderSuggestion(sizeModifier: SizeModifier) {
-    return (hit: Hit<Data>): string => {
-      return templates.autocomplete.suggestion({
-        ...hit,
-        sizeModifier,
-        snippet: this.getSuggestionSnippet(hit),
-      });
-    };
-  }
-
-  private getSuggestionSnippet(hit: Hit<Data>): string {
-    const description = hit._snippetResult?.description!;
-    const content = hit._snippetResult?.content!;
-    if (!description || !content) {
-      if (description) return description.value;
-      if (content) return content.value;
-      return '';
-    }
-    if (description.matchLevel === 'full') return description.value;
-    if (content.matchLevel === 'full') return content.value;
-    if (description.matchLevel === 'partial') return description.value;
-    if (content.matchLevel === 'partial') return content.value;
-    return description.value;
-  }
-
-  private createHandleSelected() {
-    return (_event: any, suggestion: { url: string }) => {
-      window.location.href = suggestion.url;
-    };
-  }
 }
 
+function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
+  if (hit._snippetResult?.description) {
+    return snippetHit({ hit, attribute: 'description' });
+  }
+  if (hit._snippetResult?.content) {
+    return snippetHit({ hit, attribute: 'content' });
+  }
+  return null;
+}
 export { AutocompleteWrapper };
