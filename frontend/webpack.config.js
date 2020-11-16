@@ -105,7 +105,7 @@ module.exports = function (env, options) {
   const productionDevTool = process.env.CI ? undefined : 'source-map';
   const devtool = production
     ? productionDevTool
-    : 'cheap-module-eval-source-map';
+    : 'eval-cheap-module-source-map';
   const devServer = production
     ? undefined
     : {
@@ -173,10 +173,8 @@ module.exports = function (env, options) {
       minimize: production,
       minimizer: [
         new TerserPlugin({
-          cache: !production,
           extractComments: false,
           parallel: true,
-          sourceMap,
           terserOptions: {
             parse: {},
             compress: {},
