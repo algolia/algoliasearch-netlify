@@ -50,9 +50,6 @@ function styleLoaders({ production, sourceMap }) {
 
   loaders.push({
     loader: MiniCssExtractPlugin.loader,
-    options: {
-      sourceMap,
-    },
   });
 
   loaders.push({
@@ -67,12 +64,14 @@ function styleLoaders({ production, sourceMap }) {
     options: {
       postcssOptions: {
         plugins: [
-          require('postcss-preset-env')({
-            stage: 4, // Only stable polyfills
-            autoprefixer: {},
-          }),
-          production && require('postcss-clean')(),
-        ].filter((p) => Boolean(p)),
+          [
+            'postcss-preset-env',
+            {
+              stage: 4, // Only stable polyfills
+              autoprefixer: {},
+            },
+          ],
+        ],
         sourceMap,
       },
     },
@@ -104,7 +103,7 @@ module.exports = function (env, options) {
   const productionDevTool = process.env.CI ? undefined : 'source-map';
   const devtool = production
     ? productionDevTool
-    : 'eval-cheap-module-source-map';
+    : 'cheap-module-eval-source-map';
   const devServer = production
     ? undefined
     : {
