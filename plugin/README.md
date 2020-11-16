@@ -26,6 +26,8 @@ Plugin inputs can be set in `netlify.toml`. They're all optional.
   Putting "pathPrefix: /blog" will alias `/blog` to `/`
 - `customDomain` - The custom domain that you use, if it's not possible to define it on your Netlify's settings.
   Putting "customDomain: example.com" will alias `example.com` to `<your-site-url>.netlify.app`
+- `renderJavascript` - _Default: `false`_ Use to enable the javascript rendering of your website, useful for SPA.
+  See [documentation](https://www.algolia.com/doc/api-reference/crawler/configuration/render-java-script/) to understood the implication of this option.
 
 Example:
 
@@ -37,6 +39,7 @@ package = "@algolia/netlify-plugin-crawler"
   disabled = true
   pathPrefix = "/blog"
   customDomain = "example.com"
+  renderJavascript = true
 ```
 
 ### Environment variables

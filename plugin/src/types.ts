@@ -8,6 +8,7 @@ export interface BuildParams {
     branches: string[];
     pathPrefix?: string;
     customDomain?: string;
+    renderJavascript?: boolean;
   };
   utils: {
     status: {

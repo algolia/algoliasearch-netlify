@@ -50,6 +50,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const branches = inputs.branches;
   const pathPrefix = inputs.pathPrefix;
   const customDomain = inputs.customDomain;
+  const renderJavascript = inputs.renderJavascript;
 
   if (isEnvDisabled) {
     summary(`Disabled by the "ALGOLIA_DISABLED" environment variable`);
@@ -105,6 +106,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
       version,
       pathPrefix,
       customDomain,
+      renderJavascript,
     });
     console.log('Sending request to crawl', endpoint);
     if (isDebugMode) {
