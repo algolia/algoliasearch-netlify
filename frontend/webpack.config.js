@@ -52,7 +52,6 @@ function styleLoaders({ production, sourceMap }) {
     loader: MiniCssExtractPlugin.loader,
     options: {
       sourceMap,
-      hmr: production,
     },
   });
 
