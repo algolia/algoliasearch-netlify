@@ -1,7 +1,7 @@
 $color-bg: #fff;
 $color-muted: #969faf;
 $color-light: #797979;
-$color-main: #23263b;
+$color-text: #23263b;
 $color-mark: rgb(84, 104, 255);
 $color-bg-selected: #f5f5fa;
 
@@ -14,6 +14,12 @@ $size-m: 8px;
 $size-l: 16px;
 $size-l: 32px;
 
+.aa-Autocomplete {
+  --color-mark: #{$color-mark};
+  --color-background: #{$color-bg};
+  --color-selected: #{$color-bg-selected};
+  --color-text: #{$color-text};
+}
 // Source (modified) https://github.com/algolia/autocomplete.js/blob/next/examples/js/autocomplete.css
 .aa-Form {
   position: relative;
@@ -33,10 +39,12 @@ $size-l: 32px;
 
 .aa-InputWrapper {
   background-color: $color-bg;
+  background-color: var(--color-background);
   max-width: 100%;
   position: relative;
   width: 100%;
   display: flex;
+  border-radius: 3px;
 }
 
 .aa-Input {
@@ -46,7 +54,8 @@ $size-l: 32px;
   border-radius: 3px;
   box-shadow: rgba(119, 122, 175, 0.3) 0 1px 4px 0 inset;
   caret-color: #5a5e9a;
-  color: #23263b;
+  color: $color-text;
+  color: var(--color-text);
   height: $size-l;
   width: 100%;
   z-index: 2;
@@ -78,6 +87,7 @@ $size-l: 32px;
   background: none;
   border: 0;
   cursor: pointer;
+  color: #777;
   height: $size-l;
   width: $size-l;
   position: absolute;
@@ -90,6 +100,7 @@ $size-l: 32px;
 
 .aa-Panel {
   background-color: $color-bg;
+  background-color: var(--color-background);
   border: 1px solid rgba(150, 150, 150, 0.16);
   border-radius: 3px;
   box-shadow: 0 0 0 1px rgba(35, 38, 59, 0.05),
@@ -123,13 +134,15 @@ $size-l: 32px;
 }
 
 .aa-Item {
-  color: $color-main;
+  color: $color-text;
+  color: var(--color-text);
   cursor: pointer;
   display: flex;
 }
 
 .aa-Item[aria-selected='true'] {
   background-color: $color-bg-selected;
+  background-color: var(--color-selected);
 }
 
 .aa-ItemContent {
@@ -156,6 +169,7 @@ $size-l: 32px;
 }
 .aa-ItemContent mark {
   color: $color-mark;
+  color: var(--color-mark);
   background-color: transparent;
 }
 

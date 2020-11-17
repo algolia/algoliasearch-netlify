@@ -9,7 +9,12 @@ export interface Options {
   // Optional
   analytics?: boolean;
   hitsPerPage?: number;
-  color?: string;
+  theme?: {
+    mark?: string;
+    background?: string;
+    selected?: string;
+    text?: string;
+  };
   debug?: boolean;
   silenceWarnings?: boolean;
   poweredBy?: boolean;

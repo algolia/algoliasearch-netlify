@@ -7,7 +7,6 @@ const defaultOptions: Omit<
 > = {
   analytics: true,
   hitsPerPage: 5,
-  color: '#3c4fe0',
   debug: false,
   silenceWarnings: false,
   poweredBy: true,

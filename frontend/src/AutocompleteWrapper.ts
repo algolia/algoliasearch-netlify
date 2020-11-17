@@ -14,7 +14,6 @@ import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
 import type { Options } from './types/options';
 
 import { templates } from './templates';
-// import { addCss } from './addCss';
 import type { AlgoliaRecord } from './types';
 
 // @ts-ignore
@@ -34,14 +33,14 @@ class AutocompleteWrapper {
   }
 
   render() {
-    const $input = document.querySelector(this.options.selector);
+    const $input = document.querySelector(this.options.selector) as HTMLElement;
     if (!$input) {
       console.error('[algoliasearch netlify] no inputs found');
       return;
     }
 
     const instance = autocomplete<AlgoliaRecord>({
-      container: $input as HTMLElement,
+      container: $input,
       autoFocus: false,
       placeholder: 'Search...',
       debug: this.options.debug,
@@ -54,6 +53,7 @@ class AutocompleteWrapper {
         return [this.getSources()];
       },
     });
+    this.applyTheme($input.firstElementChild as HTMLElement);
 
     this.autocomplete = instance;
 
@@ -112,6 +112,26 @@ class AutocompleteWrapper {
         },
       },
     };
+  }
+
+  private applyTheme(el: HTMLElement | null) {
+    if (!el || !this.options.theme) {
+      return;
+    }
+
+    const theme = this.options.theme;
+    if (theme.mark) {
+      el.style.setProperty('--color-mark', theme.mark);
+    }
+    if (theme.background) {
+      el.style.setProperty('--color-background', theme.background);
+    }
+    if (theme.text) {
+      el.style.setProperty('--color-text', theme.text);
+    }
+    if (theme.selected) {
+      el.style.setProperty('--color-selected', theme.selected);
+    }
   }
 }
 
