@@ -77,9 +77,9 @@ You can find an HTML code snippet in the [Crawler Admin Console](https://crawler
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.css"
+  href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
 />
-<script src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
 <script>
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',

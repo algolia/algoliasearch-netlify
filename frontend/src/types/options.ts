@@ -16,6 +16,5 @@ export interface Options {
     text?: string;
   };
   debug?: boolean;
-  silenceWarnings?: boolean;
   poweredBy?: boolean;
 }

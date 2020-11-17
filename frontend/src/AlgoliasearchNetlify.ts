@@ -8,7 +8,6 @@ const defaultOptions: Omit<
   analytics: true,
   hitsPerPage: 5,
   debug: false,
-  silenceWarnings: false,
   poweredBy: true,
 };
 

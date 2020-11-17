@@ -11,16 +11,14 @@ import {
 } from '@algolia/autocomplete-js';
 import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
 
-import type { Options } from './types/options';
+import type { Options, AlgoliaRecord } from './types';
 
 import { templates } from './templates';
-import type { AlgoliaRecord } from './types';
 
 // @ts-ignore
 import { version } from '../package.json';
 
 class AutocompleteWrapper {
-  // All fields are private because they're just here for debugging
   private options;
   private indexName;
   private client;
@@ -56,8 +54,6 @@ class AutocompleteWrapper {
     this.applyTheme($input.firstElementChild as HTMLElement);
 
     this.autocomplete = instance;
-
-    // addCss(templates.autocomplete.css(color));
   }
 
   private computeIndexName(): string {
@@ -144,4 +140,5 @@ function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
   }
   return null;
 }
+
 export { AutocompleteWrapper };
