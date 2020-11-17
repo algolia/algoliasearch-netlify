@@ -33,10 +33,18 @@
     }
 
     #search {
+      display: flex;
+      gap: 16px;
+    }
+
+    #searchBig {
       width: 60%;
-      display: block;
-      margin: 16px auto;
       height: 32px;
+    }
+
+    #searchSmall {
+      height: 32px;
+      width: 20%;
     }
 
     #debug-script {
@@ -100,7 +108,10 @@
 <body>
   <h1>Algoliasearch Netlify Test Website</h1>
 
-  <div id="search"></div>
+  <div id="search">
+    <div id="searchBig"></div>
+    <div id="searchSmall"></div>
+  </div>
 
   <h2>Script</h2>
   <div id="debug-script">
@@ -146,9 +157,17 @@
     const DEFAULT_SOURCE = `algoliasearchNetlify({
           appId: '4C7VLPQA76',
           apiKey: 'a9cfed5acb56143690b612167d89a1b5',
-          selector: '#search',
-          siteId: '9209706f-d5b7-46e2-bb88-5d6bedd2823f',
-          branch: 'master',
+          selector: '#searchBig',
+          siteId: 'test',
+          branch: 'netlify_index',
+          debug: true,
+        });
+        algoliasearchNetlify({
+          appId: '4C7VLPQA76',
+          apiKey: 'a9cfed5acb56143690b612167d89a1b5',
+          selector: '#searchSmall',
+          siteId: 'test',
+          branch: 'netlify_index',
           debug: true,
         });`
       .split('\n')

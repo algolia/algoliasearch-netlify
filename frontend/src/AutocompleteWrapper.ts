@@ -7,6 +7,7 @@ import {
   AutocompleteApi,
   highlightHit,
   snippetHit,
+  AutocompleteSource,
 } from '@algolia/autocomplete-js';
 import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
 
@@ -45,47 +46,12 @@ class AutocompleteWrapper {
       placeholder: 'Search...',
       debug: this.options.debug,
       openOnFocus: true,
+      panelPlacement: 'input-wrapper-width',
       classNames: {
         sourceFooter: 'aa-powered-by',
       },
       getSources: () => {
-        return [
-          {
-            getItems: ({ query }) => {
-              return getAlgoliaHits({
-                searchClient: this.client,
-                queries: [
-                  {
-                    indexName: this.indexName,
-                    query,
-                    params: {
-                      analytics: this.options.analytics,
-                      hitsPerPage: this.options.hitsPerPage,
-                    },
-                  },
-                ],
-              });
-            },
-            getItemUrl({ item }) {
-              return item.url;
-            },
-            templates: {
-              header() {
-                return;
-              },
-              item({ item }: { item: Hit<AlgoliaRecord> }) {
-                return templates.item(
-                  item,
-                  highlightHit({ hit: item, attribute: 'title' }),
-                  getSuggestionSnippet(item)
-                );
-              },
-              footer() {
-                return templates.poweredBy(window.location.host);
-              },
-            },
-          },
-        ];
+        return [this.getSources()];
       },
     });
 
@@ -108,6 +74,44 @@ class AutocompleteWrapper {
     const client = algoliasearch(this.options.appId, this.options.apiKey);
     client.addAlgoliaAgent(`Netlify integration ${version}`);
     return client;
+  }
+
+  private getSources(): AutocompleteSource<AlgoliaRecord> {
+    return {
+      getItems: ({ query }) => {
+        return getAlgoliaHits({
+          searchClient: this.client,
+          queries: [
+            {
+              indexName: this.indexName,
+              query,
+              params: {
+                analytics: this.options.analytics,
+                hitsPerPage: this.options.hitsPerPage,
+              },
+            },
+          ],
+        });
+      },
+      getItemUrl({ item }) {
+        return item.url;
+      },
+      templates: {
+        header() {
+          return;
+        },
+        item({ item }: { item: Hit<AlgoliaRecord> }) {
+          return templates.item(
+            item,
+            highlightHit({ hit: item, attribute: 'title' }),
+            getSuggestionSnippet(item)
+          );
+        },
+        footer() {
+          return templates.poweredBy(window.location.host);
+        },
+      },
+    };
   }
 }
 
