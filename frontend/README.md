@@ -20,7 +20,9 @@ It **creates a new search input** in your website with an autocomplete menu prov
 </script>
 ```
 
-<img src="/docs/screenshots/frontend/normal-theme.png?raw=true" alt="Frontend plugin light theme" width="500px">
+<p align="center">
+  <img src="/docs/screenshots/frontend/normal-theme.png?raw=true" alt="Frontend plugin light theme" width="600px">
+</p>
 
 ## Available options
 
