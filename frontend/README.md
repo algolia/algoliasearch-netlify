@@ -87,7 +87,7 @@ You can quickly theme the input and the autocomplete by using the `theme` proper
 }
 ```
 
-<img src="/docs/screenshots/frontend/dark-theme.png?raw=true" alt="Dark theme">
+<img src="/docs/screenshots/frontend/dark-theme.png?raw=true" alt="Dark theme" width="500px">
 
 To go further you should take a look at the [autocomplete.js documentation](https://algolia-autocomplete.netlify.app/), or implement your own search with [InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/).
 
