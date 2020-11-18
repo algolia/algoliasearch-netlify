@@ -9,6 +9,8 @@ const defaultOptions: Omit<
   hitsPerPage: 5,
   debug: false,
   poweredBy: true,
+  placeholder: 'Search...',
+  openOnFocus: false,
 };
 
 const mandatory: Array<keyof Options> = [

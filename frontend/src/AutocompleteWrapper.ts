@@ -42,13 +42,10 @@ class AutocompleteWrapper {
     const instance = autocomplete<AlgoliaRecord>({
       container: $input,
       autoFocus: false,
-      placeholder: 'Search...',
+      placeholder: this.options.placeholder,
       debug: this.options.debug,
-      openOnFocus: true,
+      openOnFocus: this.options.openOnFocus,
       panelPlacement: 'input-wrapper-width',
-      classNames: {
-        sourceFooter: 'aa-powered-by',
-      },
       getSources: () => {
         return [this.getSources()];
       },
@@ -75,6 +72,7 @@ class AutocompleteWrapper {
   }
 
   private getSources(): AutocompleteSource<AlgoliaRecord> {
+    const poweredBy = this.options.poweredBy;
     return {
       getItems: ({ query }) => {
         return getAlgoliaHits({
@@ -106,7 +104,9 @@ class AutocompleteWrapper {
           );
         },
         footer() {
-          return templates.poweredBy(window.location.host);
+          if (poweredBy) {
+            return templates.poweredBy(window.location.host);
+          }
         },
       },
     };

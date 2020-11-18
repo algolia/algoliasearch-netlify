@@ -16,5 +16,7 @@ export interface Options {
     text?: string;
   };
   debug?: boolean;
+  placeholder?: string;
+  openOnFocus?: boolean;
   poweredBy?: boolean;
 }

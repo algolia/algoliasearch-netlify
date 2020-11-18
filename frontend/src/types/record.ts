@@ -17,14 +17,4 @@ export type AlgoliaRecord = {
 
   urlDepth?: number;
   position?: number;
-
-  hierarchy?: string[];
-  hierarchyObj?: {
-    [lvl: string]: string;
-  };
-  currentHierarchy?: string;
-
-  contentLength?: number;
-
-  recordUrl?: string;
 };
