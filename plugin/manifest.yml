@@ -6,6 +6,8 @@ inputs:
   - name: branches
     description: Branches to index. Each branch in this array will have its content crawled in a dedicated index.
     default: ['master', 'main']
+  - name: mainBranch
+    description: Main working branch. Useful when you tweak Algolia search settings. If set, Algolia indices created for other branches will inherit the settings of the mainBranch's index.
   - name: pathPrefix
     description: The prefix of your website if it's not at the root level, e.g /blog
   - name: customDomain

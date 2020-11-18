@@ -13,7 +13,7 @@ Read our full documentation [here](../docs/GettingStarted.md)
 
 Plugin inputs can be set in `netlify.toml`. They're all optional.
 
-- `branches` - _Default: `['master']`_ - List of branches the crawler should build.  
+- `branches` - _Default: `['master', 'main']`_ - List of branches the crawler should build.  
   By default, we only build your main branch, but this can be used to build multiple branches.
   Each of those will have a dedicated Algolia index, named `netlify_<site-id>_<branch-name>_all`.
   You will need to [target the right branch](../frontend#using-multiple-branches) in your front-end code.
@@ -22,6 +22,8 @@ Plugin inputs can be set in `netlify.toml`. They're all optional.
   - `feat/*`: matches all branches starting with `feat/`
   - `*-bug`: matches all branches finishing with `-bug`
 - `disabled` - _Default: `false`_ - Use to disable the plugin without removing it.
+- `mainBranch` - The main project's branch. If set, it will be used to propagate your [Algolia index settings](https://www.algolia.com/doc/guides/managing-results/relevance-overview/#index-setting-and-query-parameters) modifications to other branches:
+  Settings of the Algolia index of your main branch will be used to create the new index when the plugin runs for the first time on a new branch.
 - `pathPrefix` - The prefix of your website if it's not at the root level.
   Putting "pathPrefix: /blog" will alias `/blog` to `/`
 - `customDomain` - The custom domain that you use, if it's not possible to define it on your Netlify's settings.

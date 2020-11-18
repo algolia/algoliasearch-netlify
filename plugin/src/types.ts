@@ -6,6 +6,7 @@ export interface BuildParams {
   inputs: {
     disabled: boolean;
     branches: string[];
+    mainBranch?: string;
     pathPrefix?: string;
     customDomain?: string;
   };
