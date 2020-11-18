@@ -91,7 +91,7 @@ You can find an HTML code snippet in the [Crawler Admin Console](https://crawler
 </script>
 ```
 
-This code automatically adds create new input in the specified `selector` with a ready to use autocomplete, using your newly created Algolia index.
+This code automatically creates a new input in the specified `selector` with a ready to use autocomplete, using your newly created Algolia index.
 Please refer to the [full documentation](https://github.com/algolia/algoliasearch-netlify/tree/master/frontend) to configure this front-end plugin.
 
 <img src="/docs/screenshots/frontend.png?raw=true" alt="Autocomplete preview">

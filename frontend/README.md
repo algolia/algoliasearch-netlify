@@ -77,7 +77,7 @@ algoliasearchNetlify({
 
 ## Theme
 
-You can quickly theme the input and the autocomplete by using the `theme` property.
+You can theme the input and the autocomplete by using the `theme` property.
 
 ```js
 // Example of dark theme:

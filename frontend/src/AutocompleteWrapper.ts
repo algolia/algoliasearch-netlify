@@ -33,7 +33,9 @@ class AutocompleteWrapper {
   render() {
     const $input = document.querySelector(this.options.selector) as HTMLElement;
     if (!$input) {
-      console.error('[algoliasearch netlify] no inputs found');
+      console.error(
+        `[algoliasearch-netlify] no element ${this.options.selector} found`
+      );
       return;
     }
 

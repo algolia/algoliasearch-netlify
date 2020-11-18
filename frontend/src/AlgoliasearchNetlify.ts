@@ -1,5 +1,5 @@
 import { AutocompleteWrapper } from './AutocompleteWrapper';
-import { Options } from './types';
+import type { Options } from './types';
 
 const defaultOptions: Omit<
   Options,
@@ -29,7 +29,7 @@ function algoliasearchNetlify(_options: Options) {
   for (const key of mandatory) {
     if (options[key]) continue;
 
-    throw new Error(`Missing mandatory key: ${key}`);
+    throw new Error(`[algoliasearch-netlify] Missing mandatory key: ${key}`);
   }
 
   const autocomplete = new AutocompleteWrapper(options);
