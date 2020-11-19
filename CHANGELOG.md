@@ -1,3 +1,12 @@
+## [0.0.20](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.19...v0.0.20) (2020-11-19)
+
+
+### Features
+
+* new 'mainBranch' parameter ([#123](https://github.com/algolia/algoliasearch-netlify/issues/123)) ([0ca01b6](https://github.com/algolia/algoliasearch-netlify/commit/0ca01b642eb28c56c96b21be3664b02610d97047))
+
+
+
 ## [0.0.19](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.18...v0.0.19) (2020-11-12)
 
 
