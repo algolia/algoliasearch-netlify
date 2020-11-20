@@ -48,6 +48,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
 
   const branches = inputs.branches;
+  const mainBranch = inputs.mainBranch;
   const pathPrefix = inputs.pathPrefix;
   const customDomain = inputs.customDomain;
   const renderJavascript = inputs.renderJavascript;
@@ -101,6 +102,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   try {
     const body = JSON.stringify({
       branch,
+      mainBranch,
       siteName,
       deployPrimeUrl,
       version,
