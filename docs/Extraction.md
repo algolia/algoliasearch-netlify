@@ -200,7 +200,7 @@ Learn more about [canonical meta tag](https://support.google.com/webmasters/answ
 ## Executing Javascript
 
 If your website needs it, for example if you have a React application without server-side rendering,
-you can enable Javascript rendering by setting the `renderJavascript` option in your [netlify.toml](/plugin/README.md#inputs)
+you can enable Javascript rendering by setting the `renderJavaScript` option in your [netlify.toml](/plugin/README.md#inputs)
 
 ## Password protection
 
