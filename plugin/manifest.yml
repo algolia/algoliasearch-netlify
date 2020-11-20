@@ -13,4 +13,4 @@ inputs:
   - name: customDomain
     description: The custom domain that you use, if it's not possible to define it on your Netlify's settings.
   - name: renderJavascript
-    description: Use to enable the javascript rendering of your website.
+    description: If true, we will use JavaScript to render your website.
