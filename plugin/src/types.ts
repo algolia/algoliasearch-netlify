@@ -9,6 +9,7 @@ export interface BuildParams {
     mainBranch?: string;
     pathPrefix?: string;
     customDomain?: string;
+    renderJavaScript?: boolean;
   };
   utils: {
     status: {
