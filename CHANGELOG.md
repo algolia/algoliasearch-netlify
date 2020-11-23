@@ -1,8 +1,14 @@
-## [0.0.20](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.19...v0.0.20) (2020-11-19)
+## [0.0.21](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.19...v0.0.21) (2020-11-23)
+
+
+### Bug Fixes
+
+* synchronise branch naming ([9381082](https://github.com/algolia/algoliasearch-netlify/commit/93810825a31dda990762f5ecfad0d9b694f8d146))
 
 
 ### Features
 
+* add renderJavaScript option ([#134](https://github.com/algolia/algoliasearch-netlify/issues/134)) ([dd91d7e](https://github.com/algolia/algoliasearch-netlify/commit/dd91d7ebfe88917253fc335df76e12d54b37200c))
 * new 'mainBranch' parameter ([#123](https://github.com/algolia/algoliasearch-netlify/issues/123)) ([0ca01b6](https://github.com/algolia/algoliasearch-netlify/commit/0ca01b642eb28c56c96b21be3664b02610d97047))
 
 
