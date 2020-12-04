@@ -30,6 +30,8 @@ Plugin inputs can be set in `netlify.toml`. They're all optional.
   Putting "customDomain: example.com" will alias `example.com` to `<your-site-url>.netlify.app`
 - `renderJavaScript` - _Default: `false`_ If true, we will use JavaScript to render your website. Useful for Single Page Applications.
   See the [documentation](https://www.algolia.com/doc/api-reference/crawler/configuration/render-java-script/) to understand the implication of this option.
+- `template` - Used to modify the way we extract records and their schema. Supported templates: `'hierarchical'`.
+  More information on how the extraction works in the [dedicated extraction documentation](../docs/Extraction.md).
 
 Example:
 

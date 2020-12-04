@@ -7,9 +7,9 @@ You can see on this page what the Crawler extract and how you can improve the cr
 ## Table of Contents<!-- omit in toc -->
 
 - [Schema](#schema)
-  - [Example](#example)
-  - [Record splitting](#record-splitting)
-  - [JSON-LD](#json-ld)
+  - [Default](#default-schema)
+  - [Hierarchical](#hierarchical-schema)
+- [JSON-LD](#json-ld)
 - [Sitemaps](#sitemaps)
 - [Ignoring URLs or Patterns](#ignoring-urls-or-patterns)
   - [Using Robots.txt](#using-robotstxt)
@@ -23,6 +23,10 @@ You can see on this page what the Crawler extract and how you can improve the cr
 All root-level properties are a computation of multiple selectors, with a fallback. We might change the extraction logic to add more properties, but **we won't remove root-level properties without a proper deprecation period**.
 
 All properties that aren't marked as optional are present in the final record. Others can be missing if the Algolia Crawler couldn't find any relevant information.
+
+### Default schema
+
+By default, the Netlify plugin will try to extract one record per webpage, with the following schema:
 
 ```ts
 {
@@ -113,7 +117,7 @@ All properties that aren't marked as optional are present in the final record. O
 }
 ```
 
-### Example
+#### Example
 
 For this URL: <https://www.algolia.com/products/crawler/>
 
@@ -130,11 +134,47 @@ For this URL: <https://www.algolia.com/products/crawler/>
 }
 ```
 
-### Record splitting
+#### Content splitting
 
-For better relevance, we can split records into multiple ones. We create all indices with the index settings `{ distinct: true, attributeForDistinct: 'url' }` to deduplicate them at search time.
+For better relevance and to stay within [Algolia's records size limits](https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/in-depth/index-and-records-size-and-usage-limitations/#record-size),
+we will split the content of big pages into multiple records. We create all indices with the index settings `{ distinct: true, attributeForDistinct: 'url' }` to deduplicate them at search time.
 
-### JSON-LD
+### `hierarchical` schema
+
+If your website contains a hierarchical structure (as it's often the case for documentation websites), it can be more relevant to create one Algolia record per section.
+The Netlify crawler plugin supports such content extraction logic, and you can enable it by specifying the following parameter in your `.toml` configuration file:
+```
+template = "hierarchical"
+```
+
+With this template enabled, the plugin will create a new Algolia record for each header tag (`<h1>`, `<h2>`, ...), so the content of each page will be split into several records.
+If your headers have an `id`, it will be put in the `url` to permits search results to point directly to it, as defined in the [HTML specification](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-fragid).
+
+The schema of the records will be similar to the default schema, augmented with a few fields:
+```ts
+{
+  ...defaultSchema,
+
+  /**
+   * The current hierarchy of the extracted record
+   */
+  hierarchy: { lvl0: 'H1 heading', lvl1: 'H2 heading', lvl2: 'H3 heading', ... };
+
+  /**
+   * The current hierarchy of the extracted record, in an InstantSearch compatible format.
+   * https://www.algolia.com/doc/api-reference/widgets/hierarchical-menu/js/#requirements
+   */
+  hierarchicalCategories: { lvl0: 'H1 heading', lvl1: 'H1 heading > H2 heading', lvl3: 'H1 heading > H2 heading > H3 heading', ... };
+
+  /**
+   * Lengh of the extracted content for the current section.
+   * Can be used for custom ranking, for e.g. redirect users to sections with more content first.
+   */
+  contentLength: number;
+}
+```
+
+## JSON-LD
 
 We support a limited set of [JSON-LD](https://json-ld.org/) attributes. We expect the JSON-LD structure to follow the <https://schema.org/> structure.
 If present, the attributes found in JSON-LD will be taken in priority during the extraction.
