@@ -15,6 +15,11 @@ export type AlgoliaRecord = {
   dateModified?: number;
   category?: string;
 
+  hierarchy?: Hierarchy;
+  hierarchicalCategories?: Hierarchy;
+
   urlDepth?: number;
   position?: number;
 };
+
+export type Hierarchy = { [lvl: string]: string };
