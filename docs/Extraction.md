@@ -199,8 +199,8 @@ Learn more about [canonical meta tag](https://support.google.com/webmasters/answ
 
 ## Executing Javascript
 
-The Algolia Crawler supports JavaScript-rendered websites, but we don't yet expose this option in the plugin.
-Please [contact us](mailto:support@algolia.com) to enable it.
+If your website needs it, for example if you have a React application without server-side rendering,
+you can enable Javascript rendering by setting the `renderJavaScript` option in your [netlify.toml](/plugin/README.md#inputs)
 
 ## Password protection
 
