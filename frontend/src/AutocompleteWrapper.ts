@@ -86,10 +86,6 @@ class AutocompleteWrapper {
               params: {
                 analytics: this.options.analytics,
                 hitsPerPage: this.options.hitsPerPage,
-                highlightPreTag: '<span class="aa-hit--highlight">',
-                highlightPostTag: '</span>',
-                attributesToSnippet: [`description:20`, `content:20`],
-                snippetEllipsisText: '...',
               },
             },
           ],
@@ -146,7 +142,7 @@ function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
   if (hit._snippetResult?.content) {
     return snippetHit({ hit, attribute: 'content' });
   }
-  return null;
+  return hit.description || hit.content;
 }
 
 export { AutocompleteWrapper };
