@@ -86,6 +86,10 @@ class AutocompleteWrapper {
               params: {
                 analytics: this.options.analytics,
                 hitsPerPage: this.options.hitsPerPage,
+                highlightPreTag: '<span class="aa-hit--highlight">',
+                highlightPostTag: '</span>',
+                attributesToSnippet: [`description:20`, `content:20`],
+                snippetEllipsisText: '...',
               },
             },
           ],
