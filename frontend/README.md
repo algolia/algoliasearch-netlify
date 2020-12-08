@@ -2,25 +2,27 @@
 
 `algoliasearch-netlify-frontend` is the front-end bundle we recommend to use with our Netlify plugin.
 It's designed to be compatible with the index structure extracted by the [plugin](../plugin).
-It enhances existing search inputs in your website with an autocomplete menu providing search as you type results.
+It **creates a new search input** in your website with an autocomplete menu providing search as you type results.
 
 ## Usage
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.css" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
 <script type="text/javascript">
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',
     apiKey: '<YOUR_ALGOLIA_API_KEY>',
     siteId: '<YOUR_NETLIFY_SITE_ID>',
     branch: '<YOUR_TARGET_GIT_BRANCH>',
-    autocomplete: {
-      inputSelector: 'input[type=search]',
-    },
+    selector: 'div#search',
   });
 </script>
 ```
+
+<p align="center">
+  <img src="/docs/screenshots/frontend/normal-theme.png?raw=true" alt="Frontend plugin light theme" width="600px">
+</p>
 
 ## Available options
 
@@ -33,17 +35,22 @@ algoliasearchNetlify({
   apiKey: '<YOUR_ALGOLIA_API_KEY>',             // Search api key (Can be found in https://www.algolia.com/api-keys)
   siteId: '<YOUR_NETLIFY_SITE_ID>',             // Netlify Site ID (Can be found in https://crawler.algolia.com/admin/netlify)
   branch: '<YOUR_TARGET_GIT_BRANCH>',           // Target git branch, either a fixed one (e.g. 'master') or a dynamic one using `process.env.HEAD`. See "Using Multiple branches" in this doc.
+  selector: 'div#search',                       // Where the autocomplete will be spawned (should not be an input)
 
   // Optional
   analytics: true,                              // Enable search analytics
-  autocomplete: {
-    hitsPerPage: 5,                             // Amount of results to display
-    inputSelector: 'input[type=search]',        // CSS selector of your search input(s)
-  },
-  color: '#3c4fe0',                             // Main color
-  debug: false,                                 // Debug mode (keeps the autocomplete open)
-  silenceWarnings: false,                       // Disable warnings (e.g. no search input found)
+  hitsPerPage: 5,                               // Amount of results to display
   poweredBy: true,                              // Controls displaying the logo (mandatory with our FREE plan)
+  placeholder: 'Search...';                     // Input placeholder
+  openOnFocus: true;                            // Open search panel with default search, when focusing input
+
+  // Theme
+  theme: {
+    mark: '#fff',                               // Color of the matching content
+    background: '#23263b',                      // Background Color of the input and the panel
+    selected: '#111432',                        // Background Color of the selected item
+    text: '#d6d6e7'                             // Color of the title of the items
+  }
 });
 ```
 
@@ -70,24 +77,26 @@ algoliasearchNetlify({
 });
 ```
 
-## Scripts
+## Theme
 
-- `yarn dev`: run dev environment
-- `yarn release`: build & publish the library
+You can theme the input and the autocomplete by using the `theme` property.
 
-## Development
-
-From this folder:
-
-```sh
-yarn dev
+```js
+// Example of dark theme:
+{
+  theme: {
+    mark: '#fff',
+    background: '#23263b',
+    selected: '#111432',
+    text: '#d6d6e7'
+  }
+}
 ```
 
-Or from the root of the repository:
+<img src="/docs/screenshots/frontend/dark-theme.png?raw=true" alt="Dark theme" width="500px">
 
-```sh
-yarn dev:frontend
-```
+To go further you should take a look at the [autocomplete.js documentation](https://algolia-autocomplete.netlify.app/), or implement your own search with [InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/).
 
-This runs a `webpack-dev-server` on port 9100.
-Meant to be used in conjunction with the [test website](../public/).
+## Development & Release
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md).

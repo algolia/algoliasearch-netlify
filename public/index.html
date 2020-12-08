@@ -33,13 +33,18 @@
     }
 
     #search {
+      display: flex;
+      gap: 16px;
+    }
+
+    #searchBig {
       width: 60%;
-      display: block;
-      margin: 16px auto;
-      padding: 8px 16px;
-      font-size: 1.2em;
-      border-radius: 4px;
-      border: 1px solid #ccc;
+      height: 32px;
+    }
+
+    #searchSmall {
+      height: 32px;
+      width: 20%;
     }
 
     #debug-script {
@@ -103,7 +108,10 @@
 <body>
   <h1>Algoliasearch Netlify Test Website</h1>
 
-  <input id="search" type="search" placeholder="Search for content" />
+  <div id="search">
+    <div id="searchBig"></div>
+    <div id="searchSmall"></div>
+  </div>
 
   <h2>Script</h2>
   <div id="debug-script">
@@ -146,12 +154,29 @@
   <script src="https://cdn.jsdelivr.net/npm/ace-builds@1.4.12/src-min-noconflict/ace.js"
     type="text/javascript"></script>
   <script type="text/javascript">
-    const DEFAULT_SOURCE = `algoliasearchNetlify({
+    const DEFAULT_SOURCE = `
+        algoliasearchNetlify({
           appId: '4C7VLPQA76',
           apiKey: 'a9cfed5acb56143690b612167d89a1b5',
+          selector: '#searchBig',
           siteId: '9209706f-d5b7-46e2-bb88-5d6bedd2823f',
           branch: 'master',
-          debug: true,
+          hitsPerPage: 3,
+        });
+        algoliasearchNetlify({
+          appId: '4C7VLPQA76',
+          apiKey: 'a9cfed5acb56143690b612167d89a1b5',
+          selector: '#searchSmall',
+          siteId: '9209706f-d5b7-46e2-bb88-5d6bedd2823f',
+          branch: 'master',
+          placeholder: 'Small Input',
+          poweredBy: false,
+          theme: {
+            mark: '#fff',
+            background: '#23263b',
+            selected: '#111432',
+            text: '#d6d6e7'
+          },
         });`
       .split('\n')
       .map((l) => l.replace(/^\s{8}/, ''))
@@ -254,7 +279,7 @@
       // Base Url
       const baseUrl = usingDev
         ? 'http://localhost:9100'
-        : 'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist';
+        : 'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist';
 
       // Debug info
       $baseUrl.innerText = baseUrl;

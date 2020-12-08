@@ -18,11 +18,12 @@
     "postinstall": "[ -d dist/ ] || npm run build"
   },
   "devDependencies": {
+    "@algolia/autocomplete-js": "1.0.0-alpha.35",
+    "@algolia/autocomplete-preset-algolia": "1.0.0-alpha.29",
     "@algolia/transporter": "4.6.0",
     "@babel/core": "7.12.9",
     "@babel/preset-env": "7.12.7",
     "algoliasearch": "4.6.0",
-    "autocomplete.js": "0.38.0",
     "babel-loader": "8.2.2",
     "clean-webpack-plugin": "3.0.0",
     "core-js": "3.8.0",
@@ -37,9 +38,9 @@
     "sass-loader": "10.1.0",
     "terser-webpack-plugin": "4.2.3",
     "ts-loader": "8.0.11",
-    "webpack": "4.44.2",
     "webpack-cli": "4.2.0",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.0",
+    "webpack": "4.44.2"
   },
   "keywords": [
     "algolia",
