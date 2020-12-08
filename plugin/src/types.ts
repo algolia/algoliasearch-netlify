@@ -10,6 +10,7 @@ export interface BuildParams {
     pathPrefix?: string;
     customDomain?: string;
     renderJavaScript?: boolean;
+    template?: string;
   };
   utils: {
     status: {

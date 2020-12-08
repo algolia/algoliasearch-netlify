@@ -14,3 +14,5 @@ inputs:
     description: The custom domain that you use, if it's not possible to define it on your Netlify's settings.
   - name: renderJavaScript
     description: If true, we will use JavaScript to render your website.
+  - name: template
+    description: Change the way we extract records and their schema.
