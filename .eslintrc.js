@@ -24,7 +24,10 @@ module.exports = {
     'algolia/func-style-toplevel': 'error',
 
     'no-console': 'off',
+    'no-continue': 'off',
+    'no-loop-func': 'off',
     'consistent-return': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
 
     '@typescript-eslint/explicit-member-accessibility': [
       'error',

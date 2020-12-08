@@ -77,23 +77,21 @@ You can find an HTML code snippet in the [Crawler Admin Console](https://crawler
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.css"
+  href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
 />
-<script src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@0/dist/algoliasearchNetlify.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
 <script>
   algoliasearchNetlify({
     appId: '<YOUR_ALGOLIA_APP_ID>',
     apiKey: '<YOUR_ALGOLIA_API_KEY>',
     siteId: '<YOUR_NETLIFY_SITE_ID>',
     branch: '<YOUR_TARGET_GIT_BRANCH>',
-    autocomplete: {
-      inputSelector: 'input[type=search]',
-    },
+    selector: 'div#search',
   });
 </script>
 ```
 
-This code automatically adds a search autocomplete widget on your website on all `<input type="search" />` tags, using your newly created Algolia index.  
+This code automatically creates a new input in the specified `selector` with a ready to use autocomplete, using your newly created Algolia index.
 Please refer to the [full documentation](https://github.com/algolia/algoliasearch-netlify/tree/master/frontend) to configure this front-end plugin.
 
 <img src="/docs/screenshots/frontend.png?raw=true" alt="Autocomplete preview">
