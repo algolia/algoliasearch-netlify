@@ -141,7 +141,7 @@ function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
     return snippetHit({ hit, attribute: 'description' });
   }
   if (hit._snippetResult?.content) {
-    return snippetHit({hit, attribute: 'content'});
+    return snippetHit({ hit, attribute: 'content' });
   }
   return hit.description || hit.content;
 }
