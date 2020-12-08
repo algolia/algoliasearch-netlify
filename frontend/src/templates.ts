@@ -1,4 +1,4 @@
-import { AlgoliaRecord } from './types';
+import { AlgoliaRecord, Hierarchy } from './types';
 
 export const templates = {
   poweredBy: (hostname: string) => {
@@ -16,7 +16,12 @@ export const templates = {
     `;
   },
 
-  item: (record: AlgoliaRecord, title: string, description: string | null) => {
+  item: (
+    record: AlgoliaRecord,
+    title: string,
+    description: string | null,
+    hierarchy: Hierarchy | null
+  ) => {
     return `
         <a href="${record.url}">
           <div class="aa-ItemContent">
@@ -25,8 +30,15 @@ export const templates = {
             </div>
             <div>
               <div class="aa-ItemTitle">
-                ${title}
+                ${hierarchy?.lvl0 ?? title}
               </div>
+              ${
+                hierarchy
+                  ? `<div class="aa-ItemHierarchy">${hierarchyToBreadcrumbString(
+                      hierarchy
+                    )}</div>`
+                  : ''
+              }
               ${
                 description
                   ? `<div class="aa-ItemDescription">${description}</div>`
@@ -39,3 +51,22 @@ export const templates = {
     `;
   },
 };
+
+/**
+ * Transform a hierarchy object into a displayable string
+ *
+ * @param {Hierarchy} hierarchy A record's hierarchy under the form { lvl0: '', lvl1: '', lvl2: '', ... }
+ * @returns {string} A string representation of the hierarchy starting from lvl1,
+ *                   i.e. values from lvl1 to lvl6 joined by a '>' character (max 3 levels displayed)
+ */
+function hierarchyToBreadcrumbString(hierarchy: Hierarchy): string {
+  const breadcrumbArray = [];
+  let addedLevels = 0;
+  for (let i = 1; i < 7 && addedLevels < 3; ++i) {
+    if (hierarchy[`lvl${i}`]) {
+      breadcrumbArray.push(hierarchy[`lvl${i}`]);
+      ++addedLevels;
+    }
+  }
+  return breadcrumbArray.join(' > ');
+}

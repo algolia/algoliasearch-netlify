@@ -160,7 +160,13 @@ $size-l: 32px;
 // ---- More
 .aa-ItemTitle {
   font-size: $font-size-s;
+  font-weight: bold;
   line-height: 18px;
+}
+.aa-ItemHierarchy {
+  font-size: $font-size-s;
+  line-height: 18px;
+  opacity: 0.8;
 }
 .aa-ItemDescription {
   font-size: $font-size-xs;
