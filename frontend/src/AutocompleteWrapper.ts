@@ -11,7 +11,7 @@ import {
 } from '@algolia/autocomplete-js';
 import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
 
-import type { Options, AlgoliaRecord } from './types';
+import type { Options, AlgoliaRecord, Hierarchy } from './types';
 
 import { templates } from './templates';
 
@@ -102,7 +102,8 @@ class AutocompleteWrapper {
           return templates.item(
             item,
             highlightHit({ hit: item, attribute: 'title' }),
-            getSuggestionSnippet(item)
+            getSuggestionSnippet(item),
+            getHighlightedHierarchy(item)
           );
         },
         footer() {
@@ -143,6 +144,21 @@ function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
     return snippetHit({ hit, attribute: 'content' });
   }
   return hit.description || hit.content;
+}
+
+function getHighlightedHierarchy(hit: Hit<AlgoliaRecord>): Hierarchy | null {
+  if (!hit.hierarchy) {
+    return null;
+  }
+  const highlightedHierarchy: Hierarchy = {};
+  for (let i = 0; i <= 6; ++i) {
+    highlightedHierarchy[`lvl${i}`] = highlightHit({
+      hit,
+      // @ts-ignore
+      attribute: `hierarchy.lvl${i}`,
+    });
+  }
+  return highlightedHierarchy;
 }
 
 export { AutocompleteWrapper };
