@@ -48,8 +48,10 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   const algoliaApiKey = process.env.ALGOLIA_API_KEY;
 
   const branches = inputs.branches;
+  const mainBranch = inputs.mainBranch;
   const pathPrefix = inputs.pathPrefix;
   const customDomain = inputs.customDomain;
+  const renderJavaScript = inputs.renderJavaScript;
 
   if (isEnvDisabled) {
     summary(`Disabled by the "ALGOLIA_DISABLED" environment variable`);
@@ -100,11 +102,13 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   try {
     const body = JSON.stringify({
       branch,
+      mainBranch,
       siteName,
       deployPrimeUrl,
       version,
       pathPrefix,
       customDomain,
+      renderJavaScript,
     });
     console.log('Sending request to crawl', endpoint);
     if (isDebugMode) {

@@ -60,8 +60,10 @@ class AutocompleteWrapper {
 
     // Keep in sync with crawler code in /netlify/crawl
     const cleanBranch = branch
+      .trim()
       .replace(/[^\p{L}\p{N}_.-]+/gu, '-')
-      .replace(/-{2,}/g, '-');
+      .replace(/-{2,}/g, '-')
+      .toLocaleLowerCase();
     return `netlify_${siteId}_${cleanBranch}_all`;
   }
 
@@ -139,9 +141,9 @@ function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
     return snippetHit({ hit, attribute: 'description' });
   }
   if (hit._snippetResult?.content) {
-    return snippetHit({ hit, attribute: 'content' });
+    return snippetHit({hit, attribute: 'content'});
   }
-  return null;
+  return hit.description || hit.content;
 }
 
 function getHighlightedHierarchy(hit: Hit<AlgoliaRecord>): Hierarchy | null {

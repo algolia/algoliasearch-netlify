@@ -17,6 +17,7 @@ dev_only='
 package = "./plugin/dist/index.js"
   [plugins.inputs]
   branches = ["*"]
+  mainBranch = "master"
 
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
