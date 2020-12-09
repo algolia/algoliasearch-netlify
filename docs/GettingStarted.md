@@ -15,8 +15,6 @@
 
 Here's how you can implement an instant search on your site using Netlify, Algolia, and this plugin. **All you need is an existing Netlify site.**
 
-> This plugin is in Public Beta
-
 ### Link your site to Algolia
 
 First, go to the [Algolia Crawler for Netlify](https://crawler.algolia.com/admin/netlify) and click **Sign in to Algolia with Netlify**. We automatically create a new Algolia account if you don't have one.
