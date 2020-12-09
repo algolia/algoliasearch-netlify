@@ -1,6 +1,6 @@
 {
   "name": "@algolia/netlify",
-  "version": "0.0.21",
+  "version": "1.0.0",
   "private": true,
   "author": "Algolia Team <contact@algolia.com>",
   "license": "MIT",

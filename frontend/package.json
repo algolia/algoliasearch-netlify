@@ -1,6 +1,6 @@
 {
   "name": "@algolia/algoliasearch-netlify-frontend",
-  "version": "0.0.21",
+  "version": "1.0.0",
   "private": false,
   "author": "Algolia Team <contact@algolia.com>",
   "license": "MIT",
@@ -35,13 +35,12 @@
     "postcss": "8.1.7",
     "postcss-loader": "4.1.0",
     "postcss-preset-env": "6.7.0",
-    "postcss": "8.1.7",
     "sass-loader": "10.1.0",
     "terser-webpack-plugin": "4.2.3",
     "ts-loader": "8.0.11",
+    "webpack": "4.44.2",
     "webpack-cli": "4.2.0",
-    "webpack-dev-server": "3.11.0",
-    "webpack": "4.44.2"
+    "webpack-dev-server": "3.11.0"
   },
   "keywords": [
     "algolia",

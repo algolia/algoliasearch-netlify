@@ -1,3 +1,14 @@
+# [1.0.0](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.21...v1.0.0) (2020-12-09)
+
+
+### Features
+
+* Extraction templates ([#142](https://github.com/algolia/algoliasearch-netlify/issues/142)) ([912386f](https://github.com/algolia/algoliasearch-netlify/commit/912386f1e9397cc0f85ba89ffe9de0429b768ad6))
+* **UI:** Hierarchical records support ([#141](https://github.com/algolia/algoliasearch-netlify/issues/141)) ([1c84083](https://github.com/algolia/algoliasearch-netlify/commit/1c840832cf130070d80bf42e24f6e0579a3f3226))
+* migrate to autocomplete.js v1 [BREAKING CHANGES] ([#135](https://github.com/algolia/algoliasearch-netlify/issues/135)) ([1f93199](https://github.com/algolia/algoliasearch-netlify/commit/1f9319924f27cd5ddce03b6578f63096b26c6600))
+
+
+
 ## [0.0.21](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.19...v0.0.21) (2020-11-23)
 
 
