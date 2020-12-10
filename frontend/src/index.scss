@@ -4,6 +4,8 @@ $color-light: #797979;
 $color-text: #23263b;
 $color-mark: rgb(84, 104, 255);
 $color-bg-selected: #f5f5fa;
+$color-input-icon: #777;
+$color-source-icon: rgba(80, 80, 80, 0.32);
 
 $font-size-xs: 12px;
 $font-size-s: 14px;
@@ -12,39 +14,65 @@ $font-size-m: 16px;
 $size-s: 4px;
 $size-m: 8px;
 $size-l: 16px;
-$size-l: 32px;
+$size-xl: 32px;
 
-.aa-Autocomplete {
+$height: $size-xl;
+$height-icon: $size-l;
+$font-size: $font-size-m;
+
+.aa-Autocomplete, .aa-Panel {
   --color-mark: #{$color-mark};
   --color-background: #{$color-bg};
   --color-selected: #{$color-bg-selected};
   --color-text: #{$color-text};
+  --color-input-icon: #{$color-input-icon};
+  --color-source-icon: #{$color-source-icon};
+  --height: #{$height};
+  --height-icon: #{$height-icon};
+  --font-size: #{$font-size};
 }
-// Source (modified) https://github.com/algolia/autocomplete.js/blob/next/examples/js/autocomplete.css
+
+// Source modified from
+// https://raw.githubusercontent.com/algolia/autocomplete.js/next/packages/autocomplete-theme-classic/src/theme.scss
 .aa-Form {
   position: relative;
+  height: $height;
+  height: var(--height);
+  font-size: $font-size;
+  font-size: var(--font-size);
 }
 
 .aa-Label {
-  align-items: center;
-  color: #777;
   cursor: initial;
-  display: flex;
-  height: $size-l;
-  width: $size-l;
-  padding: 0 0.5rem;
+  color: $color-input-icon;
+  color: var(--color-input-icon);
   position: absolute;
   z-index: 2;
+
+  padding: 0;
 }
 
 .aa-InputWrapper {
-  background-color: $color-bg;
-  background-color: var(--color-background);
+  background-color: #fff;
   max-width: 100%;
+  height: $height;
+  height: var(--height);
   position: relative;
   width: 100%;
-  display: flex;
+  background-color: $color-bg;
+  background-color: var(--color-background);
   border-radius: 3px;
+
+  svg {
+    height: 90%;
+    color: $color-input-icon;
+    color: var(--color-input-icon);
+    height: $height-icon;
+    height: var(--height-icon);
+  }
+  [hidden] {
+    display: none;
+  }
 }
 
 .aa-Input {
@@ -56,49 +84,84 @@ $size-l: 32px;
   caret-color: #5a5e9a;
   color: $color-text;
   color: var(--color-text);
-  height: $size-l;
+  font: inherit;
+  height: 100%;
+  padding: 0 2.25rem;
+  position: absolute;
   width: 100%;
   z-index: 2;
-  font-size: $font-size-m;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    appearance: none;
+  }
+
+  &::placeholder {
+    color: #5a5e9a;
+  }
+
+  &:focus {
+    border-color: #3c4fe0;
+    box-shadow: rgba(35, 38, 59, 0.05) 0 1px 0 0;
+    outline: currentColor none medium;
+  }
 }
 
-.aa-Input::-webkit-search-decoration,
-.aa-Input::-webkit-search-cancel-button,
-.aa-Input::-webkit-search-results-button,
-.aa-Input::-webkit-search-results-decoration {
-  -webkit-appearance: none;
+.aa-SubmitButton,
+.aa-ResetButton,
+.aa-LoadingIndicator,
+.aa-Label {
+  height: $height;
+  height: var(--height);
+  width: $height;
+  width: var(--height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.aa-Input {
-  padding: 0 2.25rem;
-}
-
-.aa-Input::placeholder {
-  color: #5a5e9a;
-}
-
-.aa-Input:focus {
-  border-color: #3c4fe0;
-  box-shadow: rgba(35, 38, 59, 0.05) 0 1px 0 0;
-  outline: currentcolor none medium;
-}
-
+.aa-SubmitButton,
 .aa-ResetButton {
   background: none;
   border: 0;
   cursor: pointer;
-  color: #777;
-  height: $size-l;
-  width: $size-l;
+}
+
+.aa-ResetButton {
   position: absolute;
   right: 0;
   z-index: 2;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.aa-LoadingIndicator {
+  position: absolute;
+  z-index: 2;
+}
+
+.aa-LoadingIcon {
+  height: 100%;
 }
 
 .aa-Panel {
+  max-width: 480px;
+  min-width: 300px;
+  position: absolute;
+  width: 100%;
+  z-index: 11;
+
+  &--stalled {
+    filter: grayscale(1);
+    opacity: 0.5;
+    transition: opacity 200ms ease-in;
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+}
+
+.aa-PanelLayout {
   background-color: $color-bg;
   background-color: var(--color-background);
   border: 1px solid rgba(150, 150, 150, 0.16);
@@ -106,28 +169,9 @@ $size-l: 32px;
   box-shadow: 0 0 0 1px rgba(35, 38, 59, 0.05),
     0 8px 16px -4px rgba(35, 38, 59, 0.25);
   margin-top: 5px;
-  max-width: 480px;
-  position: absolute;
-  width: 100%;
-  min-width: 400px;
-  font-size: $font-size-m;
-  font-weight: normal;
-  z-index: 100;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
 }
 
-.aa-Panel--stalled {
-  filter: grayscale(1);
-  opacity: 0.5;
-  transition: opacity 200ms ease-in;
-}
-
-.aa-Panel a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.aa-Panel ul {
+.aa-List {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -138,11 +182,31 @@ $size-l: 32px;
   color: var(--color-text);
   cursor: pointer;
   display: flex;
+  grid-gap: 0.5rem;
+  justify-content: space-between;
+
+  mark {
+    font-style: normal;
+    font-weight: bold;
+    color: $color-mark;
+    color: var(--color-mark);
+    background-color: transparent;
+  }
+
+  &[aria-selected='true'] {
+    background-color: $color-bg-selected;
+    background-color: var(--color-selected);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-.aa-Item[aria-selected='true'] {
-  background-color: $color-bg-selected;
-  background-color: var(--color-selected);
+.aa-ItemLink {
+  color: inherit;
+  text-decoration: none;
 }
 
 .aa-ItemContent {
@@ -150,11 +214,29 @@ $size-l: 32px;
   flex-grow: 1;
   grid-gap: 0.5rem;
   padding: 0.5rem;
-  text-align: left;
 }
 
-.aa-ItemSourceIcon {
-  color: rgba(80, 80, 80, 0.32);
+.aa-ItemSourceIcon,
+.aa-ItemActionButton {
+  color: $color-source-icon;
+  color: var(--color-source-icon);
+}
+
+.aa-ItemActionButton {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 0.5rem;
+  transition: color 100ms;
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: rgba(80, 80, 80, 1);
+  }
 }
 
 // ---- More
@@ -164,7 +246,7 @@ $size-l: 32px;
   line-height: 18px;
 }
 .aa-ItemHierarchy {
-  font-size: $font-size-s;
+  font-size: $font-size-xs;
   line-height: 18px;
   opacity: 0.8;
 }
@@ -172,11 +254,6 @@ $size-l: 32px;
   font-size: $font-size-xs;
   line-height: 16px;
   color: $color-light;
-}
-.aa-ItemContent mark {
-  color: $color-mark;
-  color: var(--color-mark);
-  background-color: transparent;
 }
 
 

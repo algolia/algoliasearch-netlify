@@ -14,6 +14,7 @@ export interface Options {
     background?: string;
     selected?: string;
     text?: string;
+    colorSourceIcon?: string;
   };
   debug?: boolean;
   placeholder?: string;

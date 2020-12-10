@@ -22,6 +22,7 @@ class AutocompleteWrapper {
   private options;
   private indexName;
   private client;
+  private $themeNode: HTMLStyleElement | null = null;
   private autocomplete: AutocompleteApi<AlgoliaRecord> | undefined;
 
   constructor(options: Options) {
@@ -121,18 +122,16 @@ class AutocompleteWrapper {
     }
 
     const theme = this.options.theme;
-    if (theme.mark) {
-      el.style.setProperty('--color-mark', theme.mark);
-    }
-    if (theme.background) {
-      el.style.setProperty('--color-background', theme.background);
-    }
-    if (theme.text) {
-      el.style.setProperty('--color-text', theme.text);
-    }
-    if (theme.selected) {
-      el.style.setProperty('--color-selected', theme.selected);
-    }
+    this.$themeNode = addCss(
+      `.aa-Autocomplete, .aa-Panel {
+      ${theme.mark && `--color-mark: ${theme.mark};`}
+      ${theme.mark && `--color-background: ${theme.background};`}
+      ${theme.mark && `--color-selected: ${theme.selected};`}
+      ${theme.mark && `--color-text: ${theme.text};`}
+      ${theme.mark && `--color-source-icon: ${theme.colorSourceIcon};`}
+    }`,
+      this.$themeNode
+    );
   }
 }
 
@@ -159,6 +158,25 @@ function getHighlightedHierarchy(hit: Hit<AlgoliaRecord>): Hierarchy | null {
     });
   }
   return highlightedHierarchy;
+}
+
+function addCss(
+  css: string,
+  $mainStyle: HTMLElement | null = null
+): HTMLStyleElement {
+  const $usedSibling =
+    $mainStyle ??
+    document.querySelector(
+      'link[rel=stylesheet][href*="algoliasearchNetlify"]'
+    ) ??
+    document.getElementsByTagName('head')[0].lastChild!;
+  const $styleTag = document.createElement('style');
+  $styleTag.setAttribute('type', 'text/css');
+  $styleTag.appendChild(document.createTextNode(css));
+  return $usedSibling.parentNode!.insertBefore(
+    $styleTag,
+    $usedSibling.nextSibling
+  );
 }
 
 export { AutocompleteWrapper };
