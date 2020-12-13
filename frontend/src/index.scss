@@ -40,14 +40,27 @@ $font-size: $font-size-m;
   height: var(--height);
   font-size: $font-size;
   font-size: var(--font-size);
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+
+
+  svg {
+    height: 90%;
+    color: $color-input-icon;
+    color: var(--color-input-icon);
+    height: $height-icon;
+    height: var(--height-icon);
+  }
+  [hidden] {
+    display: none;
+  }
 }
 
 .aa-Label {
   cursor: initial;
   color: $color-input-icon;
   color: var(--color-input-icon);
-  position: absolute;
-  z-index: 2;
 
   padding: 0;
 }
@@ -62,17 +75,16 @@ $font-size: $font-size-m;
   background-color: $color-bg;
   background-color: var(--color-background);
   border-radius: 3px;
-
-  svg {
-    height: 90%;
-    color: $color-input-icon;
-    color: var(--color-input-icon);
-    height: $height-icon;
-    height: var(--height-icon);
-  }
-  [hidden] {
-    display: none;
-  }
+}
+.aa-InputWrapperPrefix,
+.aa-InputWrapperSuffix {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.aa-InputWrapperSuffix {
+  right: 0;
 }
 
 .aa-Input {
@@ -127,12 +139,6 @@ $font-size: $font-size-m;
   background: none;
   border: 0;
   cursor: pointer;
-}
-
-.aa-ResetButton {
-  position: absolute;
-  right: 0;
-  z-index: 2;
 }
 
 .aa-LoadingIndicator {
