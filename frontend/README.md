@@ -50,6 +50,7 @@ algoliasearchNetlify({
     background: '#23263b',                      // Background Color of the input and the panel
     selected: '#111432',                        // Background Color of the selected item
     text: '#d6d6e7'                             // Color of the title of the items
+    colorSourceIcon: '#d6d6e7'                  // Color of the icon on the left of results
   }
 });
 ```
@@ -88,7 +89,8 @@ You can theme the input and the autocomplete by using the `theme` property.
     mark: '#fff',
     background: '#23263b',
     selected: '#111432',
-    text: '#d6d6e7'
+    text: '#d6d6e7',
+    colorSourceIcon: '#d6d6e7'
   }
 }
 ```
