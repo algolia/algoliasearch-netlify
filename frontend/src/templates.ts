@@ -22,7 +22,6 @@ export const templates = {
     description: string | null,
     hierarchy: Hierarchy | null
   ) => {
-    console.log(hierarchy);
     return `
         <a href="${record.url}">
           <div class="aa-ItemContent">
