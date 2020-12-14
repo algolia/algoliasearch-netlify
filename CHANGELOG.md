@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.0...v1.0.1) (2020-12-14)
+
+
+### Bug Fixes
+
+* **frontend:** upgrade autocomplete  ([#146](https://github.com/algolia/algoliasearch-netlify/issues/146)) ([bd6753f](https://github.com/algolia/algoliasearch-netlify/commit/bd6753f129454cf8ffc09ef3ab91aa379a40e09b))
+
+
+
 # [1.0.0](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.21...v1.0.0) (2020-12-09)
 
 
