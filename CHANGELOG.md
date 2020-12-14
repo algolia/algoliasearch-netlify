@@ -1,3 +1,13 @@
+## [1.0.2](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.1...v1.0.2) (2020-12-14)
+
+
+### Bug Fixes
+
+* **frontend:** css edge cases ([5705615](https://github.com/algolia/algoliasearch-netlify/commit/5705615db67acc701f79cc5f161ea4faf40bb6bf))
+* **frontend:** inherit border-radius ([a4c2fb8](https://github.com/algolia/algoliasearch-netlify/commit/a4c2fb8dc5560ba4d2c1af9cb4ec78075286ba39))
+
+
+
 ## [1.0.1](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.0...v1.0.1) (2020-12-14)
 
 
