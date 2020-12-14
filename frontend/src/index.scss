@@ -43,7 +43,7 @@ $font-size: $font-size-m;
   display: flex;
   flex-grow: 1;
   margin: 0;
-
+  min-width: 160px;
 
   svg {
     height: 90%;
@@ -129,7 +129,7 @@ $font-size: $font-size-m;
   height: var(--height);
   width: $height;
   width: var(--height);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -155,7 +155,7 @@ $font-size: $font-size-m;
   min-width: 350px;
   position: absolute;
   width: 100%;
-  z-index: 11;
+  z-index: 1100;
 
   &--stalled {
     filter: grayscale(1);
