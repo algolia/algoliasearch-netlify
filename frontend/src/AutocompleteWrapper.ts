@@ -136,8 +136,8 @@ class AutocompleteWrapper {
 }
 
 function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
-  // Description and content are always returned by default
-  // unless indexSettings were modified even they don't match
+  // If they are defined as `searchableAttributes`, 'description' and 'content' are always
+  // present in the `_snippetResult`, even if they don't match.
   // So we need to have 1 check on the presence and 1 check on the match
   const description = hit._snippetResult?.description;
   const content = hit._snippetResult?.content;
