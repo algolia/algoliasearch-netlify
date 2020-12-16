@@ -136,13 +136,29 @@ class AutocompleteWrapper {
 }
 
 function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
-  if (hit._snippetResult?.description) {
+  // Description and content are always returned by default
+  // unless indexSettings were modified even they don't match
+  // So we need to have 1 check on the presence and 1 check on the match
+  const description = hit._snippetResult?.description;
+  const content = hit._snippetResult?.content;
+
+  // Take in priority props that matches the search
+  if (description && description.matchLevel === 'full') {
     return snippetHit({ hit, attribute: 'description' });
   }
-  if (hit._snippetResult?.content) {
+  if (content && content.matchLevel === 'full') {
     return snippetHit({ hit, attribute: 'content' });
   }
-  return hit.description || hit.content;
+
+  // Otherwise take the prop that was at least correctly returned
+  if (description && !content) {
+    return snippetHit({ hit, attribute: 'description' });
+  } else if (content) {
+    return snippetHit({ hit, attribute: 'content' });
+  }
+
+  // Otherwise raw value or empty
+  return hit.description || hit.content || '';
 }
 
 function getHighlightedHierarchy(hit: Hit<AlgoliaRecord>): Hierarchy | null {
