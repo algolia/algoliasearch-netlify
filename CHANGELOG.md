@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.2...v1.0.3) (2020-12-16)
+
+
+### Bug Fixes
+
+* **frontend:** suggestionSnippet correct logic ([#155](https://github.com/algolia/algoliasearch-netlify/issues/155)) ([0076ecb](https://github.com/algolia/algoliasearch-netlify/commit/0076ecb7dc87d3527b47befdbbc59d5737bb015b))
+
+
+
 ## [1.0.2](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.1...v1.0.2) (2020-12-14)
 
 
