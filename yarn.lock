@@ -25,10 +25,22 @@
   dependencies:
     "@algolia/autocomplete-shared" "1.0.0-alpha.38"
 
+"@algolia/autocomplete-preset-algolia@1.0.0-alpha.39":
+  version "1.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.39.tgz#efbd238cf8fba4ed178344cca70b84addb0f0209"
+  integrity sha512-0E9dvwk1ibGpQk7Kq1M8bqcxZ5ToXowAxcICLpy6SwQoWAV4P5lygkeU3gkkEwqZCzCdRbB+KbahUP62ie26Jw==
+  dependencies:
+    "@algolia/autocomplete-shared" "1.0.0-alpha.39"
+
 "@algolia/autocomplete-shared@1.0.0-alpha.38":
   version "1.0.0-alpha.38"
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.0.0-alpha.38.tgz#37a2b927fa718105cbabdc5cdb8ac0d2efbc10b4"
   integrity sha512-4GPHme9Wm8JN2ZTQWZaOgfJk28Z3WdC9XUaAhdd0Vii0GZkBMXSwlpeLPvKyrpuaocnkrMPafKJOMRHU0baMGQ==
+
+"@algolia/autocomplete-shared@1.0.0-alpha.39":
+  version "1.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.0.0-alpha.39.tgz#5f661a09150cb5a049d4697eb57fffb4adbceb63"
+  integrity sha512-t0tOPVBjWicKWtysQZbblXmFDRToTgXXtjSeiDCeAfD9lCN7jx52F8kkT1ZnzhmAHcSpcaLagjTLttcyJwJjwQ==
 
 "@algolia/cache-browser-local-storage@4.8.3":
   version "4.8.3"
