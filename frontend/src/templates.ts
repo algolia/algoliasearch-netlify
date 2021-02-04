@@ -1,4 +1,5 @@
-import { AlgoliaRecord, Hierarchy } from './types';
+import type { Pragma, PragmaFrag, VNode } from '@algolia/autocomplete-js';
+import { AlgoliaRecord, HighlightedHierarchy } from './types';
 
 export const templates = {
   poweredBy: (hostname: string) => {
@@ -18,55 +19,88 @@ export const templates = {
 
   item: (
     record: AlgoliaRecord,
-    title: string,
-    description: string | null,
-    hierarchy: Hierarchy | null
-  ) => {
-    return `
-        <a href="${record.url}">
-          <div class="aa-ItemContent">
-            <div class="aa-ItemSourceIcon"><svg width="20" height="20" viewBox="0 0 20 20">
-              <path d="M17 6v12c0 .52-.2 1-1 1H4c-.7 0-1-.33-1-1V2c0-.55.42-1 1-1h8l5 5zM14 8h-3.13c-.51 0-.87-.34-.87-.87V4" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linejoin="round"></path></svg>
-            </div>
-            <div>
-              <div class="aa-ItemTitle">
-                ${hierarchy?.lvl0 ?? title}
-              </div>
-              ${
-                hierarchy
-                  ? `<div class="aa-ItemHierarchy">${hierarchyToBreadcrumbString(
-                      hierarchy
-                    )}</div>`
-                  : ''
-              }
-              ${
-                description
-                  ? `<div class="aa-ItemDescription">${description}</div>`
-                  : ''
-              }
-            </div>
-          </div>
-        </a>
-      </li>
-    `;
+    createElement: Pragma,
+    Fragment: PragmaFrag,
+    title: Array<string | VNode>,
+    description: Array<string | VNode>,
+    hierarchy: HighlightedHierarchy | null
+    // eslint-disable-next-line max-params
+  ): VNode => {
+    return createElement(
+      Fragment,
+      {},
+      createElement(
+        'a',
+        { href: record.url },
+        createElement(
+          'div',
+          { class: 'aa-ItemContent' },
+          createElement(
+            'div',
+            { class: 'aa-ItemSourceIcon' },
+            createElement(
+              'svg',
+              { width: '20', height: '20', viewBox: '0 0 20 20' },
+              createElement('path', {
+                d:
+                  'M17 6v12c0 .52-.2 1-1 1H4c-.7 0-1-.33-1-1V2c0-.55.42-1 1-1h8l5 5zM14 8h-3.13c-.51 0-.87-.34-.87-.87V4',
+                stroke: 'currentColor',
+                fill: 'none',
+                'fill-rule': 'evenodd',
+                'stroke-linejoin': 'round',
+              })
+            )
+          ),
+          createElement(
+            'div',
+            {},
+            createElement(
+              'div',
+              { class: 'aa-ItemTitle' },
+              hierarchy?.lvl0 ?? title
+            ),
+            hierarchy
+              ? createElement(
+                  'div',
+                  { class: 'aa-ItemHierarchy' },
+                  hierarchyToBreadcrumbVNodes(hierarchy)
+                )
+              : '',
+            description
+              ? createElement(
+                  'div',
+                  { class: 'aa-ItemDescription' },
+                  description
+                )
+              : ''
+          )
+        )
+      )
+    );
   },
 };
 
 /**
- * Transform a hierarchy object into a displayable string
+ * Transform a highlighted hierarchy object into an array of VNode[].
+ * 3 levels max are returned.
  *
- * @param {Hierarchy} hierarchy A record's hierarchy under the form { lvl0: '', lvl1: '', lvl2: '', ... }
- * @returns {string} A string representation of the hierarchy starting from lvl1,
- *                   i.e. values from lvl1 to lvl6 joined by a '>' character (max 3 levels displayed)
+ * @param {Hierarchy} hierarchy An highlighted hierarchy, i.e. { lvl0: (string | VNode)[], lvl1: (string | VNode)[], lvl2: (string | VNode)[], ... }
+ * @returns {Array<string | Array<string | VNode>>} An array of VNode[], representing of the highlighted hierarchy starting from lvl1.
+ *                                                  Between each VNode[] we insert a ' > ' character to render them as breadcrumbs eventually.
  */
-function hierarchyToBreadcrumbString(hierarchy: Hierarchy): string {
-  const breadcrumbArray = [];
+function hierarchyToBreadcrumbVNodes(
+  hierarchy: HighlightedHierarchy
+): Array<string | Array<string | VNode>> {
+  const breadcrumbVNodeArray: Array<string | Array<string | VNode>> = [];
   let addedLevels = 0;
   for (let i = 1; i < 7 && addedLevels < 3; ++i) {
-    if (hierarchy[`lvl${i}`]) {
-      breadcrumbArray.push(hierarchy[`lvl${i}`]);
+    if (hierarchy[`lvl${i}`] && hierarchy[`lvl${i}`].length > 0) {
+      if (addedLevels > 0) {
+        breadcrumbVNodeArray.push(' > ');
+      }
+      breadcrumbVNodeArray.push(hierarchy[`lvl${i}`]);
       ++addedLevels;
     }
   }
-  return breadcrumbArray.join(' > ');
+  return breadcrumbVNodeArray;
 }

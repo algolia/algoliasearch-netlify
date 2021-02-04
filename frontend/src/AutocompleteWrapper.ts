@@ -9,9 +9,10 @@ import {
   snippetHit,
   AutocompleteSource,
 } from '@algolia/autocomplete-js';
+import type { VNode } from '@algolia/autocomplete-js';
 import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
 
-import type { Options, AlgoliaRecord, Hierarchy } from './types';
+import type { Options, AlgoliaRecord, HighlightedHierarchy } from './types';
 
 import { templates } from './templates';
 
@@ -97,11 +98,13 @@ class AutocompleteWrapper {
       },
       templates: {
         header() {
-          return;
+          return '';
         },
-        item({ item }: { item: Hit<AlgoliaRecord> }) {
+        item({ item, createElement, Fragment }) {
           return templates.item(
             item,
+            createElement,
+            Fragment,
             highlightHit({ hit: item, attribute: 'title' }),
             getSuggestionSnippet(item),
             getHighlightedHierarchy(item)
@@ -111,6 +114,7 @@ class AutocompleteWrapper {
           if (poweredBy) {
             return templates.poweredBy(window.location.host);
           }
+          return '';
         },
       },
     };
@@ -135,7 +139,7 @@ class AutocompleteWrapper {
   }
 }
 
-function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
+function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): Array<string | VNode> {
   // If they are defined as `searchableAttributes`, 'description' and 'content' are always
   // present in the `_snippetResult`, even if they don't match.
   // So we need to have 1 check on the presence and 1 check on the match
@@ -158,19 +162,24 @@ function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): string | null {
   }
 
   // Otherwise raw value or empty
-  return hit.description || hit.content || '';
+  const res = hit.description || hit.content || '';
+  return [res];
 }
 
-function getHighlightedHierarchy(hit: Hit<AlgoliaRecord>): Hierarchy | null {
+function getHighlightedHierarchy(
+  hit: Hit<AlgoliaRecord>
+): HighlightedHierarchy | null {
   if (!hit.hierarchy) {
     return null;
   }
-  const highlightedHierarchy: Hierarchy = {};
+  const highlightedHierarchy: HighlightedHierarchy = {};
   for (let i = 0; i <= 6; ++i) {
+    if (!highlightedHierarchy[`lvl${i}`]) {
+      continue;
+    }
     highlightedHierarchy[`lvl${i}`] = highlightHit({
       hit,
-      // @ts-ignore
-      attribute: `hierarchy.lvl${i}`,
+      attribute: ['hierarchy', `lvl${i}`],
     });
   }
   return highlightedHierarchy;
