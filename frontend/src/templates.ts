@@ -34,10 +34,10 @@ export const templates = {
         { href: record.url },
         createElement(
           'div',
-          { class: 'aa-ItemContent' },
+          { class: 'aa-Item aa-ItemContent' }, // aa-ItemContent is kept for compatibility with former CSS
           createElement(
             'div',
-            { class: 'aa-ItemSourceIcon' },
+            { class: 'aa-ItemIcon aa-ItemIcon--no-border aa-ItemSourceIcon' }, // aa-ItemSourceIcon is kept for compatibility with former CSS
             createElement(
               'svg',
               { width: '20', height: '20', viewBox: '0 0 20 20' },

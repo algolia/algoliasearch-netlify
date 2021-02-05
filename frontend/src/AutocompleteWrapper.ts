@@ -127,12 +127,12 @@ class AutocompleteWrapper {
 
     const theme = this.options.theme;
     this.$themeNode = addCss(
-      `.aa-Autocomplete, .aa-Panel {
+      `:root {
+      ${theme.mark && `--aa-background-color: ${theme.background};`}
+      ${theme.mark && `--aa-selected-color: ${theme.selected};`}
+      ${theme.mark && `--aa-text-color: ${theme.text};`}
+      ${theme.mark && `--aa-icon-color: ${theme.colorSourceIcon};`}
       ${theme.mark && `--color-mark: ${theme.mark};`}
-      ${theme.mark && `--color-background: ${theme.background};`}
-      ${theme.mark && `--color-selected: ${theme.selected};`}
-      ${theme.mark && `--color-text: ${theme.text};`}
-      ${theme.mark && `--color-source-icon: ${theme.colorSourceIcon};`}
     }`,
       this.$themeNode
     );
@@ -174,7 +174,7 @@ function getHighlightedHierarchy(
   }
   const highlightedHierarchy: HighlightedHierarchy = {};
   for (let i = 0; i <= 6; ++i) {
-    if (!highlightedHierarchy[`lvl${i}`]) {
+    if (!hit.hierarchy[`lvl${i}`]) {
       continue;
     }
     highlightedHierarchy[`lvl${i}`] = highlightHit({
