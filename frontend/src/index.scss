@@ -1,8 +1,13 @@
 @import 'autocomplete-theme-classic';
 
+$color-bg: #fff;
 $color-muted: #969faf;
 $color-light: #797979;
+$color-text: #23263b;
 $color-mark: rgb(84, 104, 255);
+$color-bg-selected: #f5f5fa;
+$color-input-icon: #777;
+$color-source-icon: rgba(80, 80, 80, 0.32);
 
 $font-size-xs: 12px;
 $font-size-s: 14px;
@@ -14,11 +19,25 @@ $size-m: 8px;
 $size-l: 16px;
 $size-xl: 32px;
 
+$height: $size-xl;
+$height-icon: $size-l;
 $font-size: $font-size-m;
 
-// ---- Overridden definitions of classic theme
-:root {
+.aa-Autocomplete, .aa-Panel {
   --color-mark: #{$color-mark};
+  --color-background: #{$color-bg};
+  --color-selected: #{$color-bg-selected};
+  --color-text: #{$color-text};
+  --color-input-icon: #{$color-input-icon};
+  --color-source-icon: #{$color-source-icon};
+  --height: #{$height};
+  --height-icon: #{$height-icon};
+  --font-size: #{$font-size};
+}
+
+//// ---- Overridden definitions of classic theme
+:root {
+  --aa-icon-color: #{$color-source-icon};
 }
 
 .aa-Panel {
@@ -28,11 +47,29 @@ $font-size: $font-size-m;
 
 .aa-Autocomplete, .aa-TouchFormContainer {
   .aa-Form {
+    height: var(--height);
+    padding: 0;
+
+    &:focus-within {
+      box-shadow: none;
+    }
     .aa-InputWrapperPrefix {
+      padding: 0;
+
       .aa-Label {
+        padding: 0;
+
         svg {
-          color: var(--aa-icon-color);
+          left: 0;
+          vertical-align: middle;
+          color: var(--color-input-icon);
+          height: var(--height-icon);
         }
+      }
+    }
+    .aa-InputWrapper {
+      .aa-Input {
+        height: var(--height);
       }
     }
   }

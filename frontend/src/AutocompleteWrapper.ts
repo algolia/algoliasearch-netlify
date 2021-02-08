@@ -133,6 +133,9 @@ class AutocompleteWrapper {
       ${theme.mark && `--aa-text-color: ${theme.text};`}
       ${theme.mark && `--aa-icon-color: ${theme.colorSourceIcon};`}
       ${theme.mark && `--color-mark: ${theme.mark};`}
+    }
+    .aa-Autocomplete, .aa-Panel {
+      ${theme.mark && `--color-source-icon: ${theme.colorSourceIcon};`}
     }`,
       this.$themeNode
     );
