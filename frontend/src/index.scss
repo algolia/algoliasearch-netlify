@@ -55,6 +55,7 @@ $font-size: $font-size-m;
 .aa-Autocomplete, .aa-TouchFormContainer {
   .aa-Form {
     height: var(--height);
+    font-size: var(--font-size);
     padding: 0;
     background-color: var(--color-background);
 
