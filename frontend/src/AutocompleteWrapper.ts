@@ -127,14 +127,11 @@ class AutocompleteWrapper {
 
     const theme = this.options.theme;
     this.$themeNode = addCss(
-      `:root {
-      ${theme.mark && `--aa-background-color: ${theme.background};`}
-      ${theme.mark && `--aa-selected-color: ${theme.selected};`}
-      ${theme.mark && `--aa-text-color: ${theme.text};`}
-      ${theme.mark && `--aa-icon-color: ${theme.colorSourceIcon};`}
+      `.aa-Autocomplete, .aa-Panel {
       ${theme.mark && `--color-mark: ${theme.mark};`}
-    }
-    .aa-Autocomplete, .aa-Panel {
+      ${theme.mark && `--color-background: ${theme.background};`}
+      ${theme.mark && `--color-selected: ${theme.selected};`}
+      ${theme.mark && `--color-text: ${theme.text};`}
       ${theme.mark && `--color-source-icon: ${theme.colorSourceIcon};`}
     }`,
       this.$themeNode

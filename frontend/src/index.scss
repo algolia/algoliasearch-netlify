@@ -36,19 +36,27 @@ $font-size: $font-size-m;
 }
 
 //// ---- Overridden definitions of classic theme
-:root {
-  --aa-icon-color: #{$color-source-icon};
-}
 
 .aa-Panel {
   min-width: 350px;
   z-index: 1100;
+
+  &.aa-Panel--desktop {
+    .aa-PanelLayout {
+      background-color: var(--color-background);
+
+      .aa-PanelLayoutPreview {
+        border-left: solid 1px var(--color-selected);
+      }
+    }
+  }
 }
 
 .aa-Autocomplete, .aa-TouchFormContainer {
   .aa-Form {
     height: var(--height);
     padding: 0;
+    background-color: var(--color-background);
 
     &:focus-within {
       box-shadow: none;
@@ -70,13 +78,14 @@ $font-size: $font-size-m;
     .aa-InputWrapper {
       .aa-Input {
         height: var(--height);
+        color: var(--color-text);
       }
     }
   }
 }
 
 .aa-Item {
-  color: var(--aa-text-color);
+  color: var(--color-text);
   padding: $size-xs 0;
 
   a {
@@ -84,8 +93,12 @@ $font-size: $font-size-m;
     text-decoration: none;
   }
 
+  &[aria-selected='true'] {
+    background-color: var(--color-selected);
+  }
   .aa-ItemContent {
     display: flex;
+    color: var(--color-text);
 
     mark {
       color: var(--color-mark);
@@ -94,7 +107,7 @@ $font-size: $font-size-m;
   }
   .aa-ItemIcon {
     align-items: baseline;
-    color: var(--aa-icon-color);
+    color: var(--color-source-icon);
 
     background: none;
     box-shadow: none;
@@ -123,7 +136,15 @@ $font-size: $font-size-m;
   z-index: 10;
 
   .aa-TouchCancelButton {
-    color: var(--aa-text-color);
+    color: var(--color-text);
+  }
+}
+
+.aa-TouchSearchButton {
+  background-color: var(--color-background);
+
+  .aa-TouchSearchButtonIcon {
+    color: var(--color-source-icon);
   }
 }
 
