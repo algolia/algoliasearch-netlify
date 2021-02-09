@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     'algolia/func-style-toplevel': 'error',
 
+    'arrow-body-style': 'off',
     'no-console': 'off',
     'no-continue': 'off',
     'no-loop-func': 'off',
