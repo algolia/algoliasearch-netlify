@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.3...v1.0.4) (2021-02-09)
+
+
+### Bug Fixes
+
+* Update autocomplete to alpha.41 ([#198](https://github.com/algolia/algoliasearch-netlify/issues/198)) ([19dc101](https://github.com/algolia/algoliasearch-netlify/commit/19dc1012801f7f24194e54c74a8d53ac3f00f43c))
+
+
+
 ## [1.0.3](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.2...v1.0.3) (2020-12-16)
 
 
@@ -37,7 +46,7 @@
 
 
 
-## [0.0.21](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.19...v0.0.21) (2020-11-23)
+## [0.0.21](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.20...v0.0.21) (2020-11-23)
 
 
 ### Bug Fixes
@@ -48,6 +57,14 @@
 ### Features
 
 * add renderJavaScript option ([#134](https://github.com/algolia/algoliasearch-netlify/issues/134)) ([dd91d7e](https://github.com/algolia/algoliasearch-netlify/commit/dd91d7ebfe88917253fc335df76e12d54b37200c))
+
+
+
+## [0.0.20](https://github.com/algolia/algoliasearch-netlify/compare/v0.0.19...v0.0.20) (2020-11-19)
+
+
+### Features
+
 * new 'mainBranch' parameter ([#123](https://github.com/algolia/algoliasearch-netlify/issues/123)) ([0ca01b6](https://github.com/algolia/algoliasearch-netlify/commit/0ca01b642eb28c56c96b21be3664b02610d97047))
 
 
