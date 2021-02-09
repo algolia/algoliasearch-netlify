@@ -43,6 +43,9 @@ $font-size: $font-size-m;
 
   &.aa-Panel--desktop {
     .aa-PanelLayout {
+      margin-top: $size-xs;
+      padding-top: 0;
+      padding-bottom: 0;
       background-color: var(--color-background);
 
       .aa-PanelLayoutPreview {

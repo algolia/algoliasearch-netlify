@@ -78,6 +78,7 @@ class AutocompleteWrapper {
   private getSources(): AutocompleteSource<AlgoliaRecord> {
     const poweredBy = this.options.poweredBy;
     return {
+      sourceId: 'algoliaHits',
       getItems: ({ query }) => {
         return getAlgoliaHits({
           searchClient: this.client,
@@ -110,9 +111,13 @@ class AutocompleteWrapper {
             getHighlightedHierarchy(item)
           );
         },
-        footer() {
+        footer({ createElement, Fragment }) {
           if (poweredBy) {
-            return templates.poweredBy(window.location.host);
+            return templates.poweredBy({
+              hostname: window.location.host,
+              createElement,
+              Fragment,
+            });
           }
           return '';
         },

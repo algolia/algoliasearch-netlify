@@ -2,19 +2,33 @@ import type { Pragma, PragmaFrag, VNode } from '@algolia/autocomplete-js';
 import { AlgoliaRecord, HighlightedHierarchy } from './types';
 
 export const templates = {
-  poweredBy: (hostname: string) => {
+  poweredBy: ({
+    hostname,
+    createElement,
+    Fragment,
+  }: {
+    hostname: string;
+    createElement: Pragma;
+    Fragment: PragmaFrag;
+  }) => {
     const escapedHostname = encodeURIComponent(hostname);
-    return `
-      <div class="aa-powered-by">
-        Search by
-        <a
-          href="https://www.algolia.com/?utm_source=netlify&utm_medium=link&utm_campaign=autocomplete-${escapedHostname}"
-          class="aa-powered-by-link"
-        >
-          Algolia
-        </a>
-      </div>
-    `;
+    return createElement(
+      Fragment,
+      {},
+      createElement(
+        'div',
+        { class: 'aa-powered-by' },
+        'Search by',
+        createElement(
+          'a',
+          {
+            href: `https://www.algolia.com/?utm_source=netlify&utm_medium=link&utm_campaign=autocomplete-${escapedHostname}`,
+            class: 'aa-powered-by-link',
+          },
+          'Algolia'
+        )
+      )
+    );
   },
 
   item: (
