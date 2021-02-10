@@ -1,17 +1,10 @@
 /** @jsx createElement */
-import type { Pragma, PragmaFrag, VNode } from '@algolia/autocomplete-js';
+import { Fragment, createElement } from 'preact';
+import type { VNode } from '@algolia/autocomplete-js';
 import { AlgoliaRecord, HighlightedHierarchy } from './types';
 
 export const templates = {
-  poweredBy: ({
-    hostname,
-    createElement,
-    Fragment,
-  }: {
-    hostname: string;
-    createElement: Pragma;
-    Fragment: PragmaFrag;
-  }) => {
+  poweredBy: ({ hostname }: { hostname: string }) => {
     const escapedHostname = encodeURIComponent(hostname);
     return (
       <Fragment>
@@ -30,12 +23,9 @@ export const templates = {
 
   item: (
     record: AlgoliaRecord,
-    createElement: Pragma,
-    Fragment: PragmaFrag,
     title: Array<string | VNode>,
     description: Array<string | VNode>,
     hierarchy: HighlightedHierarchy | null
-    // eslint-disable-next-line max-params
   ): VNode => {
     return (
       <Fragment>
@@ -47,9 +37,9 @@ export const templates = {
                   d="M17 6v12c0 .52-.2 1-1 1H4c-.7 0-1-.33-1-1V2c0-.55.42-1 1-1h8l5 5zM14 8h-3.13c-.51 0-.87-.34-.87-.87V4"
                   stroke="currentColor"
                   fill="none"
-                  fill-rule="evenodd"
-                  stroke-linejoin="round"
-                ></path>
+                  fillRule="evenodd"
+                  strokeLinejoin="round"
+                />
               </svg>
             </div>
             <div>
