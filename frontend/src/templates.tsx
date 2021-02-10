@@ -1,4 +1,3 @@
-import * as React from 'preact';
 import type { VNode } from '@algolia/autocomplete-js';
 import { AlgoliaRecord, HighlightedHierarchy } from './types';
 

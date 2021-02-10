@@ -5,7 +5,8 @@
     "rootDir": "src",
     /* Use a fake outDir */
     "outDir": "dist-webpack-never-used",
-    "jsx": "react"
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   },
   "include": ["src/**/*"]
 }
