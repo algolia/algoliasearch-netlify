@@ -1,23 +1,20 @@
-/** @jsx createElement */
-import { Fragment, createElement } from 'preact';
+import * as React from 'preact';
 import type { VNode } from '@algolia/autocomplete-js';
 import { AlgoliaRecord, HighlightedHierarchy } from './types';
 
 export const templates = {
-  poweredBy: ({ hostname }: { hostname: string }) => {
+  poweredBy: ({ hostname }: { hostname: string }): VNode => {
     const escapedHostname = encodeURIComponent(hostname);
     return (
-      <Fragment>
-        <div className="aa-powered-by">
-          Search by
-          <a
-            href={`https://www.algolia.com/?utm_source=netlify&utm_medium=link&utm_campaign=autocomplete-${escapedHostname}`}
-            className="aa-powered-by-link"
-          >
-            Algolia
-          </a>
-        </div>
-      </Fragment>
+      <div className="aa-powered-by">
+        Search by
+        <a
+          href={`https://www.algolia.com/?utm_source=netlify&utm_medium=link&utm_campaign=autocomplete-${escapedHostname}`}
+          className="aa-powered-by-link"
+        >
+          Algolia
+        </a>
+      </div>
     );
   },
 
@@ -28,38 +25,36 @@ export const templates = {
     hierarchy: HighlightedHierarchy | null
   ): VNode => {
     return (
-      <Fragment>
-        <a href={record.url}>
-          <div className="aa-ItemContent">
-            <div className="aa-ItemIcon">
-              <svg width="20" height="20" viewBox="0 0 20 20">
-                <path
-                  d="M17 6v12c0 .52-.2 1-1 1H4c-.7 0-1-.33-1-1V2c0-.55.42-1 1-1h8l5 5zM14 8h-3.13c-.51 0-.87-.34-.87-.87V4"
-                  stroke="currentColor"
-                  fill="none"
-                  fillRule="evenodd"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div>
-              <div className="aa-ItemTitle">{hierarchy?.lvl0 ?? title}</div>
-              {hierarchy ? (
-                <div className="aa-ItemHierarchy">
-                  {hierarchyToBreadcrumbVNodes(hierarchy)}
-                </div>
-              ) : (
-                ''
-              )}
-              {description ? (
-                <div className="aa-ItemDescription">{description}</div>
-              ) : (
-                ''
-              )}
-            </div>
+      <a href={record.url}>
+        <div className="aa-ItemContent">
+          <div className="aa-ItemIcon">
+            <svg width="20" height="20" viewBox="0 0 20 20">
+              <path
+                d="M17 6v12c0 .52-.2 1-1 1H4c-.7 0-1-.33-1-1V2c0-.55.42-1 1-1h8l5 5zM14 8h-3.13c-.51 0-.87-.34-.87-.87V4"
+                stroke="currentColor"
+                fill="none"
+                fillRule="evenodd"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
-        </a>
-      </Fragment>
+          <div>
+            <div className="aa-ItemTitle">{hierarchy?.lvl0 ?? title}</div>
+            {hierarchy ? (
+              <div className="aa-ItemHierarchy">
+                {hierarchyToBreadcrumbVNodes(hierarchy)}
+              </div>
+            ) : (
+              ''
+            )}
+            {description ? (
+              <div className="aa-ItemDescription">{description}</div>
+            ) : (
+              ''
+            )}
+          </div>
+        </div>
+      </a>
     );
   },
 };

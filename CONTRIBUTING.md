@@ -20,7 +20,7 @@ See each tool's respective README.
 yarn release
 ```
 
-This releases both `plugin` & `frontend` to be sure our versions are aligned even if there was changes in only one of both projects.
+This releases both `plugin` & `frontend` to be sure our versions are aligned even if there were changes in only one of both projects.
 Push to your website
 
 ## Architecture
