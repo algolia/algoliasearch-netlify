@@ -97,7 +97,7 @@ module.exports = function (env, options) {
 
   console.log(`Webpack running in "${mode}" mode`);
 
-  const resolvedExtensions = ['.ts', '.js'];
+  const resolvedExtensions = ['.ts', '.tsx', '.js'];
 
   const buildFolder = 'dist';
   const productionDevTool = process.env.CI ? undefined : 'source-map';
@@ -135,7 +135,7 @@ module.exports = function (env, options) {
     module: {
       rules: [
         {
-          test: /\.ts$/,
+          test: /\.tsx?$/,
           exclude: /node_modules/,
           use: [
             {

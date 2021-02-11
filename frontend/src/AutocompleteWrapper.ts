@@ -101,22 +101,18 @@ class AutocompleteWrapper {
         header() {
           return '';
         },
-        item({ item, createElement, Fragment }) {
+        item({ item }) {
           return templates.item(
             item,
-            createElement,
-            Fragment,
             highlightHit({ hit: item, attribute: 'title' }),
             getSuggestionSnippet(item),
             getHighlightedHierarchy(item)
           );
         },
-        footer({ createElement, Fragment }) {
+        footer() {
           if (poweredBy) {
             return templates.poweredBy({
               hostname: window.location.host,
-              createElement,
-              Fragment,
             });
           }
           return '';
