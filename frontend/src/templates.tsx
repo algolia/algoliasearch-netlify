@@ -39,17 +39,13 @@ export const templates = {
           </div>
           <div>
             <div className="aa-ItemTitle">{hierarchy?.lvl0 ?? title}</div>
-            {hierarchy ? (
+            {hierarchy && (
               <div className="aa-ItemHierarchy">
                 {hierarchyToBreadcrumbVNodes(hierarchy)}
               </div>
-            ) : (
-              ''
             )}
-            {description ? (
+            {description && (
               <div className="aa-ItemDescription">{description}</div>
-            ) : (
-              ''
             )}
           </div>
         </div>
