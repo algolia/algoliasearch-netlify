@@ -2307,7 +2307,7 @@
     "@netlify/traffic-mesh-agent-linux-x64" "^0.27.0"
     "@netlify/traffic-mesh-agent-win32-x64" "^0.27.0"
 
-"@netlify/zip-it-and-ship-it@^1.3.10", "@netlify/zip-it-and-ship-it@^1.3.9":
+"@netlify/zip-it-and-ship-it@^1.3.10":
   version "1.3.10"
   resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-1.3.10.tgz#e30bbb7e4bcf9589aea720d555ae4c7ec9894339"
   integrity sha512-0iBn64/rb5rqwahwSOV53VPxQxaIh2DUlmVni/KqJaIxObbTgRCzPTPqq7TORCGBhDUD02khcLvzoTAwd+Fhsw==
@@ -2395,6 +2395,32 @@
     cp-file "^7.0.0"
     elf-cam "^0.1.1"
     end-of-stream "^1.4.4"
+    find-up "^4.1.0"
+    glob "^7.1.6"
+    junk "^3.1.0"
+    locate-path "^5.0.0"
+    make-dir "^3.1.0"
+    p-map "^3.0.0"
+    path-exists "^4.0.0"
+    pkg-dir "^4.2.0"
+    precinct "^6.3.1"
+    require-package-name "^2.0.1"
+    resolve "^2.0.0-next.1"
+    semver "^7.3.2"
+    unixify "^1.0.0"
+    yargs "^15.4.1"
+
+"@netlify/zip-it-and-ship-it@^2.0.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-2.3.0.tgz#00d5261fb90765c038a337ad0986dd9e94aaa3c8"
+  integrity sha512-dqYXA/e2ZY6bO7fvp18YKXLYE/CK8cAbjBE2mo339sA+xchoV3ryYEjsLpoYqFWofUBLQnCYahm4D9a4H7RT0A==
+  dependencies:
+    archiver "^4.0.0"
+    common-path-prefix "^2.0.0"
+    cp-file "^7.0.0"
+    elf-cam "^0.1.1"
+    end-of-stream "^1.4.4"
+    esbuild "^0.8.36"
     find-up "^4.1.0"
     glob "^7.1.6"
     junk "^3.1.0"
@@ -6559,6 +6585,11 @@ es-to-primitive@^1.2.1:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+esbuild@^0.8.36:
+  version "0.8.44"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.44.tgz#2a74f48fe20579081c9d8fe99be6fb8d2848c887"
+  integrity sha512-m9yyBZMgWuAB7e7tA2g9L4PovoLa5Xb73+Yg9uBBR2w3Fe4P9/nxqj/HLrw1k/rjdjF1eX1kNJRytboqOtRCCQ==
 
 escalade@^3.1.0:
   version "3.1.0"
@@ -10765,16 +10796,16 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@2.69.11:
-  version "2.69.11"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.69.11.tgz#d715d4d0c916d154753cb7f936e5c61c8177e7aa"
-  integrity sha512-d6yj11oi+4lzS2dkXYGmhzYlU90S+2utjnrkwD2DdIPGuLLax0XISZ7TMdTPdPuhRF7o0Z9U0GcMMd/0VH3ukQ==
+netlify-cli@2.71.0:
+  version "2.71.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.71.0.tgz#c9209e0ef6f3094d98542e39bedc65e81d511c1e"
+  integrity sha512-763qnilecCVkY6HsZl9Ke8ab4oXUghBJh2dgtg/ZGwgzuQNCjAlTT8n54DFxEuw9Sx0tySDviOLKimHITKa01Q==
   dependencies:
     "@netlify/build" "^8.0.0"
     "@netlify/config" "^2.0.9"
     "@netlify/plugin-edge-handlers" "^1.10.0"
     "@netlify/traffic-mesh-agent" "^0.27.0"
-    "@netlify/zip-it-and-ship-it" "^1.3.9"
+    "@netlify/zip-it-and-ship-it" "^2.0.0"
     "@oclif/command" "^1.6.1"
     "@oclif/config" "^1.15.1"
     "@oclif/errors" "^1.3.4"
@@ -10845,6 +10876,7 @@ netlify-cli@2.69.11:
     raw-body "^2.4.1"
     resolve "^1.12.0"
     safe-join "^0.1.3"
+    semver "^7.3.4"
     static-server "^2.2.1"
     strip-ansi-control-characters "^2.0.0"
     to-readable-stream "^2.1.0"
