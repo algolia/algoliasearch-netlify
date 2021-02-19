@@ -20,7 +20,7 @@
   "devDependencies": {
     "@algolia/autocomplete-js": "1.0.0-alpha.41",
     "@algolia/autocomplete-preset-algolia": "1.0.0-alpha.41",
-    "@algolia/transporter": "4.8.4",
+    "@algolia/transporter": "4.8.5",
     "@babel/core": "7.12.10",
     "@babel/preset-env": "7.12.11",
     "@types/react": "17.0.1",
