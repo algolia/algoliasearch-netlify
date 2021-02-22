@@ -22,6 +22,9 @@ export type AlgoliaRecord = {
 
   urlDepth?: number;
   position?: number;
+
+  // returned by Algolia
+  _highlightResult: Record<string, any>;
 };
 
 export type Hierarchy = { [lvl: string]: string };

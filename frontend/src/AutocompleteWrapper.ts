@@ -48,6 +48,7 @@ class AutocompleteWrapper {
       debug: this.options.debug,
       openOnFocus: this.options.openOnFocus,
       panelPlacement: 'input-wrapper-width',
+      detachedMediaQuery: 'none',
       getSources: () => {
         return [this.getSources()];
       },
@@ -104,7 +105,7 @@ class AutocompleteWrapper {
         item({ item }) {
           return templates.item(
             item,
-            highlightHit({ hit: item, attribute: 'title' }),
+            highlightHit<AlgoliaRecord>({ hit: item, attribute: 'title' }),
             getSuggestionSnippet(item),
             getHighlightedHierarchy(item)
           );

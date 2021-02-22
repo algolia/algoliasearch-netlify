@@ -33,6 +33,17 @@ $font-size: $font-size-m;
   --height: #{$height};
   --height-icon: #{$height-icon};
   --font-size: #{$font-size};
+
+  // There for retro compat
+  --aa-text-color: var(--color-text);
+  --aa-primary-color: var(--color-mark);
+  --aa-muted-color: rgba(128, 126, 163, 0.6);
+  --aa-selected-color: rgba(62, 52, 211, 0.1);
+  --aa-icon-color: rgb(119, 119, 163);
+  --aa-text-color: var(--color-text);
+  --aa-content-text-color: rgb(38, 38, 39, 0.7);
+  --aa-background-color: var(--color-background);
+  --aa-panel-shadow: 0 0 0 1px rgba(35, 38, 59, 0.1),
 }
 
 //// ---- Overridden definitions of classic theme
@@ -41,16 +52,14 @@ $font-size: $font-size-m;
   min-width: 350px;
   z-index: 1100;
 
-  &.aa-Panel--desktop {
-    .aa-PanelLayout {
-      margin-top: $size-xs;
-      padding-top: 0;
-      padding-bottom: 0;
-      background-color: var(--color-background);
+  .aa-PanelLayout {
+    margin-top: $size-xs;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--color-background);
 
-      .aa-PanelLayoutPreview {
-        border-left: solid 1px var(--color-selected);
-      }
+    .aa-PanelLayoutPreview {
+      border-left: solid 1px var(--color-selected);
     }
   }
 }
@@ -83,6 +92,11 @@ $font-size: $font-size-m;
       .aa-Input {
         height: var(--height);
         color: var(--color-text);
+      }
+    }
+    .aa-InputWrapperSuffix {
+      .aa-ResetButton {
+        padding: 4px;
       }
     }
   }
