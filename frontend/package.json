@@ -18,8 +18,8 @@
     "postinstall": "[ -d dist/ ] || npm run build"
   },
   "devDependencies": {
-    "@algolia/autocomplete-js": "1.0.0-alpha.43",
-    "@algolia/autocomplete-preset-algolia": "1.0.0-alpha.43",
+    "@algolia/autocomplete-js": "1.0.0-alpha.44",
+    "@algolia/autocomplete-preset-algolia": "1.0.0-alpha.44",
     "@algolia/transporter": "4.8.5",
     "@babel/core": "7.12.17",
     "@babel/preset-env": "7.12.17",

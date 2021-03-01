@@ -2,34 +2,34 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@1.0.0-alpha.43":
-  version "1.0.0-alpha.43"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.0.0-alpha.43.tgz#9b331845d22fda0d84c7184668a4aa23409132ba"
-  integrity sha512-RJ6Y55HV/OC5YDF1Yx6ct0dtftCcrbyvO17R/JtVZGP9gQcBj5mFW2BfBE1zzF06vdRUehYKxAJ9YuIH97TTqA==
+"@algolia/autocomplete-core@1.0.0-alpha.44":
+  version "1.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.0.0-alpha.44.tgz#e626dba45f5f3950d6beb0ab055395ef0f7e8bb2"
+  integrity sha512-2iMXthldMIDXtlbg9omRKLgg1bLo2ZzINAEqwhNjUeyj1ceEyL1ck6FY0VnJpf2LsjmNthHCz2BuFk+nYUeDNA==
   dependencies:
-    "@algolia/autocomplete-shared" "1.0.0-alpha.43"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.44"
 
-"@algolia/autocomplete-js@1.0.0-alpha.43":
-  version "1.0.0-alpha.43"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-js/-/autocomplete-js-1.0.0-alpha.43.tgz#46def4afe446dafdc690222745ad448a837ed849"
-  integrity sha512-LQLePdgDcptVcIlQqYjSDpquahWFCFFOfUBMI3YEFnRdvE+xiG/fZ7tkD3z51p9Pb9kYGuTvNbWrfs70Efn0gA==
+"@algolia/autocomplete-js@1.0.0-alpha.44":
+  version "1.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-js/-/autocomplete-js-1.0.0-alpha.44.tgz#a252bdbf7ab662dedcc05cfe53e318d6becd7bee"
+  integrity sha512-KmWhIvO/T5yS+kelZQrVMgAGKZKozoFHQM8VMrXK3a77i1uqTYFkg70HFIsiQ9kRGjB/EA0exNtm3/BwGkIIkw==
   dependencies:
-    "@algolia/autocomplete-core" "1.0.0-alpha.43"
-    "@algolia/autocomplete-preset-algolia" "1.0.0-alpha.43"
-    "@algolia/autocomplete-shared" "1.0.0-alpha.43"
+    "@algolia/autocomplete-core" "1.0.0-alpha.44"
+    "@algolia/autocomplete-preset-algolia" "1.0.0-alpha.44"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.44"
     preact "^10.0.0"
 
-"@algolia/autocomplete-preset-algolia@1.0.0-alpha.43":
-  version "1.0.0-alpha.43"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.43.tgz#f36b40c99706f3f9576779da8f678b79c199d15f"
-  integrity sha512-NnjzTpuiSPgOHkkEQ9bd08XrD+iFbQ9VA0RGNSFqVlCwFQ71GZnQtu/C2ofQuQFDZmY3d7QmLKR6Tkgg6TJKlw==
+"@algolia/autocomplete-preset-algolia@1.0.0-alpha.44":
+  version "1.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.44.tgz#0ea0b255d0be10fbe262e281472dd6e4619b62ba"
+  integrity sha512-DCHwo5ovzg9k2ejUolGNTLFnIA7GpsrkbNJTy1sFbMnYfBmeK8egZPZnEl7lBTr27OaZu7IkWpTepLVSztZyng==
   dependencies:
-    "@algolia/autocomplete-shared" "1.0.0-alpha.43"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.44"
 
-"@algolia/autocomplete-shared@1.0.0-alpha.43":
-  version "1.0.0-alpha.43"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.0.0-alpha.43.tgz#e02a3f2e81171835351f8a782f471d445623fbfa"
-  integrity sha512-WS07SRi4HyIQwc4tJEr0UDXB58TV5ntAzVSLFtS7wi0a/yfmXfXRM452P3Yfw4yAAbE3b8WGZkjddwDAZ0dtSw==
+"@algolia/autocomplete-shared@1.0.0-alpha.44":
+  version "1.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.0.0-alpha.44.tgz#db13902ad1667e455711b77d08cae1a0feafaa48"
+  integrity sha512-2oQZPERYV+yNx/yoVWYjZZdOqsitJ5dfxXJjL18yczOXH6ujnsq+DTczSrX+RjzjQdVeJ1UAG053EJQF/FOiMg==
 
 "@algolia/cache-browser-local-storage@4.8.5":
   version "4.8.5"
@@ -13379,7 +13379,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.3.3, rxjs@^6.6.3:
+rxjs@^6.3.3:
   version "6.6.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
   integrity sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==
@@ -13390,6 +13390,13 @@ rxjs@^6.4.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.0.tgz#af2901eedf02e3a83ffa7f886240ff9018bbec84"
   integrity sha512-3HMA8z/Oz61DUHe+SdOiQyzIf4tOx5oQHmMir7IZEu6TMqCLHT4LRcmNaUS0NwOz8VLvmmBduMsoaUvMaIiqzg==
+  dependencies:
+    tslib "^1.9.0"
+
+rxjs@^6.6.3:
+  version "6.6.6"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.6.tgz#14d8417aa5a07c5e633995b525e1e3c0dec03b70"
+  integrity sha512-/oTwee4N4iWzAMAL9xdGKjkEHmIwupR3oXbQjCKywF1BeFohswF3vZdogbmEF6pZkOsXTzWkrZszrWpQTByYVg==
   dependencies:
     tslib "^1.9.0"
 
