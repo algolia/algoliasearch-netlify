@@ -17,6 +17,7 @@ export interface Options {
     colorSourceIcon?: string;
   };
   debug?: boolean;
+  detachedMediaQuery?: string;
   placeholder?: string;
   openOnFocus?: boolean;
   poweredBy?: boolean;

@@ -49,6 +49,7 @@ class AutocompleteWrapper {
       debug: this.options.debug,
       openOnFocus: this.options.openOnFocus,
       panelPlacement: 'input-wrapper-width',
+      detachedMediaQuery: this.options.detachedMediaQuery,
       getSources: () => {
         return [this.getSources()];
       },
