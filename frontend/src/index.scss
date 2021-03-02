@@ -1,4 +1,4 @@
-@import 'autocomplete-theme-classic';
+@import '~@algolia/autocomplete-theme-classic';
 
 $color-bg: #fff;
 $color-muted: #969faf;
@@ -155,7 +155,7 @@ $font-size: $font-size-m;
   background-color: var(--color-background);
 
   .aa-DetachedSearchButtonIcon {
-    color: var(--color-source-icon);
+    color: var(--color-input-icon);
   }
 }
 
