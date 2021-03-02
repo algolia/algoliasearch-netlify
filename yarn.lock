@@ -2,46 +2,34 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@1.0.0-alpha.41":
-  version "1.0.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.0.0-alpha.41.tgz#c6d50118ff4493cb51e7787d73fea2fc505f7fac"
-  integrity sha512-yXrJ6bfweoUmFrfHvs6+XULJgf3mSz7Mh+LD+9wrN7xyt3z5CpKdXfNmBjJzpALYqd4kaFNhvDqeA6ka3QhlBA==
+"@algolia/autocomplete-core@1.0.0-alpha.44":
+  version "1.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.0.0-alpha.44.tgz#e626dba45f5f3950d6beb0ab055395ef0f7e8bb2"
+  integrity sha512-2iMXthldMIDXtlbg9omRKLgg1bLo2ZzINAEqwhNjUeyj1ceEyL1ck6FY0VnJpf2LsjmNthHCz2BuFk+nYUeDNA==
   dependencies:
-    "@algolia/autocomplete-shared" "1.0.0-alpha.41"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.44"
 
-"@algolia/autocomplete-js@1.0.0-alpha.41":
-  version "1.0.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-js/-/autocomplete-js-1.0.0-alpha.41.tgz#b910f9f4ba5226119727e8bcd3b4e9b166170417"
-  integrity sha512-kqzv0LUrr1dVFOsN101VFhA5/QlKZR6CvDDxtGEEGUFiP7bwkIczpYF0HPGf14htuV/es4QYPXLChLzqe4wFaw==
+"@algolia/autocomplete-js@1.0.0-alpha.44":
+  version "1.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-js/-/autocomplete-js-1.0.0-alpha.44.tgz#a252bdbf7ab662dedcc05cfe53e318d6becd7bee"
+  integrity sha512-KmWhIvO/T5yS+kelZQrVMgAGKZKozoFHQM8VMrXK3a77i1uqTYFkg70HFIsiQ9kRGjB/EA0exNtm3/BwGkIIkw==
   dependencies:
-    "@algolia/autocomplete-core" "1.0.0-alpha.41"
-    "@algolia/autocomplete-preset-algolia" "1.0.0-alpha.41"
-    "@algolia/autocomplete-shared" "1.0.0-alpha.41"
+    "@algolia/autocomplete-core" "1.0.0-alpha.44"
+    "@algolia/autocomplete-preset-algolia" "1.0.0-alpha.44"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.44"
     preact "^10.0.0"
 
-"@algolia/autocomplete-preset-algolia@1.0.0-alpha.41":
-  version "1.0.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.41.tgz#cd5b6d91b8146380aa6e8f8d105df4cb98a3b86f"
-  integrity sha512-vuFlPM61s6ovOEyxapGDw66QnZ97Hn2ZyzJmUQcDEPc9NY/haWomkugHBr5njPx+JN1rK1mak3mfgH6Va3RxQQ==
+"@algolia/autocomplete-preset-algolia@1.0.0-alpha.44":
+  version "1.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.44.tgz#0ea0b255d0be10fbe262e281472dd6e4619b62ba"
+  integrity sha512-DCHwo5ovzg9k2ejUolGNTLFnIA7GpsrkbNJTy1sFbMnYfBmeK8egZPZnEl7lBTr27OaZu7IkWpTepLVSztZyng==
   dependencies:
-    "@algolia/autocomplete-shared" "1.0.0-alpha.41"
+    "@algolia/autocomplete-shared" "1.0.0-alpha.44"
 
-"@algolia/autocomplete-preset-algolia@1.0.0-alpha.43":
-  version "1.0.0-alpha.43"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.43.tgz#f36b40c99706f3f9576779da8f678b79c199d15f"
-  integrity sha512-NnjzTpuiSPgOHkkEQ9bd08XrD+iFbQ9VA0RGNSFqVlCwFQ71GZnQtu/C2ofQuQFDZmY3d7QmLKR6Tkgg6TJKlw==
-  dependencies:
-    "@algolia/autocomplete-shared" "1.0.0-alpha.43"
-
-"@algolia/autocomplete-shared@1.0.0-alpha.41":
-  version "1.0.0-alpha.41"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.0.0-alpha.41.tgz#594ea0423d6f7b6ad68a131c6bbd701d2499849d"
-  integrity sha512-8sI2pLoQoYb/8CiwaOy/fha0V7DedfZpruOFQHTaqVF0HG5kiKmw+IFTW4jpS+vyjKV7b2QZp3OnKGln3t5fBQ==
-
-"@algolia/autocomplete-shared@1.0.0-alpha.43":
-  version "1.0.0-alpha.43"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.0.0-alpha.43.tgz#e02a3f2e81171835351f8a782f471d445623fbfa"
-  integrity sha512-WS07SRi4HyIQwc4tJEr0UDXB58TV5ntAzVSLFtS7wi0a/yfmXfXRM452P3Yfw4yAAbE3b8WGZkjddwDAZ0dtSw==
+"@algolia/autocomplete-shared@1.0.0-alpha.44":
+  version "1.0.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.0.0-alpha.44.tgz#db13902ad1667e455711b77d08cae1a0feafaa48"
+  integrity sha512-2oQZPERYV+yNx/yoVWYjZZdOqsitJ5dfxXJjL18yczOXH6ujnsq+DTczSrX+RjzjQdVeJ1UAG053EJQF/FOiMg==
 
 "@algolia/cache-browser-local-storage@4.8.5":
   version "4.8.5"

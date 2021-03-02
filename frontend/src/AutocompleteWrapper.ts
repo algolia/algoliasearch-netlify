@@ -1,4 +1,5 @@
 import type { SearchClient } from 'algoliasearch/lite';
+import type { HighlightedHit } from '@algolia/autocomplete-preset-algolia';
 
 import algoliasearch from 'algoliasearch/lite';
 import type { Hit } from '@algolia/client-search';
@@ -75,7 +76,7 @@ class AutocompleteWrapper {
     return client;
   }
 
-  private getSources(): AutocompleteSource<AlgoliaRecord> {
+  private getSources(): AutocompleteSource<HighlightedHit<AlgoliaRecord>> {
     const poweredBy = this.options.poweredBy;
     return {
       sourceId: 'algoliaHits',
@@ -128,7 +129,7 @@ class AutocompleteWrapper {
 
     const theme = this.options.theme;
     this.$themeNode = addCss(
-      `.aa-Autocomplete, .aa-Panel {
+      `.aa-Autocomplete, .aa-Panel, .aa-DetachedContainer {
       ${theme.mark && `--color-mark: ${theme.mark};`}
       ${theme.mark && `--color-background: ${theme.background};`}
       ${theme.mark && `--color-selected: ${theme.selected};`}
