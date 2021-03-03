@@ -42,6 +42,14 @@ class AutocompleteWrapper {
       return;
     }
 
+    let detachedMediaQuery = undefined;
+    if (this.options.detached) {
+      if (this.options.detached === true) {
+        detachedMediaQuery = '';
+      } else {
+        detachedMediaQuery = this.options.detached.mediaQuery;
+      }
+    }
     const instance = autocomplete<AlgoliaRecord>({
       container: $input,
       autoFocus: false,
@@ -49,7 +57,7 @@ class AutocompleteWrapper {
       debug: this.options.debug,
       openOnFocus: this.options.openOnFocus,
       panelPlacement: 'input-wrapper-width',
-      detachedMediaQuery: this.options.detachedMediaQuery,
+      detachedMediaQuery,
       getSources: () => {
         return [this.getSources()];
       },
