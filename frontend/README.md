@@ -31,27 +31,27 @@ Here's the full list of options with their default value.
 ```js
 algoliasearchNetlify({
   // Mandatory
-  appId: '<YOUR_ALGOLIA_APP_ID>',               // Application ID (Can be found in https://www.algolia.com/api-keys)
-  apiKey: '<YOUR_ALGOLIA_API_KEY>',             // Search api key (Can be found in https://www.algolia.com/api-keys)
-  siteId: '<YOUR_NETLIFY_SITE_ID>',             // Netlify Site ID (Can be found in https://crawler.algolia.com/admin/netlify)
-  branch: '<YOUR_TARGET_GIT_BRANCH>',           // Target git branch, either a fixed one (e.g. 'master') or a dynamic one using `process.env.HEAD`. See "Using Multiple branches" in this doc.
-  selector: 'div#search',                       // Where the autocomplete will be spawned (should not be an input)
+  appId: '<YOUR_ALGOLIA_APP_ID>',                 // Application ID (Can be found in https://www.algolia.com/api-keys)
+  apiKey: '<YOUR_ALGOLIA_API_KEY>',               // Search api key (Can be found in https://www.algolia.com/api-keys)
+  siteId: '<YOUR_NETLIFY_SITE_ID>',               // Netlify Site ID (Can be found in https://crawler.algolia.com/admin/netlify)
+  branch: '<YOUR_TARGET_GIT_BRANCH>',             // Target git branch, either a fixed one (e.g. 'master') or a dynamic one using `process.env.HEAD`. See "Using Multiple branches" in this doc.
+  selector: 'div#search',                         // Where the autocomplete will be spawned (should not be an input)
 
   // Optional
-  analytics: true,                              // Enable search analytics
-  hitsPerPage: 5,                               // Amount of results to display
-  poweredBy: true,                              // Controls displaying the logo (mandatory with our FREE plan)
-  placeholder: 'Search...',                     // Input placeholder
-  openOnFocus: true,                            // Open search panel with default search, when focusing input
-  detachedMediaQuery: '(max-width: 500px)',     // Media query to determine when the search popup should open in detached mode (full screen, modal experience). Set to 'none' to never go in detached mode.
+  analytics: true,                                // Enable search analytics
+  hitsPerPage: 5,                                 // Amount of results to display
+  poweredBy: true,                                // Controls displaying the logo (mandatory with our FREE plan)
+  placeholder: 'Search...',                       // Input placeholder
+  openOnFocus: true,                              // Open search panel with default search, when focusing input
+  detached: { mediaQuery: '(max-width: 500px)' }, // Determine when the search popup should open in detached mode (full screen, modal experience). Can be set to `true` or `false` to always/never go in detached mode.
 
   // Theme
   theme: {
-    mark: '#fff',                               // Color of the matching content
-    background: '#23263b',                      // Background Color of the input and the panel
-    selected: '#111432',                        // Background Color of the selected item
-    text: '#d6d6e7'                             // Color of the title of the items
-    colorSourceIcon: '#d6d6e7'                  // Color of the icon on the left of results
+    mark: '#fff',                                 // Color of the matching content
+    background: '#23263b',                        // Background Color of the input and the panel
+    selected: '#111432',                          // Background Color of the selected item
+    text: '#d6d6e7',                              // Color of the title of the items
+    colorSourceIcon: '#d6d6e7'                    // Color of the icon on the left of results
   }
 });
 ```

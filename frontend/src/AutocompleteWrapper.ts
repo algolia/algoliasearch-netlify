@@ -43,9 +43,11 @@ class AutocompleteWrapper {
     }
 
     let detachedMediaQuery = undefined;
-    if (this.options.detached) {
+    if (this.options.detached !== undefined) {
       if (this.options.detached === true) {
         detachedMediaQuery = '';
+      } else if (this.options.detached === false) {
+        detachedMediaQuery = 'none';
       } else {
         detachedMediaQuery = this.options.detached.mediaQuery;
       }
