@@ -1,4 +1,4 @@
-@import 'autocomplete-theme-classic';
+@import '~@algolia/autocomplete-theme-classic';
 
 $color-bg: #fff;
 $color-muted: #969faf;
@@ -23,7 +23,7 @@ $height: $size-xl;
 $height-icon: $size-l;
 $font-size: $font-size-m;
 
-.aa-Autocomplete, .aa-Panel {
+.aa-Autocomplete, .aa-Panel, .aa-DetachedContainer {
   --color-mark: #{$color-mark};
   --color-background: #{$color-bg};
   --color-selected: #{$color-bg-selected};
@@ -41,21 +41,22 @@ $font-size: $font-size-m;
   min-width: 350px;
   z-index: 1100;
 
-  &.aa-Panel--desktop {
-    .aa-PanelLayout {
-      margin-top: $size-xs;
-      padding-top: 0;
-      padding-bottom: 0;
-      background-color: var(--color-background);
+  &::after {
+    background-image: none;
+  }
+  .aa-PanelLayout {
+    margin-top: $size-xs;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--color-background);
 
-      .aa-PanelLayoutPreview {
-        border-left: solid 1px var(--color-selected);
-      }
+    .aa-PanelLayoutPreview {
+      border-left: solid 1px var(--color-selected);
     }
   }
 }
 
-.aa-Autocomplete, .aa-TouchFormContainer {
+.aa-Autocomplete, .aa-DetachedFormContainer {
   .aa-Form {
     height: var(--height);
     font-size: var(--font-size);
@@ -83,6 +84,14 @@ $font-size: $font-size-m;
       .aa-Input {
         height: var(--height);
         color: var(--color-text);
+      }
+    }
+    .aa-InputWrapperSuffix {
+      .aa-ClearButton {
+        &:hover,
+        &:focus {
+          color: var(--color-text);
+        }
       }
     }
   }
@@ -136,19 +145,25 @@ $font-size: $font-size-m;
   }
 }
 
-.aa-TouchOverlay {
-  z-index: 10;
+.aa-DetachedContainer {
+  background: var(--color-background);
 
-  .aa-TouchCancelButton {
-    color: var(--color-text);
+  .aa-DetachedFormContainer {
+    .aa-DetachedCancelButton {
+      color: var(--color-text);
+    }
   }
 }
 
-.aa-TouchSearchButton {
+.aa-DetachedOverlay {
+  z-index: 10;
+}
+
+.aa-DetachedSearchButton {
   background-color: var(--color-background);
 
-  .aa-TouchSearchButtonIcon {
-    color: var(--color-source-icon);
+  .aa-DetachedSearchButtonIcon {
+    color: var(--color-input-icon);
   }
 }
 

@@ -1,4 +1,5 @@
 import type { SearchClient } from 'algoliasearch/lite';
+import type { HighlightedHit } from '@algolia/autocomplete-preset-algolia';
 
 import algoliasearch from 'algoliasearch/lite';
 import type { Hit } from '@algolia/client-search';
@@ -41,6 +42,14 @@ class AutocompleteWrapper {
       return;
     }
 
+    let detachedMediaQuery = undefined;
+    if (this.options.detached) {
+      if (this.options.detached === true) {
+        detachedMediaQuery = '';
+      } else {
+        detachedMediaQuery = this.options.detached.mediaQuery;
+      }
+    }
     const instance = autocomplete<AlgoliaRecord>({
       container: $input,
       autoFocus: false,
@@ -48,6 +57,7 @@ class AutocompleteWrapper {
       debug: this.options.debug,
       openOnFocus: this.options.openOnFocus,
       panelPlacement: 'input-wrapper-width',
+      detachedMediaQuery,
       getSources: () => {
         return [this.getSources()];
       },
@@ -75,7 +85,7 @@ class AutocompleteWrapper {
     return client;
   }
 
-  private getSources(): AutocompleteSource<AlgoliaRecord> {
+  private getSources(): AutocompleteSource<HighlightedHit<AlgoliaRecord>> {
     const poweredBy = this.options.poweredBy;
     return {
       sourceId: 'algoliaHits',
@@ -128,7 +138,7 @@ class AutocompleteWrapper {
 
     const theme = this.options.theme;
     this.$themeNode = addCss(
-      `.aa-Autocomplete, .aa-Panel {
+      `.aa-Autocomplete, .aa-Panel, .aa-DetachedContainer {
       ${theme.mark && `--color-mark: ${theme.mark};`}
       ${theme.mark && `--color-background: ${theme.background};`}
       ${theme.mark && `--color-selected: ${theme.selected};`}
