@@ -1,6 +1,6 @@
 {
   "name": "@algolia/netlify-plugin-crawler",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "author": "Algolia Team <contact@algolia.com>",
   "license": "MIT",

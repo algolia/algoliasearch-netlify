@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.4...v1.0.5) (2021-03-04)
+
+
+### Bug Fixes
+
+* autocomplete to alpha.44 ([#227](https://github.com/algolia/algoliasearch-netlify/issues/227)) ([9a467eb](https://github.com/algolia/algoliasearch-netlify/commit/9a467ebf6f6fba28baaad9844404493954c26d42))
+
+
+
 ## [1.0.4](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.3...v1.0.4) (2021-02-09)
 
 
