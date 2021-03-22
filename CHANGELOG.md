@@ -1,3 +1,7 @@
+## [1.0.6](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.5...v1.0.6) (2021-03-22)
+
+
+
 ## [1.0.5](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.4...v1.0.5) (2021-03-04)
 
 
