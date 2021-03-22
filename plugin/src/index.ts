@@ -11,7 +11,7 @@ import type { BuildParams } from './types';
 function createSummaryLogger(
   show: BuildParams['utils']['status']['show']
 ): (message: string) => void {
-  return (message) => {
+  return (message): void => {
     show({ title: 'Algolia Crawler', summary: message });
     console.log(message);
   };
@@ -81,7 +81,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   }
 
   // Check required env vars
-  const missingEnvMessage = (key: string) =>
+  const missingEnvMessage = (key: string): string =>
     `Missing ${key}, please go to ${algoliaBaseUrl}/admin/netlify to complete your installation.`;
   if (!algoliaBaseUrl) {
     return utils.build.failPlugin(missingEnvMessage('ALGOLIA_BASE_URL'));

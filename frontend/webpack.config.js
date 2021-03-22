@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint import/no-commonjs: 'off' */
 const path = require('path');
 

@@ -23,7 +23,7 @@ const mandatory: Array<keyof Options> = [
 
 const instances: AutocompleteWrapper[] = [];
 
-function algoliasearchNetlify(_options: Options) {
+function algoliasearchNetlify(_options: Options): void {
   const options = {
     ...defaultOptions,
     ..._options,
@@ -38,7 +38,7 @@ function algoliasearchNetlify(_options: Options) {
   instances.push(autocomplete);
 
   // Wait for DOM initialization, then render
-  const render = () => {
+  const render = (): void => {
     autocomplete.render();
   };
   if (['complete', 'interactive'].includes(document.readyState)) {
