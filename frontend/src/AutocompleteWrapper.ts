@@ -170,7 +170,8 @@ function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): Array<string | VNode> {
   // Otherwise take the prop that was at least correctly returned
   if (description && !content) {
     return snippetHit({ hit, attribute: 'description' });
-  } else if (content) {
+  }
+  if (content) {
     return snippetHit({ hit, attribute: 'content' });
   }
 
