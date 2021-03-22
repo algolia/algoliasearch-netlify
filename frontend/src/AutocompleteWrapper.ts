@@ -1,24 +1,25 @@
-import type { SearchClient } from 'algoliasearch/lite';
-import type { HighlightedHit } from '@algolia/autocomplete-preset-algolia';
-
-import algoliasearch from 'algoliasearch/lite';
-import type { Hit } from '@algolia/client-search';
 import {
   autocomplete,
-  AutocompleteApi,
   highlightHit,
   snippetHit,
-  AutocompleteSource,
 } from '@algolia/autocomplete-js';
-import type { VNode } from '@algolia/autocomplete-js';
+import type {
+  VNode,
+  AutocompleteApi,
+  AutocompleteSource,
+  SourceTemplates,
+} from '@algolia/autocomplete-js';
+import type { HighlightedHit } from '@algolia/autocomplete-preset-algolia';
 import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
+import type { Hit } from '@algolia/client-search';
+import algoliasearch from 'algoliasearch/lite';
+import type { SearchClient } from 'algoliasearch/lite';
 
-import type { Options, AlgoliaRecord, HighlightedHierarchy } from './types';
+// @ts-expect-error
+import { version } from '../package.json';
 
 import { templates } from './templates';
-
-// @ts-ignore
-import { version } from '../package.json';
+import type { Options, AlgoliaRecord, HighlightedHierarchy } from './types';
 
 class AutocompleteWrapper {
   private options;
@@ -33,7 +34,7 @@ class AutocompleteWrapper {
     this.indexName = this.computeIndexName();
   }
 
-  render() {
+  render(): void {
     const $input = document.querySelector(this.options.selector) as HTMLElement;
     if (!$input) {
       console.error(
@@ -89,7 +90,28 @@ class AutocompleteWrapper {
 
   private getSources(): AutocompleteSource<HighlightedHit<AlgoliaRecord>> {
     const poweredBy = this.options.poweredBy;
-    return {
+    const tpls: SourceTemplates<HighlightedHit<AlgoliaRecord>> = {
+      header() {
+        return '';
+      },
+      item({ item }) {
+        return templates.item(
+          item,
+          highlightHit({ hit: item, attribute: 'title' }),
+          getSuggestionSnippet(item),
+          getHighlightedHierarchy(item)
+        );
+      },
+      footer() {
+        if (poweredBy) {
+          return templates.poweredBy({
+            hostname: window.location.host,
+          });
+        }
+        return '';
+      },
+    };
+    const res: AutocompleteSource<HighlightedHit<AlgoliaRecord>> = {
       sourceId: 'algoliaHits',
       getItems: ({ query }) => {
         return getAlgoliaHits({
@@ -109,31 +131,12 @@ class AutocompleteWrapper {
       getItemUrl({ item }) {
         return item.url;
       },
-      templates: {
-        header() {
-          return '';
-        },
-        item({ item }) {
-          return templates.item(
-            item,
-            highlightHit({ hit: item, attribute: 'title' }),
-            getSuggestionSnippet(item),
-            getHighlightedHierarchy(item)
-          );
-        },
-        footer() {
-          if (poweredBy) {
-            return templates.poweredBy({
-              hostname: window.location.host,
-            });
-          }
-          return '';
-        },
-      },
+      templates: tpls,
     };
+    return res;
   }
 
-  private applyTheme(el: HTMLElement | null) {
+  private applyTheme(el: HTMLElement | null): void {
     if (!el || !this.options.theme) {
       return;
     }

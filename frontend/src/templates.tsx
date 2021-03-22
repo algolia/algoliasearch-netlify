@@ -1,5 +1,6 @@
 import type { VNode } from '@algolia/autocomplete-js';
-import { AlgoliaRecord, HighlightedHierarchy } from './types';
+
+import type { AlgoliaRecord, HighlightedHierarchy } from './types';
 
 export const templates = {
   poweredBy: ({ hostname }: { hostname: string }): VNode => {
@@ -58,8 +59,8 @@ export const templates = {
  * Transform a highlighted hierarchy object into an array of VNode[].
  * 3 levels max are returned.
  *
- * @param {Hierarchy} hierarchy An highlighted hierarchy, i.e. { lvl0: (string | VNode)[], lvl1: (string | VNode)[], lvl2: (string | VNode)[], ... }
- * @returns {Array<string | Array<string | VNode>>} An array of VNode[], representing of the highlighted hierarchy starting from lvl1.
+ * @param hierarchy - An highlighted hierarchy, i.e. { lvl0: (string | VNode)[], lvl1: (string | VNode)[], lvl2: (string | VNode)[], ... }.
+ * @returns An array of VNode[], representing of the highlighted hierarchy starting from lvl1.
  *                                                  Between each VNode[] we insert a ' > ' character to render them as breadcrumbs eventually.
  */
 function hierarchyToBreadcrumbVNodes(
