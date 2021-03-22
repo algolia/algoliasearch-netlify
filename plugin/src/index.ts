@@ -1,10 +1,12 @@
-import fetch, { Response } from 'node-fetch';
+import type { Response } from 'node-fetch';
+import fetch from 'node-fetch';
 
-// @ts-ignore
+// @ts-expect-error
 import { version } from '../package.json';
+
 import { loadDevEnvVariables } from './dev';
 import { starMatch } from './starMatch';
-import { BuildParams } from './types';
+import type { BuildParams } from './types';
 
 function createSummaryLogger(
   show: BuildParams['utils']['status']['show']

@@ -1,24 +1,24 @@
-import type { SearchClient } from 'algoliasearch/lite';
-import type { HighlightedHit } from '@algolia/autocomplete-preset-algolia';
-
-import algoliasearch from 'algoliasearch/lite';
-import type { Hit } from '@algolia/client-search';
 import {
   autocomplete,
-  AutocompleteApi,
   highlightHit,
   snippetHit,
+} from '@algolia/autocomplete-js';
+import type {
+  VNode,
+  AutocompleteApi,
   AutocompleteSource,
 } from '@algolia/autocomplete-js';
-import type { VNode } from '@algolia/autocomplete-js';
+import type { HighlightedHit } from '@algolia/autocomplete-preset-algolia';
 import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
+import type { Hit } from '@algolia/client-search';
+import algoliasearch from 'algoliasearch/lite';
+import type { SearchClient } from 'algoliasearch/lite';
 
-import type { Options, AlgoliaRecord, HighlightedHierarchy } from './types';
+// @ts-expect-error
+import { version } from '../package.json';
 
 import { templates } from './templates';
-
-// @ts-ignore
-import { version } from '../package.json';
+import type { Options, AlgoliaRecord, HighlightedHierarchy } from './types';
 
 class AutocompleteWrapper {
   private options;

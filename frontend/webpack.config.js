@@ -3,9 +3,8 @@ const path = require('path');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const TerserPlugin = require('terser-webpack-plugin');
 const { HotModuleReplacementPlugin } = require('webpack');
 
 function plugins({ production }) {
