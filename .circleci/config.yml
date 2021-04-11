@@ -18,7 +18,7 @@ aliases:
 defaults: &defaults
   working_directory: ~/app
   docker:
-    - image: cimg/node:14.16.0
+    - image: cimg/node:14.16.1
   environment:
     NODE_ENV: 'test'
 
