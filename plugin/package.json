@@ -23,7 +23,7 @@
     "node-fetch": "2.6.1"
   },
   "devDependencies": {
-    "@types/node-fetch": "2.5.8",
+    "@types/node-fetch": "2.5.10",
     "dotenv": "8.2.0"
   },
   "keywords": [
