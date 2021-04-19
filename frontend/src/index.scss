@@ -40,12 +40,9 @@ $font-size: $font-size-m;
 .aa-Panel {
   min-width: 350px;
   z-index: 1100;
+  margin-top: $size-xs;
 
-  &::after {
-    background-image: none;
-  }
   .aa-PanelLayout {
-    margin-top: $size-xs;
     padding-top: 0;
     padding-bottom: 0;
     background-color: var(--color-background);
@@ -53,6 +50,10 @@ $font-size: $font-size-m;
     .aa-PanelLayoutPreview {
       border-left: solid 1px var(--color-selected);
     }
+  }
+
+  .aa-GradientBottom {
+    background-image: none;
   }
 }
 
