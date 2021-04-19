@@ -5,7 +5,7 @@ It will trigger a crawl on each successful build.
 
 ## Install the plugin
 
-Read our full documentation [here](../docs/GettingStarted.md)
+Read our full documentation [here](https://www.algolia.com/doc/tools/crawler/netlify-plugin/quick-start/)
 
 ## Available parameters
 
@@ -31,7 +31,7 @@ Plugin inputs can be set in `netlify.toml`. They're all optional.
 - `renderJavaScript` - _Default: `false`_ If true, we will use JavaScript to render your website. Useful for Single Page Applications.
   See the [documentation](https://www.algolia.com/doc/api-reference/crawler/configuration/render-java-script/) to understand the implication of this option.
 - `template` - Used to modify the way we extract records and their schema. Supported templates: `'hierarchical'`.
-  More information on how the extraction works in the [dedicated extraction documentation](../docs/Extraction.md).
+  More information on how the extraction works in the [dedicated extraction documentation](https://www.algolia.com/doc/tools/crawler/netlify-plugin/extraction-strategy/).
 
 Example:
 
