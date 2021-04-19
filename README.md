@@ -23,10 +23,10 @@ Automatically index your website to Algolia when deploying your project to Netli
 
 ## Documentation
 
-- [Getting Started](docs/GettingStarted.md)
-- [FAQ](docs/FAQ.md)
-- [Uninstall](docs/Uninstall.md)
-- [Data Extraction](docs/Extraction.md)
+- [Getting Started](https://www.algolia.com/doc/tools/crawler/netlify-plugin/quick-start/)
+- [FAQ](https://www.algolia.com/doc/tools/crawler/netlify-plugin/netlify-faq/)
+- [Uninstall](https://www.algolia.com/doc/tools/crawler/netlify-plugin/uninstalling/)
+- [Data Extraction](https://www.algolia.com/doc/tools/crawler/netlify-plugin/extraction-strategy/)
 
 ## Troubleshooting
 
