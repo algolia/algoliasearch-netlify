@@ -1,5 +1,3 @@
-import type { VNode } from '@algolia/autocomplete-js';
-
 export type AlgoliaRecord = {
   objectID: string;
 
@@ -25,4 +23,3 @@ export type AlgoliaRecord = {
 };
 
 export type Hierarchy = { [lvl: string]: string };
-export type HighlightedHierarchy = { [lvl: string]: Array<string | VNode> };

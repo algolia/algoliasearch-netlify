@@ -1,6 +1,7 @@
-import type { VNode } from '@algolia/autocomplete-js';
+import type { AutocompleteComponents, VNode } from '@algolia/autocomplete-js';
+import type { Hit } from '@algolia/client-search';
 
-import type { AlgoliaRecord, HighlightedHierarchy } from './types';
+import type { AlgoliaRecord } from './types';
 
 export const templates = {
   poweredBy: ({ hostname }: { hostname: string }): VNode => {
@@ -19,13 +20,11 @@ export const templates = {
   },
 
   item: (
-    record: AlgoliaRecord,
-    title: Array<string | VNode>,
-    description: Array<string | VNode>,
-    hierarchy: HighlightedHierarchy | null
-  ): VNode => {
+    hit: AlgoliaRecord,
+    components: AutocompleteComponents
+  ): JSX.Element => {
     return (
-      <a href={record.url}>
+      <a href={hit.url}>
         <div className="aa-ItemContent">
           <div className="aa-ItemIcon">
             <svg width="20" height="20" viewBox="0 0 20 20">
@@ -39,15 +38,19 @@ export const templates = {
             </svg>
           </div>
           <div>
-            <div className="aa-ItemTitle">{hierarchy?.lvl0 ?? title}</div>
-            {hierarchy && (
+            <div className="aa-ItemTitle">
+              {hit.hierarchy?.lvl0 ?? (
+                <components.Highlight hit={hit} attribute="title" />
+              )}
+            </div>
+            {hit.hierarchy && (
               <div className="aa-ItemHierarchy">
-                {hierarchyToBreadcrumbVNodes(hierarchy)}
+                {hierarchyToBreadcrumbs(hit, components)}
               </div>
             )}
-            {description && (
-              <div className="aa-ItemDescription">{description}</div>
-            )}
+            <div className="aa-ItemDescription">
+              {getSuggestionSnippet(hit, components)}
+            </div>
           </div>
         </div>
       </a>
@@ -56,26 +59,63 @@ export const templates = {
 };
 
 /**
- * Transform a highlighted hierarchy object into an array of VNode[].
+ * Transform a highlighted hierarchy object into an array of Highlighted elements.
  * 3 levels max are returned.
  *
- * @param hierarchy - An highlighted hierarchy, i.e. { lvl0: (string | VNode)[], lvl1: (string | VNode)[], lvl2: (string | VNode)[], ... }.
- * @returns An array of VNode[], representing of the highlighted hierarchy starting from lvl1.
- *                                                  Between each VNode[] we insert a ' > ' character to render them as breadcrumbs eventually.
+ * @param hit - A record with a hierarchy field ( { lvl0: string, lvl1: string, lvl2: string, ... } ).
+ * @param components - Autocomplete components.
+ * @returns An array of JSX.Elements | string, representing of the highlighted hierarchy starting from lvl1.
+ *          Between each element, we insert a ' > ' character to render them as breadcrumbs eventually.
  */
-function hierarchyToBreadcrumbVNodes(
-  hierarchy: HighlightedHierarchy
-): Array<string | Array<string | VNode>> {
-  const breadcrumbVNodeArray: Array<string | Array<string | VNode>> = [];
+function hierarchyToBreadcrumbs(
+  hit: Hit<AlgoliaRecord>,
+  components: AutocompleteComponents
+): Array<JSX.Element | string> {
+  const breadcrumbArray: Array<JSX.Element | string> = [];
   let addedLevels = 0;
+  if (!hit.hierarchy) {
+    return breadcrumbArray;
+  }
   for (let i = 1; i < 7 && addedLevels < 3; ++i) {
-    if (hierarchy[`lvl${i}`] && hierarchy[`lvl${i}`].length > 0) {
+    if (hit.hierarchy[`lvl${i}`] && hit.hierarchy[`lvl${i}`].length > 0) {
       if (addedLevels > 0) {
-        breadcrumbVNodeArray.push(' > ');
+        breadcrumbArray.push(' > ');
       }
-      breadcrumbVNodeArray.push(hierarchy[`lvl${i}`]);
+      breadcrumbArray.push(
+        <components.Highlight hit={hit} attribute="description" />
+      );
       ++addedLevels;
     }
   }
-  return breadcrumbVNodeArray;
+  return breadcrumbArray;
+}
+
+function getSuggestionSnippet(
+  hit: Hit<AlgoliaRecord>,
+  components: AutocompleteComponents
+): JSX.Element | string {
+  // If they are defined as `searchableAttributes`, 'description' and 'content' are always
+  // present in the `_snippetResult`, even if they don't match.
+  // So we need to have 1 check on the presence and 1 check on the match
+  const description = hit._snippetResult?.description;
+  const content = hit._snippetResult?.content;
+
+  // Take in priority props that matches the search
+  if (description && description.matchLevel === 'full') {
+    return <components.Snippet hit={hit} attribute="description" />;
+  }
+  if (content && content.matchLevel === 'full') {
+    return <components.Snippet hit={hit} attribute="content" />;
+  }
+
+  // Otherwise take the prop that was at least correctly returned
+  if (description && !content) {
+    return <components.Snippet hit={hit} attribute="description" />;
+  }
+  if (content) {
+    return <components.Snippet hit={hit} attribute="content" />;
+  }
+
+  // Otherwise raw value or empty
+  return hit.description || hit.content || '';
 }

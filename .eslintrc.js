@@ -27,6 +27,8 @@ module.exports = {
     'no-console': 'off',
     'no-continue': 'off',
     'no-loop-func': 'off',
+    // eslint-disable-next-line no-warning-comments
+    'no-undef': 'off', // TODO: find how to remove "ESLint: 'JSX' is not defined." errors properly
     'consistent-return': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
 

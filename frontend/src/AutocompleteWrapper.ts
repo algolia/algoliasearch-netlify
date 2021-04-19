@@ -1,17 +1,11 @@
-import {
-  autocomplete,
-  highlightHit,
-  snippetHit,
-} from '@algolia/autocomplete-js';
+import { autocomplete } from '@algolia/autocomplete-js';
 import type {
-  VNode,
   AutocompleteApi,
   AutocompleteSource,
   SourceTemplates,
 } from '@algolia/autocomplete-js';
 import type { HighlightedHit } from '@algolia/autocomplete-preset-algolia';
 import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
-import type { Hit } from '@algolia/client-search';
 import algoliasearch from 'algoliasearch/lite';
 import type { SearchClient } from 'algoliasearch/lite';
 
@@ -19,7 +13,7 @@ import type { SearchClient } from 'algoliasearch/lite';
 import { version } from '../package.json';
 
 import { templates } from './templates';
-import type { Options, AlgoliaRecord, HighlightedHierarchy } from './types';
+import type { Options, AlgoliaRecord } from './types';
 
 class AutocompleteWrapper {
   private options;
@@ -94,13 +88,8 @@ class AutocompleteWrapper {
       header() {
         return '';
       },
-      item({ item }) {
-        return templates.item(
-          item,
-          highlightHit({ hit: item, attribute: 'title' }),
-          getSuggestionSnippet(item),
-          getHighlightedHierarchy(item)
-        );
+      item({ item, components }) {
+        return templates.item(item, components);
       },
       footer() {
         if (poweredBy) {
@@ -153,53 +142,6 @@ class AutocompleteWrapper {
       this.$themeNode
     );
   }
-}
-
-function getSuggestionSnippet(hit: Hit<AlgoliaRecord>): Array<string | VNode> {
-  // If they are defined as `searchableAttributes`, 'description' and 'content' are always
-  // present in the `_snippetResult`, even if they don't match.
-  // So we need to have 1 check on the presence and 1 check on the match
-  const description = hit._snippetResult?.description;
-  const content = hit._snippetResult?.content;
-
-  // Take in priority props that matches the search
-  if (description && description.matchLevel === 'full') {
-    return snippetHit({ hit, attribute: 'description' });
-  }
-  if (content && content.matchLevel === 'full') {
-    return snippetHit({ hit, attribute: 'content' });
-  }
-
-  // Otherwise take the prop that was at least correctly returned
-  if (description && !content) {
-    return snippetHit({ hit, attribute: 'description' });
-  }
-  if (content) {
-    return snippetHit({ hit, attribute: 'content' });
-  }
-
-  // Otherwise raw value or empty
-  const res = hit.description || hit.content || '';
-  return [res];
-}
-
-function getHighlightedHierarchy(
-  hit: Hit<AlgoliaRecord>
-): HighlightedHierarchy | null {
-  if (!hit.hierarchy) {
-    return null;
-  }
-  const highlightedHierarchy: HighlightedHierarchy = {};
-  for (let i = 0; i <= 6; ++i) {
-    if (!hit.hierarchy[`lvl${i}`]) {
-      continue;
-    }
-    highlightedHierarchy[`lvl${i}`] = highlightHit({
-      hit,
-      attribute: ['hierarchy', `lvl${i}`],
-    });
-  }
-  return highlightedHierarchy;
 }
 
 function addCss(
