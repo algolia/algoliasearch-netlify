@@ -40,7 +40,6 @@ algoliasearchNetlify({
   // Optional
   analytics: true,                                // Enable search analytics
   hitsPerPage: 5,                                 // Amount of results to display
-  poweredBy: true,                                // Controls displaying the logo (mandatory with our FREE plan)
   placeholder: 'Search...',                       // Input placeholder
   openOnFocus: true,                              // Open search panel with default search, when focusing input
   detached: { mediaQuery: '(max-width: 500px)' }, // Determine when the search popup should open in detached mode (full screen, modal experience). Can be set to `true` or `false` to always/never go in detached mode.
