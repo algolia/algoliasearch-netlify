@@ -88,7 +88,11 @@ $font-size: $font-size-m;
       }
     }
     .aa-InputWrapperSuffix {
+      height: var(--height);
+
       .aa-ClearButton {
+        padding: 0;
+
         &:hover,
         &:focus {
           color: var(--color-text);
