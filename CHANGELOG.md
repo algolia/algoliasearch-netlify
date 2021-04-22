@@ -1,3 +1,13 @@
+## [1.0.7](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.6...v1.0.7) (2021-04-22)
+
+
+### Bug Fixes
+
+* move docs to algolia.com ([#277](https://github.com/algolia/algoliasearch-netlify/issues/277)) ([6495afc](https://github.com/algolia/algoliasearch-netlify/commit/6495afc79a03cad0e8b54f9683bea873ecf26ed3))
+* undocument powered by ([#278](https://github.com/algolia/algoliasearch-netlify/issues/278)) ([ee0cfdd](https://github.com/algolia/algoliasearch-netlify/commit/ee0cfddd9f46982d93138ffd8a42bded5b854112))
+
+
+
 ## [1.0.6](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.5...v1.0.6) (2021-03-22)
 
 
