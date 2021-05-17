@@ -108,8 +108,9 @@ typings/
 # Built files
 dist/
 
-# VSCode files
+# IDEs
 .vscode
+.idea
 
 # npm package lock
 package-lock.json

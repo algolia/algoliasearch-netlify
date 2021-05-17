@@ -1,11 +1,10 @@
-import { autocomplete } from '@algolia/autocomplete-js';
+import { autocomplete, getAlgoliaResults } from '@algolia/autocomplete-js';
 import type {
   AutocompleteApi,
   AutocompleteSource,
   SourceTemplates,
 } from '@algolia/autocomplete-js';
 import type { HighlightedHit } from '@algolia/autocomplete-preset-algolia';
-import { getAlgoliaHits } from '@algolia/autocomplete-preset-algolia';
 import algoliasearch from 'algoliasearch/lite';
 import type { SearchClient } from 'algoliasearch/lite';
 
@@ -103,7 +102,7 @@ class AutocompleteWrapper {
     const res: AutocompleteSource<HighlightedHit<AlgoliaRecord>> = {
       sourceId: 'algoliaHits',
       getItems: ({ query }) => {
-        return getAlgoliaHits({
+        return getAlgoliaResults({
           searchClient: this.client,
           queries: [
             {
