@@ -31,10 +31,10 @@
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.1.0.tgz#d66ef20e26cb417b7fa4119de27ce042819395c5"
   integrity sha512-rnuXLIisuzPn84OMg4/AIivzxX1nbPLtcVBriSZtde0L3Hn+cwQHQ8necC5SaOvUVjKW60G44LjqbJuGaL2ZUQ==
 
-"@algolia/autocomplete-theme-classic@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-theme-classic/-/autocomplete-theme-classic-1.0.1.tgz#c8703c353a4b21e05554c96e6d2885a664106913"
-  integrity sha512-ihi+Bz2maShksHQOtu/w9F5AW5B1TJJD/p/kR4L25ZZ+0x0raPX3PW5UAsAMnqjDP1I08NoOLsZP2GqLNS+AeA==
+"@algolia/autocomplete-theme-classic@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-theme-classic/-/autocomplete-theme-classic-1.1.0.tgz#24b4545442e94dd3d90d6066b437e9aea3de5246"
+  integrity sha512-usbOwwPydJEzUlMjLAip/CtMqKy2PzsnhkFfWoBPBr9I74uBNYa4+NJBg0b31KmNLSUH0nWFlhiIKwNBjoMTzg==
 
 "@algolia/cache-browser-local-storage@4.9.1":
   version "4.9.1"
