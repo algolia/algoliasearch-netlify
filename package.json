@@ -51,7 +51,7 @@
     "netlify-cli": "2.71.0",
     "nodemon": "2.0.7",
     "prettier": "2.3.2",
-    "ts-jest": "26.5.6",
+    "ts-jest": "27.0.3",
     "typescript": "4.3.4"
   },
   "engines": {
