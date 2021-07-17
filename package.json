@@ -49,7 +49,7 @@
     "jest": "27.0.6",
     "json": "11.0.0",
     "netlify-cli": "3.39.4",
-    "nodemon": "2.0.7",
+    "nodemon": "2.0.12",
     "prettier": "2.3.2",
     "ts-jest": "27.0.3",
     "typescript": "4.3.5"
