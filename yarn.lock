@@ -19,24 +19,12 @@
     "@algolia/autocomplete-shared" "1.2.2"
     preact "^10.0.0"
 
-"@algolia/autocomplete-preset-algolia@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.2.1.tgz#bda1741823268ff76ba78306259036f000198e01"
-  integrity sha512-Lf4PpPVgHNXm1ytrnVdrZYV7hAYSCpAI/TrebF8UC6xflPY6sKb1RL/2OfrO9On7SDjPBtNd+6MArSar5JmK0g==
-  dependencies:
-    "@algolia/autocomplete-shared" "1.2.1"
-
 "@algolia/autocomplete-preset-algolia@1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.2.2.tgz#da734ef9e42a5f64cdad2dfc81c4e9fbf805d976"
   integrity sha512-AZkh+bAMaJDzMZTelFOXJTJqkp5VPGH8W3n0B+Ggce7DdozlMRsDLguKTCQAkZ0dJ1EbBPyFL5ztL/JImB137Q==
   dependencies:
     "@algolia/autocomplete-shared" "1.2.2"
-
-"@algolia/autocomplete-shared@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.2.1.tgz#96f869fb2285ed6a34a5ac2509722c065df93016"
-  integrity sha512-RHCwcXAYFwDXTlomstjWRFIzOfyxtQ9KmViacPE5P5hxUSSjkmG3dAb77xdydift1PaZNbho5TNTCi5UZe0RpA==
 
 "@algolia/autocomplete-shared@1.2.2":
   version "1.2.2"
