@@ -30,7 +30,7 @@
     "clean-webpack-plugin": "3.0.0",
     "core-js": "3.16.0",
     "css-loader": "5.2.7",
-    "fork-ts-checker-webpack-plugin": "6.2.13",
+    "fork-ts-checker-webpack-plugin": "6.3.2",
     "mini-css-extract-plugin": "1.6.2",
     "mustache": "4.2.0",
     "node-sass": "6.0.1",
