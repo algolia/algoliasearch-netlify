@@ -3,7 +3,7 @@ import type { Options } from './types';
 
 const defaultOptions: Omit<
   Options,
-  'appId' | 'apiKey' | 'selector' | 'siteId' | 'branch'
+  'apiKey' | 'appId' | 'branch' | 'selector' | 'siteId'
 > = {
   analytics: true,
   hitsPerPage: 5,
