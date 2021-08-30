@@ -5,15 +5,7 @@ module.exports = {
     es2020: true,
     jest: true,
   },
-  extends: [
-    'algolia',
-    'algolia/jest',
-    'algolia/typescript',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
-    'plugin:jest/style',
-  ],
+  extends: ['algolia', 'algolia/jest', 'algolia/react', 'algolia/typescript'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 11,
@@ -27,8 +19,6 @@ module.exports = {
     'no-console': 'off',
     'no-continue': 'off',
     'no-loop-func': 'off',
-    // eslint-disable-next-line no-warning-comments
-    'no-undef': 'warn', // TODO: find how to remove "ESLint: 'JSX' is not defined." errors properly
     'consistent-return': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
 
@@ -36,5 +26,6 @@ module.exports = {
       'error',
       { accessibility: 'no-public' },
     ],
+    'react/react-in-jsx-scope': 'off',
   },
 };
