@@ -100,29 +100,38 @@ module.exports = function (env, options) {
   const resolvedExtensions = ['.ts', '.tsx', '.js'];
 
   const buildFolder = 'dist';
-  const productionDevTool = process.env.CI ? undefined : 'source-map';
-  const devtool = production
-    ? productionDevTool
-    : 'cheap-module-eval-source-map';
-  const devServer = production
-    ? undefined
-    : {
-        contentBase: path.resolve(__dirname, buildFolder),
-        port: process.env.PORT || '1234',
-        historyApiFallback: true,
-        hot: true,
+
+  // See what changes what here: https://webpack.js.org/configuration/devtool/#devtool
+  let devtool = 'eval-cheap-module-source-map';
+  if (production) {
+    devtool = 'cheap-source-map';
+  } else if (process.env.CI) {
+    devtool = undefined;
+  }
+
+  let devServer;
+  if (!production) {
+    devServer = {
+      static: path.resolve(__dirname, buildFolder),
+      port: process.env.PORT || '1234',
+      historyApiFallback: true,
+      hot: true,
+      client: {
         overlay: {
           warnings: false,
           errors: true,
         },
-        headers: {
-          'Access-Control-Allow-Origin': 'http://localhost:9000',
-          'Access-Control-Allow-Methods':
-            'HEAD, GET, POST, PUT, DELETE, PATCH, OPTIONS',
-        },
-      };
+      },
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:9000',
+        'Access-Control-Allow-Methods':
+          'HEAD, GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      },
+    };
+  }
 
   return {
+    target: 'web',
     mode,
     devServer,
     entry: {
