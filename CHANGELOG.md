@@ -1,3 +1,27 @@
+## [1.0.9](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.8...v1.0.9) (2021-08-30)
+
+
+### Bug Fixes
+
+* update renovate ([83facfe](https://github.com/algolia/algoliasearch-netlify/commit/83facfeb94954fb71aa5b109f8cd9ef473f62b1a))
+* upgrade webpack to V5 ([#436](https://github.com/algolia/algoliasearch-netlify/issues/436)) ([4ec3d1c](https://github.com/algolia/algoliasearch-netlify/commit/4ec3d1cddf1754cc2695e5313a548ea9c2bbc00e))
+
+
+
+## [1.0.8](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.7...v1.0.8) (2021-07-20)
+
+
+### Bug Fixes
+
+* **autocomplete:** use the new Requester API ([#314](https://github.com/algolia/algoliasearch-netlify/issues/314)) ([67ca346](https://github.com/algolia/algoliasearch-netlify/commit/67ca3462357624d1f6f7bde6045726d7653afc1d))
+
+
+### Features
+
+* **doc:** move everything to algolia.com ([78f8a4e](https://github.com/algolia/algoliasearch-netlify/commit/78f8a4eb04591993ebd17737e93b6ea5b783d6f6))
+
+
+
 ## [1.0.7](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.6...v1.0.7) (2021-04-22)
 
 
