@@ -51,7 +51,7 @@
     "http-server": "13.0.2",
     "jest": "27.2.0",
     "json": "11.0.0",
-    "netlify-cli": "6.8.5",
+    "netlify-cli": "6.9.6",
     "nodemon": "2.0.12",
     "prettier": "2.4.0",
     "renovate-config-algolia": "2.1.5",
