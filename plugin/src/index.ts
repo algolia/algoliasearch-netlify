@@ -137,7 +137,7 @@ export async function onSuccess(params: BuildParams): Promise<void> {
   } catch (error) {
     console.error('Could not reach algolia', error);
     utils.build.failPlugin(
-      `Could not reach Algolia's Crawler, got: ${error.message}`
+      `Could not reach Algolia's Crawler, got: ${(error as Error).message}`
     );
     return;
   }
