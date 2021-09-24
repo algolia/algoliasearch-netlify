@@ -24,7 +24,7 @@
     "@algolia/transporter": "4.10.5",
     "@babel/core": "7.15.5",
     "@babel/preset-env": "7.15.6",
-    "@types/react": "17.0.21",
+    "@types/react": "17.0.24",
     "algoliasearch": "4.10.5",
     "babel-loader": "8.2.2",
     "clean-webpack-plugin": "4.0.0",
