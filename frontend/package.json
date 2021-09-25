@@ -29,7 +29,7 @@
     "babel-loader": "8.2.2",
     "clean-webpack-plugin": "4.0.0",
     "core-js": "3.18.0",
-    "css-loader": "6.2.0",
+    "css-loader": "6.3.0",
     "fork-ts-checker-webpack-plugin": "6.3.3",
     "mini-css-extract-plugin": "2.3.0",
     "mustache": "4.2.0",
