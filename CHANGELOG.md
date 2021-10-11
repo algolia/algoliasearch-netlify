@@ -1,3 +1,14 @@
+## [1.0.10](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.9...v1.0.10) (2021-10-11)
+
+
+### Bug Fixes
+
+* bump version ([c6ac356](https://github.com/algolia/algoliasearch-netlify/commit/c6ac35660e740363b9215059ac345adedf9ff94e))
+* **deps:** update dependency node-fetch to v2.6.2 ([#451](https://github.com/algolia/algoliasearch-netlify/issues/451)) ([b170103](https://github.com/algolia/algoliasearch-netlify/commit/b1701031f3536baa635a3ffeb08b55127ac2cd6d))
+* **deps:** update dependency node-fetch to v2.6.5 ([#482](https://github.com/algolia/algoliasearch-netlify/issues/482)) ([df17f0b](https://github.com/algolia/algoliasearch-netlify/commit/df17f0bb057df0ebdde80f35b88fc054635b6596))
+
+
+
 ## [1.0.9](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.8...v1.0.9) (2021-08-30)
 
 
