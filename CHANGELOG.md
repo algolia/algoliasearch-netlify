@@ -1,3 +1,12 @@
+## [1.0.12](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.11...v1.0.12) (2021-11-03)
+
+
+### Bug Fixes
+
+* upgrade autocomplete.js ([1e321a1](https://github.com/algolia/algoliasearch-netlify/commit/1e321a1eb6f5ae5d97f961928345be14eb43574e))
+
+
+
 ## [1.0.11](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.10...v1.0.11) (2021-11-03)
 
 
