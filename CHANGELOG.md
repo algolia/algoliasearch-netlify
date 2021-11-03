@@ -1,3 +1,12 @@
+## [1.0.11](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.10...v1.0.11) (2021-11-03)
+
+
+### Bug Fixes
+
+* hierarchy to breadcrumbs wrong attribute displayed ([4d01afe](https://github.com/algolia/algoliasearch-netlify/commit/4d01afe976795e2094906a85f45ea93bf10cd750))
+
+
+
 ## [1.0.10](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.9...v1.0.10) (2021-10-11)
 
 
