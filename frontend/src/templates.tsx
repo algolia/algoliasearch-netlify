@@ -77,12 +77,13 @@ function hierarchyToBreadcrumbs(
     return breadcrumbArray;
   }
   for (let i = 1; i < 7 && addedLevels < 3; ++i) {
-    if (hit.hierarchy[`lvl${i}`] && hit.hierarchy[`lvl${i}`].length > 0) {
+    const lvl = `lvl${i}`;
+    if (hit.hierarchy[lvl] && hit.hierarchy[lvl].length > 0) {
       if (addedLevels > 0) {
         breadcrumbArray.push(' > ');
       }
       breadcrumbArray.push(
-        <components.Highlight hit={hit} attribute="description" />
+        <components.Highlight hit={hit.hierarchy} attribute={lvl} />
       );
       ++addedLevels;
     }
