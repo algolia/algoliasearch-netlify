@@ -16,8 +16,7 @@
   ],
   "scripts": {
     "build": "npx tsc -b",
-    "dev": "nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'",
-    "postinstall": "[ -d dist/ ] || npm run build"
+    "dev": "nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'"
   },
   "dependencies": {
     "node-fetch": "2.6.6"
