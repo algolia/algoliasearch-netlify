@@ -1,3 +1,4 @@
+import type { NetlifyPluginOptions, NetlifyPluginUtils } from '@netlify/build';
 import type { Response } from 'node-fetch';
 import fetch from 'node-fetch';
 
@@ -6,10 +7,10 @@ import { version } from '../package.json';
 
 import { loadDevEnvVariables } from './dev';
 import { starMatch } from './starMatch';
-import type { BuildParams } from './types';
+import type { PluginInputs } from './types';
 
 function createSummaryLogger(
-  show: BuildParams['utils']['status']['show']
+  show: NetlifyPluginUtils['status']['show']
 ): (message: string) => void {
   return (message): void => {
     show({ title: 'Algolia Crawler', summary: message });
@@ -17,7 +18,9 @@ function createSummaryLogger(
   };
 }
 
-export async function onSuccess(params: BuildParams): Promise<void> {
+export async function onSuccess(
+  params: NetlifyPluginOptions<PluginInputs>
+): Promise<void> {
   console.log('Algolia Netlify plugin started');
 
   // Debug
