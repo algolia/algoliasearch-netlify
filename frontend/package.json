@@ -23,7 +23,7 @@
     "@algolia/autocomplete-theme-classic": "1.5.0",
     "@algolia/transporter": "4.11.0",
     "@babel/core": "7.16.0",
-    "@babel/preset-env": "7.16.0",
+    "@babel/preset-env": "7.16.4",
     "@types/react": "17.0.35",
     "algoliasearch": "4.11.0",
     "babel-loader": "8.2.3",
