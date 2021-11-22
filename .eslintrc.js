@@ -27,5 +27,8 @@ module.exports = {
       { accessibility: 'no-public' },
     ],
     'react/react-in-jsx-scope': 'off',
+
+    // TMP
+    'jsdoc/check-examples': ['off'],
   },
 };
