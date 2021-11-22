@@ -27,7 +27,7 @@
     "@algolia/netlify-plugin-crawler": "*",
     "@netlify/build": "^18.21.8",
     "@types/jest": "27.0.3",
-    "@types/node": "15.14.9",
+    "@types/node": "16.11.9",
     "@typescript-eslint/eslint-plugin": "5.4.0",
     "@typescript-eslint/parser": "5.4.0",
     "concurrently": "6.4.0",
@@ -61,6 +61,6 @@
   },
   "engines": {
     "yarn": "1.*",
-    "node": "14.*"
+    "node": "16.*"
   }
 }
