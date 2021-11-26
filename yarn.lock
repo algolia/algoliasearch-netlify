@@ -2399,10 +2399,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^18.21.8":
-  version "18.21.8"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-18.21.8.tgz#d4fa33523167dfc6a48af7287c3646512ec3fd9b"
-  integrity sha512-VNApf9pFGtFT1MELx00BhXDecZkPbszZgxOU2krnXKakcHiZo5/BjiMNlO5Rher3Us+8RJlW7/AMM8SqnuHa/g==
+"@netlify/build@18.25.2":
+  version "18.25.2"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-18.25.2.tgz#7cdc8eb4579b0567c1ff51e72ef8ec2fe652c8f2"
+  integrity sha512-y51FdO3wz9X1BMDKRzKLLGLFXdsLrjYfWg9dCXZtcL16mB7zcAjbd+0L2kH++zGQeadhxUOT8EOe2uVHFxdR2Q==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^2.0.0"
@@ -2410,9 +2410,9 @@
     "@netlify/functions-utils" "^2.0.0"
     "@netlify/git-utils" "^2.0.0"
     "@netlify/plugin-edge-handlers" "^1.11.22"
-    "@netlify/plugins-list" "^4.1.0"
+    "@netlify/plugins-list" "^4.2.0"
     "@netlify/run-utils" "^2.0.0"
-    "@netlify/zip-it-and-ship-it" "^4.29.1"
+    "@netlify/zip-it-and-ship-it" "^4.30.0"
     "@sindresorhus/slugify" "^1.1.0"
     "@ungap/from-entries" "^0.2.1"
     ansi-escapes "^4.3.2"
@@ -2751,7 +2751,7 @@
     rollup-plugin-terser "^7.0.2"
     typescript "^4.1.5"
 
-"@netlify/plugins-list@^4.1.0", "@netlify/plugins-list@^4.2.0":
+"@netlify/plugins-list@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-4.2.0.tgz#eadcf3582b236af9a6945fae934effba9fd0fcb7"
   integrity sha512-ZHbaafIr77FdY5tVvv2GHDsNKShjVtF4ycZBpkMEr0zg74ng9gGtxKGg785esTj0Jobtx5Em1dluczzC0px//g==
@@ -2866,46 +2866,6 @@
     semver "^7.0.0"
     tmp-promise "^3.0.2"
     toml "^3.0.0"
-    unixify "^1.0.0"
-    yargs "^16.0.0"
-
-"@netlify/zip-it-and-ship-it@^4.29.1":
-  version "4.29.1"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-4.29.1.tgz#ff81b1d98b8c4ea886a315b21af1dd4b06cc576f"
-  integrity sha512-tTJ+EGONXfi5OntmgJlvrCI2dmVlxhJLKRtZsDbcoDr/PbFg3LurVMbdYJS34XqCOMZQNhWG8zRFfqoW1N9T5w==
-  dependencies:
-    "@babel/parser" "^7.15.7"
-    "@netlify/esbuild" "^0.13.6"
-    "@vercel/nft" "^0.17.0"
-    archiver "^5.3.0"
-    array-flat-polyfill "^1.0.1"
-    common-path-prefix "^3.0.0"
-    cp-file "^9.0.0"
-    del "^6.0.0"
-    elf-cam "^0.1.1"
-    end-of-stream "^1.4.4"
-    es-module-lexer "^0.9.0"
-    execa "^5.0.0"
-    filter-obj "^2.0.1"
-    find-up "^5.0.0"
-    glob "^7.1.6"
-    is-builtin-module "^3.1.0"
-    junk "^3.1.0"
-    locate-path "^6.0.0"
-    make-dir "^3.1.0"
-    merge-options "^3.0.4"
-    minimatch "^3.0.4"
-    p-map "^4.0.0"
-    path-exists "^4.0.0"
-    pkg-dir "^5.0.0"
-    precinct "^8.2.0"
-    read-package-json-fast "^2.0.2"
-    require-package-name "^2.0.1"
-    resolve "^2.0.0-next.1"
-    semver "^7.0.0"
-    tmp-promise "^3.0.2"
-    toml "^3.0.0"
-    typescript "^4.4.3"
     unixify "^1.0.0"
     yargs "^16.0.0"
 
