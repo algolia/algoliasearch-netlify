@@ -33,7 +33,7 @@
     "concurrently": "6.4.0",
     "conventional-changelog": "3.1.24",
     "conventional-changelog-cli": "2.1.1",
-    "eslint": "8.3.0",
+    "eslint": "8.4.1",
     "eslint-config-algolia": "19.0.2",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "16.0.3",
