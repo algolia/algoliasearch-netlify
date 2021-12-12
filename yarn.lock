@@ -2399,70 +2399,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@18.25.2":
+"@netlify/build@18.25.2", "@netlify/build@^18.25.2":
   version "18.25.2"
   resolved "https://registry.yarnpkg.com/@netlify/build/-/build-18.25.2.tgz#7cdc8eb4579b0567c1ff51e72ef8ec2fe652c8f2"
   integrity sha512-y51FdO3wz9X1BMDKRzKLLGLFXdsLrjYfWg9dCXZtcL16mB7zcAjbd+0L2kH++zGQeadhxUOT8EOe2uVHFxdR2Q==
-  dependencies:
-    "@bugsnag/js" "^7.0.0"
-    "@netlify/cache-utils" "^2.0.0"
-    "@netlify/config" "^15.0.0"
-    "@netlify/functions-utils" "^2.0.0"
-    "@netlify/git-utils" "^2.0.0"
-    "@netlify/plugin-edge-handlers" "^1.11.22"
-    "@netlify/plugins-list" "^4.2.0"
-    "@netlify/run-utils" "^2.0.0"
-    "@netlify/zip-it-and-ship-it" "^4.30.0"
-    "@sindresorhus/slugify" "^1.1.0"
-    "@ungap/from-entries" "^0.2.1"
-    ansi-escapes "^4.3.2"
-    array-flat-polyfill "^1.0.1"
-    chalk "^4.1.2"
-    clean-stack "^3.0.1"
-    execa "^5.1.1"
-    figures "^3.2.0"
-    filter-obj "^2.0.1"
-    got "^10.0.0"
-    indent-string "^4.0.0"
-    is-plain-obj "^3.0.0"
-    js-yaml "^4.0.0"
-    keep-func-props "^3.0.0"
-    locate-path "^6.0.0"
-    log-process-errors "^6.0.0"
-    make-dir "^3.0.2"
-    map-obj "^4.0.0"
-    memoize-one "^6.0.0"
-    os-name "^4.0.1"
-    p-event "^4.1.0"
-    p-every "^2.0.0"
-    p-filter "^2.1.0"
-    p-locate "^5.0.0"
-    p-reduce "^2.1.0"
-    path-exists "^4.0.0"
-    path-type "^4.0.0"
-    pkg-dir "^5.0.0"
-    pretty-ms "^7.0.0"
-    ps-list "^7.0.0"
-    read-pkg-up "^7.0.1"
-    readdirp "^3.4.0"
-    resolve "^2.0.0-next.1"
-    rfdc "^1.3.0"
-    safe-json-stringify "^1.2.0"
-    semver "^7.0.0"
-    statsd-client "0.4.7"
-    string-width "^4.2.0"
-    strip-ansi "^6.0.0"
-    supports-color "^8.0.0"
-    tmp-promise "^3.0.2"
-    ts-node "^10.4.0"
-    update-notifier "^5.0.0"
-    uuid "^8.0.0"
-    yargs "^15.3.1"
-
-"@netlify/build@^18.22.0":
-  version "18.25.1"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-18.25.1.tgz#2b1fb0f0528216965d408e726ffb53312d67fa6b"
-  integrity sha512-3T4u66wc5357wYhwHsJ2MAA3zvCDlhaCylTjzXH9gnUHABZTNbgWSRsWaNdGseNzbQc5P/TAP5f3OGKtS3+45Q==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^2.0.0"
@@ -11140,12 +11080,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@6.15.0:
-  version "6.15.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-6.15.0.tgz#43d1e75046c1782ea2503356500a4235a11110f1"
-  integrity sha512-40r0FZC4vj3qddfTJ536sCO9geCzv15dmGJKEZCQknu12j46RB9AXvy+PUHyXQZQrkZvUnFYsdR6zlgwz7ofyQ==
+netlify-cli@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-7.1.0.tgz#49823c0bb7fef9b469e8377ee3bec2a7f54cb933"
+  integrity sha512-89pIezDEAt8OcTU17Z1SfGMNVvlWXw3/5/tZAWe3y15VmzWn0MjwxJK3VU/FbiOGIpdKBFZT6CcBGZgo2r6w/g==
   dependencies:
-    "@netlify/build" "^18.22.0"
+    "@netlify/build" "^18.25.2"
     "@netlify/config" "^15.8.2"
     "@netlify/framework-info" "^5.11.0"
     "@netlify/local-functions-proxy" "^1.1.1"
