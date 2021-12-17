@@ -50,7 +50,7 @@
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-standard": "4.1.0",
     "http-server": "14.0.0",
-    "jest": "27.4.3",
+    "jest": "27.4.5",
     "json": "11.0.0",
     "netlify-cli": "7.1.0",
     "nodemon": "2.0.15",
