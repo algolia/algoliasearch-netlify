@@ -27,7 +27,7 @@
     "@algolia/netlify-plugin-crawler": "*",
     "@netlify/build": "18.25.2",
     "@types/jest": "27.0.3",
-    "@types/node": "16.11.12",
+    "@types/node": "16.11.14",
     "@typescript-eslint/eslint-plugin": "5.7.0",
     "@typescript-eslint/parser": "5.7.0",
     "concurrently": "6.4.0",
