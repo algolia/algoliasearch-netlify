@@ -28,7 +28,7 @@
     "algoliasearch": "4.11.0",
     "babel-loader": "8.2.3",
     "clean-webpack-plugin": "4.0.0",
-    "core-js": "3.20.0",
+    "core-js": "3.20.1",
     "css-loader": "6.5.1",
     "fork-ts-checker-webpack-plugin": "6.5.0",
     "mini-css-extract-plugin": "2.4.5",
