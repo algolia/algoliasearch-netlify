@@ -40,7 +40,7 @@
     "eslint-plugin-algolia": "2.0.0",
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-jest": "25.3.0",
+    "eslint-plugin-jest": "25.3.4",
     "eslint-plugin-jsdoc": "37.4.0",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-node": "11.1.0",
