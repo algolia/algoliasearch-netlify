@@ -20,7 +20,7 @@
     "postinstall": "[ -d dist/ ] || npm run build"
   },
   "dependencies": {
-    "node-fetch": "2.6.6"
+    "node-fetch": "2.6.7"
   },
   "devDependencies": {
     "@types/node-fetch": "2.5.12",
