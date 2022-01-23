@@ -2441,19 +2441,19 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@20.3.2":
-  version "20.3.2"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-20.3.2.tgz#50031954fd2fec0c6b3d1a2d2ffb92ef05e56262"
-  integrity sha512-PqlfZxBRuqGLbpQjM+hX6/bS0dCyrv+xiq304ajEPUsQ8BY6IhG3ZiYEVOAMYq5J9NTZFA3CYyYN9ZjtPKA8gQ==
+"@netlify/build@22.0.1":
+  version "22.0.1"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-22.0.1.tgz#9783695cf0f63bf774b35990d5ca1e32b39ba4bf"
+  integrity sha512-eqrvNEjBXJ6wJjsLAqgQISKcdMe7DCm03IC+ZZKK2I7IE0XsrYmubi6VjRmhb8zPRv0ytUV0/isDCVqVKEiTDQ==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^3.0.0"
     "@netlify/config" "^16.0.0"
     "@netlify/functions-utils" "^3.0.0"
-    "@netlify/git-utils" "^3.0.0"
+    "@netlify/git-utils" "^4.0.0"
     "@netlify/plugin-edge-handlers" "^3.0.0"
     "@netlify/plugins-list" "^6.2.0"
-    "@netlify/run-utils" "^3.0.0"
+    "@netlify/run-utils" "^4.0.0"
     "@netlify/zip-it-and-ship-it" "^5.2.0"
     "@sindresorhus/slugify" "^1.1.0"
     ansi-escapes "^4.3.2"
@@ -2735,10 +2735,10 @@
     moize "^6.0.0"
     path-exists "^4.0.0"
 
-"@netlify/git-utils@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@netlify/git-utils/-/git-utils-3.0.0.tgz#e34951880e09b1f9011412883f8aac6030e3ef40"
-  integrity sha512-dfK8B3Lt/wHwdo8GL+gqGKesCYoiqZYQu3hIdQA0zPhIgRvm7W3fgfskSwlke8Zt3g11EesiGxrzUNIjsd7HpQ==
+"@netlify/git-utils@^4.0.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@netlify/git-utils/-/git-utils-4.1.0.tgz#8767e9e82e0796bc707f12dda9884b7feb2e6584"
+  integrity sha512-WseJxFYY6rgQcRX7GuHIhG7XZg1dz88pGSjO5nZCwqL7VAB0FSbholuZBUWqetCFVsW4ICIArDaA04WTvWyS+A==
   dependencies:
     execa "^5.1.1"
     map-obj "^4.0.0"
@@ -2934,10 +2934,10 @@
   dependencies:
     execa "^5.1.1"
 
-"@netlify/run-utils@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@netlify/run-utils/-/run-utils-3.0.0.tgz#ec8c45c89d9094caee74a18284160d1b9d617098"
-  integrity sha512-CaHpFDHYe4sYjJ/KnbCKo2qx19PSHktFcRfafJU0de2YrJ3K/J0Q6s7ZIjSzRjKUb0PIEq2ivgMPi3jAHNy9kA==
+"@netlify/run-utils@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@netlify/run-utils/-/run-utils-4.0.0.tgz#c15e7ea183130b91067fb374fb694eae23a3e2d4"
+  integrity sha512-ZeQFp1VmSMfrKaV2A13HJ2b7UJBHf7DUvzAcNjjJdbugD8wCDs5l00rRZeLhyl48AIZl9ki+RpsATZ/j6qKn+g==
   dependencies:
     execa "^5.1.1"
 
