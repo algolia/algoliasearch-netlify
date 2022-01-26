@@ -19,10 +19,10 @@
     "dev": "nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'"
   },
   "dependencies": {
-    "node-fetch": "2.6.7"
+    "node-fetch": "3.2.0"
   },
   "devDependencies": {
-    "@types/node-fetch": "2.5.12",
+    "@types/node-fetch": "3.0.2",
     "dotenv": "14.2.0"
   },
   "keywords": [
