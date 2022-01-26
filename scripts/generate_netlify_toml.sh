@@ -14,7 +14,7 @@ common='
 # Dev only
 dev_only='
 [[plugins]]
-package = "./plugin/dist/index.js"
+package = "./plugin/src/index.ts"
   [plugins.inputs]
   branches = ["*"]
   mainBranch = "master"
@@ -33,9 +33,9 @@ package = "@algolia/netlify-plugin-crawler"
   branches = ["*"]
 '
 
-echo "$common" > "$target"
+echo "$common" >"$target"
 if [ "$ALGOLIA_DEV_ENV" = "true" ]; then
-  echo "$dev_only" >> "$target"
+  echo "$dev_only" >>"$target"
 else
-  echo "$prod_only" >> "$target"
+  echo "$prod_only" >>"$target"
 fi
