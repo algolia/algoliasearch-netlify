@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/node-fetch": "2.5.12",
-    "dotenv": "14.2.0"
+    "dotenv": "16.0.0"
   },
   "keywords": [
     "netlify",
