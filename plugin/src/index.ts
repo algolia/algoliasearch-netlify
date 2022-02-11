@@ -144,7 +144,7 @@ export async function onSuccess(
     );
     return;
   }
-  const json: { crawlerId: string } = await response.json();
+  const json = (await response.json()) as { crawlerId: string };
 
   console.log(`API answered: ${response.status}`);
 

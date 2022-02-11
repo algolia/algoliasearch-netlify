@@ -15,7 +15,6 @@
     "src"
   ],
   "scripts": {
-    "build": "npx tsc -b",
     "dev": "nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'"
   },
   "dependencies": {

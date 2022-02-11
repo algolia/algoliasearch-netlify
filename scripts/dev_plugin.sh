@@ -17,5 +17,4 @@ restore_netlify_toml() {
 ALGOLIA_DEV_ENV=true ./scripts/generate_netlify_toml.sh
 trap restore_netlify_toml EXIT
 
-yarn build:plugin
 ALGOLIA_DEV_ENV=true yarn netlify build
