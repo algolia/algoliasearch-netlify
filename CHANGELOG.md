@@ -1,3 +1,18 @@
+## [1.0.14](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.13...v1.0.14) (2022-02-11)
+
+
+### Bug Fixes
+
+* type error + unecessary build step ([f6c3a8b](https://github.com/algolia/algoliasearch-netlify/commit/f6c3a8bd371d5025a7bce1338ec311cacc8ec7c9))
+* yarn build leftover ([e81979a](https://github.com/algolia/algoliasearch-netlify/commit/e81979a9db581cdc2e1d56939375b6546730960f))
+
+
+### Reverts
+
+* Revert "fix(deps): update dependency node-fetch to v3 (#448)" ([73f3704](https://github.com/algolia/algoliasearch-netlify/commit/73f3704ffea8a7c0487ffacce3863d27d08aa862)), closes [#448](https://github.com/algolia/algoliasearch-netlify/issues/448)
+
+
+
 ## [1.0.13](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.12...v1.0.13) (2022-01-26)
 
 
