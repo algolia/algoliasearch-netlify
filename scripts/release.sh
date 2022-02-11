@@ -6,12 +6,12 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 cd ..
 
 # Check if the git directory is clean
-if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
+if [[ $(git diff --shortstat 2>/dev/null | tail -n1) != "" ]]; then
   echo "Your git directory is unclean"
   exit 1
 fi
 
-current=`npx json -f package.json version`
+current=$(npx json -f package.json version)
 read -p "New version number (current is ${current}): " version
 export ALGOLIASEARCH_NETLIFY_VERSION=$version
 
@@ -28,7 +28,6 @@ echo
 echo 'Preparing plugin...'
 cd plugin/
 yarn version -s --no-git-tag-version --new-version $ALGOLIASEARCH_NETLIFY_VERSION
-yarn build
 cd ..
 
 ## Building front-end
