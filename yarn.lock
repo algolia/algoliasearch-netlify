@@ -12955,10 +12955,10 @@ remove-trailing-separator@^1.0.1:
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
   integrity sha1-wkvOKig62tW8P1jg1IJJuSN52O8=
 
-renovate-config-algolia@2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/renovate-config-algolia/-/renovate-config-algolia-2.1.8.tgz#b18e24df441abe6c6f5557622eaed5b4f9f0082d"
-  integrity sha512-KalyBHtwHMNDnJdixI8rmqsGkVnS82Ec7OyfXEOhZbN0DS4KyH7qixboPmpYu594Em8wA1U8MdWoZhxxiunBLw==
+renovate-config-algolia@2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/renovate-config-algolia/-/renovate-config-algolia-2.1.9.tgz#917b9d259e2823083208579ade340c478832cc4b"
+  integrity sha512-zL8ZVAXAzbtntkgbfL1FPcoojguHw+i/RzLhmPxbemVCZ9bWSGlNu7lo3X3iC8FzTXvlOy2ht583djSf24pB+g==
 
 repeat-element@^1.1.2:
   version "1.1.3"
