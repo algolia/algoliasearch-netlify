@@ -37,7 +37,7 @@
     "postcss": "8.4.6",
     "postcss-loader": "6.2.1",
     "postcss-preset-env": "7.3.1",
-    "preact": "10.6.5",
+    "preact": "10.6.6",
     "sass-loader": "12.4.0",
     "terser-webpack-plugin": "4.2.3",
     "ts-loader": "9.2.6",
