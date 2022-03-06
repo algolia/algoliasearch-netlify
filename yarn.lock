@@ -2630,20 +2630,20 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@26.3.3":
-  version "26.3.3"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-26.3.3.tgz#f0a9b7ee806713f96fced775717b67fff69c05e1"
-  integrity sha512-ktZ6my38EisaUecAfV8ihNitYrgTzpoL1Y+0QzdWhZGw3HoBMMnuyc3DfQ9cNo4SWeg2mG4ISGgApnqg3ah8sA==
+"@netlify/build@26.3.14":
+  version "26.3.14"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-26.3.14.tgz#94590417e6e481757353e9aa48464433765b3863"
+  integrity sha512-xuDNJqklYa9+8tl04qhQcgrt/JFD7pUH+wlLPvn4Ur8p/ZI/Mvs6A06gob0r2CKR+7HczimDrb3LwKZKXVsgvw==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^4.0.0"
     "@netlify/config" "^17.0.0"
     "@netlify/functions-utils" "^4.0.0"
     "@netlify/git-utils" "^4.0.0"
-    "@netlify/plugin-edge-handlers" "^3.0.6"
-    "@netlify/plugins-list" "^6.11.0"
+    "@netlify/plugin-edge-handlers" "^3.0.7"
+    "@netlify/plugins-list" "^6.15.0"
     "@netlify/run-utils" "^4.0.0"
-    "@netlify/zip-it-and-ship-it" "5.8.0"
+    "@netlify/zip-it-and-ship-it" "5.9.0"
     "@sindresorhus/slugify" "^2.0.0"
     "@types/node" "^16.0.0"
     ansi-escapes "^5.0.0"
@@ -2658,7 +2658,7 @@
     js-yaml "^4.0.0"
     keep-func-props "^4.0.0"
     locate-path "^7.0.0"
-    log-process-errors "^7.0.0"
+    log-process-errors "^8.0.0"
     map-obj "^5.0.0"
     memoize-one "^6.0.0"
     os-name "^5.0.0"
@@ -2793,7 +2793,7 @@
     validate-npm-package-name "^3.0.0"
     yargs "^17.3.1"
 
-"@netlify/esbuild@^0.13.6":
+"@netlify/esbuild@0.13.6", "@netlify/esbuild@^0.13.6":
   version "0.13.6"
   resolved "https://registry.yarnpkg.com/@netlify/esbuild/-/esbuild-0.13.6.tgz#ef0fda98604e708528ef0a57e853c50a6fc987f2"
   integrity sha512-tiKmDcHM2riSVN79c0mJY/67EBDafXQAMitHuLiCDAMdtz3kfv+NqdVG5krgf5lWR8Uf8AeZrUW5Q9RP25REvw==
@@ -2936,15 +2936,36 @@
     rollup-plugin-node-polyfills "^0.2.1"
     rollup-plugin-terser "^7.0.2"
 
+"@netlify/plugin-edge-handlers@^3.0.7":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-edge-handlers/-/plugin-edge-handlers-3.0.7.tgz#c78be3ae44bbba8473bab4da6660c1486b3f7a1d"
+  integrity sha512-ThceMAZ7M0k6WVcZwszVh9qozZKveQCnmQtWZW69Qf+g1pGHFkGIt9Vclt5op+Dd8bIdk0kcu1NnX9Ll7eZL1w==
+  dependencies:
+    "@babel/core" "^7.11.4"
+    "@babel/preset-env" "^7.11.5"
+    "@rollup/plugin-babel" "^5.2.0"
+    "@rollup/plugin-commonjs" "^21.0.0"
+    "@rollup/plugin-inject" "^4.0.2"
+    "@rollup/plugin-json" "^4.1.0"
+    "@rollup/plugin-node-resolve" "^11.0.0"
+    buffer-es6 "^4.9.3"
+    del "^6.0.0"
+    node-fetch "^3.0.0"
+    path-type "^5.0.0"
+    process-es6 "^0.11.6"
+    rollup "^2.23.1"
+    rollup-plugin-node-polyfills "^0.2.1"
+    rollup-plugin-terser "^7.0.2"
+
 "@netlify/plugins-list@^6.10.1", "@netlify/plugins-list@^6.9.0":
   version "6.10.2"
   resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-6.10.2.tgz#0428ac9a63bc95f2cda140b1a83a8937fe1a221c"
   integrity sha512-Agkt26O+bBQq3iXq7tSnDqWn+Ew3M7ImtoBNy/KI2KhNGaW1Mu31F9sIJqxvTUjVjBfklSI/L9M5GBWVAgk08A==
 
-"@netlify/plugins-list@^6.11.0":
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-6.12.0.tgz#46e420a57aad4c483d2b73ffab25cec69ca98ae3"
-  integrity sha512-h9qFET+jiLeQQvK/NUNE0qaX/XhGKObhvIyOymhXgq2qf7vd+np842m8hz9sVbA1sJeVulk5CS89adcV6+ATgQ==
+"@netlify/plugins-list@^6.15.0":
+  version "6.16.0"
+  resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-6.16.0.tgz#9a7b917af5a741f5145ed1bf480bffec895468b6"
+  integrity sha512-wfPmtfHW7WY6oivVfkHY6yo2hiMjvsP97/vKIn+mzpjmua+nCC3aIfbU+JJGnH8HwKq7UAbC2bwLNQhvQdYsuQ==
 
 "@netlify/routing-local-proxy-darwin-arm64@^0.34.1":
   version "0.34.1"
@@ -3021,13 +3042,13 @@
     unixify "^1.0.0"
     yargs "^16.0.0"
 
-"@netlify/zip-it-and-ship-it@5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-5.8.0.tgz#98275c516da597b624a1e07c575256e04530ba8a"
-  integrity sha512-Tr6/x19us7xCuHHHdZxKzAyR2jPLBCgHwmNvRsv1WWyptElm+srd0Xku5RzK1P/FdOySkub2d5iy+NHeSrbLLQ==
+"@netlify/zip-it-and-ship-it@5.9.0":
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-5.9.0.tgz#01761f198c9008106f2c8270a032dee4e7946fae"
+  integrity sha512-79w8yNRLFBiAHhYcol3hvkDu9s/qn7lDIlnUyK1e9qvAaXbcsjoz07Av7o1ePkLtUADcP7qz97PJNANyyotdAA==
   dependencies:
     "@babel/parser" "7.16.8"
-    "@netlify/esbuild" "^0.13.6"
+    "@netlify/esbuild" "0.13.6"
     "@vercel/nft" "^0.17.0"
     archiver "^5.3.0"
     common-path-prefix "^3.0.0"
@@ -5782,6 +5803,16 @@ colors-option@^2.0.1:
     filter-obj "^2.0.1"
     is-plain-obj "^4.0.0"
     jest-validate "^27.0.2"
+
+colors-option@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/colors-option/-/colors-option-3.0.0.tgz#51f5d0d2b511a01859cdd70eaa9ed43ca4abf108"
+  integrity sha512-DP3FpjsiDDvnQC1OJBsdOJZPuy7r0o6sepY2T5M3L/d2nrE23O/ErFkEqyY3ngVL1ZhTj/H0pCMNObZGkEOaaQ==
+  dependencies:
+    chalk "^5.0.0"
+    filter-obj "^3.0.0"
+    is-plain-obj "^4.0.0"
+    jest-validate "^27.3.1"
 
 colors@^1.1.2, colors@^1.2.1:
   version "1.4.0"
@@ -10189,7 +10220,7 @@ jest-validate@^25.3.0:
     leven "^3.1.0"
     pretty-format "^25.5.0"
 
-jest-validate@^27.0.2, jest-validate@^27.5.1:
+jest-validate@^27.0.2, jest-validate@^27.3.1, jest-validate@^27.4.2, jest-validate@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.5.1.tgz#9197d54dc0bdb52260b8db40b46ae668e04df067"
   integrity sha512-thkNli0LYTmOI1tDB3FI1S1RTp/Bqyd9pTarJwL87OIBFuqEb5Apv5EaApEudYg4g86e3CT6kM0RowkhtEnCBQ==
@@ -10841,6 +10872,19 @@ log-process-errors@^7.0.0:
     moize "^6.0.3"
     semver "^7.3.5"
 
+log-process-errors@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/log-process-errors/-/log-process-errors-8.0.0.tgz#f88a9556e4914037ad97ceee24b148dc1b566dfd"
+  integrity sha512-+SNGqNC1gCMJfhwYzAHr/YgNT/ZJc+V2nCkvtPnjrENMeCe+B/jgShBW0lmWoh6uVV2edFAPc/IUOkDdsjTbTg==
+  dependencies:
+    colors-option "^3.0.0"
+    figures "^4.0.0"
+    filter-obj "^3.0.0"
+    jest-validate "^27.4.2"
+    map-obj "^5.0.0"
+    moize "^6.1.0"
+    semver "^7.3.5"
+
 log-symbols@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
@@ -11418,7 +11462,7 @@ moize@^6.0.0:
     fast-equals "2.0.0"
     micro-memoize "4.0.9"
 
-moize@^6.0.3:
+moize@^6.0.3, moize@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/moize/-/moize-6.1.0.tgz#736e505d30d0ff7751005ed2c66c74cf52941b87"
   integrity sha512-WrMcM+C2Jy+qyOC/UMhA3BCHGowxV34dhDZnDNfxsREW/8N+33SFjmc23Q61Xv1WUthUA1vYopTitP1sZ5jkeg==
