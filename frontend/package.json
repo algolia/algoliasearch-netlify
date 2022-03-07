@@ -31,7 +31,7 @@
     "core-js": "3.21.1",
     "css-loader": "6.6.0",
     "fork-ts-checker-webpack-plugin": "6.5.0",
-    "mini-css-extract-plugin": "2.5.3",
+    "mini-css-extract-plugin": "2.6.0",
     "mustache": "4.2.0",
     "node-sass": "7.0.1",
     "postcss": "8.4.7",
