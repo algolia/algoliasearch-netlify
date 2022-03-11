@@ -24,7 +24,7 @@
   "devDependencies": {
     "@algolia/algoliasearch-netlify-frontend": "*",
     "@algolia/netlify-plugin-crawler": "*",
-    "@netlify/build": "26.3.14",
+    "@netlify/build": "26.4.0",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.26",
     "@typescript-eslint/eslint-plugin": "5.13.0",
