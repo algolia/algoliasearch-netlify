@@ -2650,10 +2650,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@26.4.0":
-  version "26.4.0"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-26.4.0.tgz#ae18c0117a28e3cd837b1fd215b69de5457939c3"
-  integrity sha512-Xr4HR7gr+B34x8WwFcFU8+AOVoaPkWBchhPH9K+hJggzFf9CyCodMMwHo5+obkg6aNJtVcGQZTmZXtI9Tu8twQ==
+"@netlify/build@26.5.0":
+  version "26.5.0"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-26.5.0.tgz#f5fa412e917a348c70bce6e0c19fab33ea20dfd4"
+  integrity sha512-aF6H6CnWcggf5ObDYMzreGq9tKtny95Ys9GhxCMxoQxfhcw3kab984Xj1epk3wlKNt1vJbZ3bndlme3LDG/cOg==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^4.0.0"
