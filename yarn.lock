@@ -2657,10 +2657,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@26.5.1":
-  version "26.5.1"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-26.5.1.tgz#cce2d91740af7a46d022dd8dd5ee693bb811c45b"
-  integrity sha512-sqS/7zyJwp48f1nsKJ9XaZF8FSoJpdCp1EH2g5777rc0hGyYC1AFX0NaJnT3weN47VjsLkaxcfHBUvwo6lyEJw==
+"@netlify/build@26.5.2":
+  version "26.5.2"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-26.5.2.tgz#e10794bd4e144cc769d7dc3107468bf2e9878e6b"
+  integrity sha512-b/movOQmBIw9ghNDdo4jviZGQRYMBzcGTN1BcoWgK649Whj1KfqEWpL+JBeqnCCNUQpfhfE9o284o6Ql37k8jQ==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^4.0.0"
@@ -2668,7 +2668,7 @@
     "@netlify/functions-utils" "^4.0.0"
     "@netlify/git-utils" "^4.0.0"
     "@netlify/plugin-edge-handlers" "^3.0.7"
-    "@netlify/plugins-list" "^6.17.0"
+    "@netlify/plugins-list" "^6.18.1"
     "@netlify/run-utils" "^4.0.0"
     "@netlify/zip-it-and-ship-it" "5.9.0"
     "@sindresorhus/slugify" "^2.0.0"
@@ -2989,10 +2989,10 @@
   resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-6.10.2.tgz#0428ac9a63bc95f2cda140b1a83a8937fe1a221c"
   integrity sha512-Agkt26O+bBQq3iXq7tSnDqWn+Ew3M7ImtoBNy/KI2KhNGaW1Mu31F9sIJqxvTUjVjBfklSI/L9M5GBWVAgk08A==
 
-"@netlify/plugins-list@^6.17.0":
-  version "6.17.0"
-  resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-6.17.0.tgz#fd6ff86a81de0f2b4bc14ec2f0f5f9431ec54bd6"
-  integrity sha512-XQMijnVOxbZwkOeSzUZ8Hwon8WIv9uka5R6+mjJs25lcFiTscA8HqHWjhSHf2xPSrcKopJm4BNJZja5YHV3NQg==
+"@netlify/plugins-list@^6.18.1":
+  version "6.19.0"
+  resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-6.19.0.tgz#6618803445e5ad7f7f1fadb576cf7783160102b9"
+  integrity sha512-EuRZgOhP7QE0H5Sn4+LvsOKL+rcUn+ny6dzwK1V+Rj2HV0cBW2JMGxWj2IEAI1Qb0xU/Gy+Ib+bX23dCvm5LdQ==
 
 "@netlify/routing-local-proxy-darwin-arm64@^0.34.1":
   version "0.34.1"
