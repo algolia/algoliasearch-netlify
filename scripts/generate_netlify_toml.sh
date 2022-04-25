@@ -14,7 +14,7 @@ common='
 # Dev only
 dev_only='
 [[plugins]]
-package = "./plugin/src/index.ts"
+package = "./plugin/dist/index.js"
   [plugins.inputs]
   branches = ["*"]
   mainBranch = "master"
