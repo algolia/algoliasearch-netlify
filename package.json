@@ -11,14 +11,14 @@
   ],
   "scripts": {
     "build": "echo 'Website already built in public'",
-    "dev": "yarn && npx concurrently --success first --kill-others --names 'plugin,frontend,website' --prefix-colors 'magenta,cyan,yellow' 'yarn dev:plugin' 'yarn dev:frontend' 'yarn dev:website'",
+    "dev": "yarn && concurrently --success first --kill-others --names 'plugin,frontend,website' --prefix-colors 'magenta,cyan,yellow' 'yarn dev:plugin' 'yarn dev:frontend' 'yarn dev:website'",
     "dev:frontend": "cd frontend && yarn dev",
     "dev:plugin": "cd plugin && yarn dev",
-    "dev:website": "npx http-server --port 9000 -c -1 public",
+    "dev:website": "http-server --port 9000 -c -1 public",
     "changelog:generate": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "lint": "eslint --ext=jsx,ts,tsx,js .",
     "release": "./scripts/release.sh",
-    "test": "npx jest"
+    "test": "jest"
   },
   "devDependencies": {
     "@algolia/algoliasearch-netlify-frontend": "*",
