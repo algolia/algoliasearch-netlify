@@ -1,3 +1,18 @@
+## [1.0.15](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.14...v1.0.15) (2022-04-25)
+
+
+### Bug Fixes
+
+* ci with yarn3 ([f4475b6](https://github.com/algolia/algoliasearch-netlify/commit/f4475b643d8b89ea9faaa063432be028bb3e8a04))
+* upgrade yarn ([db83c9c](https://github.com/algolia/algoliasearch-netlify/commit/db83c9cd3a48e0c83095933f2a37fc9eb9abee02))
+
+
+### Reverts
+
+* use TS ([967e96d](https://github.com/algolia/algoliasearch-netlify/commit/967e96d345ceb9e27959c28985d976b6b89acce7))
+
+
+
 ## [1.0.14](https://github.com/algolia/algoliasearch-netlify/compare/v1.0.13...v1.0.14) (2022-02-11)
 
 
