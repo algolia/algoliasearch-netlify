@@ -75,7 +75,7 @@ echo
 echo "Publishing frontend on npm..."
 ## Release frontend
 cd frontend/
-yarn publish --otp $OTP
+npm publish --otp $OTP
 cd ..
 
 ## Release git
