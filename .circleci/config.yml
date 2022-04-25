@@ -9,11 +9,24 @@ aliases:
   - &attach-work-dir
     at: ~/app/
 
+  # Cache Management
+  - &restore_node_modules
+    keys:
+      - v2.8-node-modules-{{ arch }}-{{ checksum "yarn.lock" }}
+
+  - &save_node_modules
+    key: v2.8-node-modules-{{ arch }}-{{ checksum "yarn.lock" }}
+    paths:
+      - .yarn/cache
+      - node_modules
+      - src/plugin/node_modules
+      - src/frontend/node_modules
+
   # Dependencies
   - &yarn
     name: Run Yarn
     command: |
-      yarn install --non-interactive --cache-folder ~/.cache/yarn
+      yarn install --immutable
 
 defaults: &defaults
   working_directory: ~/app
@@ -31,8 +44,10 @@ jobs:
     steps:
       - checkout
 
+      - restore_cache: *restore_node_modules
       - run: *yarn
 
+      - save_cache: *save_node_modules
       - persist-to-workspace: *persist-work-dir
 
   lint:
