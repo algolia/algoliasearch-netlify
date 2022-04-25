@@ -7,13 +7,14 @@
   "bugs": {
     "url": "https://github.com/algolia/algoliasearch-netlify/issues"
   },
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "files": [
     "README.md",
     "manifest.yml",
-    "src"
+    "dist"
   ],
   "scripts": {
+    "build": "npx tsc -b",
     "dev": "nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'"
   },
   "dependencies": {

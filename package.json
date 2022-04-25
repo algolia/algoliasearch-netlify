@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "build": "echo 'Website already built in public'",
+    "build:plugin": "cd plugin && yarn build",
     "dev": "yarn && concurrently --success first --kill-others --names 'plugin,frontend,website' --prefix-colors 'magenta,cyan,yellow' 'yarn dev:plugin' 'yarn dev:frontend' 'yarn dev:website'",
     "dev:frontend": "cd frontend && yarn dev",
     "dev:plugin": "cd plugin && yarn dev",
