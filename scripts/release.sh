@@ -27,14 +27,15 @@ echo
 echo
 echo 'Preparing plugin...'
 cd plugin/
-yarn version -s --no-git-tag-version --new-version $ALGOLIASEARCH_NETLIFY_VERSION
+npm version -s --no-git-tag-version $ALGOLIASEARCH_NETLIFY_VERSION
+yarn build
 cd ..
 
 ## Building front-end
 echo
 echo 'Preparing frontend...'
 cd frontend/
-yarn version -s --no-git-tag-version --new-version $ALGOLIASEARCH_NETLIFY_VERSION
+npm version -s --no-git-tag-version $ALGOLIASEARCH_NETLIFY_VERSION
 yarn build
 cd ..
 
@@ -42,7 +43,7 @@ cd ..
 echo
 echo 'Preparing changelog, creating commit & tag...'
 ### Initial (fake) commit & version tag
-yarn version -s --no-git-tag-version --new-version $ALGOLIASEARCH_NETLIFY_VERSION
+npm version -s --no-git-tag-version $ALGOLIASEARCH_NETLIFY_VERSION
 git add package.json plugin/package.json frontend/package.json
 git commit -m "chore(release): $ALGOLIASEARCH_NETLIFY_VERSION"
 git tag -a "v$ALGOLIASEARCH_NETLIFY_VERSION" -m "$ALGOLIASEARCH_NETLIFY_VERSION"
@@ -67,14 +68,14 @@ read OTP
 echo
 echo "Publishing plugin on npm..."
 cd plugin/
-yarn publish --new-version $ALGOLIASEARCH_NETLIFY_VERSION --otp $OTP
+npm publish --otp $OTP
 cd ..
 
 echo
 echo "Publishing frontend on npm..."
 ## Release frontend
 cd frontend/
-yarn publish --new-version $ALGOLIASEARCH_NETLIFY_VERSION --otp $OTP
+yarn publish --otp $OTP
 cd ..
 
 ## Release git
