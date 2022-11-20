@@ -15,7 +15,7 @@ __metadata:
     "@algolia/transporter": 4.13.0
     "@babel/core": 7.17.9
     "@babel/preset-env": 7.16.11
-    "@types/react": 17.0.44
+    "@types/react": 17.0.52
     algoliasearch: 4.13.0
     babel-loader: 8.2.4
     clean-webpack-plugin: 4.0.0
@@ -5198,14 +5198,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.44":
-  version: 17.0.44
-  resolution: "@types/react@npm:17.0.44"
+"@types/react@npm:17.0.52":
+  version: 17.0.52
+  resolution: "@types/react@npm:17.0.52"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: ebee02778ca08f954c316dc907802264e0121c87b8fa2e7e0156ab0ef2a1b0a09d968c016a3600ec4c9a17dc09b4274f292d9b15a1a5369bb7e4072def82808f
+  checksum: a51b98dd87838d161278fdf9dd78e6a4ff8c018f406d6647f77963e144fb52a8beee40c89fd0e7e840eaeaa8bd9fe2f34519410540b1a52d43a6f8b4d2fbce33
   languageName: node
   linkType: hard
 
