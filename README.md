@@ -41,7 +41,7 @@ Automatically index your website to Algolia when deploying your project to Netli
 
 - Need help? We have you covered in our [Discourse forum](https://discourse.algolia.com/c/netlify/28)
 - Found a bug in the plugin? Please read our [contributing guide](/CONTRIBUTING.md) and either open an [issue](https://github.com/algolia/algoliasearch-netlify/issues) or a [pull request](https://github.com/algolia/algoliasearch-netlify/pulls)
-- Can't find the answer to your issue? Please reach out to [support@algolia.com](support@algolia.com)
+- Can't find the answer to your issue? Please reach out to the [Algolia Support team](https://support.algolia.com/hc/en-us/requests/new)
 
 ## Development & Release
 
