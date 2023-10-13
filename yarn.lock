@@ -229,7 +229,7 @@ __metadata:
     netlify-cli: 8.19.3
     nodemon: 2.0.15
     prettier: 2.7.1
-    renovate-config-algolia: 2.1.9
+    renovate-config-algolia: 2.1.10
     ts-jest: 27.1.4
     typescript: 4.6.3
   languageName: unknown
@@ -18717,10 +18717,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"renovate-config-algolia@npm:2.1.9":
-  version: 2.1.9
-  resolution: "renovate-config-algolia@npm:2.1.9"
-  checksum: c92f55e861d5d5a532d21bdcf2ab27f1cc096a748b599b73f0bab73d285e041961d46aca35e5eeaf221a91f24e54acb9ccad1e3e48b707e4838c12ed9d62bcce
+"renovate-config-algolia@npm:2.1.10":
+  version: 2.1.10
+  resolution: "renovate-config-algolia@npm:2.1.10"
+  checksum: 2fa9e541ce8672c2dd96b0719ae0ca054e9e4fcbc24c9a4b7aee9047cd22f0f7d48f45142b65b41a7bb7da7738deee40a02920ce7893c6eabd24d40c5828ed3e
   languageName: node
   linkType: hard
 
