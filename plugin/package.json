@@ -18,10 +18,10 @@
     "dev": "nodemon --config .nodemon.json --exec '../scripts/dev_plugin.sh'"
   },
   "dependencies": {
-    "node-fetch": "2.6.7"
+    "node-fetch": "2.7.0"
   },
   "devDependencies": {
-    "@types/node-fetch": "2.6.1",
+    "@types/node-fetch": "2.6.11",
     "dotenv": "16.0.0"
   },
   "keywords": [
