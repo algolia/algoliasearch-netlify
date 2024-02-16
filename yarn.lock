@@ -9,9 +9,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@algolia/algoliasearch-netlify-frontend@workspace:frontend"
   dependencies:
-    "@algolia/autocomplete-js": 1.5.6
-    "@algolia/autocomplete-preset-algolia": 1.5.6
-    "@algolia/autocomplete-theme-classic": 1.5.6
+    "@algolia/autocomplete-js": 1.17.0
+    "@algolia/autocomplete-preset-algolia": 1.17.0
+    "@algolia/autocomplete-theme-classic": 1.17.0
     "@algolia/transporter": 4.13.0
     "@babel/core": 7.17.9
     "@babel/preset-env": 7.16.11
@@ -38,52 +38,69 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@algolia/autocomplete-core@npm:1.5.6":
-  version: 1.5.6
-  resolution: "@algolia/autocomplete-core@npm:1.5.6"
+"@algolia/autocomplete-core@npm:1.17.0":
+  version: 1.17.0
+  resolution: "@algolia/autocomplete-core@npm:1.17.0"
   dependencies:
-    "@algolia/autocomplete-shared": 1.5.6
-  checksum: 4d6afd897e1262f5a9e925d5e24e9029c33e91c9772d66a776fc76ee02b8fd0f19cba4567e961224c48cd08d40ce4cf5f018d860084ee159713cfa9022bc3ca4
+    "@algolia/autocomplete-plugin-algolia-insights": 1.17.0
+    "@algolia/autocomplete-shared": 1.17.0
+  checksum: 326035fbdc055c823be145724e7934ae7ddd3629da1dd869a6ba8bab9547235b96339c1ec977bab31a8dcf36a39564653b80bed9a1ad1783b6ccf5545ba7e992
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-js@npm:1.5.6":
-  version: 1.5.6
-  resolution: "@algolia/autocomplete-js@npm:1.5.6"
+"@algolia/autocomplete-js@npm:1.17.0":
+  version: 1.17.0
+  resolution: "@algolia/autocomplete-js@npm:1.17.0"
   dependencies:
-    "@algolia/autocomplete-core": 1.5.6
-    "@algolia/autocomplete-preset-algolia": 1.5.6
-    "@algolia/autocomplete-shared": 1.5.6
-    preact: ^10.0.0
+    "@algolia/autocomplete-core": 1.17.0
+    "@algolia/autocomplete-preset-algolia": 1.17.0
+    "@algolia/autocomplete-shared": 1.17.0
+    htm: ^3.1.1
+    preact: ^10.13.2
   peerDependencies:
-    "@algolia/client-search": ^4.5.1
-  checksum: 06648167baa1a578958f42bf238183fa5f5aebdb654858d61801b852dd2133195b4750591fb52509d6a41e9de143fb6146a8d0ec574abe775b9470fc9a64a11d
+    "@algolia/client-search": ">= 4.5.1 < 6"
+    algoliasearch: ">= 4.9.1 < 6"
+  checksum: d048de6c218b4c17ea160fa4a2dd1aeed1fe298e481212b633e540608bc9db3fd0a4bf7c55c9ef255c893b92b22c7c55c77cc898a047ba31ea8115a65f3855ce
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-preset-algolia@npm:1.5.6":
-  version: 1.5.6
-  resolution: "@algolia/autocomplete-preset-algolia@npm:1.5.6"
+"@algolia/autocomplete-plugin-algolia-insights@npm:1.17.0":
+  version: 1.17.0
+  resolution: "@algolia/autocomplete-plugin-algolia-insights@npm:1.17.0"
   dependencies:
-    "@algolia/autocomplete-shared": 1.5.6
+    "@algolia/autocomplete-shared": 1.17.0
   peerDependencies:
-    "@algolia/client-search": ^4.9.1
-    algoliasearch: ^4.9.1
-  checksum: e1f5e6ec44c683e0775e50eecd8b0c80305af83203734b5c2ed2b8acdabe3faa75bcb89a73c08805d60fed95b948fbaa837f7fe573f06e6c0011cd56a62cf1ef
+    search-insights: ">= 1 < 3"
+  checksum: ab32c31ab43cadb2bfe9b304e959f1afb6584bb2f0fa618637a3d75fd7c450eff731eb31a89157a3b4a630b6dbb222f2df480dfd8f931a6f978f1c95eb1c47d2
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-shared@npm:1.5.6":
-  version: 1.5.6
-  resolution: "@algolia/autocomplete-shared@npm:1.5.6"
-  checksum: 02b9fbde8fde0a2d3000e504a0f84a896782ba83f68e973aee7fdaf3054e87e094e46355cc72687e87f6904f9002302c2ec270b6cae9659017a554f9da3852ae
+"@algolia/autocomplete-preset-algolia@npm:1.17.0":
+  version: 1.17.0
+  resolution: "@algolia/autocomplete-preset-algolia@npm:1.17.0"
+  dependencies:
+    "@algolia/autocomplete-shared": 1.17.0
+  peerDependencies:
+    "@algolia/client-search": ">= 4.9.1 < 6"
+    algoliasearch: ">= 4.9.1 < 6"
+  checksum: 9e3d779ceaf6bb2b202fb7a7c1a2f5de36f4d6acb8b52ba9f6a67651f74852c3092da899f69fc928e321017f4c5451b7bcef57b021292ec2988378896b4625a3
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-theme-classic@npm:1.5.6":
-  version: 1.5.6
-  resolution: "@algolia/autocomplete-theme-classic@npm:1.5.6"
-  checksum: 194d122a5df636b81bc7694ca5a612f927a7c114572296c836eaf711423b3399c6c70af8cd380e91ad3bdbe83d817376de58f3d61757b17d3df7ab2a3e0975d5
+"@algolia/autocomplete-shared@npm:1.17.0":
+  version: 1.17.0
+  resolution: "@algolia/autocomplete-shared@npm:1.17.0"
+  peerDependencies:
+    "@algolia/client-search": ">= 4.9.1 < 6"
+    algoliasearch: ">= 4.9.1 < 6"
+  checksum: a5bccecd50c770bca34263631a280332c5884a2a2879b27fadd5ef3dc78425db697c0cf54b11da9c84565bfe10d0b3cc4be46742e798619011c41c5e6297c821
+  languageName: node
+  linkType: hard
+
+"@algolia/autocomplete-theme-classic@npm:1.17.0":
+  version: 1.17.0
+  resolution: "@algolia/autocomplete-theme-classic@npm:1.17.0"
+  checksum: 71f314bbc6ed1061c94f6899669e8a50559cef81c8aea3545c0ffed6a24a54604360b05a8b8624d17bc9fd3d2514ffd2586ee23bf26189a607592cbf52ad6fe1
   languageName: node
   linkType: hard
 
@@ -12164,6 +12181,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"htm@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "htm@npm:3.1.1"
+  checksum: 1827a0cafffcff69690b048a4df59944086d7503fe5eb7c10b40834439205bdf992941e7aa25e92b3c2c086170565b4ed7c365bc072d31067c6e7a4e478776bd
+  languageName: node
+  linkType: hard
+
 "html-encoding-sniffer@npm:^2.0.1":
   version: 2.0.1
   resolution: "html-encoding-sniffer@npm:2.0.1"
@@ -17957,10 +17981,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact@npm:^10.0.0":
-  version: 10.5.13
-  resolution: "preact@npm:10.5.13"
-  checksum: afc22da600977935dd0c69c7b69f54d44cdf5d0bc50a6a1a47eafb55cce9c6bf126213b6e842f8079e7e6aca77ea763478eaba6ff75eb5bcb998273bc15b74d1
+"preact@npm:^10.13.2":
+  version: 10.19.5
+  resolution: "preact@npm:10.19.5"
+  checksum: c1fd0a5b4243c648a7b3600a2e8794cc51eeca90b5c8c3af1513b63a1ec3ee83326c7d7fd62261baa5547992b80a10fc2a30ccd07df7d72b03289e0f4e156ca4
   languageName: node
   linkType: hard
 
