@@ -54,7 +54,7 @@
     "netlify-cli": "8.19.3",
     "nodemon": "2.0.15",
     "prettier": "2.7.1",
-    "renovate-config-algolia": "2.1.9",
+    "renovate-config-algolia": "2.2.0",
     "ts-jest": "27.1.4",
     "typescript": "4.6.3"
   },
