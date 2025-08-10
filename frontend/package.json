@@ -34,7 +34,7 @@
     "mustache": "4.2.0",
     "node-sass": "7.0.1",
     "postcss": "8.4.12",
-    "postcss-loader": "6.2.1",
+    "postcss-loader": "7.3.4",
     "postcss-preset-env": "7.4.3",
     "preact": "10.7.1",
     "sass-loader": "12.6.0",
