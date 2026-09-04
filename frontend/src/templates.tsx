@@ -1,6 +1,7 @@
 import type { AutocompleteComponents, VNode } from '@algolia/autocomplete-js';
 import type { Hit } from '@algolia/client-search';
 
+import { AlgoliaLogo } from './AlgoliaLogo';
 import type { AlgoliaRecord } from './types';
 
 export const templates = {
@@ -12,8 +13,9 @@ export const templates = {
         <a
           href={`https://www.algolia.com/?utm_source=netlify&utm_medium=link&utm_campaign=autocomplete-${escapedHostname}`}
           className="aa-powered-by-link"
+          aria-label="Algolia"
         >
-          Algolia
+          <AlgoliaLogo />
         </a>
       </div>
     );
