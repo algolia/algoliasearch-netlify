@@ -1,0 +1,15 @@
+---
+alwaysApply: true
+---
+
+Use DocSearch MCP when the user asks about public developer documentation for a library, framework, SDK, API, CLI tool, or cloud service.
+
+Prefer the one-shot `algolia_docsearch_search_docs` tool for normal lookups:
+
+1. Put the official product, library, SDK, or platform name in `library`.
+2. Put the actual documentation question in `query`.
+3. Answer only from returned documentation chunks and include source links when available.
+
+Use `algolia_docsearch_resolve_docset` followed by `algolia_docsearch_query_docs` when a question spans multiple products or when the right documentation set is ambiguous.
+
+Do not use DocSearch MCP for general programming concepts, local code review, or business logic that is not answered by public docs.
