@@ -198,6 +198,9 @@
     const $errorTitle = document.getElementById('error-title');
     const $error = document.getElementById('error');
 
+    const CDN_FRONTEND =
+      'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist';
+
     async function checkIfWebpackRunning() {
       try {
         const response = await fetch(
@@ -206,6 +209,18 @@
             method: 'HEAD',
           }
         );
+        return response.status === 200;
+      } catch (err) {
+        console.log(err);
+        return false;
+      }
+    }
+
+    async function checkIfPreviewFrontendAvailable() {
+      try {
+        const response = await fetch('/frontend/algoliasearchNetlify.css', {
+          method: 'HEAD',
+        });
         return response.status === 200;
       } catch (err) {
         console.log(err);
@@ -262,27 +277,44 @@
       };
       document.addEventListener('keydown', handleKeyDown);
 
-      // Base URL
+      // Base URL: webpack (local) > this deploy's /frontend build > published CDN
       const webpackReady = await checkIfWebpackRunning();
-      let usingDev = webpackReady;
-      if (usp.get('force_env') === 'dev') usingDev = true;
-      if (usp.get('force_env') === 'prod') usingDev = false;
+      const previewFrontendReady = await checkIfPreviewFrontendAvailable();
+      const forceEnv = usp.get('force_env');
 
-      // Toggle dev <-> prod
-      $debugToggle.innerText = usingDev
-        ? 'Switch to cdn.jsdelivr.net'
-        : 'Switch to localhost:9100';
+      let mode = 'cdn';
+      if (forceEnv === 'dev') {
+        mode = 'dev';
+      } else if (forceEnv === 'prod') {
+        mode = 'cdn';
+      } else if (webpackReady) {
+        mode = 'dev';
+      } else if (previewFrontendReady) {
+        mode = 'preview';
+      }
+
+      $debugToggle.innerText =
+        mode === 'cdn'
+          ? webpackReady
+            ? 'Switch to localhost:9100'
+            : 'Switch to this deploy'
+          : 'Switch to cdn.jsdelivr.net';
       $debugToggle.addEventListener('click', () => {
         usp.delete('force_env');
-        if (usingDev && webpackReady) usp.set('force_env', 'prod');
-        if (!usingDev && !webpackReady) usp.set('force_env', 'dev');
+        if (mode !== 'cdn') {
+          usp.set('force_env', 'prod');
+        } else if (!webpackReady && !previewFrontendReady) {
+          usp.set('force_env', 'dev');
+        }
         reloadWithNewUsp();
       });
 
-      // Base Url
-      const baseUrl = usingDev
-        ? 'http://localhost:9100'
-        : 'https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist';
+      const baseUrl =
+        mode === 'dev'
+          ? 'http://localhost:9100'
+          : mode === 'preview'
+          ? `${window.location.origin}/frontend`
+          : CDN_FRONTEND;
 
       // Debug info
       $baseUrl.innerText = baseUrl;
