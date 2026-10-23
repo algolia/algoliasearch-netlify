@@ -32,7 +32,7 @@
     "fork-ts-checker-webpack-plugin": "6.5.1",
     "mini-css-extract-plugin": "2.6.0",
     "mustache": "4.2.0",
-    "node-sass": "7.0.1",
+    "node-sass": "7.0.3",
     "postcss": "8.4.12",
     "postcss-loader": "6.2.1",
     "postcss-preset-env": "7.4.3",
