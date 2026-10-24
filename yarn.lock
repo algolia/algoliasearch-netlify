@@ -188,7 +188,7 @@ __metadata:
   resolution: "@algolia/netlify-plugin-crawler@workspace:plugin"
   dependencies:
     "@types/node-fetch": 2.6.1
-    dotenv: 16.0.0
+    dotenv: 16.6.1
     node-fetch: 2.6.7
   languageName: unknown
   linkType: soft
@@ -9460,10 +9460,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:16.0.0":
-  version: 16.0.0
-  resolution: "dotenv@npm:16.0.0"
-  checksum: 664cebb51f0a9a1d1b930f51f0271e72e26d62feaecc9dc03df39453dd494b4e724809ca480fb3ec3213382b1ed3f791aaeb83569a137f9329ce58efd4853dbf
+"dotenv@npm:16.6.1":
+  version: 16.6.1
+  resolution: "dotenv@npm:16.6.1"
+  checksum: e8bd63c9a37f57934f7938a9cf35de698097fadf980cb6edb61d33b3e424ceccfe4d10f37130b904a973b9038627c2646a3365a904b4406514ea94d7f1816b69
   languageName: node
   linkType: hard
 
