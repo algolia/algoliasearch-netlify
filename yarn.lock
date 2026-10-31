@@ -19,7 +19,7 @@ __metadata:
     algoliasearch: 4.13.0
     babel-loader: 8.2.4
     clean-webpack-plugin: 4.0.0
-    core-js: 3.21.1
+    core-js: 3.51.0
     css-loader: 6.7.1
     fork-ts-checker-webpack-plugin: 6.5.1
     mini-css-extract-plugin: 2.6.0
@@ -8551,10 +8551,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:3.21.1":
-  version: 3.21.1
-  resolution: "core-js@npm:3.21.1"
-  checksum: d68eddd831340ad5b24ac29c72fda022a43b17f194c4278b6b875a843283d316502cb4abd07f28631d6ebc4387f66aa06e2b1b3c8fd7e08096a751b5c63f6889
+"core-js@npm:3.51.0":
+  version: 3.51.0
+  resolution: "core-js@npm:3.51.0"
+  checksum: b90b7241f09b6f011b798c1b9dd5d9b6d2b3a9e70f1e2772f02ae8864ca5efcb32ec877f822b3e5aba07b551043774a91897c6c33782a769bb694a467c3bdfca
   languageName: node
   linkType: hard
 
