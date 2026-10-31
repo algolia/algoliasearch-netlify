@@ -24,7 +24,7 @@ __metadata:
     fork-ts-checker-webpack-plugin: 6.5.1
     mini-css-extract-plugin: 2.6.0
     mustache: 4.2.0
-    node-sass: 7.0.1
+    node-sass: 7.0.3
     postcss: 8.4.12
     postcss-loader: 6.2.1
     postcss-preset-env: 7.4.3
@@ -14030,7 +14030,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-base64@npm:^2.4.3":
+"js-base64@npm:^2.4.9":
   version: 2.6.4
   resolution: "js-base64@npm:2.6.4"
   checksum: 5f4084078d6c46f8529741d110df84b14fac3276b903760c21fa8cc8521370d607325dfe1c1a9fbbeaae1ff8e602665aaeef1362427d8fef704f9e3659472ce8
@@ -16222,9 +16222,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-sass@npm:7.0.1":
-  version: 7.0.1
-  resolution: "node-sass@npm:7.0.1"
+"node-sass@npm:7.0.3":
+  version: 7.0.3
+  resolution: "node-sass@npm:7.0.3"
   dependencies:
     async-foreach: ^0.1.3
     chalk: ^4.1.2
@@ -16238,12 +16238,12 @@ __metadata:
     node-gyp: ^8.4.1
     npmlog: ^5.0.0
     request: ^2.88.0
-    sass-graph: 4.0.0
+    sass-graph: ^4.0.1
     stdout-stream: ^1.4.0
     true-case-path: ^1.0.2
   bin:
     node-sass: bin/node-sass
-  checksum: bfec32802c1818948b58a8efe25bb90d606a9db663be6a3cd8468255362d161fa16d89bed0bf7074d6209e903c2df4900d31889a699a68b936c5ff9534b16f87
+  checksum: 7d577d0fb68948959f367341e6cfc2858aa37abc5fadbd9e6b477ed0d192bebf7f8516d0b53c27be30ab05d5cd62d8a9bab08cc4442ef901b02cb51d864b4419
   languageName: node
   linkType: hard
 
@@ -19130,17 +19130,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-graph@npm:4.0.0":
-  version: 4.0.0
-  resolution: "sass-graph@npm:4.0.0"
+"sass-graph@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "sass-graph@npm:4.0.1"
   dependencies:
     glob: ^7.0.0
     lodash: ^4.17.11
-    scss-tokenizer: ^0.3.0
+    scss-tokenizer: ^0.4.3
     yargs: ^17.2.1
   bin:
     sassgraph: bin/sassgraph
-  checksum: 2d9db9bbcc6daacf58713316c12b7da88c66a21e046612b12db6c85d8bddf61f584f6c973ebf9ad310d7b41188220ed246c3061666be0fc7d983137a9682baef
+  checksum: 896f99253bd77a429a95e483ebddee946e195b61d3f84b3e1ccf8ad843265ec0585fa40bf55fbf354c5f57eb9fd0349834a8b190cd2161ab1234cb9af10e3601
   languageName: node
   linkType: hard
 
@@ -19241,13 +19241,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scss-tokenizer@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "scss-tokenizer@npm:0.3.0"
+"scss-tokenizer@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "scss-tokenizer@npm:0.4.3"
   dependencies:
-    js-base64: ^2.4.3
-    source-map: ^0.7.1
-  checksum: 3d1ae9d48aeb4db2895e02fe324c6ac77b3eb4c66ece48d2dea54b1c1251e2c1e770ba010c3e8ea0ae2a25ea89f8fab4396ac568fc7a78ce9cce449ca5c40705
+    js-base64: ^2.4.9
+    source-map: ^0.7.3
+  checksum: f3697bb155ae23d88c7cd0275988a73231fe675fbbd250b4e56849ba66319fc249a597f3799a92f9890b12007f00f8f6a7f441283e634679e2acdb2287a341d1
   languageName: node
   linkType: hard
 
@@ -19769,7 +19769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.7.1, source-map@npm:^0.7.3, source-map@npm:~0.7.2":
+"source-map@npm:^0.7.3, source-map@npm:~0.7.2":
   version: 0.7.3
   resolution: "source-map@npm:0.7.3"
   checksum: cd24efb3b8fa69b64bf28e3c1b1a500de77e84260c5b7f2b873f88284df17974157cc88d386ee9b6d081f08fdd8242f3fc05c953685a6ad81aad94c7393dedea
