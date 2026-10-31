@@ -199,7 +199,7 @@ __metadata:
   dependencies:
     "@algolia/algoliasearch-netlify-frontend": "*"
     "@algolia/netlify-plugin-crawler": "*"
-    "@netlify/build": 26.5.2
+    "@netlify/build": 26.5.3
     "@types/jest": 27.4.1
     "@types/node": 16.11.26
     "@typescript-eslint/eslint-plugin": 5.18.0
@@ -3690,9 +3690,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/build@npm:26.5.2":
-  version: 26.5.2
-  resolution: "@netlify/build@npm:26.5.2"
+"@netlify/build@npm:26.5.3":
+  version: 26.5.3
+  resolution: "@netlify/build@npm:26.5.3"
   dependencies:
     "@bugsnag/js": ^7.0.0
     "@netlify/cache-utils": ^4.0.0
@@ -3700,7 +3700,7 @@ __metadata:
     "@netlify/functions-utils": ^4.0.0
     "@netlify/git-utils": ^4.0.0
     "@netlify/plugin-edge-handlers": ^3.0.7
-    "@netlify/plugins-list": ^6.18.1
+    "@netlify/plugins-list": ^6.19.0
     "@netlify/run-utils": ^4.0.0
     "@netlify/zip-it-and-ship-it": 5.9.0
     "@sindresorhus/slugify": ^2.0.0
@@ -3749,7 +3749,7 @@ __metadata:
     yargs: ^17.3.1
   bin:
     netlify-build: src/core/bin.js
-  checksum: fb54422fadf9b538cb604be2f2a8af43ca64a8803a2d81d20c62215c16f9e42d1decfd183004350609e73c06426578b57912d3cf92983717e0ea94cee8dbddd2
+  checksum: 71a6c41ce2b2f051155647f3e950b10176db55c95d471a5452c2cd32dc393eaf87553f7ed48465d5597a191d014e496e13d1f7da6b92025e2629a2ec1ecfb87f
   languageName: node
   linkType: hard
 
@@ -4133,10 +4133,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/plugins-list@npm:^6.18.1":
-  version: 6.19.0
-  resolution: "@netlify/plugins-list@npm:6.19.0"
-  checksum: e3c9824b0b780f756500f43efa3cb063900cbe1961bf65b5f2041bb3d41dc70758c5588295d0c106dcee30c590c70ed710b4663a4e5777a96f7abdd5c0a28a41
+"@netlify/plugins-list@npm:^6.19.0":
+  version: 6.81.14
+  resolution: "@netlify/plugins-list@npm:6.81.14"
+  checksum: ea6654c388cf431f0b4971f0590779b3894a0e81fb7cdbb2d7c408961d99611e5d21ae2eb96c58dcd23115db66d12faac8703306096628a3bd465c4fada72e44
   languageName: node
   linkType: hard
 
