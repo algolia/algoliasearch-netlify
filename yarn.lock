@@ -208,7 +208,7 @@ __metadata:
     conventional-changelog: 3.1.25
     conventional-changelog-cli: 2.2.2
     eslint: 8.12.0
-    eslint-config-algolia: 20.0.0
+    eslint-config-algolia: 20.1.0
     eslint-config-prettier: 8.5.0
     eslint-config-standard: 16.0.3
     eslint-plugin-algolia: 2.0.0
@@ -9879,13 +9879,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-algolia@npm:20.0.0":
-  version: 20.0.0
-  resolution: "eslint-config-algolia@npm:20.0.0"
+"eslint-config-algolia@npm:20.1.0":
+  version: 20.1.0
+  resolution: "eslint-config-algolia@npm:20.1.0"
   peerDependencies:
     eslint: ^5.16.0 || ^6.8.0 || ^7.2.0 || ^8.0.0
     prettier: ^2.2.1
-  checksum: d50b249f65c535c7f34dfd773d36b7057b2cfbd6406631af67550ac22e6d00018be38a499e11c8dbb8f163911098a4b0ab20a7933393eaaa17968b308dd726ef
+  checksum: 19f6bf27b5600972afeeb29984b1353b6aee85745d1db657a2f2e733e89fddcbaf60d8b592734c6eec8d90890a8eeef02570511e7a6bab26ad413cb51555890d
   languageName: node
   linkType: hard
 
