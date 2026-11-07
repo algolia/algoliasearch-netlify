@@ -15,7 +15,7 @@ __metadata:
     "@algolia/transporter": 4.13.0
     "@babel/core": 7.17.9
     "@babel/preset-env": 7.16.11
-    "@types/react": 17.0.44
+    "@types/react": 17.0.93
     algoliasearch: 4.13.0
     babel-loader: 8.2.4
     clean-webpack-plugin: 4.0.0
@@ -221,7 +221,7 @@ __metadata:
     eslint-plugin-prettier: 4.0.0
     eslint-plugin-promise: 6.0.0
     eslint-plugin-react: 7.29.4
-    eslint-plugin-react-hooks: 4.4.0
+    eslint-plugin-react-hooks: 4.6.2
     eslint-plugin-standard: 4.1.0
     http-server: 14.1.0
     jest: 27.5.1
@@ -5198,14 +5198,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.44":
-  version: 17.0.44
-  resolution: "@types/react@npm:17.0.44"
+"@types/react@npm:17.0.93":
+  version: 17.0.93
+  resolution: "@types/react@npm:17.0.93"
   dependencies:
     "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: ebee02778ca08f954c316dc907802264e0121c87b8fa2e7e0156ab0ef2a1b0a09d968c016a3600ec4c9a17dc09b4274f292d9b15a1a5369bb7e4072def82808f
+    "@types/scheduler": ^0.16
+    csstype: ^3.2.2
+  checksum: 3620f58144cef74db73381b87caa171f42cbac4accc3c67a00383bb886672e5b3b4dd6f4f491f76ea90a5732494d8acb819f35f6c96af8ad04a3041731ac53c0
   languageName: node
   linkType: hard
 
@@ -5234,10 +5234,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/scheduler@npm:*":
-  version: 0.16.1
-  resolution: "@types/scheduler@npm:0.16.1"
-  checksum: 2ff8034df029a6cbb3623b05fa895cac4fc504806a8e948ebe29675a1edfa5ac04faac7611016076b3ffefc2037bbe344ad1978304059b2d4c78e513ec43c7bf
+"@types/scheduler@npm:^0.16":
+  version: 0.16.8
+  resolution: "@types/scheduler@npm:0.16.8"
+  checksum: 6c091b096daa490093bf30dd7947cd28e5b2cd612ec93448432b33f724b162587fed9309a0acc104d97b69b1d49a0f3fc755a62282054d62975d53d7fd13472d
   languageName: node
   linkType: hard
 
@@ -8798,10 +8798,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.0.2":
-  version: 3.0.7
-  resolution: "csstype@npm:3.0.7"
-  checksum: 2f30c993be570c6d0de334b979a718370ee9bca9569c90340f13e05e542146c55b22e87372b858c061f9f8ded494da7a4715957882f9356cf9993ba11ab6f09c
+"csstype@npm:^3.2.2":
+  version: 3.2.3
+  resolution: "csstype@npm:3.2.3"
+  checksum: cb882521b3398958a1ce6ca98c011aec0bde1c77ecaf8a1dd4db3b112a189939beae3b1308243b2fe50fc27eb3edeb0f73a5a4d91d928765dc6d5ecc7bda92ee
   languageName: node
   linkType: hard
 
@@ -10084,12 +10084,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:4.4.0":
-  version: 4.4.0
-  resolution: "eslint-plugin-react-hooks@npm:4.4.0"
+"eslint-plugin-react-hooks@npm:4.6.2":
+  version: 4.6.2
+  resolution: "eslint-plugin-react-hooks@npm:4.6.2"
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-  checksum: 350b50d45677cb2df682b9e54475912746bd2f56fc342e4d47fad78d71eb1b2b742e702f1e6c04ab2196346d3d7a2e327b5eee826f5b96bfb84b5c41d35e44e9
+  checksum: 395c433610f59577cfcf3f2e42bcb130436c8a0b3777ac64f441d88c5275f4fcfc89094cedab270f2822daf29af1079151a7a6579a8e9ea8cee66540ba0384c4
   languageName: node
   linkType: hard
 
