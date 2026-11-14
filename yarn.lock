@@ -21,7 +21,7 @@ __metadata:
     clean-webpack-plugin: 4.0.0
     core-js: 3.21.1
     css-loader: 6.7.1
-    fork-ts-checker-webpack-plugin: 6.5.1
+    fork-ts-checker-webpack-plugin: 6.5.3
     mini-css-extract-plugin: 2.6.0
     mustache: 4.2.0
     node-sass: 7.0.1
@@ -11067,9 +11067,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-ts-checker-webpack-plugin@npm:6.5.1":
-  version: 6.5.1
-  resolution: "fork-ts-checker-webpack-plugin@npm:6.5.1"
+"fork-ts-checker-webpack-plugin@npm:6.5.3":
+  version: 6.5.3
+  resolution: "fork-ts-checker-webpack-plugin@npm:6.5.3"
   dependencies:
     "@babel/code-frame": ^7.8.3
     "@types/json-schema": ^7.0.5
@@ -11094,7 +11094,7 @@ __metadata:
       optional: true
     vue-template-compiler:
       optional: true
-  checksum: b5a06f72fb2db5d182e026668446ef54a80eb8f2f01a4f3336dfa9770c80cda6b5657d1e8dc20f45e2aaa9b72b55be1f4425fb9cf78efc989e1b5107ccdb41a1
+  checksum: 9732a49bfeed8fc23e6e8a59795fa7c238edeba91040a9b520db54b4d316dda27f9f1893d360e296fd0ad8930627d364417d28a8c7007fba60cc730ebfce4956
   languageName: node
   linkType: hard
 
